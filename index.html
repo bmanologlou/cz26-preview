@@ -13,19 +13,69 @@
 <meta property="og:description" content="35 years of precision engineering. Designed and manufactured in Greece. Trusted in 98 countries.">
 <meta property="og:site_name" content="Carbon Zapp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ─── GUNTERZ WEBFONT ─── */
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Regular.woff') format('woff');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Italic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Italic.woff') format('woff');
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Medium.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Medium.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-MediumItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-MediumItalic.woff') format('woff');
+    font-weight: 500; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Bold.woff') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BoldItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BoldItalic.woff') format('woff');
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Black.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Black.woff') format('woff');
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BlackItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BlackItalic.woff') format('woff');
+    font-weight: 900; font-style: italic; font-display: swap;
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --black: #0a0a0a;
-    --white: #f5f3ef;
-    --carbon: #1a1a1a;
-    --steel: #2e2e2e;
-    --mid: #6b6b6b;
-    --light: #c8c4bc;
+    --white: #f5f5f5;
+    --carbon: #1a1a1a;  /* keep */
+    --steel: #3e3e3d;
+    --mid: #868685;
+    --light: #dadadb;
     --accent: #ED1C24;
-    --accent2: #e8871f;
+    --accent2: #146cf7;
     --nav-h: 68px;
   }
 
@@ -128,6 +178,30 @@
   }
   .btn-login:hover { color: var(--white); }
 
+
+  /* ─── NAV SCROLL BEHAVIOUR ─── */
+  .nav-logo .cz-logo-svg {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: left center;
+  }
+  .nav-logo .cz-brandmark-svg {
+    height: 32px;
+    width: auto;
+    color: #f5f5f5;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  nav.scrolled .cz-logo-svg {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  nav.scrolled .cz-brandmark-svg {
+    display: block;
+    opacity: 1;
+  }
+
   /* ─── MEGA MENU ─── */
   .nav-item { position: relative; }
 
@@ -199,7 +273,7 @@
     text-transform: uppercase;
   }
   .mega-new-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 18px;
     letter-spacing: 0.08em;
     color: var(--white);
@@ -227,7 +301,7 @@
     margin-bottom: 4px;
   }
   .mega-cloudx-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 18px;
     letter-spacing: 0.08em;
     color: var(--white);
@@ -390,7 +464,7 @@
   }
 
   .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(72px, 9vw, 128px);
     line-height: 0.92;
     letter-spacing: 0.02em;
@@ -491,7 +565,7 @@
   }
 
   .problem-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(42px, 5vw, 68px);
     line-height: 1;
     letter-spacing: 0.03em;
@@ -521,7 +595,7 @@
   }
 
   .solutions-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(38px, 4vw, 56px);
     letter-spacing: 0.04em;
     line-height: 1;
@@ -621,7 +695,7 @@
   }
 
   .sol-card h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 28px;
     letter-spacing: 0.05em;
     margin-bottom: 12px;
@@ -687,7 +761,7 @@
   }
 
   .featured-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(52px, 7vw, 96px);
     line-height: 0.9;
     letter-spacing: 0.02em;
@@ -710,7 +784,7 @@
   .spec-item { display: flex; flex-direction: column; gap: 4px; }
 
   .spec-value {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 36px;
     letter-spacing: 0.04em;
     color: var(--white);
@@ -764,7 +838,7 @@
   }
 
   .machine-label {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 48px;
     letter-spacing: 0.08em;
     color: rgba(255,255,255,0.08);
@@ -811,7 +885,7 @@
   }
 
   .cloudx-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(42px, 5vw, 72px);
     line-height: 0.95;
     letter-spacing: 0.03em;
@@ -912,7 +986,7 @@
   }
 
   .db-card-value {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 28px;
     letter-spacing: 0.04em;
     color: var(--white);
@@ -973,7 +1047,7 @@
   }
 
   .why-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(48px, 5vw, 72px);
     line-height: 0.95;
     letter-spacing: 0.03em;
@@ -1019,7 +1093,7 @@
   }
 
   .stat-value {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 42px;
     letter-spacing: 0.03em;
     color: var(--white);
@@ -1079,7 +1153,7 @@
   }
 
   .news-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(38px, 4vw, 52px);
     letter-spacing: 0.04em;
   }
@@ -1204,7 +1278,7 @@
   }
 
   .footer-cta-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: clamp(38px, 5vw, 64px);
     line-height: 0.95;
     letter-spacing: 0.03em;
@@ -1410,7 +1484,7 @@
   }
 
   .network-count {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 42px;
     letter-spacing: 0.04em;
     line-height: 1;
@@ -1515,7 +1589,7 @@
     50% { opacity: 0.4; transform: scale(0.7); }
   }
   .hero-event-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Gunterz', sans-serif;
     font-size: 17px;
     letter-spacing: 0.06em;
     color: var(--white);
@@ -1641,6 +1715,21 @@
 <nav>
 <div class="nav-inner">
   <a href="#" class="nav-logo">
+    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-brandmark-svg">
+<g id="XMLID_1678_">
+	<g id="XMLID_1679_">
+		<g id="XMLID_1680_">
+			<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
+				c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
+				c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
+			<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
+				l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56c1.44-2.38,1.44-5.35,0-7.73
+				l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
     <svg viewBox="0 0 961.38 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logo-svg" aria-label="Carbon Zapp">
 <g>
 	<g id="XMLID_1678_">
@@ -1796,7 +1885,7 @@
       playsinline
       preload="auto"
     >
-      <source src="EO_CZ_Intro_video.mp4" type="video/mp4">
+      <source src="assets/video/EO_CZ_Intro_video.mp4" type="video/mp4">
     </video>
   </div>
 
@@ -2524,5 +2613,20 @@
     showEvent(0, false);
     resetTimer();
   })();
+
+  // Nav logo scroll behaviour: logotype → brandmark after 80px
+  (function() {
+    var nav = document.querySelector('nav');
+    var threshold = 80;
+    function onScroll() {
+      if (window.scrollY > threshold) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
 </script>
 </html>
