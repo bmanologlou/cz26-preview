@@ -26,7 +26,7 @@
     --light: #c8c4bc;
     --accent: #ED1C24;
     --accent2: #e8871f;
-    --nav-h: 62px;
+    --nav-h: 76px;
   }
 
   html { scroll-behavior: smooth; }
@@ -327,13 +327,24 @@
     height: 100vh;
     min-height: 720px;
     position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content-wrap {
+    position: absolute;
+    inset: 0;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     align-items: flex-end;
     padding: 0 80px 130px;
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    pointer-events: none;
   }
+
+  .hero-content-wrap > * { pointer-events: all; }
 
   .hero-bg {
     position: absolute; inset: 0;
@@ -367,7 +378,7 @@
   .hero-badge {
     position: absolute;
     top: calc(var(--nav-h) + 40px);
-    right: 80px;
+    right: 0;
     z-index: 2;
     display: flex; align-items: center; gap: 8px;
     font-family: 'DM Mono', monospace;
@@ -1811,6 +1822,7 @@
 
   <div class="hero-bg"></div>
 
+<div class="hero-content-wrap">
   <div class="hero-badge">NEW HQ — KOROPI, ATHENS</div>
 
   <div class="hero-content">
