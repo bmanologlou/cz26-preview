@@ -44,13 +44,31 @@
     height: var(--nav-h);
     display: flex;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 60px;
     background: rgba(10,10,10,0.85);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
     z-index: 100;
     gap: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  /* Nav wrapper to constrain fixed nav */
+  nav::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: -1;
   }
 
   .nav-logo {
@@ -58,7 +76,7 @@
     align-items: center;
     text-decoration: none;
     flex-shrink: 0;
-    margin-right: 40px;
+    margin-right: 72px;
   }
 
   .nav-logo .cz-logo-svg {
@@ -146,7 +164,7 @@
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
     border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding: 40px 80px 36px;
+    padding: 40px 120px 36px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.18s ease, transform 0.18s ease;
@@ -323,7 +341,7 @@
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding: 0 80px 130px;
+    padding: 0 120px 130px;
     overflow: hidden;
   }
 
@@ -359,7 +377,7 @@
   .hero-badge {
     position: absolute;
     top: calc(var(--nav-h) + 40px);
-    right: 80px;
+    right: 120px;
     z-index: 2;
     display: flex; align-items: center; gap: 8px;
     font-family: 'DM Mono', monospace;
@@ -465,7 +483,7 @@
   }
 
   /* ─── SECTIONS ─── */
-  section { padding: 160px 80px; }
+  section { padding: 160px 120px; }
 
   .section-label {
     font-family: 'DM Mono', monospace;
@@ -1137,7 +1155,7 @@
   /* ─── FOOTER CTA ─── */
   .footer-cta {
     background: var(--carbon);
-    padding: 140px 80px;
+    padding: 140px 120px;
     position: relative;
     overflow: hidden;
   }
@@ -1219,7 +1237,7 @@
   footer {
     background: var(--black);
     border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 90px 80px 60px;
+    padding: 90px 120px 60px;
     position: relative;
     overflow: hidden;
   }
@@ -1334,7 +1352,7 @@
     background: var(--carbon);
     border-top: 1px solid rgba(255,255,255,0.06);
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 36px 80px;
+    padding: 36px 120px;
   }
 
   .network-strip-inner {
@@ -1476,7 +1494,7 @@
   /* ─── HERO EVENT CARD ─── */
   .hero-event {
     position: absolute;
-    right: 80px;
+    right: 120px;
     bottom: 100px;
     width: 240px;
     background: rgba(255,255,255,0.04);
