@@ -402,6 +402,52 @@
   }
 
   .mega-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .mega-links-small a {
+    font-size: 12px !important;
+    color: rgba(0,0,0,0.45) !important;
+  }
+  .mega-links-small a:hover { color: var(--accent) !important; }
+
+  .mega-view-all {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .mega-view-all:hover { color: var(--accent); }
+
+  .mega-model {
+    display: block;
+    font-family: 'Gunterz', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: #1a1a1a;
+    line-height: 1.2;
+  }
+  .mega-model-desc {
+    display: block;
+    font-size: 11px;
+    color: rgba(0,0,0,0.4);
+    margin-top: 1px;
+  }
+  .mega-links li a:hover .mega-model { color: var(--accent); }
+
+  .mega-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    background: rgba(237,28,36,0.1);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
   .mega-links a {
     display: block;
     font-size: 13px;
@@ -1916,75 +1962,51 @@
     <li class="nav-item">
       <a href="#">Solutions</a>
       <div class="mega">
+
+        <!-- Col 1: Solutions -->
         <div class="mega-col">
-          <h5>By Professional</h5>
+          <h5>Solutions</h5>
           <ul class="mega-links">
-            <li><a href="#">Diesel Specialists</a></li>
+            <li><a href="#">Specialists</a></li>
             <li><a href="#">Workshops</a></li>
-            <li><a href="#">Authorized Centers</a></li>
+            <li><a href="#">Large Engines</a></li>
+            <li><a href="#">Authorized</a></li>
           </ul>
-          <h5 style="margin-top:20px">By Fuel System</h5>
+          <ul class="mega-links mega-links-small" style="margin-top:12px">
+            <li><a href="#">Gasoline</a></li>
+            <li><a href="#">Diesel</a></li>
+            <li><a href="#">Parts &amp; Supplies</a></li>
+          </ul>
+          <div style="margin-top:20px">
+            <a href="#" class="mega-view-all">View All Systems →</a>
+          </div>
+        </div>
+
+        <!-- Col 2: XSeries -->
+        <div class="mega-col">
+          <h5>XSeries</h5>
           <ul class="mega-links">
-            <li><a href="#">Diesel CRDi &amp; HEUI</a></li>
-            <li><a href="#">Gasoline GDi</a></li>
-            <li><a href="#">Large Engines &amp; Marine</a></li>
+            <li><a href="#"><span class="mega-model">MTBR-X</span><span class="mega-model-desc">Diesel Specialist Bench</span></a></li>
+            <li><a href="#"><span class="mega-model">ITBR-X</span><span class="mega-model-desc">CRDi &amp; HEUI Bench</span></a></li>
+            <li><a href="#"><span class="mega-model">ETBR-X</span><span class="mega-model-desc">Electronic Test Bench</span></a></li>
+            <li><a href="#"><span class="mega-model">LTBR-X</span><span class="mega-model-desc">Large Engine &amp; Marine</span></a></li>
           </ul>
-          <div style="margin-top:28px">
-            <a href="#" class="link-arrow">View All Solutions →</a>
-          </div>
+          <ul class="mega-links mega-links-small" style="margin-top:12px">
+            <li><a href="#">Parts &amp; Supplies</a></li>
+          </ul>
         </div>
+
+        <!-- Col 3: More -->
         <div class="mega-col">
-          <h5>Featured Products</h5>
-          <div class="mega-featured">
-            <a href="#" class="mega-card">
-              <div class="mega-card-icon">MTBR|X</div>
-              <div class="mega-card-text">
-                <strong>MTBR|X</strong>
-                <span>Diesel Specialist</span>
-              </div>
-            </a>
-            <a href="#" class="mega-card">
-              <div class="mega-card-icon">ITB.4R</div>
-              <div class="mega-card-text">
-                <strong>ITB.4R|X</strong>
-                <span>CRDi Bench</span>
-              </div>
-            </a>
-            <a href="#" class="mega-card">
-              <div class="mega-card-icon">GTB.4R</div>
-              <div class="mega-card-text">
-                <strong>GTB.4R|X</strong>
-                <span>Gasoline GDi</span>
-              </div>
-            </a>
-            <a href="#" class="mega-card">
-              <div class="mega-card-icon">DSR|X</div>
-              <div class="mega-card-text">
-                <strong>DSR|X</strong>
-                <span>Workshop Diesel</span>
-              </div>
-            </a>
-          </div>
+          <h5>Explore</h5>
+          <ul class="mega-links">
+            <li><a href="#">CZ Tech <span class="mega-tag">R&amp;D</span></a></li>
+            <li><a href="#">CZ Experts</a></li>
+            <li><a href="#">CZ Credits</a></li>
+            <li><a href="#">Download Catalog</a></li>
+          </ul>
         </div>
-        <div class="mega-col">
-          <h5>New &amp; Coming</h5>
-          <div class="mega-new-block">
-            <div class="mega-new-badge">Q2 2025</div>
-            <div class="mega-new-name">CTBR|X</div>
-            <div class="mega-new-desc">Compact specialist bench. 2500 bar. Bench-top format for space-efficient labs.</div>
-          </div>
-          <div class="mega-new-block" style="margin-top:20px">
-            <div class="mega-new-badge">Q3 2025</div>
-            <div class="mega-new-name">LTBR|X</div>
-            <div class="mega-new-desc">Large Engine &amp; Marine specialist. Shipping, locomotives, industrial generators.</div>
-          </div>
-          <div class="mega-cloudx-teaser">
-            <div class="mega-cloudx-label">Platform</div>
-            <div class="mega-cloudx-name">CloudX</div>
-            <div class="mega-cloudx-desc">IoT-connected. Remote diagnostics. Live database updates.</div>
-            <a href="#" class="mega-cloudx-link">Explore CloudX →</a>
-          </div>
-        </div>
+
       </div>
     </li>
     <li><a href="#">Innovation</a></li>
