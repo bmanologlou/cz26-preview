@@ -25,43 +25,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 32px;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
   }
   #preloader.hidden {
     opacity: 0;
     visibility: hidden;
   }
-  #preloader .pre-logo {
-    width: 72px;
-    height: auto;
-    color: #f5f5f5;
-    animation: pre-pulse 1.8s ease-in-out infinite;
-  }
-  #preloader .pre-bar-wrap {
-    width: 160px;
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  #preloader .pre-bar {
+  /* Ghost outline version — always visible as base */
+  #preloader .pre-logo-ghost {
     position: absolute;
-    left: -100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #ED1C24;
-    animation: pre-load 1.6s ease-in-out forwards;
+    width: 80px;
+    height: auto;
+    color: rgba(255,255,255,0.12);
   }
-  @keyframes pre-pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.95); }
+  /* Fill version — clipped from bottom to top */
+  #preloader .pre-logo-fill {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    color: #ED1C24;
+    clip-path: inset(100% 0 0 0);
+    animation: fill-up 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
   }
-  @keyframes pre-load {
-    0%   { left: -100%; }
-    100% { left: 0%; }
+  #preloader .pre-logo-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @keyframes fill-up {
+    0%   { clip-path: inset(100% 0 0% 0); }
+    100% { clip-path: inset(0% 0 0% 0); }
   }
 
   /* ─── PUBLIC SANS VARIABLE ─── */
@@ -177,6 +173,10 @@
     position: relative;
     width: 160px;
     height: 24px;
+    min-width: 28px;
+  }
+  @media (max-width: 768px) {
+    .nav-logo { width: 28px; }
   }
 
   .nav-logo .cz-logo-svg,
@@ -1776,7 +1776,27 @@
 
 <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
 <div id="preloader">
-  <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="pre-logo">
+  <div class="pre-logo-wrap">
+    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="pre-logo-ghost">
+<g>
+	<path d="M227.72,86.07l-43.93-73.13C178.94,4.93,170.27,0,160.94,0H73.91c-9.33,0-18,4.93-22.85,12.95L7.13,86.07
+		c-5.17,8.56-5.17,19.28,0,27.89l43.92,73.11c4.85,8,13.53,12.93,22.85,12.93h87.03c9.33,0,18-4.92,22.85-12.93l43.93-73.11
+		C232.89,105.36,232.89,94.63,227.72,86.07z M213.75,112.19l-38.36,63.85c-4.24,6.99-11.81,11.29-19.96,11.29H79.42
+		c-8.15,0-15.72-4.3-19.96-11.29L21.1,112.19c-4.51-7.52-4.51-16.88,0-24.36l38.36-63.87c4.24-7,11.81-11.31,19.96-11.31h76.01
+		c8.15,0,15.72,4.3,19.96,11.31l38.36,63.87C218.27,95.31,218.27,104.68,213.75,112.19z"/>
+	<g id="XMLID_00000108306590351078262310000016656168218510676646_">
+		<path id="XMLID_00000011001227266369269340000006548198384635732099_" d="M73.21,93.97l17.74-29.25c1.95-3.21,5.44-5.18,9.2-5.18
+			h48.29V36.57c0-2.04-1.65-3.7-3.69-3.7H85.13c-3.76,0-7.25,1.97-9.2,5.18L42.02,93.97c-2.08,3.42-2.08,7.72,0,11.16l33.91,55.91
+			c1.95,3.21,5.44,5.18,9.2,5.18h59.62c2.04,0,3.69-1.65,3.69-3.7v-22.97h-48.29c-3.76,0-7.25-1.97-9.2-5.18l-17.74-29.25
+			C71.13,101.69,71.13,97.39,73.21,93.97z"/>
+		<path id="XMLID_00000155120375023282326760000004453570925528300964_" d="M170.81,59.54h-22.38v26.21h-39.29
+			c-1.73,0-3.34,0.91-4.24,2.39l-5.35,8.82c-0.96,1.58-0.96,3.56,0,5.14l5.35,8.82c0.9,1.48,2.51,2.38,4.24,2.38h39.29v26.22h22.38
+			c1.73,0,3.34-0.91,4.24-2.39l21.25-35.04c0.96-1.58,0.96-3.57,0-5.14l-21.25-35.05C174.15,60.45,172.54,59.54,170.81,59.54z"/>
+	</g>
+</g>
+</svg>
+
+    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="pre-logo-fill">
 <path d="M227.72,86.07l-43.93-73.13C178.94,4.93,170.27,0,160.94,0H73.91c-9.33,0-18,4.93-22.85,12.95L7.13,86.07
 	c-5.17,8.56-5.17,19.28,0,27.89l43.92,73.11c4.85,8,13.53,12.93,22.85,12.93h87.03c9.33,0,18-4.92,22.85-12.93l43.93-73.11
 	C232.89,105.36,232.89,94.63,227.72,86.07z M196.3,102.09l-21.25,35.04c-0.9,1.48-2.51,2.39-4.24,2.39h-22.38V113.3h-39.29
@@ -1787,8 +1807,6 @@
 	C197.26,98.52,197.26,100.51,196.3,102.09z"/>
 </svg>
 
-  <div class="pre-bar-wrap">
-    <div class="pre-bar"></div>
   </div>
 </div>
 
