@@ -327,6 +327,7 @@
     height: 100vh;
     min-height: 720px;
     position: relative;
+    overflow: hidden;
   }
 
   .hero-content-wrap {
@@ -341,7 +342,7 @@
     transform: translateX(-50%);
     width: 100%;
     pointer-events: none;
-    z-index: 3;
+    z-index: 2;
   }
 
   .hero-content-wrap > * { pointer-events: all; }
@@ -351,14 +352,13 @@
     background:
       linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.88) 100%),
       linear-gradient(90deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.1) 55%, rgba(10,10,10,0) 100%);
-    z-index: 2;
+    z-index: 1;
   }
 
   /* Video background */
   .hero-video-bg {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    width: 100vw; height: 100vh;
     z-index: 0;
     background: #080808;
   }
