@@ -221,38 +221,26 @@
   .nav-links a:hover { color: var(--white); }
 
   .nav-actions {
-    display: flex; align-items: center; gap: 12px;
+    display: flex; align-items: center; gap: 4px;
     margin-left: auto;
   }
 
-  .btn-store {
-    display: flex; align-items: center; gap: 6px;
-    padding: 9px 20px;
-    background: transparent;
-    color: var(--white);
-    font-family: 'Switzer', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    border-radius: 3px;
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-  }
-  .btn-store:hover { border-color: var(--accent); color: var(--accent); }
-
+  .btn-store,
   .btn-login {
-    padding: 9px 16px;
+    padding: 8px 14px;
     border: none;
     background: transparent;
     color: #868685;
     font-family: 'Switzer', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-decoration: none;
     transition: color 0.2s;
+    display: flex;
+    align-items: center;
   }
+  .btn-store:hover,
   .btn-login:hover { color: var(--accent); }
 
 
@@ -302,10 +290,10 @@
     top: var(--nav-h);
     left: 0; right: 0;
     transform: translateY(-6px);
-    background: rgba(18,18,18,0.82);
+    background: rgba(245,245,245,0.96);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     padding: 40px 80px 36px;
     opacity: 0;
     pointer-events: none;
