@@ -294,7 +294,7 @@
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 36px 80px 40px;
+    padding: 36px 80px 52px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.18s ease, transform 0.18s ease;
@@ -314,9 +314,9 @@
   }
   
   .mega-col {
-    padding: 0 36px 0 0;
+    padding: 0 28px 0 0;
     border-right: none;
-    margin-right: 36px;
+    margin-right: 28px;
   }
   .mega-col:last-child {
     border-right: none;
@@ -1526,18 +1526,42 @@
     font-weight: 300;
     color: rgba(245,243,239,0.25);
     letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
   }
+  .footer-legal a {
+    color: rgba(245,243,239,0.25);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-legal a:hover { color: rgba(245,243,239,0.6); }
+  .footer-legal-sep { opacity: 0.3; }
 
   .footer-social { display: flex; gap: 20px; }
   .footer-social a {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.12em;
+    font-family: 'Switzer', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
     color: var(--mid);
     text-decoration: none;
     transition: color 0.15s;
   }
   .footer-social a:hover { color: var(--white); }
+
+  .footer-crafted {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.2);
+    letter-spacing: 0.03em;
+  }
+  .footer-crafted a {
+    color: rgba(245,243,239,0.35);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-crafted a:hover { color: var(--white); }
 
   /* ─── NETWORK STRIP ─── */
   .network-strip {
@@ -2644,15 +2668,28 @@
           <li><a href="#">Find a Distributor</a></li>
           <li><a href="#">Online Store ↗</a></li>
           <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms</a></li>
         </ul>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-legal">©2025 Carbon Zapp. All Rights Reserved.
+      <div class="footer-legal">
+        <span id="footer-year"></span> Carbon Zapp. All Rights Reserved.
+        <span class="footer-legal-sep">·</span>
+        <a href="#">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/CarbonZapp" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/user/CarbonZapp" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/carbonzapp/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/CarbonZapp" target="_blank">Facebook</a>
+      </div>
+      <div class="footer-crafted">
+        Crafted by <a href="https://www.eternaloptimists.com" target="_blank">Eternal Optimists</a>
+      </div>
 
 <script>
   (function() {
