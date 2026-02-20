@@ -13,8 +13,18 @@
 <meta property="og:description" content="35 years of precision engineering. Designed and manufactured in Greece. Trusted in 98 countries.">
 <meta property="og:site_name" content="Carbon Zapp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ─── PUBLIC SANS VARIABLE ─── */
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /* ─── GUNTERZ WEBFONT ─── */
   @font-face {
     font-family: 'Gunterz';
@@ -82,7 +92,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Public Sans', sans-serif;
     background: var(--black);
     color: var(--white);
     overflow-x: hidden;
@@ -501,7 +511,7 @@
     border-radius: 2px;
     transition: background 0.2s;
   }
-  .btn-primary:hover { background: var(--accent2); }
+  .btn-primary:hover { background: #c8151c; }
 
   .btn-ghost {
     display: flex; align-items: center; gap: 8px;
