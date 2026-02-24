@@ -1926,6 +1926,129 @@
     z-index: 2;
     line-height: 1;
   }
+
+  /* ═══ EDITORIAL SLIDER ═══ */
+  .editorial-slider {
+    background: var(--black);
+    padding: 100px 0;
+  }
+  .es-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+  }
+  .es-slide {
+    display: none;
+    grid-template-columns: 55fr 45fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .es-slide.active {
+    display: grid;
+  }
+  .es-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .es-title {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 42px;
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .es-subtitle {
+    font-family: 'Switzer', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.45);
+    margin-bottom: 24px;
+  }
+  .es-body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.6;
+    color: rgba(245,243,239,0.55);
+    max-width: 420px;
+  }
+  /* Image card */
+  .es-card {
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 16px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+  .es-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+  /* Navigation */
+  .es-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 56px;
+  }
+  .es-counter {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(245,243,239,0.4);
+  }
+  .es-current {
+    color: var(--white);
+  }
+  .es-sep {
+    margin: 0 4px;
+  }
+  .es-progress {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .es-progress-bar {
+    height: 100%;
+    background: var(--white);
+    width: 25%;
+    transition: width 0.4s ease;
+  }
+  .es-arrows {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+  }
+  .es-arrow {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .es-arrow:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.06);
+  }
 </style>
 </head>
 <body>
@@ -2197,43 +2320,90 @@
 
 
 
-<!-- ═══════════════════════════════ FEATURED MACHINE ═══════════════════════════════ -->
-<section class="featured">
-<div class="featured-inner">
-  <div class="featured-content">
-    <div class="featured-kicker">Flagship — Diesel Specialists</div>
-    <div class="featured-name">MTBR|X</div>
-    <div class="featured-tagline">The Preferred Diesel Specialists Solution</div>
+<!-- ═══════════════════════════════ EDITORIAL SLIDER ═══════════════════════════════ -->
+<section class="editorial-slider">
+  <div class="es-inner">
 
-    <div class="spec-row">
-      <div class="spec-item">
-        <div class="spec-value">2800<span style="font-size:20px;color:var(--accent)">+</span></div>
-        <div class="spec-unit">BAR PRESSURE</div>
-        <div class="spec-label">Operating</div>
+    <!-- SLIDE 1 -->
+    <div class="es-slide active" data-index="0">
+      <div class="es-content">
+        <div class="es-tag">Machine</div>
+        <h2 class="es-title">MTBR-X</h2>
+        <p class="es-subtitle">Multi-System Platform</p>
+        <p class="es-body">Complete injection testing across all major fuel systems. CRDi, GDi, HEUI and EUI — in a single, compact platform trusted by specialists in 98 countries.</p>
+        <a href="#" class="btn-primary" style="margin-top:32px">Discover MTBR-X</a>
       </div>
-      <div class="spec-item">
-        <div class="spec-value">6</div>
-        <div class="spec-unit">MIN</div>
-        <div class="spec-label">Testing time per injector</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-value">4</div>
-        <div class="spec-unit">SYSTEMS</div>
-        <div class="spec-label">CRDi / GDi / HEUI / EUI</div>
+      <div class="es-visual">
+        <div class="es-card">
+          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="MTBR-X" class="es-img">
+        </div>
       </div>
     </div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="#" class="btn-primary">Discover MTBR|X</a>
-      <a href="#" class="link-arrow" style="padding:14px 0;">Download Brochure →</a>
+    <!-- SLIDE 2 -->
+    <div class="es-slide" data-index="1">
+      <div class="es-content">
+        <div class="es-tag">Machine</div>
+        <h2 class="es-title">LTBR-X</h2>
+        <p class="es-subtitle">Large Engine Platform</p>
+        <p class="es-body">Heavy-duty diesel testing for marine, industrial and large engine applications. Built for the most demanding injection service environments.</p>
+        <a href="#" class="btn-primary" style="margin-top:32px">Discover LTBR-X</a>
+      </div>
+      <div class="es-visual">
+        <div class="es-card">
+          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="LTBR-X" class="es-img">
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="featured-visual">
-    <div class="machine-placeholder">
-      <div class="machine-label">MTBR|X</div>
-      <div class="machine-sub">PRODUCT PHOTOGRAPHY</div>
+    <!-- SLIDE 3 -->
+    <div class="es-slide" data-index="2">
+      <div class="es-content">
+        <div class="es-tag">News</div>
+        <h2 class="es-title">CloudX 2.4 Released</h2>
+        <p class="es-subtitle">Platform Update</p>
+        <p class="es-body">The latest CloudX platform update brings enhanced remote diagnostics, improved EU6 compatibility and new multi-machine dashboard management tools.</p>
+        <a href="#" class="btn-primary" style="margin-top:32px">Read More</a>
+      </div>
+      <div class="es-visual">
+        <div class="es-card">
+          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="CloudX Update" class="es-img">
+        </div>
+      </div>
     </div>
+
+    <!-- SLIDE 4 -->
+    <div class="es-slide" data-index="3">
+      <div class="es-content">
+        <div class="es-tag">Event</div>
+        <h2 class="es-title">Automechanika Dubai 2026</h2>
+        <p class="es-subtitle">JUN 9–11, 2026 · Dubai, UAE</p>
+        <p class="es-body">Meet the Carbon Zapp team at Automechanika Dubai. Live XSeries demonstrations, CloudX platform showcase and direct access to our technical specialists.</p>
+        <a href="#" class="btn-primary" style="margin-top:32px">Register Interest</a>
+      </div>
+      <div class="es-visual">
+        <div class="es-card">
+          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="Automechanika Dubai" class="es-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="es-nav">
+      <div class="es-counter">
+        <span class="es-current">01</span>
+        <span class="es-sep">/</span>
+        <span class="es-total">04</span>
+      </div>
+      <div class="es-progress">
+        <div class="es-progress-bar"></div>
+      </div>
+      <div class="es-arrows">
+        <button class="es-arrow es-prev" aria-label="Previous">←</button>
+        <button class="es-arrow es-next" aria-label="Next">→</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
