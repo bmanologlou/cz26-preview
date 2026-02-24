@@ -669,6 +669,11 @@
   }
 
   /* ─── PROBLEM BLOCK ─── */
+  .problem-eyebrow-row {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 56px 80px 12px;
+  }
   .problem {
     background: var(--carbon);
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -678,14 +683,14 @@
   .problem-inner {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 56px 80px;
+    padding: 0 80px 56px;
     display: grid;
     grid-template-columns: 1fr 540px;
     gap: 60px;
-    align-items: center;
+    align-items: start;
   }
   .problem-body-col {
-    padding-top: 0;
+    padding-top: 0; /* top aligned */
   }
 
   .problem-title {
@@ -2204,13 +2209,13 @@
 
 <!-- ═══════════════════════════════ PROBLEM ═══════════════════════════════ -->
 <section class="problem">
+  <div class="problem-eyebrow-row">
+    <div class="section-label">Our Purpose</div>
+  </div>
   <div class="problem-inner">
-    <div>
-      <div class="section-label">Our Purpose</div>
-      <h2 class="problem-title">
-        ENGINEERING FORWARD<br><em>MOBILITY SOLUTIONS</em>
-      </h2>
-    </div>
+    <h2 class="problem-title">
+      ENGINEERING FORWARD<br><em>MOBILITY SOLUTIONS</em>
+    </h2>
     <div class="problem-body-col">
       <p class="problem-body">
         Modern fuel systems demand precision beyond conventional equipment. Carbon Zapp designs and manufactures a complete range of Diesel and Gasoline injection service solutions, supporting specialists, workshops and heavy-duty applications worldwide.
