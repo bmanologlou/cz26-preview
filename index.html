@@ -1930,24 +1930,27 @@
   /* ═══ EDITORIAL SLIDER ═══ */
   .editorial-slider {
     background: var(--black);
-    padding: 80px 0;
+    padding: 80px;
   }
-  .es-inner {
+  .es-wrap {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 56px 80px;
-    position: relative;
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
+    border-radius: 10px;
+    overflow: hidden;
   }
   .es-slide {
     display: none;
     grid-template-columns: 55fr 45fr;
-    gap: 80px;
-    align-items: center;
+    min-height: 0;
   }
-  .es-slide.active {
-    display: grid;
+  .es-slide.active { display: grid; }
+  .es-content {
+    padding: 56px 56px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid rgba(255,255,255,0.08);
   }
   .es-tag {
     font-family: 'DM Mono', monospace;
@@ -1955,7 +1958,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .es-title {
     font-family: 'Gunterz', sans-serif;
@@ -1963,13 +1966,13 @@
     line-height: 0.95;
     letter-spacing: 0.03em;
     color: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .es-subtitle {
     font-family: 'Switzer', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: rgba(245,243,239,0.45);
+    color: rgba(245,243,239,0.4);
     margin-bottom: 24px;
   }
   .es-body {
@@ -1978,57 +1981,52 @@
     font-weight: 200;
     line-height: 1.6;
     color: rgba(245,243,239,0.55);
-    max-width: 420px;
   }
-  .es-cta { margin-top: 48px; display: inline-flex; }
-
-  /* Image card */
+  .es-cta { margin-top: 40px; display: inline-flex; }
+  .es-visual {
+    padding: 20px;
+    display: flex;
+    align-items: stretch;
+  }
   .es-card {
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 12px;
-    padding: 12px;
-    aspect-ratio: 4/5;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
     overflow: hidden;
+    flex: 1;
+    aspect-ratio: 4/5;
   }
   .es-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
     display: block;
+    border-radius: 6px;
   }
-  /* Navigation */
-  .es-nav {
+  .es-footer {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-top: 56px;
+    gap: 20px;
+    padding: 20px 56px;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
   .es-counter {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.1em;
-    color: rgba(245,243,239,0.4);
+    color: rgba(245,243,239,0.35);
   }
-  .es-current {
-    color: var(--white);
-  }
-  .es-sep {
-    margin: 0 4px;
-  }
+  .es-current { color: var(--white); }
   .es-progress {
     flex: 1;
-    max-width: 120px;
+    max-width: 160px;
     height: 1px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 1px;
-    overflow: hidden;
+    background: rgba(255,255,255,0.1);
   }
   .es-progress-bar {
     height: 100%;
-    background: var(--white);
+    background: rgba(255,255,255,0.6);
     width: 25%;
-    transition: width 0.4s ease;
+    transition: width 0.3s ease;
   }
   .es-arrows {
     display: flex;
@@ -2036,11 +2034,11 @@
     margin-left: auto;
   }
   .es-arrow {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.07);
     border: none;
-    color: rgba(255,255,255,0.7);
-    width: 36px;
-    height: 36px;
+    color: rgba(255,255,255,0.6);
+    width: 34px;
+    height: 34px;
     border-radius: 6px;
     cursor: pointer;
     display: flex;
@@ -2048,10 +2046,7 @@
     justify-content: center;
     transition: background 0.2s, color 0.2s;
   }
-  .es-arrow:hover {
-    background: var(--accent);
-    color: #fff;
-  }
+  .es-arrow:hover { background: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
@@ -2325,10 +2320,10 @@
 
 <!-- ═══════════════════════════════ EDITORIAL SLIDER ═══════════════════════════════ -->
 <section class="editorial-slider">
-  <div class="es-inner">
+  <div class="es-wrap">
 
     <!-- SLIDE 1 -->
-    <div class="es-slide active" data-index="0">
+    <div class="es-slide active">
       <div class="es-content">
         <div class="es-tag">Machine</div>
         <h2 class="es-title">MTBR-X</h2>
@@ -2344,7 +2339,7 @@
     </div>
 
     <!-- SLIDE 2 -->
-    <div class="es-slide" data-index="1">
+    <div class="es-slide">
       <div class="es-content">
         <div class="es-tag">Machine</div>
         <h2 class="es-title">LTBR-X</h2>
@@ -2354,13 +2349,13 @@
       </div>
       <div class="es-visual">
         <div class="es-card">
-          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="LTBR-X" class="es-img">
+          <img src="assets/images/Slider_01.webp" alt="LTBR-X" class="es-img">
         </div>
       </div>
     </div>
 
     <!-- SLIDE 3 -->
-    <div class="es-slide" data-index="2">
+    <div class="es-slide">
       <div class="es-content">
         <div class="es-tag">News</div>
         <h2 class="es-title">CloudX 2.4 Released</h2>
@@ -2370,13 +2365,13 @@
       </div>
       <div class="es-visual">
         <div class="es-card">
-          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="CloudX Update" class="es-img">
+          <img src="assets/images/Slider_01.webp" alt="CloudX" class="es-img">
         </div>
       </div>
     </div>
 
     <!-- SLIDE 4 -->
-    <div class="es-slide" data-index="3">
+    <div class="es-slide">
       <div class="es-content">
         <div class="es-tag">Event</div>
         <h2 class="es-title">Automechanika Dubai 2026</h2>
@@ -2386,29 +2381,45 @@
       </div>
       <div class="es-visual">
         <div class="es-card">
-          <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="Automechanika Dubai" class="es-img">
+          <img src="assets/images/Slider_01.webp" alt="Event" class="es-img">
         </div>
       </div>
     </div>
 
-    <!-- NAVIGATION -->
-    <div class="es-nav">
-      <div class="es-counter">
-        <span class="es-current">01</span>
-        <span class="es-sep">/</span>
-        <span class="es-total">04</span>
-      </div>
-      <div class="es-progress">
-        <div class="es-progress-bar"></div>
-      </div>
+    <!-- FOOTER NAV -->
+    <div class="es-footer">
+      <div class="es-counter"><span class="es-current">01</span><span style="margin:0 4px;opacity:0.3">/</span><span>04</span></div>
+      <div class="es-progress"><div class="es-progress-bar"></div></div>
       <div class="es-arrows">
-        <button class="es-arrow es-prev" aria-label="Previous"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="es-arrow es-next" aria-label="Next"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="es-arrow es-prev" aria-label="Previous"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="es-arrow es-next" aria-label="Next"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.es-slide');
+  var current = document.querySelector('.es-current');
+  var bar = document.querySelector('.es-progress-bar');
+  var prev = document.querySelector('.es-prev');
+  var next = document.querySelector('.es-next');
+  var idx = 0;
+  var total = slides.length;
+  function go(n){
+    slides[idx].classList.remove('active');
+    idx = (n + total) % total;
+    slides[idx].classList.add('active');
+    current.textContent = String(idx+1).padStart(2,'0');
+    bar.style.width = ((idx+1)/total*100)+'%';
+  }
+  prev.onclick = function(){ go(idx-1); };
+  next.onclick = function(){ go(idx+1); };
+})();
+</script>
+
 
 <!-- ═══════════════════════════════ CLOUDX ═══════════════════════════════ -->
 <section class="cloudx">
