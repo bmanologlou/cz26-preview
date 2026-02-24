@@ -1930,13 +1930,15 @@
   /* ═══ EDITORIAL SLIDER ═══ */
   .editorial-slider {
     background: var(--black);
-    padding: 100px 0;
+    padding: 80px 0;
   }
   .es-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 56px 80px;
     position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
   }
   .es-slide {
     display: none;
@@ -1978,11 +1980,13 @@
     color: rgba(245,243,239,0.55);
     max-width: 420px;
   }
+  .es-cta { margin-top: 48px; display: inline-flex; }
+
   /* Image card */
   .es-card {
     border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: 12px;
+    padding: 12px;
     aspect-ratio: 4/5;
     overflow: hidden;
   }
@@ -1990,7 +1994,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 8px;
     display: block;
   }
   /* Navigation */
@@ -2028,26 +2032,25 @@
   }
   .es-arrows {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     margin-left: auto;
   }
   .es-arrow {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.18);
-    color: var(--white);
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: rgba(255,255,255,0.7);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: border-color 0.2s, background 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
   .es-arrow:hover {
-    border-color: var(--white);
-    background: rgba(255,255,255,0.06);
+    background: var(--accent);
+    color: #fff;
   }
 </style>
 </head>
@@ -2331,7 +2334,7 @@
         <h2 class="es-title">MTBR-X</h2>
         <p class="es-subtitle">Multi-System Platform</p>
         <p class="es-body">Complete injection testing across all major fuel systems. CRDi, GDi, HEUI and EUI — in a single, compact platform trusted by specialists in 98 countries.</p>
-        <a href="#" class="btn-primary" style="margin-top:32px">Discover MTBR-X</a>
+        <a href="#" class="btn-primary es-cta">Discover MTBR-X</a>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2347,7 +2350,7 @@
         <h2 class="es-title">LTBR-X</h2>
         <p class="es-subtitle">Large Engine Platform</p>
         <p class="es-body">Heavy-duty diesel testing for marine, industrial and large engine applications. Built for the most demanding injection service environments.</p>
-        <a href="#" class="btn-primary" style="margin-top:32px">Discover LTBR-X</a>
+        <a href="#" class="btn-primary es-cta">Discover LTBR-X</a>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2363,7 +2366,7 @@
         <h2 class="es-title">CloudX 2.4 Released</h2>
         <p class="es-subtitle">Platform Update</p>
         <p class="es-body">The latest CloudX platform update brings enhanced remote diagnostics, improved EU6 compatibility and new multi-machine dashboard management tools.</p>
-        <a href="#" class="btn-primary" style="margin-top:32px">Read More</a>
+        <a href="#" class="btn-primary es-cta">Read More</a>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2379,7 +2382,7 @@
         <h2 class="es-title">Automechanika Dubai 2026</h2>
         <p class="es-subtitle">JUN 9–11, 2026 · Dubai, UAE</p>
         <p class="es-body">Meet the Carbon Zapp team at Automechanika Dubai. Live XSeries demonstrations, CloudX platform showcase and direct access to our technical specialists.</p>
-        <a href="#" class="btn-primary" style="margin-top:32px">Register Interest</a>
+        <a href="#" class="btn-primary es-cta">Register Interest</a>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2399,8 +2402,8 @@
         <div class="es-progress-bar"></div>
       </div>
       <div class="es-arrows">
-        <button class="es-arrow es-prev" aria-label="Previous">←</button>
-        <button class="es-arrow es-next" aria-label="Next">→</button>
+        <button class="es-arrow es-prev" aria-label="Previous"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="es-arrow es-next" aria-label="Next"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
