@@ -1927,32 +1927,34 @@
     line-height: 1;
   }
 
-  /* ═══ EDITORIAL SLIDER ═══ */
-  .editorial-slider {
-    background: var(--black);
-    padding: 80px;
-  }
-  .es-wrap {
-    max-width: 1200px;
+  /* ═══ APPLE-STYLE GRID ═══ */
+  .cz-grid {
+    padding: 0 80px 80px;
+    max-width: 1440px;
     margin: 0 auto;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .es-slide {
-    display: none;
-    grid-template-columns: 55fr 45fr;
-    min-height: 0;
-  }
-  .es-slide.active { display: grid; }
-  .es-content {
-    padding: 48px 48px 32px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    gap: 16px;
   }
-  .es-tag {
+  .cz-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111111;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    min-height: 480px;
+    position: relative;
+  }
+  .cz-card-full { width: 100%; }
+  .cz-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .cz-card-half { min-height: 400px; }
+  .cz-card-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.2em;
@@ -1960,93 +1962,61 @@
     color: var(--accent);
     margin-bottom: 16px;
   }
-  .es-title {
+  .cz-card-title {
     font-family: 'Gunterz', sans-serif;
-    font-size: 42px;
-    line-height: 0.95;
+    font-size: 32px;
+    line-height: 1;
     letter-spacing: 0.03em;
     color: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
-  .es-subtitle {
-    font-family: 'Switzer', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(245,243,239,0.4);
-    margin-bottom: 24px;
+  .cz-card-title.large {
+    font-size: 48px;
   }
-  .es-body {
+  .cz-card-subtitle {
     font-family: 'Public Sans', sans-serif;
     font-size: 18px;
     font-weight: 200;
-    line-height: 1.6;
-    color: rgba(245,243,239,0.55);
+    color: rgba(245,243,239,0.45);
+    margin-bottom: 32px;
   }
-  .es-top { }
-  .es-bottom { display: flex; flex-direction: column; gap: 20px; }
-  .es-cta { display: inline-flex; align-self: flex-start; }
-  .es-visual {
-    padding: 24px 24px 24px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .es-card {
-    border-radius: 8px;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 4/5;
-  }
-  .es-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 6px;
-  }
-  .es-footer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 0 0;
-  }
-  .es-counter {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: rgba(245,243,239,0.35);
-    white-space: nowrap;
-  }
-  .es-current { color: var(--white); }
-  .es-arrows {
-    display: flex;
-    gap: 8px;
-  }
-  .es-progress {
+  .cz-card-placeholder {
     flex: 1;
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-  }
-  .es-progress-bar {
-    height: 100%;
-    background: rgba(255,255,255,0.5);
-    width: 25%;
-    transition: width 0.3s ease;
-  }
-  .es-arrow {
-    background: rgba(255,255,255,0.07);
-    border: none;
-    color: rgba(255,255,255,0.6);
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
-    cursor: pointer;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    margin-top: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s, color 0.2s;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.15);
+    text-transform: uppercase;
   }
-  .es-arrow:hover { background: var(--accent); color: #fff; }
+  .cz-card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 32px;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: rgba(245,243,239,0.6);
+    font-size: 14px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
 </style>
 </head>
 <body>
@@ -2318,115 +2288,68 @@
 
 
 
-<!-- ═══════════════════════════════ EDITORIAL SLIDER ═══════════════════════════════ -->
-<section class="editorial-slider">
-  <div class="es-wrap">
+<!-- ═══════════════════════════════ CZ GRID ═══════════════════════════════ -->
+<section style="background: var(--black); padding-top: 80px;">
+<div class="cz-grid">
 
-    <!-- SLIDE 1 -->
-    <div class="es-slide active">
-            <div class="es-content">
-        <div class="es-top">
-          <div class="es-tag">Machine</div>
-          <h2 class="es-title">MTBR-X</h2>
-        </div>
-        <div class="es-bottom">
-          <p class="es-body">Complete injection testing across all major fuel systems. CRDi, GDi, HEUI and EUI — in a single, compact platform trusted by specialists in 98 countries.</p>
-          <a href="#" class="btn-primary es-cta">Discover MTBR-X</a>
-        </div>
-      </div>
-      <div class="es-visual">
-        <div class="es-card">
-          <img src="assets/images/Slider_01.webp" alt="MTBR-X" class="es-img">
-        </div>
-        <div class="es-footer">
-          <div class="es-counter"><span class="es-current">01</span><span style="margin:0 4px;opacity:0.3">/</span><span>04</span></div>
-          <div class="es-arrows">
-            <button class="es-arrow es-prev"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button class="es-arrow es-next"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
-          <div class="es-progress"><div class="es-progress-bar"></div></div>
-        </div>
-      </div>
+  <!-- ROW 1: Full width -->
+  <div class="cz-card cz-card-full">
+    <div class="cz-card-eyebrow">XSeries Platforms</div>
+    <h2 class="cz-card-title large">Engineered at Every Scale</h2>
+    <p class="cz-card-subtitle">from compact CRDi to large engine systems</p>
+    <div class="cz-card-actions">
+      <a href="#" class="btn-primary">Explore the XSeries</a>
+      <a href="#" class="btn-secondary">Download Catalog</a>
     </div>
+    <div class="cz-card-placeholder">Image Placeholder — XSeries 3 Machines</div>
+  </div>
 
-    <!-- SLIDE 2 -->
-    <div class="es-slide">
-            <div class="es-content">
-        <div class="es-top">
-          <div class="es-tag">Machine</div>
-          <h2 class="es-title">LTBR-X</h2>
-        </div>
-        <div class="es-bottom">
-          <p class="es-body">Heavy-duty diesel testing for marine, industrial and large engine applications. Built for the most demanding injection service environments.</p>
-          <a href="#" class="btn-primary es-cta">Discover LTBR-X</a>
-        </div>
+  <!-- ROW 2: 50/50 split -->
+  <div class="cz-row">
+    <div class="cz-card cz-card-half">
+      <div class="cz-card-eyebrow">Flagship</div>
+      <h2 class="cz-card-title">MTBR-X</h2>
+      <p class="cz-card-subtitle">Multi-System Platform</p>
+      <div class="cz-card-actions">
+        <a href="#" class="btn-primary">Discover</a>
       </div>
-      <div class="es-visual">
-        <div class="es-card">
-          <img src="assets/images/Slider_01.webp" alt="LTBR-X" class="es-img">
-        </div>
-      </div>
+      <div class="cz-card-placeholder">Image Placeholder — MTBR-X</div>
     </div>
-
-    <!-- SLIDE 3 -->
-    <div class="es-slide">
-            <div class="es-content">
-        <div class="es-top">
-          <div class="es-tag">News</div>
-          <h2 class="es-title">CloudX 2.4 Released</h2>
-        </div>
-        <div class="es-bottom">
-          <p class="es-body">The latest CloudX platform update brings enhanced remote diagnostics, improved EU6 compatibility and new multi-machine dashboard management tools.</p>
-          <a href="#" class="btn-primary es-cta">Read More</a>
-        </div>
+    <div class="cz-card cz-card-half">
+      <div class="cz-card-eyebrow">Digital Platform</div>
+      <h2 class="cz-card-title">CloudX</h2>
+      <p class="cz-card-subtitle">Connect your bench to the future</p>
+      <div class="cz-card-actions">
+        <a href="#" class="btn-primary">Explore CloudX</a>
       </div>
-      <div class="es-visual">
-        <div class="es-card">
-          <img src="assets/images/Slider_01.webp" alt="CloudX" class="es-img">
-        </div>
-      </div>
+      <div class="cz-card-placeholder">Image Placeholder — CloudX Dashboard</div>
     </div>
+  </div>
 
-    <!-- SLIDE 4 -->
-    <div class="es-slide">
-            <div class="es-content">
-        <div class="es-top">
-          <div class="es-tag">Event</div>
-          <h2 class="es-title">Automechanika Dubai 2026</h2>
-        </div>
-        <div class="es-bottom">
-          <p class="es-body">Meet the Carbon Zapp team at Automechanika Dubai. Live XSeries demonstrations, CloudX platform showcase and direct access to our technical specialists.</p>
-          <a href="#" class="btn-primary es-cta">Register Interest</a>
-        </div>
+  <!-- ROW 3: 50/50 split -->
+  <div class="cz-row">
+    <div class="cz-card cz-card-half">
+      <div class="cz-card-eyebrow">Event</div>
+      <h2 class="cz-card-title">Automechanika Dubai</h2>
+      <p class="cz-card-subtitle">JUN 9–11, 2026 · Dubai, UAE</p>
+      <div class="cz-card-actions">
+        <a href="#" class="btn-primary">Register Interest</a>
       </div>
-      <div class="es-visual">
-        <div class="es-card">
-          <img src="assets/images/Slider_01.webp" alt="Event" class="es-img">
-        </div>
+      <div class="cz-card-placeholder">Image Placeholder — Event</div>
+    </div>
+    <div class="cz-card cz-card-half">
+      <div class="cz-card-eyebrow">News</div>
+      <h2 class="cz-card-title">CloudX 2.4 Released</h2>
+      <p class="cz-card-subtitle">New remote diagnostics & EU6 updates</p>
+      <div class="cz-card-actions">
+        <a href="#" class="btn-primary">Read More</a>
       </div>
-    </div></div>
+      <div class="cz-card-placeholder">Image Placeholder — News</div>
+    </div>
+  </div>
+
+</div>
 </section>
-
-<script>
-(function(){
-  var slides = document.querySelectorAll('.es-slide');
-  var current = document.querySelector('.es-current');
-  var bar = document.querySelector('.es-progress-bar');
-  var prev = document.querySelector('.es-prev');
-  var next = document.querySelector('.es-next');
-  var idx = 0;
-  var total = slides.length;
-  function go(n){
-    slides[idx].classList.remove('active');
-    idx = (n + total) % total;
-    slides[idx].classList.add('active');
-    current.textContent = String(idx+1).padStart(2,'0');
-    bar.style.width = ((idx+1)/total*100)+'%';
-  }
-  prev.onclick = function(){ go(idx-1); };
-  next.onclick = function(){ go(idx+1); };
-})();
-</script>
 
 
 <!-- ═══════════════════════════════ CLOUDX ═══════════════════════════════ -->
