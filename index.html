@@ -714,7 +714,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center 40%;
-    opacity: 0.18;
+    opacity: 0.35;
     z-index: 0;
   }
   .solutions-inner { position: relative; z-index: 1; }
@@ -724,6 +724,71 @@
   .solutions-header {
     display: flex; justify-content: space-between; align-items: flex-end;
     margin-bottom: 56px;
+  }
+
+  /* ─── SOLUTIONS MACHINE CARDS ─── */
+  /* ─── SOLUTIONS MACHINE CARDS ─── */
+  .sol-machines {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 60px;
+  }
+  .sol-machine-card {
+    background: rgba(10,10,10,0.7);
+    padding: 36px 32px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 180px;
+    transition: background 0.2s;
+  }
+  .sol-machine-card:hover { background: rgba(237,28,36,0.06); }
+  .sol-machine-name {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .sol-machine-platform {
+    font-family: 'Switzer', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+  .sol-machine-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.5);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .sol-machine-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(245,243,239,0.35);
+    text-transform: uppercase;
+    transition: color 0.15s;
+  }
+  .sol-machine-card:hover .sol-machine-cta { color: var(--accent); }
+
+  .solutions-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.45);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+    font-family: 'Switzer', sans-serif;
   }
 
   .solutions-title {
@@ -2051,8 +2116,8 @@
       </div>
     </li>
     <li><a href="#">Innovation</a></li>
-    <li><a href="#">News</a></li>
     <li><a href="#">CloudX</a></li>
+    <li><a href="#">News</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
 
@@ -2085,13 +2150,13 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Engineering Forward Mobility</div>
     <h1 class="hero-title">
-      BUILT<br>TO<br><em>LAST</em>
+      INNOVATION<br>DRIVEN
     </h1>
     <p class="hero-sub">
-      35 years of precision injection service engineering. Designed and manufactured in Greece. Trusted in 98 countries.
+      35 years of precision injection service equipment. Trusted by OEM partners and specialists in 98 countries.
     </p>
     <div class="hero-ctas">
-      <a href="#solutions" class="btn-primary">Explore Solutions</a>
+      <a href="#solutions" class="btn-primary">Explore CZ Solutions</a>
     </div>
   </div>
 
@@ -2130,14 +2195,12 @@
     <div>
       <div class="section-label">Our Purpose</div>
       <h2 class="problem-title">
-        INJECTION<br>SERVICE<br>REDEFINED.
+        INJECTION SERVICE.<br><em>ENGINEERED<br>FOR TODAY</em>
       </h2>
     </div>
     <div>
       <p class="problem-body">
-        Modern fuel injection systems operate at <strong>pressures exceeding 2800 bar</strong>, tolerances measured in microns, and software complexity that demands more than a conventional bench can offer.<br><br>
-        Carbon Zapp exists because the market needed equipment that matches this reality — not yesterday's tools adapted for today's engines, but <strong>purpose-built systems engineered from the ground up</strong> for Diesel and Gasoline injection specialists who demand precision without compromise.<br><br>
-        From a single-cylinder CRDi injector to a marine 2-stroke Wärtsilä engine — we build the bench that gets it right.
+        Modern fuel systems demand precision beyond conventional equipment. Carbon Zapp designs and manufactures a complete range of Diesel and Gasoline injection service solutions, supporting specialists, workshops and heavy-duty applications worldwide.
       </p>
     </div>
   </div>
@@ -2148,92 +2211,39 @@
   <div class="solutions-inner">
     <div class="solutions-header">
       <div>
-        <div class="section-label">Product Range</div>
-        <h2 class="solutions-title">FIND YOUR<br>SOLUTION</h2>
+        <div class="section-label">XSeries Platforms</div>
+        <h2 class="solutions-title">ENGINEERED AT<br>EVERY SCALE</h2>
+        <p class="solutions-subtitle">from compact CRDi to large engine systems</p>
       </div>
-      <a href="#" class="link-arrow">View All Products →</a>
+      <a href="#" class="link-arrow">View All Systems →</a>
     </div>
 
-    <div class="solutions-grid">
-      <a href="#" class="sol-card">
-        <div class="sol-num">01 / 03</div>
-        <div class="sol-img">
-          <img src="https://eshop.carbonzapp.com/image/cache/catalog/products/MTBRX/MTBRX-2-1200x900.jpg"
-               alt="MTBR|X — Diesel Specialist Bench"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="sol-img-placeholder" style="display:none">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1">
-              <rect x="2" y="6" width="28" height="20" rx="2"/>
-              <circle cx="16" cy="16" r="6"/>
-              <circle cx="16" cy="16" r="2" fill="currentColor"/>
-            </svg>
-            <span class="sol-img-label">MTBR|X</span>
-          </div>
+    <div class="solutions-grid sol-machines">
+      <a href="#" class="sol-machine-card">
+        <div class="sol-machine-label">
+          <div class="sol-machine-name">LTBR-X</div>
+          <div class="sol-machine-platform">Large Engine Platform</div>
+          <div class="sol-machine-desc">Heavy-duty diesel testing for marine and industrial systems.</div>
+          <div class="sol-machine-cta">Learn more →</div>
         </div>
-        <h3>Specialists</h3>
-        <p>Professional test benches for dedicated injection service centers. Every make, every system, every standard up to EU6.</p>
-        <div class="sol-tags">
-          <span class="tag">CRDi</span>
-          <span class="tag">EUI/EUP</span>
-          <span class="tag">HEUI</span>
-          <span class="tag">GDi</span>
-          <span class="tag">2800 Bar</span>
+      </a>
+      <a href="#" class="sol-machine-card sol-machine-center">
+        <div class="sol-machine-label">
+          <div class="sol-machine-name">MTBR-X</div>
+          <div class="sol-machine-platform">Multi-System Platform</div>
+          <div class="sol-machine-desc">Complete injection testing across all major fuel systems.</div>
+          <div class="sol-machine-cta">Learn more →</div>
         </div>
-        <div class="sol-arrow">Explore Specialists →</div>
+      </a>
+      <a href="#" class="sol-machine-card">
+        <div class="sol-machine-label">
+          <div class="sol-machine-name">ITBR-X</div>
+          <div class="sol-machine-platform">Compact CRDi Platform</div>
+          <div class="sol-machine-desc">Precision injector testing for modern Diesel workshops.</div>
+          <div class="sol-machine-cta">Learn more →</div>
+        </div>
       </a>
 
-      <a href="#" class="sol-card">
-        <div class="sol-num">02 / 03</div>
-        <div class="sol-img">
-          <img src="https://eshop.carbonzapp.com/image/cache/catalog/products/DSRX/DSRX-1-1200x900.jpg"
-               alt="DSR|X — Workshop Diesel Bench"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="sol-img-placeholder" style="display:none">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1">
-              <rect x="4" y="8" width="24" height="16" rx="2"/>
-              <path d="M10 8V6M22 8V6"/>
-              <rect x="10" y="13" width="12" height="6" rx="1"/>
-            </svg>
-            <span class="sol-img-label">DSR|X</span>
-          </div>
-        </div>
-        <h3>Workshops</h3>
-        <p>Efficient, accessible diagnostic tools for general service stations and automotive workshops handling Diesel and Gasoline systems.</p>
-        <div class="sol-tags">
-          <span class="tag">DSR|X</span>
-          <span class="tag">GDR|X</span>
-          <span class="tag">GS4/GS8</span>
-          <span class="tag">Engine Service</span>
-        </div>
-        <div class="sol-arrow">Explore Workshops →</div>
-      </a>
-
-      <a href="#" class="sol-card">
-        <div class="sol-num">03 / 03</div>
-        <div class="sol-img">
-          <img src="https://eshop.carbonzapp.com/image/cache/catalog/products/LTBRX/LTBRX-1-1200x900.jpg"
-               alt="LTBR|X — Large Engine Specialist"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="sol-img-placeholder" style="display:none">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1">
-              <rect x="2" y="8" width="28" height="16" rx="2"/>
-              <circle cx="10" cy="16" r="3"/>
-              <circle cx="22" cy="16" r="3"/>
-              <line x1="13" y1="16" x2="19" y2="16"/>
-            </svg>
-            <span class="sol-img-label">LTBR|X</span>
-          </div>
-        </div>
-        <h3>Large Engines</h3>
-        <p>Purpose-engineered for shipping, marine, locomotive and industrial heavy-duty engines. The LTBR|X — a category of its own.</p>
-        <div class="sol-tags">
-          <span class="tag">Shipping</span>
-          <span class="tag">Marine</span>
-          <span class="tag">Locomotives</span>
-          <span class="tag">Industrial</span>
-        </div>
-        <div class="sol-arrow">Explore LTBR|X →</div>
-      </a>
     </div>
   </div>
 </section>
