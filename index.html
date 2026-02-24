@@ -1929,61 +1929,59 @@
 
   /* ═══ APPLE-STYLE GRID ═══ */
   .cz-grid {
-    padding: 0 80px 80px;
-    max-width: 1440px;
-    margin: 0 auto;
+    padding: 0 8px 8px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
   }
   .cz-card {
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    background: #111111;
-    padding: 48px;
+    background: #161616;
+    padding: 40px 40px 0;
     display: flex;
     flex-direction: column;
     min-height: 480px;
     position: relative;
+    text-align: center;
+    align-items: center;
   }
   .cz-card-full { width: 100%; }
   .cz-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 8px;
   }
   .cz-card-half { min-height: 400px; }
   .cz-card-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
   .cz-card-title {
     font-family: 'Gunterz', sans-serif;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 1;
     letter-spacing: 0.03em;
     color: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
-  .cz-card-title.large {
-    font-size: 48px;
-  }
+  .cz-card-title.large { font-size: 28px; }
   .cz-card-subtitle {
     font-family: 'Public Sans', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 200;
     color: rgba(245,243,239,0.45);
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   .cz-card-placeholder {
     flex: 1;
+    width: 100%;
     background: rgba(255,255,255,0.03);
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
     margin-top: 24px;
     display: flex;
     align-items: center;
@@ -1991,14 +1989,14 @@
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.12);
     text-transform: uppercase;
   }
   .cz-card-actions {
     display: flex;
     gap: 12px;
-    margin-top: auto;
-    padding-top: 32px;
+    justify-content: center;
+    padding: 20px 0;
   }
   .btn-secondary {
     display: inline-flex;
