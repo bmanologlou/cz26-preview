@@ -2028,6 +2028,89 @@
     transition: border-color 0.2s, color 0.2s;
   }
   .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+  /* ─── LOGIN DROPDOWN ─── */
+  .login-wrap {
+    position: relative;
+  }
+  .login-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    right: 0;
+    width: 300px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 28px;
+    z-index: 200;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+  .login-dropdown.open { display: block; animation: fadeInDown 0.18s ease; }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .login-field-label {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.45);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .login-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 10px 14px;
+    color: var(--white);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  .login-input::placeholder { color: rgba(255,255,255,0.2); }
+  .login-input:focus { border-color: rgba(255,255,255,0.3); }
+  .login-field { margin-bottom: 16px; }
+  .login-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding: 11px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .login-submit:hover { background: #c41019; }
+  .login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .login-link {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(245,243,239,0.35);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .login-link:hover { color: rgba(245,243,239,0.7); }
 </style>
 </head>
 <body>
@@ -2196,7 +2279,24 @@
 
   <div class="nav-actions">
     <a href="#" class="btn-store">Store</a>
-    <a href="#" class="btn-login">Login</a>
+    <div class="login-wrap">
+      <button class="btn-login" id="loginToggle" onclick="toggleLogin(event)">Login</button>
+      <div class="login-dropdown" id="loginDropdown">
+        <div class="login-field">
+          <label class="login-field-label">Email</label>
+          <input type="email" class="login-input" placeholder="Enter your email">
+        </div>
+        <div class="login-field">
+          <label class="login-field-label">Password</label>
+          <input type="password" class="login-input" placeholder="Enter your password">
+        </div>
+        <button class="login-submit">Log In</button>
+        <div class="login-links">
+          <a href="#" class="login-link">Forgot password?</a>
+          <a href="#" class="login-link">Register</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </nav>
