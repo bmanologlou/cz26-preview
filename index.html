@@ -1949,7 +1949,7 @@
     padding: 48px 48px 32px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     border-right: 1px solid rgba(255,255,255,0.08);
   }
   .es-tag {
@@ -1982,14 +1982,16 @@
     line-height: 1.6;
     color: rgba(245,243,239,0.55);
   }
-  .es-cta { margin-top: 40px; display: inline-flex; }
+  .es-top { }
+  .es-bottom { display: flex; flex-direction: column; gap: 20px; }
+  .es-cta { display: inline-flex; align-self: flex-start; }
   .es-visual {
     padding: 24px 24px 24px 0;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .es-card {
-    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
     overflow: hidden;
     width: 100%;
@@ -2005,9 +2007,8 @@
   .es-footer {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 18px 40px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 12px;
+    padding: 16px 0 0;
   }
   .es-counter {
     font-family: 'DM Mono', monospace;
@@ -2323,28 +2324,42 @@
 
     <!-- SLIDE 1 -->
     <div class="es-slide active">
-      <div class="es-content">
-        <div class="es-tag">Machine</div>
-        <h2 class="es-title">MTBR-X</h2>
-        <p class="es-subtitle">Multi-System Platform</p>
-        <p class="es-body">Complete injection testing across all major fuel systems. CRDi, GDi, HEUI and EUI — in a single, compact platform trusted by specialists in 98 countries.</p>
-        <a href="#" class="btn-primary es-cta">Discover MTBR-X</a>
+            <div class="es-content">
+        <div class="es-top">
+          <div class="es-tag">Machine</div>
+          <h2 class="es-title">MTBR-X</h2>
+        </div>
+        <div class="es-bottom">
+          <p class="es-body">Complete injection testing across all major fuel systems. CRDi, GDi, HEUI and EUI — in a single, compact platform trusted by specialists in 98 countries.</p>
+          <a href="#" class="btn-primary es-cta">Discover MTBR-X</a>
+        </div>
       </div>
       <div class="es-visual">
         <div class="es-card">
           <img src="assets/images/Slider_01.webp" alt="MTBR-X" class="es-img">
+        </div>
+        <div class="es-footer">
+          <div class="es-counter"><span class="es-current">01</span><span style="margin:0 4px;opacity:0.3">/</span><span>04</span></div>
+          <div class="es-arrows">
+            <button class="es-arrow es-prev"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="es-arrow es-next"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="es-progress"><div class="es-progress-bar"></div></div>
         </div>
       </div>
     </div>
 
     <!-- SLIDE 2 -->
     <div class="es-slide">
-      <div class="es-content">
-        <div class="es-tag">Machine</div>
-        <h2 class="es-title">LTBR-X</h2>
-        <p class="es-subtitle">Large Engine Platform</p>
-        <p class="es-body">Heavy-duty diesel testing for marine, industrial and large engine applications. Built for the most demanding injection service environments.</p>
-        <a href="#" class="btn-primary es-cta">Discover LTBR-X</a>
+            <div class="es-content">
+        <div class="es-top">
+          <div class="es-tag">Machine</div>
+          <h2 class="es-title">LTBR-X</h2>
+        </div>
+        <div class="es-bottom">
+          <p class="es-body">Heavy-duty diesel testing for marine, industrial and large engine applications. Built for the most demanding injection service environments.</p>
+          <a href="#" class="btn-primary es-cta">Discover LTBR-X</a>
+        </div>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2355,12 +2370,15 @@
 
     <!-- SLIDE 3 -->
     <div class="es-slide">
-      <div class="es-content">
-        <div class="es-tag">News</div>
-        <h2 class="es-title">CloudX 2.4 Released</h2>
-        <p class="es-subtitle">Platform Update</p>
-        <p class="es-body">The latest CloudX platform update brings enhanced remote diagnostics, improved EU6 compatibility and new multi-machine dashboard management tools.</p>
-        <a href="#" class="btn-primary es-cta">Read More</a>
+            <div class="es-content">
+        <div class="es-top">
+          <div class="es-tag">News</div>
+          <h2 class="es-title">CloudX 2.4 Released</h2>
+        </div>
+        <div class="es-bottom">
+          <p class="es-body">The latest CloudX platform update brings enhanced remote diagnostics, improved EU6 compatibility and new multi-machine dashboard management tools.</p>
+          <a href="#" class="btn-primary es-cta">Read More</a>
+        </div>
       </div>
       <div class="es-visual">
         <div class="es-card">
@@ -2371,31 +2389,22 @@
 
     <!-- SLIDE 4 -->
     <div class="es-slide">
-      <div class="es-content">
-        <div class="es-tag">Event</div>
-        <h2 class="es-title">Automechanika Dubai 2026</h2>
-        <p class="es-subtitle">JUN 9–11, 2026 · Dubai, UAE</p>
-        <p class="es-body">Meet the Carbon Zapp team at Automechanika Dubai. Live XSeries demonstrations, CloudX platform showcase and direct access to our technical specialists.</p>
-        <a href="#" class="btn-primary es-cta">Register Interest</a>
+            <div class="es-content">
+        <div class="es-top">
+          <div class="es-tag">Event</div>
+          <h2 class="es-title">Automechanika Dubai 2026</h2>
+        </div>
+        <div class="es-bottom">
+          <p class="es-body">Meet the Carbon Zapp team at Automechanika Dubai. Live XSeries demonstrations, CloudX platform showcase and direct access to our technical specialists.</p>
+          <a href="#" class="btn-primary es-cta">Register Interest</a>
+        </div>
       </div>
       <div class="es-visual">
         <div class="es-card">
           <img src="assets/images/Slider_01.webp" alt="Event" class="es-img">
         </div>
       </div>
-    </div>
-
-    <!-- FOOTER NAV -->
-    <div class="es-footer">
-      <div class="es-counter"><span class="es-current">01</span><span style="margin:0 4px;opacity:0.3">/</span><span>04</span></div>
-      <div class="es-arrows">
-        <button class="es-arrow es-prev" aria-label="Previous"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="es-arrow es-next" aria-label="Next"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
-      <div class="es-progress"><div class="es-progress-bar"></div></div>
-    </div>
-
-  </div>
+    </div></div>
 </section>
 
 <script>
