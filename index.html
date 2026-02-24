@@ -716,7 +716,7 @@
   .solutions {
     background: #000000;
     position: relative;
-    min-height: 600px;
+    min-height: 680px;
   }
   .solutions-photo {
     position: absolute;
@@ -802,10 +802,16 @@
   }
   .solutions-header-center {
     text-align: center;
-    padding: 80px 80px 40px;
+    padding: 100px 80px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .solutions-cta-wrap {
+    text-align: center;
+    padding-bottom: 48px;
+    position: relative;
+    z-index: 2;
   }
 
   .solutions-title {
@@ -2231,33 +2237,8 @@
       <h2 class="solutions-title">ENGINEERED AT EVERY SCALE</h2>
       <p class="solutions-subtitle">from compact CRDi to large engine systems</p>
     </div>
-
-    <div class="solutions-grid sol-machines">
-      <a href="#" class="sol-machine-card">
-        <div class="sol-machine-label">
-          <div class="sol-machine-name">LTBR-X</div>
-          <div class="sol-machine-platform">Large Engine Platform</div>
-          <div class="sol-machine-desc">Heavy-duty diesel testing for marine and industrial systems.</div>
-          <div class="sol-machine-cta">Learn more →</div>
-        </div>
-      </a>
-      <a href="#" class="sol-machine-card sol-machine-center">
-        <div class="sol-machine-label">
-          <div class="sol-machine-name">MTBR-X</div>
-          <div class="sol-machine-platform">Multi-System Platform</div>
-          <div class="sol-machine-desc">Complete injection testing across all major fuel systems.</div>
-          <div class="sol-machine-cta">Learn more →</div>
-        </div>
-      </a>
-      <a href="#" class="sol-machine-card">
-        <div class="sol-machine-label">
-          <div class="sol-machine-name">ITBR-X</div>
-          <div class="sol-machine-platform">Compact CRDi Platform</div>
-          <div class="sol-machine-desc">Precision injector testing for modern Diesel workshops.</div>
-          <div class="sol-machine-cta">Learn more →</div>
-        </div>
-      </a>
-
+    <div class="solutions-cta-wrap">
+      <a href="#" class="btn-primary">View All Platforms</a>
     </div>
   </div>
 </section>
