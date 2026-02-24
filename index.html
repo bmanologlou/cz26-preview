@@ -1946,7 +1946,7 @@
   }
   .es-slide.active { display: grid; }
   .es-content {
-    padding: 56px 56px 40px;
+    padding: 48px 48px 32px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1984,15 +1984,15 @@
   }
   .es-cta { margin-top: 40px; display: inline-flex; }
   .es-visual {
-    padding: 20px;
+    padding: 24px 24px 24px 0;
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
   }
   .es-card {
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
     overflow: hidden;
-    flex: 1;
+    width: 100%;
     aspect-ratio: 4/5;
   }
   .es-img {
@@ -2005,8 +2005,8 @@
   .es-footer {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 56px;
+    gap: 16px;
+    padding: 18px 40px;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
   .es-counter {
@@ -2014,24 +2014,23 @@
     font-size: 11px;
     letter-spacing: 0.1em;
     color: rgba(245,243,239,0.35);
+    white-space: nowrap;
   }
   .es-current { color: var(--white); }
+  .es-arrows {
+    display: flex;
+    gap: 8px;
+  }
   .es-progress {
     flex: 1;
-    max-width: 160px;
     height: 1px;
     background: rgba(255,255,255,0.1);
   }
   .es-progress-bar {
     height: 100%;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.5);
     width: 25%;
     transition: width 0.3s ease;
-  }
-  .es-arrows {
-    display: flex;
-    gap: 8px;
-    margin-left: auto;
   }
   .es-arrow {
     background: rgba(255,255,255,0.07);
@@ -2389,11 +2388,11 @@
     <!-- FOOTER NAV -->
     <div class="es-footer">
       <div class="es-counter"><span class="es-current">01</span><span style="margin:0 4px;opacity:0.3">/</span><span>04</span></div>
-      <div class="es-progress"><div class="es-progress-bar"></div></div>
       <div class="es-arrows">
         <button class="es-arrow es-prev" aria-label="Previous"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button class="es-arrow es-next" aria-label="Next"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
+      <div class="es-progress"><div class="es-progress-bar"></div></div>
     </div>
 
   </div>
