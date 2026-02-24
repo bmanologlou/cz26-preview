@@ -712,105 +712,7 @@
     font-weight: 500;
   }
 
-  /* ─── SOLUTIONS ─── */
-  .solutions {
-    background: #000000;
-    position: relative;
-    height: 600px;
-  }
-  .solutions-photo {
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: auto;
-    z-index: 0;
-  }
-  .solutions-inner { position: absolute; top: 40px; left: 0; right: 0; z-index: 1; text-align: center; }
-
-  .solutions-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 56px;
-  }
-
-  /* ─── SOLUTIONS MACHINE CARDS ─── */
-  /* ─── SOLUTIONS MACHINE CARDS ─── */
-  .sol-machines {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 0;
-  }
-  .sol-machine-card {
-    background: rgba(0,0,0,0.82);
-    padding: 32px 32px 40px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 160px;
-    transition: background 0.2s;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .sol-machine-card + .sol-machine-card {
-    border-left: 1px solid rgba(255,255,255,0.08);
-  }
-  .sol-machine-card:hover { background: rgba(0,0,0,0.92); }
-  .sol-machine-name {
-    font-family: 'Gunterz', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .sol-machine-platform {
-    font-family: 'Switzer', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    margin-bottom: 10px;
-  }
-  .sol-machine-desc {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(245,243,239,0.5);
-    line-height: 1.5;
-    margin-bottom: 16px;
-  }
-  .sol-machine-cta {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: rgba(245,243,239,0.35);
-    text-transform: uppercase;
-    transition: color 0.15s;
-  }
-  .sol-machine-card:hover .sol-machine-cta { color: var(--accent); }
-
-  .solutions-subtitle {
-    font-size: 16px;
-    font-weight: 200;
-    color: rgba(245,243,239,0.45);
-    letter-spacing: 0.04em;
-    margin-top: 10px;
-    font-family: 'Switzer', sans-serif;
-  }
-  .solutions-header-center {
-    text-align: center;
-    padding: 40px 80px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .solutions-cta-wrap {
-    text-align: center;
-    padding-bottom: 48px;
-    margin-top: 30px;
-    position: relative;
-    z-index: 2;
-  }
+  
   .btn-solutions {
     display: inline-flex;
     align-items: center;
@@ -1992,6 +1894,30 @@
   }
   .link-arrow:hover { gap: 10px; }
 
+
+  /* ─── SOLUTIONS PHOTO SECTION ─── */
+  .sol-photo-wrap {
+    position: relative;
+    width: 100%;
+    background: #000000;
+    line-height: 0;
+  }
+  .sol-photo {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .sol-photo-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 40px;
+    z-index: 2;
+    line-height: 1;
+  }
 </style>
 </head>
 <body>
@@ -2244,20 +2170,24 @@
 </section>
 
 <!-- ═══════════════════════════════ SOLUTIONS ═══════════════════════════════ -->
-<div style="height:2px; background:#000;"></div>
-<section class="solutions" id="solutions">
-  <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="" class="solutions-photo" aria-hidden="true">
-  <div class="solutions-inner">
-    <div class="solutions-header solutions-header-center">
-      <div class="section-label" style="margin-bottom:16px">XSeries</div>
-      <h2 class="solutions-title">ENGINEERED AT EVERY SCALE</h2>
-      <p class="solutions-subtitle">from compact CRDi to large engine systems</p>
-    </div>
-    <div class="solutions-cta-wrap">
+
+<!-- A. Black separator -->
+<div style="width:100%; height:100px; background:#000000;"></div>
+
+<!-- B+C. Image div with text overlay -->
+<div class="sol-photo-wrap">
+  <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries Platforms" class="sol-photo">
+  <div class="sol-photo-text">
+    <div class="section-label" style="margin-bottom:12px">XSeries</div>
+    <h2 class="solutions-title">ENGINEERED AT EVERY SCALE</h2>
+    <p class="solutions-subtitle">from compact CRDi to large engine systems</p>
+    <div style="margin-top:30px">
       <a href="#" class="btn-solutions">Explore the XSeries</a>
     </div>
   </div>
-</section>
+</div>
+
+
 
 <!-- ═══════════════════════════════ FEATURED MACHINE ═══════════════════════════════ -->
 <section class="featured">
