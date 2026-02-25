@@ -2127,6 +2127,80 @@
   .cz-bg-blue .cz-card-eyebrow { color: #146cf7; }
   .cz-bg-blue .cz-card-title { color: #0a0a0a; }
   .cz-bg-blue .cz-card-subtitle { color: rgba(10,10,10,0.5); }
+
+  /* ─── EVENT CARD MAP ─── */
+  .cz-bg-red { background: linear-gradient(160deg, #ED1C24 0%, #c41019 100%) !important; }
+  .cz-bg-red .cz-card-eyebrow { color: rgba(255,255,255,0.6); }
+  .cz-bg-red .cz-card-title { color: #fff; }
+  .cz-bg-red .cz-card-subtitle { color: rgba(255,255,255,0.6); }
+  .event-map-wrap {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .event-map-svg {
+    width: 100%;
+    opacity: 0.18;
+  }
+  .event-pin {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .event-pin-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.25), 0 0 16px rgba(255,255,255,0.4);
+  }
+  .event-pin-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    white-space: nowrap;
+  }
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .btn-dark:hover { background: #1a1a1a; }
+  .btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline-white:hover { border-color: #fff; color: #fff; }
 </style>
 </head>
 <body>
@@ -2436,14 +2510,44 @@
 
   <!-- ROW 3: 50/50 split -->
   <div class="cz-row">
-    <div class="cz-card cz-card-half">
+    <div class="cz-card cz-card-half cz-bg-red">
       <div class="cz-card-eyebrow">Event</div>
       <h2 class="cz-card-title">Automechanika Dubai</h2>
       <p class="cz-card-subtitle">JUN 9–11, 2026 · Dubai, UAE</p>
       <div class="cz-card-actions">
-        <a href="#" class="btn-primary">Register Interest</a>
+        <a href="#" class="btn-dark">Learn More</a>
+        <a href="#" class="btn-outline-white">All Events</a>
       </div>
-      <div class="cz-card-placeholder">Image Placeholder — Event</div>
+      <div class="event-map-wrap">
+        <svg class="event-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="0.8">
+          <!-- Simplified world map outlines -->
+          <!-- North America -->
+          <path d="M120,80 L180,70 L220,90 L240,130 L210,180 L170,200 L140,190 L110,160 L100,120 Z"/>
+          <path d="M140,190 L160,220 L155,260 L135,270 L120,250 L125,220 Z"/>
+          <!-- South America -->
+          <path d="M200,260 L240,250 L260,280 L265,330 L250,380 L220,400 L195,380 L185,330 L190,290 Z"/>
+          <!-- Europe -->
+          <path d="M430,60 L480,55 L510,70 L520,100 L500,120 L460,115 L440,100 L430,80 Z"/>
+          <!-- Africa -->
+          <path d="M440,140 L490,130 L520,150 L530,200 L520,260 L500,300 L470,310 L440,290 L425,240 L430,180 Z"/>
+          <!-- Asia (simplified) -->
+          <path d="M520,60 L620,50 L700,70 L740,100 L730,140 L680,160 L620,155 L570,140 L540,110 L520,80 Z"/>
+          <!-- Middle East highlight area -->
+          <path d="M570,140 L620,135 L640,160 L630,185 L600,190 L575,175 L565,155 Z" stroke="white" stroke-width="1.2"/>
+          <!-- Australia -->
+          <path d="M720,270 L790,260 L820,290 L815,340 L780,360 L740,350 L715,320 L715,290 Z"/>
+          <!-- Grid lines subtle -->
+          <line x1="0" y1="250" x2="1000" y2="250" stroke-width="0.3" opacity="0.5"/>
+          <line x1="500" y1="0" x2="500" y2="500" stroke-width="0.3" opacity="0.5"/>
+          <line x1="0" y1="125" x2="1000" y2="125" stroke-width="0.2" opacity="0.3" stroke-dasharray="4,6"/>
+          <line x1="0" y1="375" x2="1000" y2="375" stroke-width="0.2" opacity="0.3" stroke-dasharray="4,6"/>
+        </svg>
+        <!-- Dubai pin -->
+        <div class="event-pin" style="left:65.4%; top:36.0%; transform: translate(-50%,-50%);">
+          <div class="event-pin-dot"></div>
+          <div class="event-pin-label">Dubai</div>
+        </div>
+      </div>
     </div>
     <div class="cz-card cz-card-half cz-bg-dark">
       <div class="cz-card-eyebrow">Specialists</div>
