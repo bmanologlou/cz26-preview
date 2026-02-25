@@ -231,6 +231,7 @@
     border: none;
     background: transparent;
     color: #868685;
+    cursor: pointer;
     font-family: 'Switzer', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -2111,6 +2112,17 @@
     transition: color 0.2s;
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
+
+  /* ─── GRID CARD BACKGROUNDS ─── */
+  .cz-bg-black { background: #000000 !important; }
+  .cz-bg-light { background: #f5f5f5 !important; }
+  .cz-bg-light .cz-card-eyebrow { color: #c41019; }
+  .cz-bg-light .cz-card-title { color: #0a0a0a; }
+  .cz-bg-light .cz-card-subtitle { color: rgba(10,10,10,0.5); }
+  .cz-bg-blue { background: linear-gradient(160deg, rgba(20,108,247,0.18) 0%, #f5f5f5 70%) !important; }
+  .cz-bg-blue .cz-card-eyebrow { color: #146cf7; }
+  .cz-bg-blue .cz-card-title { color: #0a0a0a; }
+  .cz-bg-blue .cz-card-subtitle { color: rgba(10,10,10,0.5); }
 </style>
 </head>
 <body>
@@ -2384,7 +2396,7 @@
 <div class="cz-grid">
 
   <!-- ROW 1: Full width -->
-  <div class="cz-card cz-card-full" style="background:#000000;">
+  <div class="cz-card cz-card-full cz-bg-black">
     <div class="cz-card-eyebrow">XSeries Platforms</div>
     <h2 class="cz-card-title large">Engineered at Every Scale</h2>
     <p class="cz-card-subtitle">from compact CRDi to large engine systems</p>
@@ -2397,7 +2409,7 @@
 
   <!-- ROW 2: 50/50 split -->
   <div class="cz-row">
-    <div class="cz-card cz-card-half">
+    <div class="cz-card cz-card-half cz-bg-blue">
       <div class="cz-card-eyebrow">Flagship</div>
       <h2 class="cz-card-title">MTBR-X</h2>
       <p class="cz-card-subtitle">Multi-System Platform</p>
@@ -2406,7 +2418,7 @@
       </div>
       <div class="cz-card-placeholder">Image Placeholder — MTBR-X</div>
     </div>
-    <div class="cz-card cz-card-half">
+    <div class="cz-card cz-card-half cz-bg-light">
       <div class="cz-card-eyebrow">Digital Platform</div>
       <h2 class="cz-card-title">CloudX</h2>
       <p class="cz-card-subtitle">Connect your bench to the future</p>
