@@ -1425,17 +1425,28 @@
 
   .footer-cta-title {
     font-family: 'Gunterz', sans-serif;
-    font-size: clamp(30px, 4vw, 52px);
-    line-height: 0.95;
+    font-size: 32px;
+    line-height: 1.05;
     letter-spacing: 0.03em;
-    max-width: 540px;
+    max-width: 400px;
   }
 
   .footer-cta-title span { color: var(--accent); }
 
+  .footer-cta-sub {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.6;
+    color: rgba(245,243,239,0.45);
+    max-width: 400px;
+    margin-top: 16px;
+  }
+
+
   .footer-cta-actions {
-    display: flex; flex-direction: column; gap: 12px;
-    align-items: flex-start;
+    display: flex; flex-direction: row; gap: 12px;
+    align-items: center;
   }
 
   /* ─── FOOTER ─── */
@@ -2714,12 +2725,13 @@
 <!-- ═══════════════════════════════ FOOTER CTA ═══════════════════════════════ -->
 <section class="footer-cta">
   <div class="footer-cta-inner">
-    <h2 class="footer-cta-title">
-      READY TO<br>UPGRADE YOUR<br><span>WORKSHOP?</span>
-    </h2>
+    <div>
+      <h2 class="footer-cta-title">READY TO<br>MOVE <span>FORWARD?</span></h2>
+      <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
+    </div>
     <div class="footer-cta-actions">
-      <a href="#" class="btn-primary" style="width:220px;text-align:center;">Find Your Solution</a>
-      <a href="#" class="link-arrow">Or contact our global network →</a>
+      <a href="#" class="btn-primary">Explore Solutions</a>
+      <a href="#" class="link-arrow">Find a Distributor →</a>
     </div>
   </div>
 </section>
