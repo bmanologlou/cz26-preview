@@ -159,6 +159,29 @@
   }
   .sol-pdf-link:hover { color: var(--white); }
 
+  /* ─── HERO IMAGE ─── */
+  .sol-hero-image {
+    max-width: 1440px; margin: 0 auto;
+    padding: 0 80px 60px;
+    transition: opacity 0.3s ease;
+  }
+  .sol-hero-img-placeholder {
+    width: 100%; height: 320px; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.4s ease;
+  }
+  .sol-hero-img-placeholder span {
+    font-family: "DM Mono", monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.2);
+  }
+  /* Market-specific placeholder colors */
+  .sol-hero-img-placeholder.specialists { background: linear-gradient(160deg, #0d1a2e 0%, #111 100%); }
+  .sol-hero-img-placeholder.workshops   { background: linear-gradient(160deg, #1a0d0d 0%, #111 100%); }
+  .sol-hero-img-placeholder.large       { background: linear-gradient(160deg, #0d1a0d 0%, #111 100%); }
+
   /* ─── DIVIDER ─── */
   .sol-divider {
     max-width: 1440px; margin: 0 auto;
@@ -533,15 +556,15 @@
 <!-- ═══ HERO ═══ -->
 <div class="sol-hero">
   <div class="sol-hero-left">
-    <div class="sol-hero-eyebrow">Carbon Zapp — Product Range</div>
-    <h1 class="sol-hero-title">
+    <div class="sol-hero-eyebrow" id="hero-eyebrow">Carbon Zapp — Product Range</div>
+    <h1 class="sol-hero-title" id="hero-title">
       BUILT FOR<br>
       EVERY<br>
       <em>BENCH.</em>
     </h1>
   </div>
   <div class="sol-hero-right">
-    <p class="sol-hero-desc">
+    <p class="sol-hero-desc" id="hero-desc">
       From compact workshop benches to specialist diagnostic platforms — every system is engineered around one principle: precision that holds under pressure.
     </p>
     <div class="sol-hero-actions">
@@ -551,6 +574,13 @@
         PDF · 4.2 MB
       </a>
     </div>
+  </div>
+</div>
+
+<!-- Hero image strip -->
+<div class="sol-hero-image" id="hero-image">
+  <div class="sol-hero-img-placeholder" id="hero-placeholder">
+    <span id="hero-placeholder-label">All Systems</span>
   </div>
 </div>
 
@@ -833,6 +863,47 @@
 
   let activeMarket = urlMarket || "all", activeFuel = "all";
 
+  const heroContent = {
+    all: {
+      eyebrow: "Carbon Zapp — Product Range",
+      title: "BUILT FOR<br>EVERY<br><em>BENCH.</em>",
+      desc: "From compact workshop benches to specialist diagnostic platforms — every system is engineered around one principle: precision that holds under pressure.",
+      label: "All Systems",
+      bg: ""
+    },
+    specialists: {
+      eyebrow: "Carbon Zapp — Specialists",
+      title: "PRECISION<br>AT THE<br><em>HIGHEST LEVEL.</em>",
+      desc: "Specialist-grade injection test systems built for diagnostic centers and authorised service points. Full-spectrum capability across CRDi, CRP, EUI, EUP and beyond.",
+      label: "Specialists Range",
+      bg: "specialists"
+    },
+    workshops: {
+      eyebrow: "Carbon Zapp — Workshops",
+      title: "WORKSHOP<br>READY.<br><em>ALWAYS.</em>",
+      desc: "Reliable, compact and easy to operate — workshop systems designed for high-volume service environments that demand speed without compromising accuracy.",
+      label: "Workshops Range",
+      bg: "workshops"
+    },
+    large: {
+      eyebrow: "Carbon Zapp — Large Engines",
+      title: "BUILT FOR<br>THE<br><em>BIG ONES.</em>",
+      desc: "Heavy-duty injection service equipment for large diesel engines. Marine, industrial and commercial applications requiring maximum flow and force.",
+      label: "Large Engines Range",
+      bg: "large"
+    }
+  };
+
+  function updateHero(market) {
+    const h = heroContent[market] || heroContent.all;
+    document.getElementById("hero-eyebrow").textContent = h.eyebrow;
+    document.getElementById("hero-title").innerHTML = h.title;
+    document.getElementById("hero-desc").textContent = h.desc;
+    document.getElementById("hero-placeholder-label").textContent = h.label;
+    const ph = document.getElementById("hero-placeholder");
+    ph.className = "sol-hero-img-placeholder" + (h.bg ? " " + h.bg : "");
+  }
+
   function applyFilters() {
     let visible = 0;
     cards.forEach(c => {
@@ -846,6 +917,7 @@
       d.style.display = (activeMarket === "all" || activeMarket === sec) ? "" : "none";
     });
     countEl.textContent = visible + " System" + (visible !== 1 ? "s" : "");
+    updateHero(activeMarket);
   }
 
   marketBtns.forEach(b => b.addEventListener("click", () => {
