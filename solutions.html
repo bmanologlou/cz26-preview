@@ -817,13 +817,21 @@
 </div>
 
 <script>
+  // Auto-filter from URL param e.g. ?market=specialists
+  const urlMarket = new URLSearchParams(window.location.search).get("market");
+  if (urlMarket) {
+    document.querySelectorAll("[data-filter]").forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === urlMarket);
+    });
+  }
+
   const marketBtns = document.querySelectorAll("[data-filter]");
   const fuelBtns   = document.querySelectorAll("[data-fuel]");
   const cards      = document.querySelectorAll(".prod-card[data-market]");
   const dividers   = document.querySelectorAll(".sol-section-divider");
   const countEl    = document.getElementById("filter-count");
 
-  let activeMarket = "all", activeFuel = "all";
+  let activeMarket = urlMarket || "all", activeFuel = "all";
 
   function applyFilters() {
     let visible = 0;
@@ -844,6 +852,8 @@
     marketBtns.forEach(x => x.classList.remove("active"));
     b.classList.add("active"); activeMarket = b.dataset.filter; applyFilters();
   }));
+  applyFilters();
+
   fuelBtns.forEach(b => b.addEventListener("click", () => {
     fuelBtns.forEach(x => x.classList.remove("active"));
     b.classList.add("active"); activeFuel = b.dataset.fuel; applyFilters();
