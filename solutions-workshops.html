@@ -78,8 +78,8 @@
   :root {
     --black: #0a0a0a; --white: #f5f5f5; --carbon: #0a0a0a;
     --steel: #3e3e3d; --mid: #868685; --light: #dadadb;
-    --accent: #ED1C24; --accent2: #146cf7; --nav-h: 68px;
-    --filter-h: 52px;
+    --accent: #ED1C24; --accent2: #146cf7;
+    --nav-h: 68px; --fbar-h: 52px;
   }
   html { scroll-behavior: smooth; }
   body { font-family: "Public Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
@@ -2324,11 +2324,11 @@
   .filter-bar {
     position: sticky; top: var(--nav-h); z-index: 50;
     background: rgba(10,10,10,0.96); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.07); padding: 0 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
-  .filter-bar-inner {
-    max-width: 1440px; margin: 0 auto;
-    display: flex; align-items: center; gap: 0; height: var(--filter-h);
+  .filter-bar-row {
+    padding: 0 80px; max-width: 1440px; margin: 0 auto;
+    display: flex; align-items: center; height: var(--fbar-h);
   }
   .filter-group { display: flex; align-items: center; gap: 2px; }
   .filter-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.1); margin: 0 16px; }
@@ -2341,107 +2341,81 @@
   }
   .filter-btn:hover { color: rgba(245,243,239,0.8); }
   .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
+  .filter-btn.act-toggle.open {
+    color: var(--white); background: rgba(255,255,255,0.08);
+    border-radius: 2px 2px 0 0;
+  }
   .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.22); }
 
-  /* ─── HERO ─── */
-  .sol-hero {
-    margin-top: calc(var(--nav-h) + var(--filter-h));
-    position: relative; overflow: hidden;
-    min-height: 480px;
-    display: flex; flex-direction: column; justify-content: flex-end;
+  /* ─── ACTUATOR DRAWER ─── */
+  .act-drawer {
+    overflow: hidden; max-height: 0;
+    transition: max-height 0.25s ease, border-color 0.25s;
+    border-top: 1px solid transparent;
+    background: rgba(10,10,10,0.96);
   }
-  .sol-hero-bg {
-    position: absolute; inset: 0;
-    background: #0d0d0d;
-    transition: background 0.5s ease;
+  .act-drawer.open {
+    max-height: 60px;
+    border-top-color: rgba(255,255,255,0.06);
   }
-  .sol-hero-bg.specialists { background: linear-gradient(160deg,#091624 0%,#0d0d10 60%); }
-  .sol-hero-bg.workshops   { background: linear-gradient(160deg,#160a0a 0%,#0d0d0d 60%); }
-  .sol-hero-bg.large       { background: linear-gradient(160deg,#0a1608 0%,#0d0d0d 60%); }
-  .sol-hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.7) 100%);
+  .act-drawer-inner {
+    padding: 0 80px; max-width: 1440px; margin: 0 auto;
+    display: flex; align-items: center; height: 48px; gap: 0;
   }
-  .sol-hero-content {
-    position: relative; z-index: 2;
-    max-width: 1440px; margin: 0 auto; width: 100%;
-    padding: 60px 80px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
-  }
-  .sol-hero-eyebrow {
-    font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
-  }
-  .sol-hero-title {
-    font-family: "Gunterz", sans-serif;
-    font-size: 42px; line-height: 0.92; letter-spacing: 0.02em; color: var(--white);
-  }
-  .sol-hero-title em {
-    font-style: normal; color: transparent;
-    -webkit-text-stroke: 1px rgba(245,243,239,0.35);
-  }
-  .sol-hero-right { padding-bottom: 4px; }
-  .sol-hero-desc {
-    font-size: 15px; font-weight: 200; line-height: 1.7;
-    color: rgba(245,243,239,0.5); margin-bottom: 28px; max-width: 420px;
-  }
-  .sol-hero-actions { display: flex; gap: 12px; align-items: center; }
-  .sol-pdf-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: "DM Mono", monospace; font-size: 10px;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: rgba(245,243,239,0.35); text-decoration: none; transition: color 0.2s;
-  }
-  .sol-pdf-link:hover { color: var(--white); }
-
-  /* ─── ACTUATOR FILTER ─── */
-  .actuator-bar {
-    background: #111; border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 0 80px;
-  }
-  .actuator-bar-inner {
-    max-width: 1440px; margin: 0 auto;
-    display: flex; align-items: center; gap: 0;
-    height: 48px;
-  }
-  .act-label {
-    font-family: "DM Mono", monospace; font-size: 9px;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(245,243,239,0.2); margin-right: 16px; white-space: nowrap;
-  }
-  .act-pills { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; flex: 1; }
+  .act-pills { display: flex; align-items: center; gap: 6px; flex: 1; }
   .act-pill {
     background: transparent; border: 1px solid rgba(255,255,255,0.1);
     border-radius: 2px; cursor: pointer;
     font-family: "DM Mono", monospace; font-size: 9px;
     letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(245,243,239,0.35); padding: 4px 10px;
-    transition: all 0.15s; white-space: nowrap;
+    transition: all 0.15s;
   }
   .act-pill:hover { border-color: rgba(255,255,255,0.3); color: rgba(245,243,239,0.7); }
-  .act-pill.active {
-    background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);
-    color: var(--white);
-  }
+  .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.35); color: var(--white); }
   .act-reset {
-    background: transparent; border: none; cursor: pointer;
+    background: transparent; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px; cursor: pointer;
     font-family: "DM Mono", monospace; font-size: 9px;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,243,239,0.2); padding: 4px 10px;
-    transition: color 0.15s; margin-left: 8px;
+    color: rgba(245,243,239,0.3); padding: 4px 10px;
+    transition: all 0.15s; margin-right: 12px;
+    opacity: 0; pointer-events: none;
   }
-  .act-reset:hover { color: rgba(245,243,239,0.6); }
-  .act-reset.visible { color: rgba(245,243,239,0.35); }
+  .act-reset.visible { opacity: 1; pointer-events: auto; color: rgba(245,243,239,0.5); }
+  .act-reset:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+
+  /* ─── HERO ─── */
+  .sol-hero {
+    margin-top: calc(var(--nav-h) + var(--fbar-h));
+    position: relative; overflow: hidden; min-height: 480px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    transition: margin-top 0.25s ease;
+  }
+  .sol-hero.act-open { margin-top: calc(var(--nav-h) + var(--fbar-h) + 48px); }
+  .sol-hero-bg { position: absolute; inset: 0; background: #0d0d0d; }
+  .sol-hero-bg.specialists { background: linear-gradient(160deg,#091624 0%,#0d0d10 60%); }
+  .sol-hero-bg.workshops   { background: linear-gradient(160deg,#160a0a 0%,#0d0d0d 60%); }
+  .sol-hero-bg.large       { background: linear-gradient(160deg,#0a1608 0%,#0d0d0d 60%); }
+  .sol-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg,transparent 20%,rgba(10,10,10,0.75) 100%); }
+  .sol-hero-content {
+    position: relative; z-index: 2;
+    max-width: 1440px; margin: 0 auto; width: 100%;
+    padding: 60px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+  }
+  .sol-hero-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .sol-hero-title {
+    font-family: "Gunterz", sans-serif;
+    font-size: 42px; line-height: 0.92; letter-spacing: 0.02em; color: var(--white);
+  }
+  .sol-hero-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1px rgba(245,243,239,0.35); }
+  .sol-hero-desc { font-size: 15px; font-weight: 200; line-height: 1.7; color: rgba(245,243,239,0.5); margin-bottom: 28px; max-width: 420px; }
+  .sol-hero-actions { display: flex; gap: 12px; align-items: center; }
 
   /* ─── CATALOG ─── */
   .sol-catalog { max-width: 1440px; margin: 0 auto; padding: 48px 80px 0; }
-  .sol-section-divider {
-    font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em;
-    text-transform: uppercase; color: rgba(245,243,239,0.22);
-    border-top: 1px solid rgba(255,255,255,0.07); padding-top: 32px; margin-bottom: 24px;
-    grid-column: 1 / -1;
-  }
-  .sol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sol-section-divider { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding-top: 32px; margin-bottom: 24px; grid-column: 1/-1; }
+  .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 
   /* ─── PRODUCT CARD ─── */
   .prod-card { background: #111; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s; }
@@ -2488,7 +2462,7 @@
   .sol-editorial { max-width: 1440px; margin: 80px auto 0; padding: 0 80px; }
   .sol-editorial-label { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 0 24px; }
   .sol-editorial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .ed-card { border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; min-height: 260px; padding: 32px; transition: opacity 0.2s; }
+  .ed-card { border-radius: 4px; display: flex; flex-direction: column; text-decoration: none; color: inherit; min-height: 260px; padding: 32px; transition: opacity 0.2s; }
   .ed-card:hover { opacity: 0.85; }
   .ed-card-icon { width: 40px; height: 40px; border-radius: 2px; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: auto; }
   .ed-card-icon svg { color: rgba(245,243,239,0.5); }
@@ -3448,8 +3422,8 @@
 </nav>
 
 <!-- ═══ FILTER BAR ═══ -->
-<div class="filter-bar">
-  <div class="filter-bar-inner">
+<div class="filter-bar" id="filter-bar">
+  <div class="filter-bar-row">
     <div class="filter-group">
       <button class="filter-btn " onclick="location.href='solutions.html'">All Systems</button>
       <button class="filter-btn " onclick="location.href='solutions-specialists.html'">Specialists</button>
@@ -3462,48 +3436,44 @@
       <button class="filter-btn" data-fuel="diesel">Diesel</button>
       <button class="filter-btn" data-fuel="gasoline">Gasoline</button>
     </div>
+    <div class="filter-sep"></div>
+    <button class="filter-btn act-toggle" id="act-toggle">Actuator</button>
     <span class="filter-count" id="filter-count">— Systems</span>
   </div>
-</div>
-
-<!-- ═══ HERO ═══ -->
-<div class="sol-hero">
-  <div class="sol-hero-bg workshops"></div>
-  <div class="sol-hero-overlay"></div>
-  <div class="sol-hero-content">
-    <div class="sol-hero-left">
-      <div class="sol-hero-eyebrow">Carbon Zapp — Workshops</div>
-      <h1 class="sol-hero-title">WORKSHOP<br>READY.<br><em>ALWAYS.</em></h1>
-    </div>
-    <div class="sol-hero-right">
-      <p class="sol-hero-desc">Reliable, compact and easy to operate — workshop systems for high-volume service environments that demand speed without compromising accuracy.</p>
-      <div class="sol-hero-actions">
-        <a href="#" class="btn-primary">Download Full Catalog</a>
-        <a href="#" class="sol-pdf-link">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Brochure PDF
-        </a>
+  <!-- Actuator drawer -->
+  <div class="act-drawer" id="act-drawer">
+    <div class="act-drawer-inner">
+      <button class="act-reset" id="act-reset">× Reset</button>
+      <div class="act-pills">
+        <button class="act-pill" data-act="crdi">CRDi</button>
+        <button class="act-pill" data-act="crp">CRp</button>
+        <button class="act-pill" data-act="efi">EFi</button>
+        <button class="act-pill" data-act="engine">Engine</button>
+        <button class="act-pill" data-act="eui">EUi</button>
+        <button class="act-pill" data-act="eup">EUP</button>
+        <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
+        <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
+        <button class="act-pill" data-act="heui">HEUi</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ ACTUATOR FILTER ═══ -->
-<div class="actuator-bar">
-  <div class="actuator-bar-inner">
-    <span class="act-label">System</span>
-    <div class="act-pills">
-      <button class="act-pill" data-act="crdi">CRDi</button>
-      <button class="act-pill" data-act="crp">CRp</button>
-      <button class="act-pill" data-act="efi">EFi</button>
-      <button class="act-pill" data-act="engine">Engine</button>
-      <button class="act-pill" data-act="eui">EUi</button>
-      <button class="act-pill" data-act="eup">EUP</button>
-      <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
-      <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
-      <button class="act-pill" data-act="heui">HEUi</button>
+<!-- ═══ HERO ═══ -->
+<div class="sol-hero" id="sol-hero">
+  <div class="sol-hero-bg workshops"></div>
+  <div class="sol-hero-overlay"></div>
+  <div class="sol-hero-content">
+    <div>
+      <div class="sol-hero-eyebrow">Carbon Zapp — Workshops</div>
+      <h1 class="sol-hero-title">WORKSHOP<br>READY.<br><em>ALWAYS.</em></h1>
     </div>
-    <button class="act-reset" id="act-reset">× Reset</button>
+    <div>
+      <p class="sol-hero-desc">Reliable, compact and easy to operate — for high-volume service environments that demand speed without compromising accuracy.</p>
+      <div class="sol-hero-actions">
+        <a href="#" class="btn-primary">Download Full Catalog</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -3632,7 +3602,7 @@
     <div class="featured-card-text">
       <div class="featured-eyebrow">Workshops · Diesel Service Station</div>
       <h2 class="featured-title">DSR-X</h2>
-      <p class="featured-subtitle">The essential diesel service station for high-volume workshops.</p>
+      <p class="featured-subtitle">Essential diesel service station for high-volume workshops.</p>
       <div class="featured-specs"><div><div class="spec-val">Diesel</div><div class="spec-label">Focused</div></div><div><div class="spec-val">Compact</div><div class="spec-label">Footprint</div></div><div><div class="spec-val">Easy</div><div class="spec-label">Operation</div></div></div>
       <div class="featured-actions">
         <a href="#" class="btn-primary">Discover DSR-X</a>
@@ -3662,30 +3632,15 @@
   <div class="sol-editorial-grid">
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
       <div class="ed-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Digital Platform</div>
-        <div class="ed-card-title">CloudX Ecosystem</div>
-        <div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div>
-        <div class="ed-card-cta">Explore CloudX →</div>
-      </div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
     </a>
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
       <div class="ed-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Video Series</div>
-        <div class="ed-card-title">Watch CZExperts</div>
-        <div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div>
-        <div class="ed-card-cta">Watch Now →</div>
-      </div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Video Series</div><div class="ed-card-title">Watch CZExperts</div><div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div><div class="ed-card-cta">Watch Now →</div></div>
     </a>
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a0a0a 0%,#1a0d0d 50%,#111 100%);">
       <div class="ed-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Innovation & R&D</div>
-        <div class="ed-card-title">Engineering Forward</div>
-        <div class="ed-card-sub">35 years of continuous development. See what's coming next.</div>
-        <div class="ed-card-cta">Explore Innovation →</div>
-      </div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation & R&D</div><div class="ed-card-title">Engineering Forward</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
     </a>
   </div>
 </div>
@@ -3831,158 +3786,35 @@
         Crafted by <a href="https://www.eternaloptimists.com" target="_blank">Eternal Optimists</a>
       </div>
 
-<script>
-  (function() {
-    var events = [
-      {
-        name: 'Automechanika Dubai',
-        venue: 'Dubai World Trade Centre — UAE',
-        dates: 'JUN 9–11, 2026',
-        start: '2026-06-09',
-        url: '/innovation/news-events/automechanika-dubai-2026'
-      },
-      {
-        name: 'Automechanika Shanghai',
-        venue: 'National Exhibition & Convention Centre — China',
-        dates: 'NOV 4–7, 2026',
-        start: '2026-11-04',
-        url: '/innovation/news-events/automechanika-shanghai-2026'
-      },
-      {
-        name: 'HDAW 2027',
-        venue: 'Gaylord Texan Resort — Texas, USA',
-        dates: 'JAN 2027',
-        start: '2027-01-25',
-        url: '/innovation/news-events/hdaw-2027'
-      }
-    ];
-
-    var current = 0;
-    var timer;
-
-    function daysUntil(dateStr) {
-      var target = new Date(dateStr + 'T00:00:00');
-      var now = new Date();
-      var diff = Math.floor((target - now) / (1000 * 60 * 60 * 24));
-      if (diff > 0) return diff + ' days';
-      if (diff === 0) return 'Today';
-      return 'On now';
-    }
-
-    function buildDots() {
-      var container = document.getElementById('hero-event-dots');
-      if (!container) return;
-      container.innerHTML = '';
-      events.forEach(function(_, i) {
-        var dot = document.createElement('button');
-        dot.className = 'dot' + (i === current ? ' active' : '');
-        dot.setAttribute('aria-label', 'Show event ' + (i + 1));
-        dot.addEventListener('click', function() {
-          goTo(i);
-          resetTimer();
-        });
-        container.appendChild(dot);
-      });
-    }
-
-    function updateDots() {
-      var dots = document.querySelectorAll('#hero-event-dots .dot');
-      dots.forEach(function(d, i) {
-        d.className = 'dot' + (i === current ? ' active' : '');
-      });
-    }
-
-    function showEvent(idx, animate) {
-      var ev = events[idx];
-      var body = document.getElementById('hero-event-link');
-      var nameEl = document.getElementById('hero-event-name');
-      var venueEl = document.getElementById('hero-event-venue');
-      var datesEl = document.getElementById('hero-event-dates');
-      var countEl = document.getElementById('event-countdown');
-      if (!body) return;
-
-      if (animate) {
-        body.classList.add('fade-out');
-        setTimeout(function() {
-          nameEl.textContent = ev.name;
-          venueEl.textContent = ev.venue;
-          datesEl.textContent = ev.dates;
-          countEl.textContent = daysUntil(ev.start);
-          body.href = ev.url;
-          body.classList.remove('fade-out');
-          body.classList.add('fade-in');
-          setTimeout(function() { body.classList.remove('fade-in'); }, 300);
-        }, 220);
-      } else {
-        nameEl.textContent = ev.name;
-        venueEl.textContent = ev.venue;
-        datesEl.textContent = ev.dates;
-        countEl.textContent = daysUntil(ev.start);
-        body.href = ev.url;
-      }
-      updateDots();
-    }
-
-    function goTo(idx) {
-      current = idx;
-      showEvent(current, true);
-    }
-
-    function next() {
-      current = (current + 1) % events.length;
-      showEvent(current, true);
-    }
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, 4500);
-    }
-
-    // Init
-    buildDots();
-    showEvent(0, false);
-    resetTimer();
-  })();
-
-
-  // Preloader
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('preloader').classList.add('hidden');
-    }, 1800);
-  });
-
-  // Nav logo scroll behaviour: logotype → brandmark after 80px
-  (function() {
-    var nav = document.querySelector('nav');
-    var threshold = 80;
-    function onScroll() {
-      if (window.scrollY > threshold) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-  })();
-
-</script>
 </html
 
 <script>
   
   
 
-  // ── Init featured card ──
+  // ── Featured ──
   const activeMarket = "workshops";
   document.querySelectorAll(".featured-card").forEach(c => c.classList.remove("active"));
   const fc = document.getElementById("featured-" + activeMarket) || document.getElementById("featured-all");
   if (fc) fc.classList.add("active");
 
-  // ── Fuel filter ──
+  // ── Actuator drawer toggle ──
+  const actToggle = document.getElementById("act-toggle");
+  const actDrawer = document.getElementById("act-drawer");
+  const solHero   = document.getElementById("sol-hero");
+  let drawerOpen = false;
+
+  actToggle.addEventListener("click", () => {
+    drawerOpen = !drawerOpen;
+    actDrawer.classList.toggle("open", drawerOpen);
+    actToggle.classList.toggle("open", drawerOpen);
+    solHero.classList.toggle("act-open", drawerOpen);
+  });
+
+  // ── Filters ──
   const fuelBtns = document.querySelectorAll("[data-fuel]");
-  const cards = document.querySelectorAll(".prod-card[data-market]");
-  const countEl = document.getElementById("filter-count");
+  const cards    = document.querySelectorAll(".prod-card[data-market]");
+  const countEl  = document.getElementById("filter-count");
   let activeFuel = "all";
   let activeActs = new Set();
 
@@ -3990,19 +3822,22 @@
     let visible = 0;
     cards.forEach(c => {
       const fuelOk = activeFuel === "all" || c.dataset.fuel === activeFuel;
-      const cardActs = c.dataset.act ? c.dataset.act.split(' ') : [];
-      const actOk = activeActs.size === 0 || [...activeActs].some(a => cardActs.includes(a));
-      const show = fuelOk && actOk;
+      const cActs  = c.dataset.act ? c.dataset.act.split(" ") : [];
+      const actOk  = activeActs.size === 0 || [...activeActs].some(a => cActs.includes(a));
+      const show   = fuelOk && actOk;
       c.style.display = show ? "" : "none";
       if (show) visible++;
     });
     document.querySelectorAll(".sol-section-divider").forEach(d => {
-      const sec = d.dataset.section;
-      const hasVisible = [...cards].some(c => c.dataset.market === sec && c.style.display !== "none");
-      d.style.display = hasVisible ? "" : "none";
+      const hasVis = [...cards].some(c => c.dataset.market === d.dataset.section && c.style.display !== "none");
+      d.style.display = hasVis ? "" : "none";
     });
     countEl.textContent = visible + " System" + (visible !== 1 ? "s" : "");
-    document.getElementById("act-reset").classList.toggle("visible", activeActs.size > 0);
+    const resetBtn = document.getElementById("act-reset");
+    resetBtn.classList.toggle("visible", activeActs.size > 0);
+    // Show active count on toggle button
+    actToggle.textContent = activeActs.size > 0 ? `Actuator (${activeActs.size})` : "Actuator";
+    actToggle.classList.toggle("active", activeActs.size > 0);
   }
 
   fuelBtns.forEach(b => b.addEventListener("click", () => {
@@ -4010,7 +3845,6 @@
     b.classList.add("active"); activeFuel = b.dataset.fuel; applyFilters();
   }));
 
-  // ── Actuator pills (multi-select) ──
   document.querySelectorAll(".act-pill").forEach(p => {
     p.addEventListener("click", () => {
       const act = p.dataset.act;
