@@ -1954,40 +1954,55 @@
     letter-spacing: 0.08em;
     border-radius: 2px;
   }
-  /* ═══ APPLE-STYLE GRID ═══ */
+  /* ═══ LAYOUT D — HORIZONTAL GRID ═══ */
   .cz-grid {
-    padding: 0 12px 12px;
+    padding: 0 40px 40px;
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  .cz-card {
-    border-radius: 4px;
-    overflow: hidden;
-    background: #161616;
-    padding: 40px 40px 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 480px;
-    position: relative;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .cz-card-full { width: 100%; }
   .cz-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-  .cz-card-half { min-height: 400px; }
+  .card-horizontal {
+    border-radius: 4px;
+    overflow: hidden;
+    background: #161616;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 360px;
+    text-align: left;
+  }
+  .card-horizontal .card-text {
+    padding: 48px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+  .card-horizontal .card-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 0 0;
+  }
+  .card-horizontal .card-image img {
+    width: 68%;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+    margin: 0 auto;
+  }
   .cz-card-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .cz-card-title {
     font-family: 'Gunterz', sans-serif;
@@ -1995,7 +2010,7 @@
     line-height: 1;
     letter-spacing: 0.03em;
     color: var(--white);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .cz-card-title.large { font-size: 28px; }
   .cz-card-subtitle {
@@ -2005,26 +2020,11 @@
     color: rgba(245,243,239,0.45);
     margin-bottom: 0;
   }
-  .cz-card-placeholder {
-    flex: 1;
-    width: 100%;
-    background: rgba(255,255,255,0.03);
-    border-radius: 8px 8px 0 0;
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.12);
-    text-transform: uppercase;
-  }
   .cz-card-actions {
     display: flex;
     gap: 12px;
-    justify-content: center;
-    padding: 20px 0;
+    justify-content: flex-start;
+    padding: 16px 0 0;
   }
   .btn-secondary {
     display: inline-flex;
@@ -2484,60 +2484,80 @@
 <section style="background: var(--black); padding: 0;">
 <div class="cz-grid">
 
-  <!-- ROW 1: Full width -->
-  <div class="cz-card cz-card-full cz-bg-black">
-    <div class="cz-card-eyebrow">XSeries Platforms</div>
-    <h2 class="cz-card-title large">Engineered at Every Scale</h2>
-    <p class="cz-card-subtitle">from compact CRDi to large engine systems</p>
-    <div class="cz-card-actions">
-      <a href="#" class="btn-primary">Explore the XSeries</a>
-      <a href="#" class="btn-secondary">Download Catalog</a>
+  <!-- ROW 1: Full width horizontal -->
+  <div class="card-horizontal cz-bg-black">
+    <div class="card-text">
+      <div class="cz-card-eyebrow">XSeries Platforms</div>
+      <h2 class="cz-card-title large">Engineered at Every Scale</h2>
+      <p class="cz-card-subtitle" style="white-space:nowrap;">from compact CRDi to large engine systems</p>
+      <div class="cz-card-actions">
+        <a href="#" class="btn-primary">Explore the XSeries</a>
+        <a href="#" class="btn-secondary">Download Catalog</a>
+      </div>
     </div>
-    <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries" style="width:60%; margin: 24px auto 0; display:block;">
+    <div class="card-image" style="background:#000;justify-content:flex-start;padding-left:40px;">
+      <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries" style="width:95%;">
+    </div>
   </div>
 
   <!-- ROW 2: 50/50 split -->
   <div class="cz-row">
-    <div class="cz-card cz-card-half cz-bg-blue">
-      <div class="cz-card-eyebrow">Flagship</div>
-      <h2 class="cz-card-title">MTBR-X</h2>
-      <p class="cz-card-subtitle">Multi-System Platform</p>
-      <div class="cz-card-actions">
-        <a href="#" class="btn-primary">Discover</a>
+    <div class="card-horizontal cz-bg-blue">
+      <div class="card-text">
+        <div class="cz-card-eyebrow" style="color:#146cf7;">Flagship</div>
+        <h2 class="cz-card-title" style="color:#0a0a0a;">MTBR-X</h2>
+        <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Multi-System Platform</p>
+        <div class="cz-card-actions">
+          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+        </div>
       </div>
-      <img src="assets/images/MTBRX_transparent.webp" alt="MTBR-X" style="width:90%; margin: 20px auto 0; display:block; margin-bottom:-4px;">
+      <div class="card-image" style="background:linear-gradient(180deg,#eaf2fc,#f5f5f5);">
+        <img src="assets/images/MTBRX_800.webp" alt="MTBR-X">
+      </div>
     </div>
-    <div class="cz-card cz-card-half cz-bg-blue">
-      <div class="cz-card-eyebrow">Specialists</div>
-      <h2 class="cz-card-title">ITB4R-X</h2>
-      <p class="cz-card-subtitle">Standalone CRDi Test Bench</p>
-      <div class="cz-card-actions">
-        <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
-        <a href="#" class="btn-secondary" style="border-color:rgba(10,10,10,0.25);color:#0a0a0a;">Order</a>
+    <div class="card-horizontal cz-bg-blue">
+      <div class="card-text">
+        <div class="cz-card-eyebrow" style="color:#146cf7;">Specialists</div>
+        <h2 class="cz-card-title" style="color:#0a0a0a;">ITB4R-X</h2>
+        <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Standalone CRDi Test Bench</p>
+        <div class="cz-card-actions">
+          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+          <a href="#" class="btn-secondary" style="border-color:rgba(10,10,10,0.25);color:#0a0a0a;">Order</a>
+        </div>
       </div>
-      <img src="assets/images/ITBRX_transparent.webp" alt="ITB.4R|X-A" style="width:90%; margin: 20px auto 0; display:block;">
+      <div class="card-image" style="background:linear-gradient(180deg,#eaf2fc,#f5f5f5);">
+        <img src="assets/images/ITBRX_800.webp" alt="ITB4R-X">
+      </div>
     </div>
   </div>
 
   <!-- ROW 3: 50/50 split -->
   <div class="cz-row">
-    <div class="cz-card cz-card-half cz-bg-light">
-      <div class="cz-card-eyebrow">Video Series</div>
-      <h2 class="cz-card-title">Watch CZExperts</h2>
-      <p class="cz-card-subtitle">Expert skills, shared knowledge</p>
-      <div class="cz-card-actions">
-        <a href="#" class="btn-primary" style="background:var(--accent);">Watch Video</a>
+    <div class="card-horizontal cz-bg-light">
+      <div class="card-text">
+        <div class="cz-card-eyebrow" style="color:#c41019;">Video Series</div>
+        <h2 class="cz-card-title" style="color:#0a0a0a;">Watch CZExperts</h2>
+        <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Expert skills, shared knowledge</p>
+        <div class="cz-card-actions">
+          <a href="#" class="btn-primary">Watch Video</a>
+        </div>
       </div>
-      <img src="assets/images/CZExpert_transparent.webp" alt="CZ Expert" style="width:70%; margin: 20px auto 0; display:block;">
+      <div class="card-image" style="background:#f5f5f5;">
+        <img src="assets/images/CZExpert_800.webp" alt="CZ Expert">
+      </div>
     </div>
-        <div class="cz-card cz-card-half cz-bg-dark">
-      <div class="cz-card-eyebrow">Specialists</div>
-      <h2 class="cz-card-title">HK1400A-CZ</h2>
-      <p class="cz-card-subtitle">Hartridge Cambox Test Bench</p>
-      <div class="cz-card-actions">
-        <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+    <div class="card-horizontal cz-bg-dark">
+      <div class="card-text">
+        <div class="cz-card-eyebrow">Specialists</div>
+        <h2 class="cz-card-title">HK1400A-CZ</h2>
+        <p class="cz-card-subtitle">Hartridge Cambox Test Bench</p>
+        <div class="cz-card-actions">
+          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+        </div>
       </div>
-      <img src="assets/images/HK1400_transparent.webp" alt="HK1400A-CZ" style="width:60%; margin: 20px auto 0; display:block;">
+      <div class="card-image" style="background:linear-gradient(180deg,#000,#1e1e1e);">
+        <img src="assets/images/HK1400_800.webp" alt="HK1400A-CZ">
+      </div>
     </div>
   </div>
 
