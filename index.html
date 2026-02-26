@@ -1948,24 +1948,25 @@
     background: #146cf7;
     transition: background 0.2s;
   }
-  .cz-card .btn-primary:hover { background: #0d56c9; }
-  .card-horizontal .btn-secondary {
-    font-size: 11px;
-    padding: 9px 18px;
-    letter-spacing: 0.08em;
-    border-radius: 2px;
-    border: 1px solid rgba(10,10,10,0.3);
-    color: #3a3a3a;
-    background: transparent;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Public Sans', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
+  .cz-card .btn-primary:hover { background: #0a46a8; }
+  /* Outline button — dark bg (black/dark cards) */
+  .btn-outline-dark {
+    font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
+    border: 1px solid rgba(245,243,239,0.25); color: rgba(245,243,239,0.55);
+    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
-  .card-horizontal .btn-secondary:hover { border-color: #0a0a0a; color: #000; }
+  .btn-outline-dark:hover { border-color: #f5f3ef; color: #f5f3ef; }
+  /* Outline button — light bg (blue/white cards) */
+  .btn-outline-light {
+    font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
+    border: 1px solid rgba(10,10,10,0.3); color: #3a3a3a;
+    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline-light:hover { border-color: #0a0a0a; color: #000; }
   /* ═══ LAYOUT D — HORIZONTAL GRID ═══ */
   .cz-grid {
     padding: 0 40px 40px;
@@ -2504,7 +2505,7 @@
       <p class="cz-card-subtitle" style="white-space:nowrap;">from compact CRDi to large engine systems</p>
       <div class="cz-card-actions">
         <a href="#" class="btn-primary">Explore the XSeries</a>
-        <a href="#" class="btn-secondary">Download Catalog</a>
+        <a href="#" class="btn-outline-dark">Download Catalog</a>
       </div>
     </div>
     <div class="card-image" style="background:#000;justify-content:flex-start;padding-left:40px;">
@@ -2534,7 +2535,7 @@
         <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Standalone CRDi Test Bench</p>
         <div class="cz-card-actions">
           <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
-          <a href="#" class="btn-secondary" style="border-color:rgba(10,10,10,0.25);color:#0a0a0a;">Order</a>
+          <a href="#" class="btn-outline-light">Order</a>
         </div>
       </div>
       <div class="card-image" style="background:linear-gradient(180deg,#eaf2fc,#f5f5f5);">
