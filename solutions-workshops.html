@@ -3414,12 +3414,11 @@
       <button class="filter-btn" data-fuel="gasoline">Gasoline</button>
     </div>
     <div class="filter-sep"></div>
-    <button class="filter-btn" id="act-toggle">Filters</button>
-    <span class="filter-count" id="filter-count">— Filters</span>
+    <button class="filter-btn" id="act-toggle">Actuator</button>
+    <span class="filter-count" id="filter-count">Filters</span>
   </div>
   <div class="act-drawer" id="act-drawer">
     <div class="act-drawer-inner">
-      <button class="act-reset" id="act-reset">× Reset</button>
       <div class="act-pills">
         <button class="act-pill" data-act="crdi">CRDi</button>
         <button class="act-pill" data-act="crp">CRp</button>
@@ -3431,6 +3430,7 @@
         <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
         <button class="act-pill" data-act="heui">HEUi</button>
       </div>
+      <button class="act-reset" id="act-reset">× Reset</button>
     </div>
   </div>
 </div>
@@ -3767,9 +3767,9 @@
       const any = [...cards].some(c => c.dataset.market === d.dataset.section && c.style.display !== "none");
       d.style.display = any ? "" : "none";
     });
-    countEl.textContent = n + " Filters";
+    countEl.textContent = "Filters";
     document.getElementById("act-reset").classList.toggle("visible", activeActs.size > 0);
-    actToggle.textContent = activeActs.size > 0 ? "Filters (" + activeActs.size + ")" : "Filters";
+    actToggle.textContent = activeActs.size > 0 ? "Actuator (" + activeActs.size + ")" : "Actuator";
     actToggle.classList.toggle("active", drawerOpen || activeActs.size > 0);
   }
 
