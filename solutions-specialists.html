@@ -79,7 +79,7 @@
     --black: #0a0a0a; --white: #f5f5f5; --carbon: #0a0a0a;
     --steel: #3e3e3d; --mid: #868685; --light: #dadadb;
     --accent: #ED1C24; --accent2: #146cf7;
-    --nav-h: 68px; --fbar-h: 52px;
+    --nav-h: 68px; --fbar-h: 52px; --drawer-h: 48px;
   }
   html { scroll-behavior: smooth; }
   body { font-family: "Public Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
@@ -446,7 +446,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* ─── HERO ─── */
+  
 /* ─── MEGA MENU ─── */
   .nav-item { position: relative; }
 
@@ -2234,7 +2234,7 @@
   }
   .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
 
-  /* ─── LOGIN
+  
 /* ─── LOGIN DROPDOWN ─── */
   .login-wrap {
     position: relative;
@@ -2318,7 +2318,7 @@
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
-  /* ─── GRID CARD
+  
 
   /* ─── FILTER BAR ─── */
   .filter-bar {
@@ -2341,83 +2341,62 @@
   }
   .filter-btn:hover { color: rgba(245,243,239,0.8); }
   .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
-  .filter-btn.act-toggle.open {
-    color: var(--white); background: rgba(255,255,255,0.08);
-    border-radius: 2px 2px 0 0;
-  }
   .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.22); }
 
   /* ─── ACTUATOR DRAWER ─── */
   .act-drawer {
-    overflow: hidden; max-height: 0;
-    transition: max-height 0.25s ease, border-color 0.25s;
+    height: 0; overflow: hidden;
+    transition: height 0.25s cubic-bezier(0.4,0,0.2,1), border-color 0.25s;
     border-top: 1px solid transparent;
-    background: rgba(10,10,10,0.96);
   }
   .act-drawer.open {
-    max-height: 60px;
+    height: var(--drawer-h);
     border-top-color: rgba(255,255,255,0.06);
   }
   .act-drawer-inner {
     padding: 0 80px; max-width: 1440px; margin: 0 auto;
-    display: flex; align-items: center; height: 48px; gap: 0;
+    display: flex; align-items: center; height: var(--drawer-h); gap: 0;
   }
-  .act-pills { display: flex; align-items: center; gap: 6px; flex: 1; }
-  .act-pill {
-    background: transparent; border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px; cursor: pointer;
-    font-family: "DM Mono", monospace; font-size: 9px;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,243,239,0.35); padding: 4px 10px;
-    transition: all 0.15s;
-  }
-  .act-pill:hover { border-color: rgba(255,255,255,0.3); color: rgba(245,243,239,0.7); }
-  .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.35); color: var(--white); }
   .act-reset {
-    background: transparent; border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px; cursor: pointer;
-    font-family: "DM Mono", monospace; font-size: 9px;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,243,239,0.3); padding: 4px 10px;
-    transition: all 0.15s; margin-right: 12px;
-    opacity: 0; pointer-events: none;
+    background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer;
+    font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,243,239,0.3); padding: 4px 10px; margin-right: 12px;
+    opacity: 0; pointer-events: none; transition: all 0.15s; white-space: nowrap;
   }
   .act-reset.visible { opacity: 1; pointer-events: auto; color: rgba(245,243,239,0.5); }
   .act-reset:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+  .act-pills { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .act-pill {
+    background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer;
+    font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,243,239,0.35); padding: 4px 10px; transition: all 0.15s; white-space: nowrap;
+  }
+  .act-pill:hover { border-color: rgba(255,255,255,0.3); color: rgba(245,243,239,0.7); }
+  .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.35); color: var(--white); }
 
   /* ─── HERO ─── */
   .sol-hero {
-    margin-top: calc(var(--nav-h) + var(--fbar-h));
     position: relative; overflow: hidden; min-height: 480px;
     display: flex; flex-direction: column; justify-content: flex-end;
-    transition: margin-top 0.25s ease;
   }
-  .sol-hero.act-open { margin-top: calc(var(--nav-h) + var(--fbar-h) + 48px); }
   .sol-hero-bg { position: absolute; inset: 0; background: #0d0d0d; }
   .sol-hero-bg.specialists { background: linear-gradient(160deg,#091624 0%,#0d0d10 60%); }
   .sol-hero-bg.workshops   { background: linear-gradient(160deg,#160a0a 0%,#0d0d0d 60%); }
   .sol-hero-bg.large       { background: linear-gradient(160deg,#0a1608 0%,#0d0d0d 60%); }
   .sol-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg,transparent 20%,rgba(10,10,10,0.75) 100%); }
   .sol-hero-content {
-    position: relative; z-index: 2;
-    max-width: 1440px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 2; max-width: 1440px; margin: 0 auto; width: 100%;
     padding: 60px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
   }
   .sol-hero-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-  .sol-hero-title {
-    font-family: "Gunterz", sans-serif;
-    font-size: 42px; line-height: 0.92; letter-spacing: 0.02em; color: var(--white);
-  }
+  .sol-hero-title { font-family: "Gunterz", sans-serif; font-size: 42px; line-height: 0.92; letter-spacing: 0.02em; color: var(--white); }
   .sol-hero-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1px rgba(245,243,239,0.35); }
   .sol-hero-desc { font-size: 15px; font-weight: 200; line-height: 1.7; color: rgba(245,243,239,0.5); margin-bottom: 28px; max-width: 420px; }
-  .sol-hero-actions { display: flex; gap: 12px; align-items: center; }
 
   /* ─── CATALOG ─── */
   .sol-catalog { max-width: 1440px; margin: 0 auto; padding: 48px 80px 0; }
   .sol-section-divider { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding-top: 32px; margin-bottom: 24px; grid-column: 1/-1; }
   .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-
-  /* ─── PRODUCT CARD ─── */
   .prod-card { background: #111; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s; }
   .prod-card:hover { background: #181818; }
   .prod-card-image { aspect-ratio: 4/3; background: #0d0d0d; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 24px 24px 0; }
@@ -2425,8 +2404,7 @@
   .prod-card-image.bg-blue { background: linear-gradient(180deg,#eaf2fc,#f0f0f0); }
   .prod-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
   .prod-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.35); margin-bottom: 8px; }
-  .prod-card-eyebrow.red { color: var(--accent); }
-  .prod-card-eyebrow.blue { color: var(--accent2); }
+  .prod-card-eyebrow.red { color: var(--accent); } .prod-card-eyebrow.blue { color: var(--accent2); }
   .prod-card-name { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 6px; }
   .prod-card-name.dark { color: #0a0a0a; }
   .prod-card-desc { font-size: 13px; font-weight: 200; line-height: 1.5; color: rgba(245,243,239,0.38); flex: 1; margin-bottom: 20px; }
@@ -2435,8 +2413,7 @@
   .prod-card-footer.light { border-top-color: rgba(10,10,10,0.08); }
   .prod-card-cta { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.35); transition: color 0.2s; }
   .prod-card-cta.dark { color: rgba(10,10,10,0.38); }
-  .prod-card:hover .prod-card-cta { color: var(--white); }
-  .prod-card:hover .prod-card-cta.dark { color: #0a0a0a; }
+  .prod-card:hover .prod-card-cta { color: var(--white); } .prod-card:hover .prod-card-cta.dark { color: #0a0a0a; }
   .prod-card-tag { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,243,239,0.18); padding: 3px 8px; border: 1px solid rgba(255,255,255,0.07); border-radius: 2px; }
   .prod-card-tag.dark { color: rgba(10,10,10,0.3); border-color: rgba(10,10,10,0.1); }
 
@@ -2447,7 +2424,7 @@
   .featured-card.active { display: grid; }
   .featured-card-text { padding: 56px; display: flex; flex-direction: column; justify-content: center; }
   .featured-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  .featured-title { font-family: "Gunterz", sans-serif; font-size: clamp(32px,4vw,52px); line-height: 0.93; letter-spacing: 0.02em; color: var(--white); margin-bottom: 4px; }
+  .featured-title { font-family: "Gunterz", sans-serif; font-size: clamp(32px,4vw,52px); line-height: 0.93; color: var(--white); margin-bottom: 4px; }
   .featured-subtitle { font-size: 14px; font-weight: 200; line-height: 1.65; color: rgba(245,243,239,0.45); max-width: 360px; }
   .featured-specs { display: flex; gap: 32px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 20px; }
   .spec-val { font-family: "Gunterz", sans-serif; font-size: 22px; color: var(--white); line-height: 1; }
@@ -2468,7 +2445,7 @@
   .ed-card-icon svg { color: rgba(245,243,239,0.5); }
   .ed-card-content { margin-top: 40px; }
   .ed-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.4); margin-bottom: 8px; }
-  .ed-card-title { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 8px; }
+  .ed-card-title { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; color: var(--white); margin-bottom: 8px; }
   .ed-card-sub { font-size: 13px; font-weight: 200; color: rgba(245,243,239,0.45); line-height: 1.55; margin-bottom: 20px; }
   .ed-card-cta { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.5); }
 
@@ -2573,7 +2550,7 @@
     align-items: center;
   }
 
-  /* ─── FOOTER ─── */
+  
 /* ─── FOOTER ─── */
   footer {
     background: var(--black);
@@ -3265,7 +3242,7 @@
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
-  /* ─── GRID CARD
+  
 
 </style>
 </head>
@@ -3421,8 +3398,8 @@
 </div>
 </nav>
 
-<!-- ═══ FILTER BAR ═══ -->
-<div class="filter-bar" id="filter-bar">
+<!-- FILTER BAR -->
+<div class="filter-bar">
   <div class="filter-bar-row">
     <div class="filter-group">
       <button class="filter-btn " onclick="location.href='solutions.html'">All Systems</button>
@@ -3437,10 +3414,9 @@
       <button class="filter-btn" data-fuel="gasoline">Gasoline</button>
     </div>
     <div class="filter-sep"></div>
-    <button class="filter-btn act-toggle" id="act-toggle">Actuator</button>
-    <span class="filter-count" id="filter-count">— Systems</span>
+    <button class="filter-btn" id="act-toggle">Filters</button>
+    <span class="filter-count" id="filter-count">— Filters</span>
   </div>
-  <!-- Actuator drawer -->
   <div class="act-drawer" id="act-drawer">
     <div class="act-drawer-inner">
       <button class="act-reset" id="act-reset">× Reset</button>
@@ -3459,8 +3435,8 @@
   </div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<div class="sol-hero" id="sol-hero">
+<!-- HERO -->
+<div class="sol-hero">
   <div class="sol-hero-bg specialists"></div>
   <div class="sol-hero-overlay"></div>
   <div class="sol-hero-content">
@@ -3470,154 +3446,119 @@
     </div>
     <div>
       <p class="sol-hero-desc">Specialist-grade injection test systems for diagnostic centers and authorised service points. Full coverage across CRDi, CRP, EUI, EUP and beyond.</p>
-      <div class="sol-hero-actions">
-        <a href="#" class="btn-primary">Download Full Catalog</a>
-      </div>
+      <a href="#" class="btn-primary">Download Full Catalog</a>
     </div>
   </div>
 </div>
 
-<!-- ═══ CATALOG ═══ -->
+<!-- CATALOG -->
 <div class="sol-catalog">
-  <div class="sol-grid" id="sol-grid">
+  <div class="sol-grid">
     <div class="sol-section-divider" data-section="specialists">Specialists — 11 Systems</div>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp eui eup">
-      <div class="prod-card-image bg-blue" style="min-height:200px;"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-image bg-blue"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
         <div class="prod-card-name dark">MTBR-X</div>
         <div class="prod-card-desc dark">Multi-System Diesel Test Bench. CRDi, CRP, EUI, EUP.</div>
-        <div class="prod-card-footer light">
-          <span class="prod-card-cta dark">Discover →</span>
-          <span class="prod-card-tag dark">Diesel</span>
-        </div>
+        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crp engine">
-      <div class="prod-card-image bg-blue" style="min-height:200px;"></div>
+      <div class="prod-card-image bg-blue"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
         <div class="prod-card-name dark">PTBR-X</div>
         <div class="prod-card-desc dark">Pump Test Bench. Inline and rotary diesel pumps.</div>
-        <div class="prod-card-footer light">
-          <span class="prod-card-cta dark">Discover →</span>
-          <span class="prod-card-tag dark">Diesel</span>
-        </div>
+        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui heui">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">LTBR-X</div>
         <div class="prod-card-desc">Large Injector Test Bench. Heavy-duty and truck systems.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Diesel</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
-      <div class="prod-card-image bg-blue" style="min-height:200px;"><img src="assets/images/ITBRX_800.webp" alt="ITB4R-X"></div>
+      <div class="prod-card-image bg-blue"><img src="assets/images/ITBRX_800.webp" alt="ITB4R-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
         <div class="prod-card-name dark">ITB4R-X</div>
         <div class="prod-card-desc dark">Standalone CRDi Injector Test Bench.</div>
-        <div class="prod-card-footer light">
-          <span class="prod-card-cta dark">Discover →</span>
-          <span class="prod-card-tag dark">Diesel</span>
-        </div>
+        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
-      <div class="prod-card-image bg-blue" style="min-height:200px;"></div>
+      <div class="prod-card-image bg-blue"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
         <div class="prod-card-name dark">ITB1R-X</div>
         <div class="prod-card-desc dark">Single Injector CRDi Test Bench.</div>
-        <div class="prod-card-footer light">
-          <span class="prod-card-cta dark">Discover →</span>
-          <span class="prod-card-tag dark">Diesel</span>
-        </div>
+        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">CTBR-X</div>
         <div class="prod-card-desc">Common Rail Test Bench. High-pressure systems.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Diesel</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">DGFR-X</div>
         <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Diesel</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui eup">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">ETBR-X</div>
         <div class="prod-card-desc">EUI/EUP Unit Injector Test Bench.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Diesel</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="heui engine">
-      <div class="prod-card-image" style="min-height:200px;"><img src="assets/images/HK1400_800.webp" alt="HTBR-X"></div>
+      <div class="prod-card-image"><img src="assets/images/HK1400_800.webp" alt="HTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">HTBR-X</div>
         <div class="prod-card-desc">Hartridge-Compatible Diagnostic Bench.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Diesel</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="efi gdi-inj">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">GTB4R-X</div>
         <div class="prod-card-desc">Gasoline 4-Rail Test Bench.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Gasoline</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">GDU4R-X</div>
         <div class="prod-card-desc">Gasoline Direct Injection Unit Tester.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover →</span>
-          <span class="prod-card-tag">Gasoline</span>
-        </div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
       </div>
     </a>
 
   </div>
 </div>
 
-<!-- ═══ FEATURED ═══ -->
+<!-- FEATURED -->
 <div class="sol-featured-wrap">
   <div class="sol-featured-label">Featured System</div>
   <div class="featured-card" id="featured-all">
@@ -3626,10 +3567,7 @@
       <h2 class="featured-title">MTBR-X</h2>
       <p class="featured-subtitle">The most versatile diesel injection test bench in the XSeries range.</p>
       <div class="featured-specs"><div><div class="spec-val">6</div><div class="spec-label">Fuel Systems</div></div><div><div class="spec-val">98+</div><div class="spec-label">Countries</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
-      <div class="featured-actions">
-        <a href="#" class="btn-primary">Discover MTBR-X</a>
-        <a href="#" class="btn-outline-dark">Spec Sheet</a>
-      </div>
+      <div class="featured-actions"><a href="#" class="btn-primary">Discover MTBR-X</a><a href="#" class="btn-outline-dark">Spec Sheet</a></div>
     </div>
     <div class="featured-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
   </div>
@@ -3637,12 +3575,9 @@
     <div class="featured-card-text">
       <div class="featured-eyebrow">Specialists · Pump Test Bench</div>
       <h2 class="featured-title">PTBR-X</h2>
-      <p class="featured-subtitle">Dedicated inline and rotary diesel pump test bench for specialist environments.</p>
+      <p class="featured-subtitle">Dedicated inline and rotary diesel pump test bench.</p>
       <div class="featured-specs"><div><div class="spec-val">CRDi</div><div class="spec-label">Compatible</div></div><div><div class="spec-val">Inline</div><div class="spec-label">+ Rotary</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
-      <div class="featured-actions">
-        <a href="#" class="btn-primary">Discover PTBR-X</a>
-        <a href="#" class="btn-outline-dark">Spec Sheet</a>
-      </div>
+      <div class="featured-actions"><a href="#" class="btn-primary">Discover PTBR-X</a><a href="#" class="btn-outline-dark">Spec Sheet</a></div>
     </div>
     <div class="featured-card-image"><div class="feat-img-pending"><span>Image Pending</span></div></div>
   </div>
@@ -3652,10 +3587,7 @@
       <h2 class="featured-title">DSR-X</h2>
       <p class="featured-subtitle">Essential diesel service station for high-volume workshops.</p>
       <div class="featured-specs"><div><div class="spec-val">Diesel</div><div class="spec-label">Focused</div></div><div><div class="spec-val">Compact</div><div class="spec-label">Footprint</div></div><div><div class="spec-val">Easy</div><div class="spec-label">Operation</div></div></div>
-      <div class="featured-actions">
-        <a href="#" class="btn-primary">Discover DSR-X</a>
-        <a href="#" class="btn-outline-dark">Spec Sheet</a>
-      </div>
+      <div class="featured-actions"><a href="#" class="btn-primary">Discover DSR-X</a><a href="#" class="btn-outline-dark">Spec Sheet</a></div>
     </div>
     <div class="featured-card-image"><div class="feat-img-pending"><span>Image Pending</span></div></div>
   </div>
@@ -3665,16 +3597,13 @@
       <h2 class="featured-title">LTBR-X</h2>
       <p class="featured-subtitle">Large injector test bench for heavy-duty, truck and marine systems.</p>
       <div class="featured-specs"><div><div class="spec-val">High Flow</div><div class="spec-label">Capacity</div></div><div><div class="spec-val">Truck</div><div class="spec-label">+ Marine</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
-      <div class="featured-actions">
-        <a href="#" class="btn-primary">Discover LTBR-X</a>
-        <a href="#" class="btn-outline-dark">Spec Sheet</a>
-      </div>
+      <div class="featured-actions"><a href="#" class="btn-primary">Discover LTBR-X</a><a href="#" class="btn-outline-dark">Spec Sheet</a></div>
     </div>
     <div class="featured-card-image"><div class="feat-img-pending"><span>Image Pending</span></div></div>
   </div>
 </div>
 
-<!-- ═══ EDITORIAL ═══ -->
+<!-- EDITORIAL -->
 <div class="sol-editorial">
   <div class="sol-editorial-label">Explore More</div>
   <div class="sol-editorial-grid">
@@ -3688,7 +3617,7 @@
     </a>
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a0a0a 0%,#1a0d0d 50%,#111 100%);">
       <div class="ed-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-      <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation & R&D</div><div class="ed-card-title">Engineering Forward</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation & R&amp;D</div><div class="ed-card-title">Engineering Forward</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
     </a>
   </div>
 </div>
@@ -3833,82 +3762,70 @@
       <div class="footer-crafted">
         Crafted by <a href="https://www.eternaloptimists.com" target="_blank">Eternal Optimists</a>
       </div>
-
-</html
+    </div>
+  </div>
+</footer>
 
 <script>
-  
-  
 
-  // ── Featured ──
-  const activeMarket = "specialists";
+  // Featured
   document.querySelectorAll(".featured-card").forEach(c => c.classList.remove("active"));
-  const fc = document.getElementById("featured-" + activeMarket) || document.getElementById("featured-all");
-  if (fc) fc.classList.add("active");
+  (document.getElementById("featured-specialists") || document.getElementById("featured-all")).classList.add("active");
 
-  // ── Actuator drawer toggle ──
+  // Actuator drawer toggle
   const actToggle = document.getElementById("act-toggle");
   const actDrawer = document.getElementById("act-drawer");
-  const solHero   = document.getElementById("sol-hero");
   let drawerOpen = false;
-
   actToggle.addEventListener("click", () => {
     drawerOpen = !drawerOpen;
     actDrawer.classList.toggle("open", drawerOpen);
-    actToggle.classList.toggle("open", drawerOpen);
-    solHero.classList.toggle("act-open", drawerOpen);
+    actToggle.classList.toggle("active", drawerOpen);
   });
 
-  // ── Filters ──
+  // Filters
   const fuelBtns = document.querySelectorAll("[data-fuel]");
-  const cards    = document.querySelectorAll(".prod-card[data-market]");
+  const cards    = document.querySelectorAll(".prod-card");
   const countEl  = document.getElementById("filter-count");
   let activeFuel = "all";
   let activeActs = new Set();
 
   function applyFilters() {
-    let visible = 0;
+    let n = 0;
     cards.forEach(c => {
       const fuelOk = activeFuel === "all" || c.dataset.fuel === activeFuel;
-      const cActs  = c.dataset.act ? c.dataset.act.split(" ") : [];
+      const cActs  = (c.dataset.act || "").split(" ");
       const actOk  = activeActs.size === 0 || [...activeActs].some(a => cActs.includes(a));
       const show   = fuelOk && actOk;
       c.style.display = show ? "" : "none";
-      if (show) visible++;
+      if (show) n++;
     });
     document.querySelectorAll(".sol-section-divider").forEach(d => {
-      const hasVis = [...cards].some(c => c.dataset.market === d.dataset.section && c.style.display !== "none");
-      d.style.display = hasVis ? "" : "none";
+      const any = [...cards].some(c => c.dataset.market === d.dataset.section && c.style.display !== "none");
+      d.style.display = any ? "" : "none";
     });
-    countEl.textContent = visible + " System" + (visible !== 1 ? "s" : "");
-    const resetBtn = document.getElementById("act-reset");
-    resetBtn.classList.toggle("visible", activeActs.size > 0);
-    // Show active count on toggle button
-    actToggle.textContent = activeActs.size > 0 ? `Actuator (${activeActs.size})` : "Actuator";
-    actToggle.classList.toggle("active", activeActs.size > 0);
+    countEl.textContent = n + " Filters";
+    document.getElementById("act-reset").classList.toggle("visible", activeActs.size > 0);
+    actToggle.textContent = activeActs.size > 0 ? "Filters (" + activeActs.size + ")" : "Filters";
+    actToggle.classList.toggle("active", drawerOpen || activeActs.size > 0);
   }
 
   fuelBtns.forEach(b => b.addEventListener("click", () => {
     fuelBtns.forEach(x => x.classList.remove("active"));
     b.classList.add("active"); activeFuel = b.dataset.fuel; applyFilters();
   }));
-
-  document.querySelectorAll(".act-pill").forEach(p => {
-    p.addEventListener("click", () => {
-      const act = p.dataset.act;
-      if (activeActs.has(act)) { activeActs.delete(act); p.classList.remove("active"); }
-      else { activeActs.add(act); p.classList.add("active"); }
-      applyFilters();
-    });
-  });
-
+  document.querySelectorAll(".act-pill").forEach(p => p.addEventListener("click", () => {
+    const a = p.dataset.act;
+    if (activeActs.has(a)) { activeActs.delete(a); p.classList.remove("active"); }
+    else { activeActs.add(a); p.classList.add("active"); }
+    applyFilters();
+  }));
   document.getElementById("act-reset").addEventListener("click", () => {
     activeActs.clear();
     document.querySelectorAll(".act-pill").forEach(p => p.classList.remove("active"));
     applyFilters();
   });
-
   applyFilters();
+
 </script>
 
 </body>
