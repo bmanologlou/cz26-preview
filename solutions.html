@@ -353,6 +353,8 @@
   .prod-card-tag.dark { color: rgba(10,10,10,0.3); border-color: rgba(10,10,10,0.1); }
 
   /* ─── FEATURED ─── */
+  .featured-card { display: none; }
+  .featured-card.active { display: grid; }
   .sol-featured-wrap {
     max-width: 1440px; margin: 12px auto 0; padding: 0 80px;
   }
@@ -937,34 +939,58 @@
 <!-- ═══ FEATURED — MTBR-X ═══ -->
 <div class="sol-featured-wrap">
   <div class="sol-featured-label">Featured System</div>
-  <div class="featured-card">
-    <div class="featured-card-text">
-      <div class="featured-eyebrow">Flagship · Multi-System Platform</div>
-      <h2 class="featured-title">MTBR-X</h2>
-      <p class="featured-subtitle">The most versatile diesel injection test bench in the XSeries range. Engineered for specialists who demand complete diagnostic capability.</p>
-      <div class="featured-specs">
-        <div>
-          <div class="spec-val">6</div>
-          <div class="spec-label">Fuel Systems</div>
-        </div>
-        <div>
-          <div class="spec-val">98+</div>
-          <div class="spec-label">Countries</div>
-        </div>
-        <div>
-          <div class="spec-val">CloudX</div>
-          <div class="spec-label">Connected</div>
+    <div class="featured-card" id="featured-all">
+      <div class="featured-card-text">
+        <div class="featured-eyebrow">Flagship · Multi-System Platform</div>
+        <h2 class="featured-title">MTBR-X</h2>
+        <p class="featured-subtitle">The most versatile diesel injection test bench in the XSeries range. Engineered for specialists who demand complete diagnostic capability.</p>
+        <div class="featured-specs"><div><div class="spec-val">6</div><div class="spec-label">Fuel Systems</div></div><div><div class="spec-val">98+</div><div class="spec-label">Countries</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
+        <div class="featured-actions">
+          <a href="#" class="btn-primary">Discover MTBR-X</a>
+          <a href="#" class="btn-outline-dark">Spec Sheet</a>
         </div>
       </div>
-      <div class="featured-actions">
-        <a href="#" class="btn-primary">Discover MTBR-X</a>
-        <a href="#" class="btn-outline-dark">Spec Sheet</a>
+      <div class="featured-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+    </div>
+    <div class="featured-card" id="featured-specialists">
+      <div class="featured-card-text">
+        <div class="featured-eyebrow">Specialists · Pump Test Bench</div>
+        <h2 class="featured-title">PTBR-X</h2>
+        <p class="featured-subtitle">Dedicated inline and rotary diesel pump test bench. Precision diagnostics for the most demanding specialist environments.</p>
+        <div class="featured-specs"><div><div class="spec-val">CRDi</div><div class="spec-label">Compatible</div></div><div><div class="spec-val">Inline</div><div class="spec-label">+ Rotary</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
+        <div class="featured-actions">
+          <a href="#" class="btn-primary">Discover PTBR-X</a>
+          <a href="#" class="btn-outline-dark">Spec Sheet</a>
+        </div>
       </div>
+      <div class="featured-card-image"><div style="width:68%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.07);border-radius:2px;margin:0 auto;"><span style='font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.15);'>Image Pending</span></div></div>
     </div>
-    <div class="featured-card-image">
-      <img src="assets/images/MTBRX_800.webp" alt="MTBR-X">
+    <div class="featured-card" id="featured-workshops">
+      <div class="featured-card-text">
+        <div class="featured-eyebrow">Workshops · Diesel Service Station</div>
+        <h2 class="featured-title">DSR-X</h2>
+        <p class="featured-subtitle">The essential diesel service and repair station for high-volume workshops. Fast, reliable and built for daily professional use.</p>
+        <div class="featured-specs"><div><div class="spec-val">Diesel</div><div class="spec-label">Focused</div></div><div><div class="spec-val">Compact</div><div class="spec-label">Footprint</div></div><div><div class="spec-val">Easy</div><div class="spec-label">Operation</div></div></div>
+        <div class="featured-actions">
+          <a href="#" class="btn-primary">Discover DSR-X</a>
+          <a href="#" class="btn-outline-dark">Spec Sheet</a>
+        </div>
+      </div>
+      <div class="featured-card-image"><div style="width:68%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.07);border-radius:2px;margin:0 auto;"><span style='font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.15);'>Image Pending</span></div></div>
     </div>
-  </div>
+    <div class="featured-card" id="featured-large">
+      <div class="featured-card-text">
+        <div class="featured-eyebrow">Large Engines · Heavy-Duty Bench</div>
+        <h2 class="featured-title">LTBR-X</h2>
+        <p class="featured-subtitle">Large injector test bench for heavy-duty and truck systems. Built for marine, industrial and commercial diesel applications.</p>
+        <div class="featured-specs"><div><div class="spec-val">High Flow</div><div class="spec-label">Capacity</div></div><div><div class="spec-val">Truck</div><div class="spec-label">+ Marine</div></div><div><div class="spec-val">CloudX</div><div class="spec-label">Connected</div></div></div>
+        <div class="featured-actions">
+          <a href="#" class="btn-primary">Discover LTBR-X</a>
+          <a href="#" class="btn-outline-dark">Spec Sheet</a>
+        </div>
+      </div>
+      <div class="featured-card-image"><div style="width:68%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.07);border-radius:2px;margin:0 auto;"><span style='font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.15);'>Image Pending</span></div></div>
+    </div>
 </div>
 
 <!-- ═══ EDITORIAL STRIP ═══ -->
@@ -1106,6 +1132,10 @@
     } else {
       bSpec.style.display = "none";
     }
+    // Switch featured card
+    document.querySelectorAll(".featured-card").forEach(c => c.classList.remove("active"));
+    const fc = document.getElementById("featured-" + market) || document.getElementById("featured-all");
+    if (fc) fc.classList.add("active");
   }
 
   function applyFilters() {
