@@ -188,6 +188,56 @@
     border: none; border-top: 1px solid rgba(255,255,255,0.07);
   }
 
+  /* ─── INTRO ─── */
+  .sol-intro {
+    max-width: 1440px; margin: 0 auto;
+    padding: 0 80px 56px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .sol-intro-text {
+    font-size: 16px; font-weight: 200; line-height: 1.8;
+    color: rgba(245,243,239,0.55);
+  }
+  .sol-intro-text strong {
+    color: rgba(245,243,239,0.85); font-weight: 400;
+  }
+  .sol-brochure {
+    display: flex; flex-direction: column; gap: 12px;
+    align-items: flex-start; padding-top: 4px;
+  }
+  .sol-brochure-label {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.25); margin-bottom: 4px;
+  }
+  .sol-brochure-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; padding: 14px 20px;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 2px;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .sol-brochure-link:hover { border-color: rgba(255,255,255,0.3); }
+  .sol-brochure-icon {
+    width: 32px; height: 32px; border-radius: 2px;
+    background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sol-brochure-icon svg { color: rgba(245,243,239,0.4); }
+  .sol-brochure-info {}
+  .sol-brochure-title {
+    font-size: 13px; font-weight: 400; color: rgba(245,243,239,0.7);
+    display: block; margin-bottom: 2px;
+  }
+  .sol-brochure-meta {
+    font-family: "DM Mono", monospace; font-size: 9px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,243,239,0.25);
+  }
+
   /* ─── FILTER BAR ─── */
   .filter-bar {
     position: sticky; top: var(--nav-h); z-index: 50;
@@ -586,6 +636,34 @@
 
 <hr class="sol-divider">
 
+<!-- ═══ INTRO ═══ -->
+<div class="sol-intro" id="sol-intro">
+  <p class="sol-intro-text" id="intro-text">
+    Carbon Zapp designs and manufactures <strong>precision injection service equipment</strong> for every level of the automotive service industry. From entry-level workshop tools to multi-system specialist platforms, our range covers <strong>Diesel and Gasoline</strong> injection systems — built in Greece, trusted in 98 countries.
+  </p>
+  <div class="sol-brochure">
+    <div class="sol-brochure-label">Downloads</div>
+    <a href="#" class="sol-brochure-link">
+      <div class="sol-brochure-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      </div>
+      <div class="sol-brochure-info">
+        <span class="sol-brochure-title">Full Product Catalog</span>
+        <span class="sol-brochure-meta">PDF · All Systems · 2025</span>
+      </div>
+    </a>
+    <a href="#" class="sol-brochure-link" id="brochure-specific" style="display:none;">
+      <div class="sol-brochure-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      </div>
+      <div class="sol-brochure-info">
+        <span class="sol-brochure-title" id="brochure-specific-title">Specialists Brochure</span>
+        <span class="sol-brochure-meta" id="brochure-specific-meta">PDF · 2025</span>
+      </div>
+    </a>
+  </div>
+</div>
+
 <!-- ═══ FILTER BAR ═══ -->
 <div class="filter-bar">
   <div class="filter-bar-inner">
@@ -894,6 +972,20 @@
     }
   };
 
+  const introContent = {
+    all:         "Carbon Zapp designs and manufactures <strong>precision injection service equipment</strong> for every level of the automotive service industry. From entry-level workshop tools to multi-system specialist platforms, our range covers <strong>Diesel and Gasoline</strong> injection systems — built in Greece, trusted in 98 countries.",
+    specialists: "The Specialists range is Carbon Zapp's most advanced product line. Engineered for <strong>diagnostic centers and authorised service specialists</strong>, these systems deliver complete coverage across CRDi, CRP, EUI, EUP, and gasoline direct injection — with CloudX connectivity built in.",
+    workshops:   "The Workshops range brings <strong>professional-grade injection testing</strong> to high-volume service environments. Compact, reliable and easy to operate — designed for workshops that need speed without compromising on accuracy or result quality.",
+    large:       "Carbon Zapp's Large Engine range addresses the specific demands of <strong>marine, industrial and heavy commercial</strong> diesel injection service. High-flow, high-force systems built to handle the scale that standard equipment cannot."
+  };
+
+  const brochureContent = {
+    all:         null,
+    specialists: { title: "Specialists Range Brochure", meta: "PDF · 11 Systems · 2025" },
+    workshops:   { title: "Workshops Range Brochure",   meta: "PDF · 7 Systems · 2025" },
+    large:       { title: "Large Engines Brochure",     meta: "PDF · 2025" }
+  };
+
   function updateHero(market) {
     const h = heroContent[market] || heroContent.all;
     document.getElementById("hero-eyebrow").textContent = h.eyebrow;
@@ -902,6 +994,18 @@
     document.getElementById("hero-placeholder-label").textContent = h.label;
     const ph = document.getElementById("hero-placeholder");
     ph.className = "sol-hero-img-placeholder" + (h.bg ? " " + h.bg : "");
+    // Intro text
+    document.getElementById("intro-text").innerHTML = introContent[market] || introContent.all;
+    // Specific brochure
+    const bSpec = document.getElementById("brochure-specific");
+    const bc = brochureContent[market];
+    if (bc) {
+      document.getElementById("brochure-specific-title").textContent = bc.title;
+      document.getElementById("brochure-specific-meta").textContent = bc.meta;
+      bSpec.style.display = "";
+    } else {
+      bSpec.style.display = "none";
+    }
   }
 
   function applyFilters() {
