@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions — Carbon Zapp</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('assets/fonts/Switzer-Variable.woff2') format('woff2'),
+         url('assets/fonts/Switzer-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Regular.woff') format('woff');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Italic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Italic.woff') format('woff');
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Medium.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Medium.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-MediumItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-MediumItalic.woff') format('woff');
+    font-weight: 500; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Bold.woff') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BoldItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BoldItalic.woff') format('woff');
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Black.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Black.woff') format('woff');
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BlackItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BlackItalic.woff') format('woff');
+    font-weight: 900; font-style: italic; font-display: swap;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f5f5;
+    --carbon: #0a0a0a;
+    --mid: #868685;
+    --accent: #ED1C24;
+    --accent2: #146cf7;
+    --nav-h: 68px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Public Sans", sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV (reused from index) ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(18px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto; height: 100%;
+    display: flex; align-items: center; padding: 0 80px; gap: 0;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: 48px; }
+  .cz-brandmark-svg { height: 28px; width: auto; color: var(--white); }
+  .cz-logo-svg { height: 18px; width: auto; color: var(--white); }
+  .nav-links { list-style: none; display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
+    color: rgba(245,243,239,0.6); text-decoration: none;
+    padding: 8px 14px; border-radius: 2px; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.3); }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .nav-cta {
+    font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white); text-decoration: none; padding: 8px 18px; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
+  }
+  .nav-cta:hover { border-color: rgba(255,255,255,0.5); }
+
+  /* ─── HERO ─── */
+  .sol-hero {
+    padding: calc(var(--nav-h) + 80px) 80px 80px;
+    max-width: 1440px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: end;
+  }
+  .sol-hero-eyebrow {
+    font-family: "DM Mono", monospace;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  .sol-hero-title {
+    font-family: "Gunterz", sans-serif;
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 0.93; letter-spacing: 0.02em; color: var(--white);
+  }
+  .sol-hero-title em {
+    font-style: italic; color: rgba(245,243,239,0.3);
+  }
+  .sol-hero-desc {
+    font-size: 16px; font-weight: 200; line-height: 1.7;
+    color: rgba(245,243,239,0.5); max-width: 440px; margin-bottom: 32px;
+  }
+  .sol-hero-actions { display: flex; gap: 16px; align-items: center; }
+  .sol-pdf-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(245,243,239,0.35); text-decoration: none; transition: color 0.2s;
+  }
+  .sol-pdf-link:hover { color: var(--white); }
+
+  /* ─── DIVIDER ─── */
+  .sol-divider {
+    max-width: 1440px; margin: 0 auto;
+    border: none; border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* ─── FILTER BAR ─── */
+  .filter-bar {
+    position: sticky; top: var(--nav-h); z-index: 50;
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 80px;
+  }
+  .filter-bar-inner {
+    max-width: 1440px; margin: 0 auto;
+    display: flex; align-items: center; height: 52px;
+  }
+  .filter-group { display: flex; align-items: center; gap: 2px; }
+  .filter-sep {
+    width: 1px; height: 18px;
+    background: rgba(255,255,255,0.1); margin: 0 16px;
+  }
+  .filter-btn {
+    background: transparent; border: none; cursor: pointer;
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(245,243,239,0.35);
+    padding: 6px 14px; border-radius: 2px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .filter-btn:hover { color: rgba(245,243,239,0.8); }
+  .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
+  .filter-count {
+    margin-left: auto;
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,243,239,0.22);
+  }
+
+  /* ─── CATALOG ─── */
+  .sol-catalog {
+    max-width: 1440px; margin: 0 auto;
+    padding: 48px 80px 0;
+  }
+  .sol-section-divider {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.22);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 32px; margin-bottom: 24px;
+    grid-column: 1 / -1;
+  }
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  /* ─── PRODUCT CARD ─── */
+  .prod-card {
+    background: #111; border-radius: 4px; overflow: hidden;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+    transition: background 0.2s;
+  }
+  .prod-card:hover { background: #181818; }
+  .prod-card-image {
+    aspect-ratio: 4/3; background: #0d0d0d;
+    display: flex; align-items: flex-end; justify-content: center;
+    overflow: hidden; padding: 24px 24px 0;
+  }
+  .prod-card-image img {
+    width: 75%; object-fit: contain;
+    object-position: center bottom; display: block;
+  }
+  .prod-card-image.bg-blue { background: linear-gradient(180deg,#eaf2fc,#f0f0f0); }
+  .prod-card-image.bg-light { background: #f0f0f0; }
+  .prod-card-body {
+    padding: 24px; flex: 1; display: flex; flex-direction: column;
+  }
+  .prod-card-eyebrow {
+    font-family: "DM Mono", monospace; font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.35); margin-bottom: 8px;
+  }
+  .prod-card-eyebrow.red { color: var(--accent); }
+  .prod-card-eyebrow.blue { color: var(--accent2); }
+  .prod-card-name {
+    font-family: "Gunterz", sans-serif; font-size: 20px;
+    line-height: 1; letter-spacing: 0.03em; color: var(--white);
+    margin-bottom: 6px;
+  }
+  .prod-card-name.dark { color: #0a0a0a; }
+  .prod-card-desc {
+    font-size: 13px; font-weight: 200; line-height: 1.5;
+    color: rgba(245,243,239,0.38); flex: 1; margin-bottom: 20px;
+  }
+  .prod-card-desc.dark { color: rgba(10,10,10,0.45); }
+  .prod-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .prod-card-footer.light { border-top-color: rgba(10,10,10,0.08); }
+  .prod-card-cta {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(245,243,239,0.35); transition: color 0.2s;
+  }
+  .prod-card-cta.dark { color: rgba(10,10,10,0.38); }
+  .prod-card:hover .prod-card-cta { color: var(--white); }
+  .prod-card:hover .prod-card-cta.dark { color: #0a0a0a; }
+  .prod-card-tag {
+    font-family: "DM Mono", monospace; font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(245,243,239,0.18); padding: 3px 8px;
+    border: 1px solid rgba(255,255,255,0.07); border-radius: 2px;
+  }
+  .prod-card-tag.dark { color: rgba(10,10,10,0.3); border-color: rgba(10,10,10,0.1); }
+
+  /* ─── FEATURED ─── */
+  .sol-featured-wrap {
+    max-width: 1440px; margin: 12px auto 0; padding: 0 80px;
+  }
+  .sol-featured-label {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.22);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 32px 0 24px;
+  }
+  .featured-card {
+    border-radius: 4px; overflow: hidden; background: #000;
+    display: grid; grid-template-columns: 1fr 1fr; min-height: 480px;
+  }
+  .featured-card-text {
+    padding: 64px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .featured-eyebrow {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .featured-title {
+    font-family: "Gunterz", sans-serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 0.93; letter-spacing: 0.02em; color: var(--white);
+    margin-bottom: 16px;
+  }
+  .featured-subtitle {
+    font-size: 15px; font-weight: 200; line-height: 1.65;
+    color: rgba(245,243,239,0.45); margin-bottom: 0; max-width: 380px;
+  }
+  .featured-specs {
+    display: flex; gap: 36px; margin: 36px 0;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .spec-val {
+    font-family: "Gunterz", sans-serif; font-size: 24px;
+    color: var(--white); line-height: 1;
+  }
+  .spec-label {
+    font-family: "DM Mono", monospace; font-size: 9px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(245,243,239,0.28); margin-top: 5px;
+  }
+  .featured-actions { display: flex; gap: 12px; }
+  .featured-card-image {
+    display: flex; align-items: flex-end; justify-content: center;
+    background: #000; padding: 48px 40px 0; overflow: hidden;
+  }
+  .featured-card-image img {
+    width: 80%; object-fit: contain; object-position: center bottom; display: block;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    display: inline-flex; align-items: center;
+    background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; padding: 11px 22px; border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #c41019; }
+  .btn-outline-dark {
+    display: inline-flex; align-items: center;
+    border: 1px solid rgba(245,243,239,0.22); color: rgba(245,243,239,0.5);
+    font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; padding: 11px 22px; border-radius: 2px;
+    background: transparent; transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline-dark:hover { border-color: var(--white); color: var(--white); }
+
+  /* ─── BOTTOM CTA ─── */
+  .sol-cta {
+    max-width: 1440px; margin: 80px auto 0;
+    padding: 60px 80px 100px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .sol-cta-label {
+    font-family: "DM Mono", monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,243,239,0.28); margin-bottom: 14px;
+  }
+  .sol-cta-title {
+    font-family: "Gunterz", sans-serif; font-size: 32px;
+    line-height: 1.05; color: var(--white);
+  }
+  .sol-cta-title span { color: var(--accent); }
+  .sol-cta-actions { display: flex; gap: 20px; align-items: center; }
+  .link-arrow {
+    font-size: 13px; font-weight: 300; color: #868685;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .link-arrow:hover { color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-brandmark-svg">
+<g id="XMLID_1678_">
+	<g id="XMLID_1679_">
+		<g id="XMLID_1680_">
+			<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
+				c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
+				c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
+			<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
+				l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56c1.44-2.38,1.44-5.35,0-7.73
+				l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+    <svg viewBox="0 0 961.38 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logo-svg" aria-label="Carbon Zapp">
+<g>
+	<g id="XMLID_1678_">
+		<g id="XMLID_1679_">
+			<g id="XMLID_1680_">
+				<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
+					c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
+					c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
+				<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
+					l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56
+					c1.44-2.38,1.44-5.35,0-7.73l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
+			</g>
+		</g>
+	</g>
+	<g id="XMLID_1375_">
+		<g id="XMLID_1388_">
+			<path id="XMLID_1676_" d="M341.45,82.55c-3.55-1.11-8.03-2.05-13.07-2.05c-11.48,0-14.28,4.48-14.28,19.23
+				c0,15.59,3.07,20.07,14.56,20.07c4.76,0,9.24-0.94,12.98-2.53l1.96,15.31c-4.85,2.25-11.67,3.74-17.74,3.74
+				c-21.56,0-32.3-11.86-32.3-36.69c0-22.97,10.36-35.94,33.6-35.94c5.51,0,12.05,1.22,16.24,2.81L341.45,82.55z"/>
+			<path id="XMLID_1673_" d="M390.66,122.96H369l-3.08,12.05h-20.63l23.24-70h23.34l23.62,70h-21.75L390.66,122.96z M378.05,87.77
+				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.28L378.05,87.77z"/>
+			<path id="XMLID_1398_" d="M464.38,106.83l15.22,28.18h-16.97c-3.52,0-6.7-2.11-8.06-5.35l-8.01-19.01h-7.1v24.36h-19.51V65h26.7
+				c18.76,0,28.28,6.99,28.28,22.68C474.93,97.01,471.1,104.11,464.38,106.83z M446.84,80.59h-7.38v16.04h7.19
+				c5.78,0,7.93-1.39,7.93-8.21C454.58,82.26,452.62,80.59,446.84,80.59z"/>
+			<path id="XMLID_1394_" d="M514.38,135.01h-29.97V65h30.06c16.15,0,24.18,7.18,24.18,18.2c0,7.57-3.54,12.23-9.15,14.75v0.19
+				c7.55,2.34,11.48,7.85,11.48,16.24C540.98,127.08,533.05,135.01,514.38,135.01z M513.73,80.78h-10.55v11.94h10.74
+				c4.48,0,6.06-1.67,6.06-6.15C519.98,82.17,518.3,80.78,513.73,80.78z M514.38,106.44h-11.2v13.17h11.49
+				c4.95,0,6.81-1.4,6.81-6.63C521.47,108.31,519.7,106.44,514.38,106.44z"/>
+			<path id="XMLID_1391_" d="M577.83,136.23c-22.21,0-32.01-11.67-32.01-36.31s9.52-36.13,32.01-36.13
+				c22.49,0,32.01,11.49,32.01,36.13C609.85,125.12,600.33,136.23,577.83,136.23z M577.74,80.59c-8.68,0-11.39,3.54-11.39,19.32
+				c0,15.87,2.81,19.6,11.58,19.6c8.68,0,11.39-3.82,11.39-19.6C589.32,84.04,586.7,80.59,577.74,80.59z"/>
+			<path id="XMLID_1389_" d="M668.28,135.01c-3.28,0-6.35-1.58-8.27-4.22l-20.28-28.08l-4.3-6.24l-0.19,0.08l0.09,7.57v30.9h-17.35
+				V65h10.9c3.34,0,6.47,1.63,8.38,4.39l22.16,31.93l0.19-0.09l-0.19-7.47V65h17.27v70H668.28z"/>
+		</g>
+		<g id="XMLID_1376_">
+			<path id="XMLID_1385_" d="M815.32,122.96h-21.65l-3.08,12.05h-20.63l23.25-70h23.33l23.61,70H818.4L815.32,122.96z M802.73,87.77
+				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.27L802.73,87.77z"/>
+			<path id="XMLID_1382_" d="M871.09,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
+				C900.22,105.05,892,114,871.09,114z M871.09,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
+				C880.05,82.45,878,80.59,871.09,80.59z"/>
+			<path id="XMLID_1379_" d="M932.26,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
+				C961.38,105.05,953.17,114,932.26,114z M932.26,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
+				C941.22,82.45,939.17,80.59,932.26,80.59z"/>
+			<path id="XMLID_1377_" d="M714.95,135.05v-8.1c0-2.69,0.82-5.29,2.35-7.5l21.83-31.34l4.39-5.98l-0.09-0.19h-28.47v-16.9h51.99
+				v9.51c0,2.69-0.82,5.31-2.36,7.5l-20.97,30.04l-4.39,5.88l0.09,0.28h28l-0.28,16.79H714.95z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-item">
+      <a href="index.html">Solutions</a>
+      <div class="mega">
+
+        <!-- Col 1: Systems -->
+        <div class="mega-col">
+          <h5>Systems</h5>
+          <ul class="mega-links mega-links-main">
+            <li><a href="index.html">Specialists</a></li>
+            <li><a href="index.html">Workshops</a></li>
+            <li><a href="index.html">Large Engines</a></li>
+            <li><a href="index.html">Authorized</a></li>
+          </ul>
+          <ul class="mega-links mega-links-small" style="margin-top:10px">
+            <li><a href="index.html">Parts &amp; Supplies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Series -->
+        <div class="mega-col">
+          <h5>XSeries</h5>
+          <ul class="mega-links mega-links-main">
+            <li><a href="index.html">MTBR-X</a></li>
+            <li><a href="index.html">ITBR-X</a></li>
+            <li><a href="index.html">ETBR-X</a></li>
+            <li><a href="index.html">LTBR-X</a></li>
+          </ul>
+          <ul class="mega-links mega-links-small" style="margin-top:10px">
+            <li><a href="index.html">View All Systems</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Discover -->
+        <div class="mega-col">
+          <h5>Discover</h5>
+          <ul class="mega-links mega-links-main">
+            <li><a href="index.html">Explore CZ Tech</a></li>
+            <li><a href="index.html">Watch CZExperts</a></li>
+            <li><a href="index.html">Buy CZ Credits</a></li>
+            <li><a href="index.html">Discover CloudX Platform</a></li>
+          </ul>
+          <ul class="mega-links mega-links-small" style="margin-top:10px">
+            <li><a href="index.html">Download Product Catalog</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </li>
+    <li><a href="index.html">Innovation</a></li>
+    <li><a href="index.html">CloudX</a></li>
+    <li><a href="index.html">News</a></li>
+    <li><a href="index.html">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="index.html" class="btn-store">Store</a>
+    <div class="login-wrap">
+      <button class="btn-login" id="loginToggle" onclick="toggleLogin(event)">Login</button>
+      <div class="login-dropdown" id="loginDropdown">
+        <div class="login-field">
+          <label class="login-field-label">Email</label>
+          <input type="email" class="login-input" placeholder="Enter your email">
+        </div>
+        <div class="login-field">
+          <label class="login-field-label">Password</label>
+          <input type="password" class="login-input" placeholder="Enter your password">
+        </div>
+        <button class="login-submit">Log In</button>
+        <div class="login-links">
+          <a href="index.html" class="login-link">Forgot password?</a>
+          <a href="index.html" class="login-link">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="sol-hero">
+  <div class="sol-hero-left">
+    <div class="sol-hero-eyebrow">Carbon Zapp — Product Range</div>
+    <h1 class="sol-hero-title">
+      BUILT FOR<br>
+      EVERY<br>
+      <em>BENCH.</em>
+    </h1>
+  </div>
+  <div class="sol-hero-right">
+    <p class="sol-hero-desc">
+      From compact workshop benches to specialist diagnostic platforms — every system is engineered around one principle: precision that holds under pressure.
+    </p>
+    <div class="sol-hero-actions">
+      <a href="#" class="btn-primary">Download Full Catalog</a>
+      <a href="#" class="sol-pdf-link">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        PDF · 4.2 MB
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="sol-divider">
+
+<!-- ═══ FILTER BAR ═══ -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">All Systems</button>
+      <button class="filter-btn" data-filter="specialists">Specialists</button>
+      <button class="filter-btn" data-filter="workshops">Workshops</button>
+      <button class="filter-btn" data-filter="large">Large Engines</button>
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-group">
+      <button class="filter-btn active" data-fuel="all">All</button>
+      <button class="filter-btn" data-fuel="diesel">Diesel</button>
+      <button class="filter-btn" data-fuel="gasoline">Gasoline</button>
+    </div>
+    <span class="filter-count" id="filter-count">18 Systems</span>
+  </div>
+</div>
+
+<!-- ═══ CATALOG GRID ═══ -->
+<div class="sol-catalog">
+  <div class="sol-grid" id="sol-grid">
+
+    <!-- ── Specialists ── -->
+    <div class="sol-section-divider" data-section="specialists">Specialists — 11 Systems</div>
+
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image bg-blue">
+        <img src="assets/images/MTBRX_800.webp" alt="MTBR-X">
+      </div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow blue">Flagship · Specialists</div>
+        <div class="prod-card-name dark">MTBR-X</div>
+        <div class="prod-card-desc dark">Multi-System Diesel Test Bench. CRDi, CRP, EUI, EUP.</div>
+        <div class="prod-card-footer light">
+          <span class="prod-card-cta dark">Discover →</span>
+          <span class="prod-card-tag dark">Diesel</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image bg-blue">
+        <img src="assets/images/ITBRX_800.webp" alt="ITB4R-X">
+      </div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow blue">Specialists</div>
+        <div class="prod-card-name dark">ITB4R-X</div>
+        <div class="prod-card-desc dark">Standalone CRDi Injector Test Bench.</div>
+        <div class="prod-card-footer light">
+          <span class="prod-card-cta dark">Discover →</span>
+          <span class="prod-card-tag dark">Diesel</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image">
+        <img src="assets/images/HK1400_800.webp" alt="HK1400A-CZ">
+      </div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">HK1400A-CZ</div>
+        <div class="prod-card-desc">Hartridge Cambox Test Bench.</div>
+        <div class="prod-card-footer">
+          <span class="prod-card-cta">Discover →</span>
+          <span class="prod-card-tag">Diesel</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 8 more Specialists placeholders -->
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Specialists</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+
+    <!-- ── Workshops ── -->
+    <div class="sol-section-divider" data-section="workshops">Workshops — 7 Systems</div>
+
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel">
+      <div class="prod-card-image" style="min-height:200px;"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow red">Workshops</div>
+        <div class="prod-card-name">— Pending</div>
+        <div class="prod-card-desc">Machine name pending.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ═══ FEATURED — MTBR-X ═══ -->
+<div class="sol-featured-wrap">
+  <div class="sol-featured-label">Featured System</div>
+  <div class="featured-card">
+    <div class="featured-card-text">
+      <div class="featured-eyebrow">Flagship · Multi-System Platform</div>
+      <h2 class="featured-title">MTBR-X</h2>
+      <p class="featured-subtitle">The most versatile diesel injection test bench in the XSeries range. Engineered for specialists who demand complete diagnostic capability.</p>
+      <div class="featured-specs">
+        <div>
+          <div class="spec-val">6</div>
+          <div class="spec-label">Fuel Systems</div>
+        </div>
+        <div>
+          <div class="spec-val">98+</div>
+          <div class="spec-label">Countries</div>
+        </div>
+        <div>
+          <div class="spec-val">CloudX</div>
+          <div class="spec-label">Connected</div>
+        </div>
+      </div>
+      <div class="featured-actions">
+        <a href="#" class="btn-primary">Discover MTBR-X</a>
+        <a href="#" class="btn-outline-dark">Spec Sheet</a>
+      </div>
+    </div>
+    <div class="featured-card-image">
+      <img src="assets/images/MTBRX_800.webp" alt="MTBR-X">
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BOTTOM CTA ═══ -->
+<div class="sol-cta">
+  <div>
+    <div class="sol-cta-label">Next Step</div>
+    <h2 class="sol-cta-title">READY TO MOVE <span>FORWARD?</span></h2>
+  </div>
+  <div class="sol-cta-actions">
+    <a href="#" class="btn-primary">Find a Distributor</a>
+    <a href="#" class="link-arrow">Contact Us →</a>
+  </div>
+</div>
+
+<script>
+  const marketBtns = document.querySelectorAll("[data-filter]");
+  const fuelBtns   = document.querySelectorAll("[data-fuel]");
+  const cards      = document.querySelectorAll(".prod-card[data-market]");
+  const dividers   = document.querySelectorAll(".sol-section-divider");
+  const countEl    = document.getElementById("filter-count");
+
+  let activeMarket = "all", activeFuel = "all";
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(c => {
+      const show = (activeMarket === "all" || c.dataset.market === activeMarket)
+                && (activeFuel   === "all" || c.dataset.fuel   === activeFuel);
+      c.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+    dividers.forEach(d => {
+      const sec = d.dataset.section;
+      d.style.display = (activeMarket === "all" || activeMarket === sec) ? "" : "none";
+    });
+    countEl.textContent = visible + " System" + (visible !== 1 ? "s" : "");
+  }
+
+  marketBtns.forEach(b => b.addEventListener("click", () => {
+    marketBtns.forEach(x => x.classList.remove("active"));
+    b.classList.add("active"); activeMarket = b.dataset.filter; applyFilters();
+  }));
+  fuelBtns.forEach(b => b.addEventListener("click", () => {
+    fuelBtns.forEach(x => x.classList.remove("active"));
+    b.classList.add("active"); activeFuel = b.dataset.fuel; applyFilters();
+  }));
+</script>
+
+</body>
+</html>
