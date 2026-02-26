@@ -1946,14 +1946,26 @@
     letter-spacing: 0.08em;
     border-radius: 2px;
     background: #146cf7;
+    transition: background 0.2s;
   }
   .cz-card .btn-primary:hover { background: #0d56c9; }
-  .cz-card .btn-secondary {
+  .card-horizontal .btn-secondary {
     font-size: 11px;
     padding: 9px 18px;
     letter-spacing: 0.08em;
     border-radius: 2px;
+    border: 1px solid rgba(10,10,10,0.3);
+    color: #3a3a3a;
+    background: transparent;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
   }
+  .card-horizontal .btn-secondary:hover { border-color: #0a0a0a; color: #000; }
   /* ═══ LAYOUT D — HORIZONTAL GRID ═══ */
   .cz-grid {
     padding: 0 40px 40px;
