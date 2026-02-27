@@ -2397,25 +2397,20 @@
   .sol-catalog { max-width: 1440px; margin: 0 auto; padding: 48px 80px 0; }
   .sol-section-divider { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding-top: 32px; margin-bottom: 24px; grid-column: 1/-1; }
   .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .prod-card { background: #111; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s; }
-  .prod-card:hover { background: #181818; }
-  .prod-card-image { aspect-ratio: 4/3; background: #0d0d0d; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 24px 24px 0; }
+  .prod-card { background: #f5f5f5; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s, box-shadow 0.2s; }
+  .prod-card:hover { background: #efefef; box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
+  .prod-card-image { aspect-ratio: 4/3; background: #eaeaea; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 24px 24px 0; }
   .prod-card-image img { width: 75%; object-fit: contain; object-position: center bottom; display: block; }
-  .prod-card-image.bg-blue { background: linear-gradient(180deg,#eaf2fc,#f0f0f0); }
+  .prod-card-image.bg-blue { background: linear-gradient(180deg,#dce9f8,#e8e8e8); }
   .prod-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-  .prod-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.35); margin-bottom: 8px; }
+  .prod-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.35); margin-bottom: 8px; }
   .prod-card-eyebrow.red { color: var(--accent); } .prod-card-eyebrow.blue { color: var(--accent2); }
-  .prod-card-name { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 6px; }
-  .prod-card-name.dark { color: #0a0a0a; }
-  .prod-card-desc { font-size: 13px; font-weight: 200; line-height: 1.5; color: rgba(245,243,239,0.38); flex: 1; margin-bottom: 20px; }
-  .prod-card-desc.dark { color: rgba(10,10,10,0.45); }
-  .prod-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
-  .prod-card-footer.light { border-top-color: rgba(10,10,10,0.08); }
-  .prod-card-cta { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.35); transition: color 0.2s; }
-  .prod-card-cta.dark { color: rgba(10,10,10,0.38); }
-  .prod-card:hover .prod-card-cta { color: var(--white); } .prod-card:hover .prod-card-cta.dark { color: #0a0a0a; }
-  .prod-card-tag { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,243,239,0.18); padding: 3px 8px; border: 1px solid rgba(255,255,255,0.07); border-radius: 2px; }
-  .prod-card-tag.dark { color: rgba(10,10,10,0.3); border-color: rgba(10,10,10,0.1); }
+  .prod-card-name { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.03em; color: #0a0a0a; margin-bottom: 8px; }
+  .prod-card-desc { font-size: 13px; font-weight: 400; line-height: 1.5; color: rgba(10,10,10,0.5); flex: 1; margin-bottom: 20px; }
+  .prod-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(10,10,10,0.08); }
+  .prod-card-cta { display: inline-flex; align-items: center; gap: 6px; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,10,10,0.5); transition: color 0.2s; }
+  .prod-card:hover .prod-card-cta { color: #0a0a0a; }
+  .prod-card-tag { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(10,10,10,0.3); padding: 3px 8px; border: 1px solid rgba(10,10,10,0.1); border-radius: 2px; }
 
   /* ─── FEATURED ─── */
   .sol-featured-wrap { max-width: 1440px; margin: 12px auto 0; padding: 0 80px; }
@@ -3321,7 +3316,7 @@
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li class="nav-item">
-      <a href="solutions.html">Solutions</a>
+      <a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">Solutions</a>
       <div class="mega">
 
         <!-- Col 1: Systems -->
@@ -3331,7 +3326,7 @@
             <li><a href="solutions-specialists.html" class="active">Specialists</a></li>
             <li><a href="solutions-workshops.html">Workshops</a></li>
             <li><a href="solutions-large.html">Large Engines</a></li>
-            <li><a href="solutions.html">Authorized</a></li>
+            <li><a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">Authorized</a></li>
           </ul>
           <ul class="mega-links mega-links-small" style="margin-top:10px">
             <li><a href="#">Parts &amp; Supplies</a></li>
@@ -3348,7 +3343,7 @@
             <li><a href="#">LTBR-X</a></li>
           </ul>
           <ul class="mega-links mega-links-small" style="margin-top:10px">
-            <li><a href="solutions.html">View All Systems</a></li>
+            <li><a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">View All Systems</a></li>
           </ul>
         </div>
 
@@ -3406,6 +3401,7 @@
       <button class="filter-btn active" onclick="location.href='solutions-specialists.html'">Specialists</button>
       <button class="filter-btn " onclick="location.href='solutions-workshops.html'">Workshops</button>
       <button class="filter-btn " onclick="location.href='solutions-large.html'">Large Engines</button>
+      <button class="filter-btn" onclick="location.href='solutions-authorized.html'">Authorized</button>
     </div>
     <div class="filter-sep"></div>
     <div class="filter-group">
@@ -3437,7 +3433,9 @@
 
 <!-- HERO -->
 <div class="sol-hero">
-  <div class="sol-hero-bg specialists"></div>
+  <div class="sol-hero-bg specialists">
+    <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="Carbon Zapp XSeries" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.55;">
+  </div>
   <div class="sol-hero-overlay"></div>
   <div class="sol-hero-content">
     <div>
@@ -3459,18 +3457,18 @@
       <div class="prod-card-image bg-blue"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name dark">MTBR-X</div>
-        <div class="prod-card-desc dark">Multi-System Diesel Test Bench. CRDi, CRP, EUI, EUP.</div>
-        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Diesel Test Bench. CRDi, CRP, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crp engine">
       <div class="prod-card-image bg-blue"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name dark">PTBR-X</div>
-        <div class="prod-card-desc dark">Pump Test Bench. Inline and rotary diesel pumps.</div>
-        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Pump Test Bench. Inline and rotary diesel pumps.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui heui">
@@ -3479,25 +3477,25 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">LTBR-X</div>
         <div class="prod-card-desc">Large Injector Test Bench. Heavy-duty and truck systems.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
       <div class="prod-card-image bg-blue"><img src="assets/images/ITBRX_800.webp" alt="ITB4R-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name dark">ITB4R-X</div>
-        <div class="prod-card-desc dark">Standalone CRDi Injector Test Bench.</div>
-        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
+        <div class="prod-card-name">ITB4R-X</div>
+        <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
       <div class="prod-card-image bg-blue"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name dark">ITB1R-X</div>
-        <div class="prod-card-desc dark">Single Injector CRDi Test Bench.</div>
-        <div class="prod-card-footer light"><span class="prod-card-cta dark">Discover →</span><span class="prod-card-tag dark">Diesel</span></div>
+        <div class="prod-card-name">ITB1R-X</div>
+        <div class="prod-card-desc">Single Injector CRDi Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp">
@@ -3506,7 +3504,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">CTBR-X</div>
         <div class="prod-card-desc">Common Rail Test Bench. High-pressure systems.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="gdi-inj gdi-pump">
@@ -3515,7 +3513,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">DGFR-X</div>
         <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui eup">
@@ -3524,7 +3522,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">ETBR-X</div>
         <div class="prod-card-desc">EUI/EUP Unit Injector Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="heui engine">
@@ -3533,7 +3531,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">HTBR-X</div>
         <div class="prod-card-desc">Hartridge-Compatible Diagnostic Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Diesel</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="efi gdi-inj">
@@ -3542,7 +3540,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">GTB4R-X</div>
         <div class="prod-card-desc">Gasoline 4-Rail Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
@@ -3551,7 +3549,7 @@
         <div class="prod-card-eyebrow red">Specialists</div>
         <div class="prod-card-name">GDU4R-X</div>
         <div class="prod-card-desc">Gasoline Direct Injection Unit Tester.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover →</span><span class="prod-card-tag">Gasoline</span></div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
       </div>
     </a>
 
