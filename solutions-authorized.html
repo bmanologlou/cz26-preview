@@ -2375,8 +2375,9 @@
   .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.35); color: var(--white); }
 
   /* ─── HERO ─── */
+  .sol-hero-wrap { max-width: 1440px; margin: 0 auto; padding: 32px 80px 0; }
   .sol-hero {
-    border-radius: 0; overflow: hidden; background: #0a0a0a;
+    border-radius: 4px; overflow: hidden; background: #0a0a0a;
     display: grid; grid-template-columns: 2fr 3fr;
     min-height: 320px; max-height: 380px;
   }
@@ -3316,8 +3317,8 @@
 
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li class="nav-item">
-      <a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))" class="active" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">Solutions</a>
+    <li class="nav-item" id="solutions-nav-item">
+      <a href="solutions.html" class="active">Solutions</a>
       <div class="mega">
 
         <!-- Col 1: Systems -->
@@ -3327,7 +3328,7 @@
             <li><a href="solutions-specialists.html">Specialists</a></li>
             <li><a href="solutions-workshops.html">Workshops</a></li>
             <li><a href="solutions-large.html">Large Engines</a></li>
-            <li><a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))" class="active" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">Authorized</a></li>
+            <li><a href="solutions.html" class="active">Authorized</a></li>
           </ul>
           <ul class="mega-links mega-links-small" style="margin-top:10px">
             <li><a href="#">Parts &amp; Supplies</a></li>
@@ -3344,7 +3345,7 @@
             <li><a href="#">LTBR-X</a></li>
           </ul>
           <ul class="mega-links mega-links-small" style="margin-top:10px">
-            <li><a href="solutions.html" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))" class="active" onclick="document.querySelectorAll('.mega-menu').forEach(m=>m.classList.remove('open'))">View All Systems</a></li>
+            <li><a href="solutions.html" class="active">View All Systems</a></li>
           </ul>
         </div>
 
@@ -3433,15 +3434,13 @@
 </div>
 
 <!-- HERO -->
+<div class="sol-hero-wrap">
 <div class="sol-hero cz-bg-black">
   <div class="sol-hero-left">
     <div class="sol-hero-eyebrow">Carbon Zapp — Authorized</div>
     <h1 class="sol-hero-title">AUTHORIZED<br>SERVICE<br><em>NETWORK.</em></h1>
     <p class="sol-hero-desc">Official Carbon Zapp authorized service and distribution partners.</p>
-    <div class="sol-hero-actions">
-      <a href="#" class="btn-primary">Explore the XSeries</a>
-      <a href="#" class="btn-outline-dark">Download Catalog</a>
-    </div>
+    <a href="#" class="btn-outline-dark" style="border-color:rgba(245,243,239,0.35);color:rgba(245,243,239,0.7);font-size:11px;letter-spacing:0.1em;padding:10px 20px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:2px;transition:all 0.2s;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Brochure</a>
   </div>
   <div class="sol-hero-right" style="background:#000;justify-content:flex-start;padding-left:40px;">
     <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries" style="width:95%;object-fit:contain;object-position:bottom left;">
@@ -3670,7 +3669,7 @@
   <div class="sol-editorial-label">Explore More</div>
   <div class="sol-editorial-grid">
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
-      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
       <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
     </a>
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
