@@ -3111,31 +3111,29 @@
 <div class="filter-bar">
   <div class="filter-bar-row">
     <div class="filter-group">
-      <button class="filter-btn" onclick="location.href='solutions.html'">All Systems</button>
+      <button class="filter-btn" onclick="location.href='solutions.html'">All</button>
       <button class="filter-btn" onclick="location.href='solutions-specialists.html'">Specialists</button>
       <button class="filter-btn" onclick="location.href='solutions-workshops.html'">Workshops</button>
       <button class="filter-btn" onclick="location.href='solutions-large.html'">Large Engines</button>
       <button class="filter-btn active" onclick="location.href='solutions-authorized.html'">Authorized</button>
     </div>
     <div class="filter-sep"></div>
-    <span class="filter-label">Actuator</span>
-    <div class="act-pills" id="act-pills-diesel">
+    <div class="act-pills">
       <button class="act-pill" data-act="crdi">CRDi</button>
       <button class="act-pill" data-act="crp">CRp</button>
-      <button class="act-pill" data-act="eui">EUi</button>
-      <button class="act-pill" data-act="eup">EUP</button>
+      <button class="act-pill" data-act="eui eup">EUi/EUP</button>
       <button class="act-pill" data-act="heui">HEUi</button>
       <button class="act-pill" data-act="engine">Engine</button>
     </div>
     <div class="filter-sep"></div>
-    <div class="act-pills" id="act-pills-gasoline">
+    <div class="act-pills">
       <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
       <button class="act-pill" data-act="efi">EFi</button>
       <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
     </div>
     <div class="filter-sep"></div>
-    <button class="act-reset" id="act-reset">× Reset</button>
-    <span class="filter-count" id="filter-count">— Systems</span>
+    <button class="act-pill" id="act-reset">Reset</button>
+    <span class="filter-count" id="filter-count"></span>
   </div>
 </div>
 
@@ -3162,7 +3160,7 @@
         <div class="prod-card-name">MTBR-X</div>
         <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
@@ -3174,7 +3172,7 @@
         <div class="prod-card-name">ITB4R-X</div>
         <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
@@ -3186,7 +3184,7 @@
         <div class="prod-card-name">LTBR-X</div>
         <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
@@ -3198,7 +3196,7 @@
         <div class="prod-card-name">ITB1R-X</div>
         <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
@@ -3210,7 +3208,7 @@
         <div class="prod-card-name">CTBR-X</div>
         <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
@@ -3222,7 +3220,7 @@
         <div class="prod-card-name">DGFR-X</div>
         <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
         <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="prod-card-cta">Discover</span>
           <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
