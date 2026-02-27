@@ -2334,8 +2334,7 @@
   .filter-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.1); margin: 0 16px; }
   .filter-btn {
     background: transparent; border: none; cursor: pointer;
-    font-family: "DM Mono", monospace; font-size: 10px;
-    letter-spacing: 0.14em; text-transform: uppercase;
+    font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
     color: rgba(245,243,239,0.35); padding: 6px 14px; border-radius: 2px;
     transition: color 0.2s, background 0.2s;
   }
@@ -2349,19 +2348,16 @@
     transition: height 0.25s cubic-bezier(0.4,0,0.2,1), border-color 0.25s;
     border-top: 1px solid transparent;
   }
-  .act-drawer.open {
-    height: var(--drawer-h);
-    border-top-color: rgba(255,255,255,0.06);
-  }
+  .act-drawer.open { height: var(--drawer-h); border-top-color: rgba(255,255,255,0.06); }
   .act-drawer-inner {
     padding: 0 80px; max-width: 1440px; margin: 0 auto;
-    display: flex; align-items: center; height: var(--drawer-h); gap: 0;
+    display: flex; align-items: center; height: var(--drawer-h);
   }
   .act-reset {
     background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer;
     font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(245,243,239,0.3); padding: 4px 10px; margin-right: 12px;
-    opacity: 0; pointer-events: none; transition: all 0.15s; white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: all 0.15s;
   }
   .act-reset.visible { opacity: 1; pointer-events: auto; color: rgba(245,243,239,0.5); }
   .act-reset:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
@@ -2369,7 +2365,7 @@
   .act-pill {
     background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer;
     font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,243,239,0.35); padding: 4px 10px; transition: all 0.15s; white-space: nowrap;
+    color: rgba(245,243,239,0.35); padding: 4px 10px; transition: all 0.15s;
   }
   .act-pill:hover { border-color: rgba(255,255,255,0.3); color: rgba(245,243,239,0.7); }
   .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.35); color: var(--white); }
@@ -2381,15 +2377,8 @@
     display: grid; grid-template-columns: 2fr 3fr;
     min-height: 380px; max-height: 440px;
   }
-  .sol-hero-left {
-    padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; gap: 0;
-    background: #0a0a0a;
-  }
-  .sol-hero-right { background: #0a0a0a;
-    display: flex; align-items: flex-end; justify-content: center;
-    overflow: hidden; padding: 20px 0 0;
-  }
-  .sol-hero-actions { display: flex; gap: 12px; align-items: center; }
+  .sol-hero-left { padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; background: #0a0a0a; }
+  .sol-hero-right { display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 20px 0 0; background: #0a0a0a; }
   .sol-hero-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
   .sol-hero-title { font-family: "Gunterz", sans-serif; font-size: 42px; line-height: 0.92; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
   .sol-hero-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1px rgba(245,243,239,0.35); }
@@ -2399,6 +2388,8 @@
   .sol-catalog { max-width: 1440px; margin: 0 auto; padding: 48px 80px 0; }
   .sol-section-divider { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding-top: 32px; margin-bottom: 24px; grid-column: 1/-1; }
   .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+
+  /* ─── PRODUCT CARD ─── */
   .prod-card { background: #f5f5f5; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s, box-shadow 0.2s; }
   .prod-card:hover { background: #efefef; box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
   .prod-card-image { aspect-ratio: 4/3; background: linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 24px 24px 0; }
@@ -2406,7 +2397,6 @@
   .prod-card-image.bg-blue { background: linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%); }
   .prod-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
   .prod-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  
   .prod-card-name { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.03em; color: #0a0a0a; margin-bottom: 8px; }
   .prod-card-desc { font-size: 13px; font-weight: 400; line-height: 1.5; color: rgba(10,10,10,0.5); flex: 1; margin-bottom: 20px; }
   .prod-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; }
@@ -2449,10 +2439,8 @@
   /* ─── BUTTONS ─── */
   .btn-primary { display: inline-flex; align-items: center; background: var(--accent); color: #fff; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; transition: background 0.2s; }
   .btn-primary:hover { background: #c41019; }
-  .btn-outline-dark { display: inline-flex; align-items: center; border: 1px solid rgba(245,243,239,0.22); color: rgba(245,243,239,0.5); font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; background: transparent; transition: border-color 0.2s, color 0.2s; }
+  .btn-outline-dark { display: inline-flex; align-items: center; border: 1px solid rgba(245,243,239,0.22); color: rgba(245,243,239,0.5); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; background: transparent; transition: border-color 0.2s, color 0.2s; }
   .btn-outline-dark:hover { border-color: var(--white); color: var(--white); }
-  .link-arrow { font-size: 13px; font-weight: 300; color: #868685; text-decoration: none; transition: color 0.2s; }
-  .link-arrow:hover { color: var(--accent); }
 
 /* ─── FOOTER CTA ─── */
   .footer-cta {
@@ -3245,165 +3233,17 @@
 </head>
 <body>
 
-<nav>
-<div class="nav-inner">
-  <a href="index.html" class="nav-logo">
-    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-brandmark-svg">
-<g id="XMLID_1678_">
-	<g id="XMLID_1679_">
-		<g id="XMLID_1680_">
-			<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
-				c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
-				c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
-			<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
-				l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56c1.44-2.38,1.44-5.35,0-7.73
-				l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
-		</g>
-	</g>
-</g>
-</svg>
-
-    <svg viewBox="0 0 961.38 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logo-svg" aria-label="Carbon Zapp">
-<g>
-	<g id="XMLID_1678_">
-		<g id="XMLID_1679_">
-			<g id="XMLID_1680_">
-				<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
-					c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
-					c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
-				<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
-					l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56
-					c1.44-2.38,1.44-5.35,0-7.73l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
-			</g>
-		</g>
-	</g>
-	<g id="XMLID_1375_">
-		<g id="XMLID_1388_">
-			<path id="XMLID_1676_" d="M341.45,82.55c-3.55-1.11-8.03-2.05-13.07-2.05c-11.48,0-14.28,4.48-14.28,19.23
-				c0,15.59,3.07,20.07,14.56,20.07c4.76,0,9.24-0.94,12.98-2.53l1.96,15.31c-4.85,2.25-11.67,3.74-17.74,3.74
-				c-21.56,0-32.3-11.86-32.3-36.69c0-22.97,10.36-35.94,33.6-35.94c5.51,0,12.05,1.22,16.24,2.81L341.45,82.55z"/>
-			<path id="XMLID_1673_" d="M390.66,122.96H369l-3.08,12.05h-20.63l23.24-70h23.34l23.62,70h-21.75L390.66,122.96z M378.05,87.77
-				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.28L378.05,87.77z"/>
-			<path id="XMLID_1398_" d="M464.38,106.83l15.22,28.18h-16.97c-3.52,0-6.7-2.11-8.06-5.35l-8.01-19.01h-7.1v24.36h-19.51V65h26.7
-				c18.76,0,28.28,6.99,28.28,22.68C474.93,97.01,471.1,104.11,464.38,106.83z M446.84,80.59h-7.38v16.04h7.19
-				c5.78,0,7.93-1.39,7.93-8.21C454.58,82.26,452.62,80.59,446.84,80.59z"/>
-			<path id="XMLID_1394_" d="M514.38,135.01h-29.97V65h30.06c16.15,0,24.18,7.18,24.18,18.2c0,7.57-3.54,12.23-9.15,14.75v0.19
-				c7.55,2.34,11.48,7.85,11.48,16.24C540.98,127.08,533.05,135.01,514.38,135.01z M513.73,80.78h-10.55v11.94h10.74
-				c4.48,0,6.06-1.67,6.06-6.15C519.98,82.17,518.3,80.78,513.73,80.78z M514.38,106.44h-11.2v13.17h11.49
-				c4.95,0,6.81-1.4,6.81-6.63C521.47,108.31,519.7,106.44,514.38,106.44z"/>
-			<path id="XMLID_1391_" d="M577.83,136.23c-22.21,0-32.01-11.67-32.01-36.31s9.52-36.13,32.01-36.13
-				c22.49,0,32.01,11.49,32.01,36.13C609.85,125.12,600.33,136.23,577.83,136.23z M577.74,80.59c-8.68,0-11.39,3.54-11.39,19.32
-				c0,15.87,2.81,19.6,11.58,19.6c8.68,0,11.39-3.82,11.39-19.6C589.32,84.04,586.7,80.59,577.74,80.59z"/>
-			<path id="XMLID_1389_" d="M668.28,135.01c-3.28,0-6.35-1.58-8.27-4.22l-20.28-28.08l-4.3-6.24l-0.19,0.08l0.09,7.57v30.9h-17.35
-				V65h10.9c3.34,0,6.47,1.63,8.38,4.39l22.16,31.93l0.19-0.09l-0.19-7.47V65h17.27v70H668.28z"/>
-		</g>
-		<g id="XMLID_1376_">
-			<path id="XMLID_1385_" d="M815.32,122.96h-21.65l-3.08,12.05h-20.63l23.25-70h23.33l23.61,70H818.4L815.32,122.96z M802.73,87.77
-				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.27L802.73,87.77z"/>
-			<path id="XMLID_1382_" d="M871.09,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
-				C900.22,105.05,892,114,871.09,114z M871.09,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
-				C880.05,82.45,878,80.59,871.09,80.59z"/>
-			<path id="XMLID_1379_" d="M932.26,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
-				C961.38,105.05,953.17,114,932.26,114z M932.26,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
-				C941.22,82.45,939.17,80.59,932.26,80.59z"/>
-			<path id="XMLID_1377_" d="M714.95,135.05v-8.1c0-2.69,0.82-5.29,2.35-7.5l21.83-31.34l4.39-5.98l-0.09-0.19h-28.47v-16.9h51.99
-				v9.51c0,2.69-0.82,5.31-2.36,7.5l-20.97,30.04l-4.39,5.88l0.09,0.28h28l-0.28,16.79H714.95z"/>
-		</g>
-	</g>
-</g>
-</svg>
-
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li class="nav-item">
-      <a href="solutions.html" class="active">Solutions</a>
-      <div class="mega">
-
-        <!-- Col 1: Systems -->
-        <div class="mega-col">
-          <h5>Systems</h5>
-          <ul class="mega-links mega-links-main">
-            <li><a href="solutions-specialists.html">Specialists</a></li>
-            <li><a href="solutions-workshops.html">Workshops</a></li>
-            <li><a href="solutions-large.html">Large Engines</a></li>
-            <li><a href="solutions.html" class="active">Authorized</a></li>
-          </ul>
-          <ul class="mega-links mega-links-small" style="margin-top:10px">
-            <li><a href="#">Parts &amp; Supplies</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 2: Series -->
-        <div class="mega-col">
-          <h5>XSeries</h5>
-          <ul class="mega-links mega-links-main">
-            <li><a href="solutions.html#mtbr-x">MTBR-X</a></li>
-            <li><a href="solutions.html#itbr-x">ITBR-X</a></li>
-            <li><a href="#">ETBR-X</a></li>
-            <li><a href="#">LTBR-X</a></li>
-          </ul>
-          <ul class="mega-links mega-links-small" style="margin-top:10px">
-            <li><a href="solutions.html" class="active">View All Systems</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Discover -->
-        <div class="mega-col">
-          <h5>Discover</h5>
-          <ul class="mega-links mega-links-main">
-            <li><a href="#">Explore CZ Tech</a></li>
-            <li><a href="#">Watch CZExperts</a></li>
-            <li><a href="#">Buy CZ Credits</a></li>
-            <li><a href="#">Discover CloudX Platform</a></li>
-          </ul>
-          <ul class="mega-links mega-links-small" style="margin-top:10px">
-            <li><a href="#">Download Product Catalog</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </li>
-    <li><a href="#">Innovation</a></li>
-    <li><a href="#">CloudX</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-
-  <div class="nav-actions">
-    <a href="#" class="btn-store">Store</a>
-    <div class="login-wrap">
-      <button class="btn-login" id="loginToggle" onclick="toggleLogin(event)">Login</button>
-      <div class="login-dropdown" id="loginDropdown">
-        <div class="login-field">
-          <label class="login-field-label">Email</label>
-          <input type="email" class="login-input" placeholder="Enter your email">
-        </div>
-        <div class="login-field">
-          <label class="login-field-label">Password</label>
-          <input type="password" class="login-input" placeholder="Enter your password">
-        </div>
-        <button class="login-submit">Log In</button>
-        <div class="login-links">
-          <a href="#" class="login-link">Forgot password?</a>
-          <a href="#" class="login-link">Register</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</nav>
+<div id="nav-placeholder"></div>
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-bar-row">
     <div class="filter-group">
-      <button class="filter-btn active" onclick="location.href='solutions.html'">All Systems</button>
+      <button class="filter-btn " onclick="location.href='solutions.html'">All Systems</button>
       <button class="filter-btn " onclick="location.href='solutions-specialists.html'">Specialists</button>
       <button class="filter-btn " onclick="location.href='solutions-workshops.html'">Workshops</button>
       <button class="filter-btn " onclick="location.href='solutions-large.html'">Large Engines</button>
-      <button class="filter-btn" onclick="location.href='solutions-authorized.html'" class="filter-btn active">Authorized</button>
+      <button class="filter-btn active" onclick="location.href='solutions-authorized.html'">Authorized</button>
     </div>
     <div class="filter-sep"></div>
     <div class="filter-group">
@@ -3417,6 +3257,7 @@
   </div>
   <div class="act-drawer" id="act-drawer">
     <div class="act-drawer-inner">
+      <button class="act-reset" id="act-reset">× Reset</button>
       <div class="act-pills">
         <button class="act-pill" data-act="crdi">CRDi</button>
         <button class="act-pill" data-act="crp">CRp</button>
@@ -3428,193 +3269,29 @@
         <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
         <button class="act-pill" data-act="heui">HEUi</button>
       </div>
-      <button class="act-reset" id="act-reset">× Reset</button>
     </div>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="sol-hero-wrap">
-<div class="sol-hero cz-bg-black">
+<div class="sol-hero">
   <div class="sol-hero-left">
     <div class="sol-hero-eyebrow">Carbon Zapp — Authorized</div>
     <h1 class="sol-hero-title">AUTHORIZED<br>SERVICE<br><em>NETWORK.</em></h1>
     <p class="sol-hero-desc">Official Carbon Zapp authorized service and distribution partners.</p>
     <a href="#" class="btn-primary">Download Brochure</a>
   </div>
-  <div class="sol-hero-right" style="background:#000;justify-content:flex-start;padding-left:40px;">
+  <div class="sol-hero-right">
     <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries" style="width:95%;object-fit:contain;object-position:bottom left;">
   </div>
 </div>
-
+</div>
 
 <!-- CATALOG -->
 <div class="sol-catalog">
   <div class="sol-grid">
-    <div class="sol-section-divider" data-section="specialists">Specialists — 11 Systems</div>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp eui eup">
-      <div class="prod-card-image bg-blue"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name">MTBR-X</div>
-        <div class="prod-card-desc">Multi-System Diesel Test Bench. CRDi, CRP, EUI, EUP.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crp engine">
-      <div class="prod-card-image bg-blue"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name">PTBR-X</div>
-        <div class="prod-card-desc">Pump Test Bench. Inline and rotary diesel pumps.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui heui">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">LTBR-X</div>
-        <div class="prod-card-desc">Large Injector Test Bench. Heavy-duty and truck systems.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
-      <div class="prod-card-image bg-blue"><img src="assets/images/ITBRX_800.webp" alt="ITB4R-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name">ITB4R-X</div>
-        <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi">
-      <div class="prod-card-image bg-blue"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow blue">Specialists</div>
-        <div class="prod-card-name">ITB1R-X</div>
-        <div class="prod-card-desc">Single Injector CRDi Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">CTBR-X</div>
-        <div class="prod-card-desc">Common Rail Test Bench. High-pressure systems.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">DGFR-X</div>
-        <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui eup">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">ETBR-X</div>
-        <div class="prod-card-desc">EUI/EUP Unit Injector Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="heui engine">
-      <div class="prod-card-image"><img src="assets/images/HK1400_800.webp" alt="HTBR-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">HTBR-X</div>
-        <div class="prod-card-desc">Hartridge-Compatible Diagnostic Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="efi gdi-inj">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">GTB4R-X</div>
-        <div class="prod-card-desc">Gasoline 4-Rail Test Bench.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Specialists</div>
-        <div class="prod-card-name">GDU4R-X</div>
-        <div class="prod-card-desc">Gasoline Direct Injection Unit Tester.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <div class="sol-section-divider" data-section="workshops">Workshops — 7 Systems</div>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crdi crp">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">DSR-X</div>
-        <div class="prod-card-desc">Diesel Service & Repair Station.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="efi gdi-inj">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">GDR-X</div>
-        <div class="prod-card-desc">Gasoline Diagnostic & Repair System.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="efi">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">GS4</div>
-        <div class="prod-card-desc">Gasoline 4-Channel Service Station.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="efi">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">GS8</div>
-        <div class="prod-card-desc">Gasoline 8-Channel Service Station.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">ES-X</div>
-        <div class="prod-card-desc">Electronic Service Station for GDi systems.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Gasoline</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crp engine">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">EP-X</div>
-        <div class="prod-card-desc">Electronic Pump & Injector Tester.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crdi crp">
-      <div class="prod-card-image"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-eyebrow red">Workshops</div>
-        <div class="prod-card-name">FST/FST-HF</div>
-        <div class="prod-card-desc">Fuel System Tester. Standard and High-Flow.</div>
-        <div class="prod-card-footer"><span class="prod-card-cta">Discover <svg style="display:inline;vertical-align:middle;margin-left:2px" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="prod-card-tag">Diesel</span></div>
-      </div>
-    </a>
+    <div class="sol-section-divider" data-section="authorized">Authorized Partners — Coming Soon</div>
 
   </div>
 </div>
@@ -3664,7 +3341,6 @@
   </div>
 </div>
 
-<!-- EDITORIAL -->
 <div class="sol-editorial">
   <div class="sol-editorial-label">Explore More</div>
   <div class="sol-editorial-grid">
@@ -3683,157 +3359,17 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════ FOOTER CTA ═══════════════════════════════ -->
-<section class="footer-cta">
-  <div class="footer-cta-inner">
-    <div>
-      <h2 class="footer-cta-title">READY TO<br>MOVE <span>FORWARD?</span></h2>
-      <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
-    </div>
-    <div class="footer-cta-actions">
-      <a href="#" class="btn-primary">Explore Solutions</a>
-      <a href="#" class="link-arrow">Find a Distributor →</a>
-    </div>
-  </div>
-</section>
+<div id="footer-cta-placeholder"></div>
+<div id="footer-placeholder"></div>
 
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-
-      <div class="footer-brand-col">
-        <div class="footer-brand">
-          <svg viewBox="0 0 400 118.22" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logotype-2l">
-<g>
-	<g id="XMLID_00000080915881670183587740000000085572578607977128_">
-		<path id="XMLID_00000176006771781295828880000001859487201463875517_" d="M201.84,23.87c-2.1-0.66-4.74-1.21-7.73-1.21
-			c-6.79,0-8.44,2.65-8.44,11.36c0,9.22,1.82,11.86,8.61,11.86c2.82,0,5.46-0.55,7.67-1.48l1.16,9.05c-2.87,1.33-6.9,2.2-10.48,2.2
-			c-12.74,0-19.09-7-19.09-21.68c0-13.57,6.13-21.24,19.86-21.24c3.25,0,7.12,0.72,9.6,1.66L201.84,23.87z"/>
-		<path id="XMLID_00000152970878059953179810000002621249577525375935_" d="M230.92,47.75h-12.8l-1.82,7.12h-12.19l13.74-41.38
-			h13.79l13.96,41.38h-12.85L230.92,47.75z M223.47,26.96l-2.98,11.58h8.11l-2.92-11.53l-0.99-4.41h-0.16L223.47,26.96z"/>
-		<path id="XMLID_00000031889916422204559240000000824751284053718450_" d="M274.51,38.22l8.99,16.66h-10.03
-			c-2.08,0-3.96-1.25-4.76-3.16l-4.74-11.24h-4.19v14.4h-11.53V13.49h15.78c11.09,0,16.72,4.14,16.72,13.41
-			C280.74,32.42,278.48,36.61,274.51,38.22z M264.13,22.71h-4.36v9.49h4.25c3.42,0,4.69-0.83,4.69-4.86
-			C268.71,23.7,267.55,22.71,264.13,22.71z"/>
-		<path id="XMLID_00000013168126147200714770000006184956592480623751_" d="M304.06,54.88h-17.71V13.49h17.77
-			c9.55,0,14.29,4.25,14.29,10.76c0,4.47-2.09,7.23-5.4,8.72v0.11c4.47,1.38,6.79,4.63,6.79,9.6
-			C319.78,50.19,315.1,54.88,304.06,54.88z M303.67,22.82h-6.23v7.06h6.34c2.64,0,3.59-0.99,3.59-3.64
-			C307.37,23.65,306.37,22.82,303.67,22.82z M304.06,37.99h-6.62v7.78h6.78c2.92,0,4.03-0.82,4.03-3.91
-			C308.25,39.09,307.2,37.99,304.06,37.99z"/>
-		<path id="XMLID_00000090253562339020785820000014479032283044541612_" d="M341.57,55.59c-13.13,0-18.92-6.9-18.92-21.46
-			c0-14.57,5.63-21.36,18.92-21.36c13.3,0,18.93,6.79,18.93,21.36C360.49,49.03,354.86,55.59,341.57,55.59z M341.51,22.71
-			c-5.13,0-6.73,2.1-6.73,11.42c0,9.38,1.66,11.58,6.84,11.58c5.13,0,6.73-2.26,6.73-11.58C348.35,24.75,346.81,22.71,341.51,22.71z
-			"/>
-		<path id="XMLID_00000125576327399160945890000004588128736865701034_" d="M395.03,54.88c-1.94,0-3.75-0.93-4.89-2.5l-11.99-16.59
-			l-2.54-3.7l-0.11,0.06l0.06,4.47v18.26H365.3V13.49h6.45c1.98,0,3.83,0.97,4.96,2.59l13.1,18.87l0.11-0.05l-0.11-4.41v-17H400
-			v41.38L395.03,54.88L395.03,54.88z"/>
-	</g>
-	<g id="XMLID_00000132047374684032640030000003365064625450956937_">
-		<path id="XMLID_00000161625550210288727290000015200878215025810061_" d="M232.86,98.35h-12.8l-1.82,7.11h-12.19l13.74-41.38
-			h13.79l13.96,41.38h-12.86L232.86,98.35z M225.42,77.55l-2.98,11.58h8.11l-2.93-11.53l-0.99-4.41h-0.16L225.42,77.55z"/>
-		<path id="XMLID_00000060019383514659736310000007638930862321752235_" d="M265.83,93.05h-3.92v12.41h-11.53V64.09h15.45
-			c12.25,0,17.21,4.86,17.21,14.79C283.04,87.76,278.19,93.05,265.83,93.05z M265.83,73.3h-3.92v10.93h3.92
-			c3.86,0,5.3-0.83,5.3-5.41C271.13,74.41,269.91,73.3,265.83,73.3z"/>
-		<path id="XMLID_00000129176095134709063970000016755659074718709685_" d="M301.98,93.05h-3.91v12.41h-11.53V64.09h15.44
-			c12.25,0,17.22,4.86,17.22,14.79C319.2,87.76,314.35,93.05,301.98,93.05z M301.98,73.3h-3.91v10.93h3.91c3.86,0,5.3-0.83,5.3-5.41
-			C307.28,74.41,306.07,73.3,301.98,73.3z"/>
-		<path id="XMLID_00000013905479607970875440000002824559246493519519_" d="M173.53,105.5v-4.79c0-1.58,0.48-3.13,1.39-4.43
-			l12.9-18.53l2.6-3.53l-0.06-0.11h-16.22v-9.98h30.13v5.62c0,1.59-0.49,3.13-1.4,4.43l-12.4,17.75l-2.59,3.48l0.06,0.17h16.55
-			l-0.17,9.93h-30.79V105.5z"/>
-	</g>
-	<g id="XMLID_00000004543759459776758580000017855367178137969303_">
-		<g id="XMLID_00000109722323609244788940000006833804179099432889_">
-			<path id="XMLID_00000081648858034737407110000006443239721645281432_" d="M29.04,54.17l15.72-25.93
-				c1.73-2.85,4.82-4.59,8.16-4.59h42.82V3.28c0-1.81-1.47-3.28-3.27-3.28H39.61c-3.33,0-6.43,1.74-8.15,4.59L1.38,54.17
-				c-1.84,3.04-1.84,6.85,0,9.89l30.07,49.57c1.73,2.85,4.82,4.59,8.15,4.59h52.86c1.8,0,3.27-1.47,3.27-3.28V94.58H52.92
-				c-3.33,0-6.43-1.74-8.16-4.59L29.04,64.06C27.19,61.01,27.19,57.2,29.04,54.17z"/>
-			<path id="XMLID_00000068674361520583963160000007628094044354249151_" d="M115.58,23.64H95.74v23.24H60.9
-				c-1.54,0-2.96,0.81-3.76,2.12l-4.75,7.82c-0.85,1.4-0.85,3.16,0,4.56l4.75,7.82c0.79,1.31,2.22,2.11,3.76,2.11h34.83v23.25h19.85
-				c1.53,0,2.96-0.81,3.76-2.12l18.85-31.07c0.85-1.4,0.85-3.16,0-4.56l-18.85-31.07C118.55,24.44,117.12,23.64,115.58,23.64z"/>
-		</g>
-	</g>
-</g>
-</svg>
-
-        </div>
-        <p class="footer-tagline">Engineering precision injection service equipment since 1989.</p>
-        <div class="footer-contact-block">
-          <a href="mailto:sales@carbonzapp.com" class="footer-contact-line">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Send email
-          </a>
-          <a href="tel:+302109856110" class="footer-contact-line">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +30 210 98 56 110
-          </a>
-          <div class="footer-hours">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Mon–Fri 08:00–16:00 (UTC+2)
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h6>Company</h6>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Innovation & R&D</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h6>Solutions</h6>
-        <ul>
-          <li><a href="#">Specialists</a></li>
-          <li><a href="#">Workshops</a></li>
-          <li><a href="#">Large Engines</a></li>
-          <li><a href="#">CloudX</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h6>Discover</h6>
-        <ul>
-          <li><a href="#">Global Network</a></li>
-          <li><a href="#">Product Catalog</a></li>
-          <li><a href="#">Store</a></li>
-          <li><a href="#">News</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        © 2026 Carbon Zapp. All Rights Reserved.
-        <span class="footer-legal-sep">·</span>
-        <a href="#">Privacy Policy</a>
-        <span class="footer-legal-sep">·</span>
-        <a href="#">Terms</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/company/CarbonZapp" target="_blank">LinkedIn</a>
-        <a href="https://www.youtube.com/user/CarbonZapp" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/carbonzapp/" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/CarbonZapp" target="_blank">Facebook</a>
-      </div>
-      <div class="footer-crafted">
-        Crafted by <a href="https://www.eternaloptimists.com" target="_blank">Eternal Optimists</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
+<script src="components.js"></script>
 <script>
 
   // Featured
   document.querySelectorAll(".featured-card").forEach(c => c.classList.remove("active"));
-  (document.getElementById("featured-all") || document.getElementById("featured-all")).classList.add("active");
+  (document.getElementById("featured-authorized") || document.getElementById("featured-all")).classList.add("active");
 
-  // Actuator drawer toggle
+  // Actuator drawer
   const actToggle = document.getElementById("act-toggle");
   const actDrawer = document.getElementById("act-drawer");
   let drawerOpen = false;
@@ -3886,6 +3422,12 @@
     applyFilters();
   });
   applyFilters();
+
+  // Nav scroll
+  
+
+  // Login dropdown
+  
 
 </script>
 
