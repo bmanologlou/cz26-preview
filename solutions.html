@@ -685,6 +685,20 @@
     letter-spacing: 0.05em;
   }
 
+  /* ─── FILTER BAR ─── */
+  .filter-bar { position: sticky; top: var(--nav-h); z-index: 50; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .filter-bar-row { padding: 0 80px; max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: 52px; }
+  .filter-group { display: flex; align-items: center; gap: 2px; }
+  .filter-sep { width: 1px; height: 16px; background: rgba(255,255,255,0.08); margin: 0 10px; flex-shrink: 0; }
+  .filter-btn { background: transparent; border: none; cursor: pointer; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.3); padding: 5px 10px; border-radius: 2px; transition: color 0.15s, background 0.15s; white-space: nowrap; }
+  .filter-btn:hover { color: rgba(245,243,239,0.75); }
+  .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
+  .act-pills { display: flex; align-items: center; gap: 4px; }
+  .act-pill { background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.11em; text-transform: uppercase; color: rgba(245,243,239,0.3); padding: 4px 9px; transition: background 0.15s, border-color 0.15s, color 0.15s; white-space: nowrap; }
+  .act-pill:hover { border-color: rgba(255,255,255,0.28); color: rgba(245,243,239,0.65); }
+  .act-pill.active { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); color: var(--white); }
+  .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.2); padding-left: 12px; flex-shrink: 0; }
+
   /* ─── HERO ─── */
   .hero {
     height: 100vh;
@@ -2243,23 +2257,9 @@
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
   
-  .filter-bar { position: sticky; top: var(--nav-h); z-index: 50; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .filter-bar-row { padding: 0 80px; max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: var(--fbar-h); }
-  .filter-group { display: flex; align-items: center; gap: 2px; }
-  .filter-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.1); margin: 0 16px; }
-  .filter-btn { background: transparent; border: none; cursor: pointer; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.35); padding: 6px 14px; border-radius: 2px; transition: color 0.2s, background 0.2s; }
-  .filter-btn:hover { color: rgba(245,243,239,0.8); }
-  .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
-  .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.22); }
 
 
 
-  .act-reset { background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.4); padding: 4px 10px; margin-right: 12px; transition: all 0.15s; }
-  .act-reset:hover { border-color: rgba(255,255,255,0.35); color: var(--white); }
-  .act-pills { display: flex; align-items: center; gap: 6px; }
-  .act-pill { background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.35); padding: 4px 10px; transition: all 0.15s; white-space: nowrap; }
-  .act-pill:hover { border-color: rgba(255,255,255,0.3); color: rgba(245,243,239,0.7); }
-  .act-pill.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); color: var(--white); }
   .sol-hero-wrap { max-width: 1440px; margin: 0 auto; padding: 32px 80px 0; }
   .sol-hero { border-radius: 4px; overflow: hidden; background: #000; display: grid; grid-template-columns: 2fr 3fr; min-height: 460px; max-height: 520px; }
   .sol-hero-left { padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; background: #000; }
