@@ -2897,17 +2897,113 @@
       </div>
 
 <script>
-  // Preloader — show only once per session
+  // ── Events rotator ──
+  (function() {
+    var events = [
+      {
+        name: 'Automechanika Dubai',
+        venue: 'Dubai World Trade Centre — UAE',
+        dates: 'JUN 9–11, 2026',
+        start: '2026-06-09',
+        url: '/innovation/news-events/automechanika-dubai-2026'
+      },
+      {
+        name: 'Automechanika Shanghai',
+        venue: 'National Exhibition & Convention Centre — China',
+        dates: 'NOV 4–7, 2026',
+        start: '2026-11-04',
+        url: '/innovation/news-events/automechanika-shanghai-2026'
+      },
+      {
+        name: 'HDAW 2027',
+        venue: 'Gaylord Texan Resort — Texas, USA',
+        dates: 'JAN 2027',
+        start: '2027-01-25',
+        url: '/innovation/news-events/hdaw-2027'
+      }
+    ];
+
+    var current = 0;
+    var timer;
+
+    function daysUntil(dateStr) {
+      var target = new Date(dateStr + 'T00:00:00');
+      var now = new Date();
+      var diff = Math.floor((target - now) / (1000 * 60 * 60 * 24));
+      if (diff > 0) return diff + ' days';
+      if (diff === 0) return 'Today';
+      return 'On now';
+    }
+
+    function buildDots() {
+      var container = document.getElementById('hero-event-dots');
+      if (!container) return;
+      container.innerHTML = '';
+      events.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'dot' + (i === current ? ' active' : '');
+        dot.setAttribute('aria-label', 'Show event ' + (i + 1));
+        dot.addEventListener('click', function() { goTo(i); resetTimer(); });
+        container.appendChild(dot);
+      });
+    }
+
+    function updateDots() {
+      document.querySelectorAll('#hero-event-dots .dot').forEach(function(d, i) {
+        d.className = 'dot' + (i === current ? ' active' : '');
+      });
+    }
+
+    function showEvent(idx, animate) {
+      var ev = events[idx];
+      var body    = document.getElementById('hero-event-link');
+      var nameEl  = document.getElementById('hero-event-name');
+      var venueEl = document.getElementById('hero-event-venue');
+      var datesEl = document.getElementById('hero-event-dates');
+      var countEl = document.getElementById('event-countdown');
+      if (!body) return;
+      if (animate) {
+        body.classList.add('fade-out');
+        setTimeout(function() {
+          nameEl.textContent  = ev.name;
+          venueEl.textContent = ev.venue;
+          datesEl.textContent = ev.dates;
+          countEl.textContent = daysUntil(ev.start);
+          body.href = ev.url;
+          body.classList.remove('fade-out');
+          body.classList.add('fade-in');
+          setTimeout(function() { body.classList.remove('fade-in'); }, 300);
+        }, 220);
+      } else {
+        nameEl.textContent  = ev.name;
+        venueEl.textContent = ev.venue;
+        datesEl.textContent = ev.dates;
+        countEl.textContent = daysUntil(ev.start);
+        body.href = ev.url;
+      }
+      updateDots();
+    }
+
+    function goTo(idx)  { current = idx; showEvent(current, true); }
+    function next()     { current = (current + 1) % events.length; showEvent(current, true); }
+    function resetTimer() { clearInterval(timer); timer = setInterval(next, 4500); }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { buildDots(); showEvent(0, false); resetTimer(); });
+    } else {
+      buildDots(); showEvent(0, false); resetTimer();
+    }
+  })();
+
+  // ── Preloader — once per session ──
   (function() {
     var preloader = document.getElementById('preloader');
     if (!preloader) return;
     if (sessionStorage.getItem('cz_visited')) {
-      // Already visited this session — skip preloader instantly
       preloader.style.display = 'none';
       document.body.classList.add('loaded');
       return;
     }
-    // First visit — show preloader, mark session
     sessionStorage.setItem('cz_visited', '1');
     window.addEventListener('load', function() {
       setTimeout(function() {
