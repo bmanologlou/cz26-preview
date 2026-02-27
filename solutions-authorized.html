@@ -2251,9 +2251,9 @@
   .filter-btn:hover { color: rgba(245,243,239,0.8); }
   .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
   .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.22); }
-  .act-drawer { height: 0; overflow: hidden; transition: height 0.25s cubic-bezier(0.4,0,0.2,1), border-color 0.25s; border-top: 1px solid transparent; }
-  .act-drawer.open { height: var(--drawer-h); border-top-color: rgba(255,255,255,0.06); }
-  .act-drawer-inner { padding: 0 80px; max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: var(--drawer-h); }
+
+
+
   .act-reset { background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.4); padding: 4px 10px; margin-right: 12px; transition: all 0.15s; }
   .act-reset:hover { border-color: rgba(255,255,255,0.35); color: var(--white); }
   .act-pills { display: flex; align-items: center; gap: 6px; }
@@ -3111,37 +3111,31 @@
 <div class="filter-bar">
   <div class="filter-bar-row">
     <div class="filter-group">
-      <button class="filter-btn " onclick="location.href='solutions.html'">All Systems</button>
-      <button class="filter-btn " onclick="location.href='solutions-specialists.html'">Specialists</button>
-      <button class="filter-btn " onclick="location.href='solutions-workshops.html'">Workshops</button>
-      <button class="filter-btn " onclick="location.href='solutions-large.html'">Large Engines</button>
+      <button class="filter-btn" onclick="location.href='solutions.html'">All Systems</button>
+      <button class="filter-btn" onclick="location.href='solutions-specialists.html'">Specialists</button>
+      <button class="filter-btn" onclick="location.href='solutions-workshops.html'">Workshops</button>
+      <button class="filter-btn" onclick="location.href='solutions-large.html'">Large Engines</button>
       <button class="filter-btn active" onclick="location.href='solutions-authorized.html'">Authorized</button>
     </div>
     <div class="filter-sep"></div>
-    <div class="filter-group">
-      <button class="filter-btn active" data-fuel="all">All</button>
-      <button class="filter-btn" data-fuel="diesel">Diesel</button>
-      <button class="filter-btn" data-fuel="gasoline">Gasoline</button>
+    <span class="filter-label">Actuator</span>
+    <div class="act-pills" id="act-pills-diesel">
+      <button class="act-pill" data-act="crdi">CRDi</button>
+      <button class="act-pill" data-act="crp">CRp</button>
+      <button class="act-pill" data-act="eui">EUi</button>
+      <button class="act-pill" data-act="eup">EUP</button>
+      <button class="act-pill" data-act="heui">HEUi</button>
+      <button class="act-pill" data-act="engine">Engine</button>
     </div>
     <div class="filter-sep"></div>
-    <button class="filter-btn" id="act-toggle">Actuator</button>
-    <span class="filter-count" id="filter-count">— Systems</span>
-  </div>
-  <div class="act-drawer" id="act-drawer">
-    <div class="act-drawer-inner">
-      <button class="act-reset" id="act-reset">× Reset</button>
-      <div class="act-pills">
-        <button class="act-pill" data-act="crdi">CRDi</button>
-        <button class="act-pill" data-act="crp">CRp</button>
-        <button class="act-pill" data-act="eui">EUi</button>
-        <button class="act-pill" data-act="eup">EUP</button>
-        <button class="act-pill" data-act="heui">HEUi</button>
-        <button class="act-pill" data-act="engine">Engine</button>
-        <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
-        <button class="act-pill" data-act="efi">EFi</button>
-        <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
-      </div>
+    <div class="act-pills" id="act-pills-gasoline">
+      <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
+      <button class="act-pill" data-act="efi">EFi</button>
+      <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
     </div>
+    <div class="filter-sep"></div>
+    <button class="act-reset" id="act-reset">× Reset</button>
+    <span class="filter-count" id="filter-count">— Systems</span>
   </div>
 </div>
 
@@ -3260,14 +3254,6 @@
 <script src="components.js"></script>
 <script>
   (document.getElementById("featured-authorized") || document.getElementById("featured-all")).classList.add("active");
-
-  const actToggle = document.getElementById("act-toggle");
-  const actDrawer = document.getElementById("act-drawer");
-  let drawerOpen = false;
-  actToggle.addEventListener("click", () => {
-    drawerOpen = !drawerOpen;
-    actDrawer.classList.toggle("open", drawerOpen);
-    actToggle.classList.toggle("active", drawerOpen);
   });
 
 const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
@@ -3289,8 +3275,6 @@ const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
       if (fuelOk && actOk) n++;
     });
     countEl.textContent = n + " Systems";
-    actToggle.textContent = activeActs.size > 0 ? "Actuator (" + activeActs.size + ")" : "Actuator";
-    actToggle.classList.toggle("active", drawerOpen || activeActs.size > 0);
   }
 
   fuelBtns.forEach(b => b.addEventListener("click", () => {
