@@ -2357,7 +2357,7 @@
     background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer;
     font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(245,243,239,0.3); padding: 4px 10px; margin-right: 12px;
-    opacity: 0; pointer-events: none; transition: all 0.15s;
+    opacity: 1; pointer-events: auto; transition: all 0.15s;
   }
   .act-reset.visible { opacity: 1; pointer-events: auto; color: rgba(245,243,239,0.5); }
   .act-reset:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
@@ -2375,7 +2375,7 @@
   .sol-hero {
     border-radius: 4px; overflow: hidden; background: #000;
     display: grid; grid-template-columns: 2fr 3fr;
-    min-height: 380px; max-height: 440px;
+    min-height: 460px; max-height: 520px;
   }
   .sol-hero-left { padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; background: #000; }
   .sol-hero-right { display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 20px 0 0; background: #000; }
@@ -3292,7 +3292,6 @@
 <!-- CATALOG -->
 <div class="sol-catalog">
   <div class="sol-grid">
-    <div class="sol-section-divider" data-section="specialists">Specialists — 11 Systems</div>
     <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp eui eup">
       <div class="prod-card-image bg-blue"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
       <div class="prod-card-body">
