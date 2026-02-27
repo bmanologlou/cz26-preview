@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Solutions — Carbon Zapp</title>
 <link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,10 +73,10 @@
          url('assets/fonts/Gunterz-BlackItalic.woff') format('woff');
     font-weight: 900; font-style: italic; font-display: swap;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --black: #0a0a0a; --white: #f5f5f5; --carbon: #0a0a0a; --steel: #3e3e3d; --mid: #868685; --light: #dadadb; --accent: #ED1C24; --accent2: #146cf7; --nav-h: 68px; --fbar-h: 52px; --drawer-h: 48px; }
-  html { scroll-behavior: smooth; }
-  body { font-family: "Public Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--accent2:#146cf7;--nav-h:68px}
+  html{scroll-behavior:smooth}
+  body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
@@ -142,6 +142,7 @@
     padding: 4px 0;
   }
   .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); }
 
   .nav-actions {
     display: flex; align-items: center; gap: 4px;
@@ -685,20 +686,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* ─── FILTER BAR ─── */
-  .filter-bar { position: sticky; top: var(--nav-h); z-index: 50; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .filter-bar-row { padding: 0 80px; max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: 52px; }
-  .filter-group { display: flex; align-items: center; gap: 2px; }
-  .filter-sep { width: 1px; height: 16px; background: rgba(255,255,255,0.08); margin: 0 10px; flex-shrink: 0; }
-  .filter-btn { background: transparent; border: none; cursor: pointer; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.3); padding: 5px 10px; border-radius: 2px; transition: color 0.15s, background 0.15s; white-space: nowrap; }
-  .filter-btn:hover { color: rgba(245,243,239,0.75); }
-  .filter-btn.active { color: var(--white); background: rgba(255,255,255,0.08); }
-  .act-pills { display: flex; align-items: center; gap: 4px; }
-  .act-pill { background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.11em; text-transform: uppercase; color: rgba(245,243,239,0.3); padding: 4px 9px; transition: background 0.15s, border-color 0.15s, color 0.15s; white-space: nowrap; }
-  .act-pill:hover { border-color: rgba(255,255,255,0.28); color: rgba(245,243,239,0.65); }
-  .act-pill.active { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); color: var(--white); }
-  .filter-count { margin-left: auto; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.2); padding-left: 12px; flex-shrink: 0; }
-
   /* ─── HERO ─── */
   .hero {
     height: 100vh;
@@ -1058,27 +1045,88 @@
     display: flex;
   }
 
+  .featured-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
 
+  .featured-content {
+    width: 50%;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
 
+  .featured-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
 
+  .featured-name {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 42px;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
 
+  .featured-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.5);
+    letter-spacing: 0.04em;
+    margin-bottom: 36px;
+  }
 
+  .spec-row {
+    display: flex; gap: 48px;
+    margin-bottom: 40px;
+  }
 
+  .spec-item { display: flex; flex-direction: column; gap: 4px; }
 
+  .spec-value {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
 
+  .spec-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
 
+  .spec-label {
+    font-size: 11px;
+    color: var(--mid);
+    font-weight: 300;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  .featured-visual {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 52%;
+    background:
+      radial-gradient(ellipse at center, #2a1a0a 0%, #0d0d0d 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
   .machine-placeholder {
     width: 80%;
@@ -1115,7 +1163,13 @@
   }
 
   /* gradient fade left edge */
-
+  .featured-visual::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 120px;
+    background: linear-gradient(to right, var(--carbon), transparent);
+    z-index: 1;
+  }
 
   /* ─── CLOUDX ─── */
   .cloudx {
@@ -2257,65 +2311,64 @@
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
   
-
-
-
-  .sol-hero-wrap { max-width: 1440px; margin: 0 auto; padding: 32px 80px 0; }
-  .sol-hero { border-radius: 4px; overflow: hidden; background: #000; display: grid; grid-template-columns: 2fr 3fr; min-height: 460px; max-height: 520px; }
-  .sol-hero-left { padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; background: #000; }
-  .sol-hero-right { display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 20px 0 0; background: #000; }
-  .sol-hero-left .btn-primary { display: inline-flex; width: auto; align-self: flex-start; }
-  .sol-hero-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  .sol-hero-title { font-family: "Gunterz", sans-serif; font-size: 38px; line-height: 1.05; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
-  .sol-hero-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1px rgba(245,243,239,0.35); }
-  .sol-hero-desc { font-size: 14px; font-weight: 200; line-height: 1.65; color: rgba(245,243,239,0.5); margin-bottom: 24px; max-width: 380px; }
-  .sol-catalog { max-width: 1440px; margin: 0 auto; padding: 48px 80px 0; }
-  .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .prod-card { background: #f5f5f5; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s, box-shadow 0.2s; }
-  .prod-card:hover { background: #efefef; box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
-  .prod-card-image { aspect-ratio: 4/3; background: linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 24px 24px 0; }
-  .prod-card-image img { width: 75%; object-fit: contain; object-position: center bottom; display: block; }
-  .prod-card-image.bg-blue { background: linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%); }
-  .prod-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-  .prod-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  .prod-card-name { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; letter-spacing: 0.03em; color: #0a0a0a; margin-bottom: 8px; }
-  .prod-card-desc { font-size: 13px; font-weight: 400; line-height: 1.5; color: rgba(10,10,10,0.5); flex: 1; margin-bottom: 20px; }
-  .prod-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; }
-  .prod-card-cta { display: inline-flex; align-items: center; gap: 6px; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(10,10,10,0.6); border: 1px solid rgba(10,10,10,0.2); border-radius: 2px; padding: 6px 12px; transition: all 0.15s; }
-  .prod-card:hover .prod-card-cta { color: #0a0a0a; border-color: rgba(10,10,10,0.6); background: rgba(10,10,10,0.05); }
-  .prod-card-tag { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(10,10,10,0.3); padding: 3px 8px; border: 1px solid rgba(10,10,10,0.1); border-radius: 2px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .sol-editorial { max-width: 1440px; margin: 80px auto 0; padding: 0 80px; }
-  .sol-editorial-label { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.22); border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 0 24px; }
-  .sol-editorial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .ed-card { border-radius: 4px; display: flex; flex-direction: column; text-decoration: none; color: inherit; min-height: 260px; padding: 32px; transition: opacity 0.2s; }
-  .ed-card:hover { opacity: 0.85; }
-  .ed-card-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: auto; }
-  .ed-card-icon svg { color: rgba(245,243,239,0.6); }
-  .ed-card-content { margin-top: 40px; }
-  .ed-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.4); margin-bottom: 8px; }
-  .ed-card-title { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; color: var(--white); margin-bottom: 8px; }
-  .ed-card-sub { font-size: 13px; font-weight: 200; color: rgba(245,243,239,0.45); line-height: 1.55; margin-bottom: 20px; }
-  .ed-card-cta { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.5); }
-  .btn-primary { display: inline-flex; align-items: center; background: var(--accent); color: #fff; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; transition: background 0.2s; }
-  .btn-primary:hover { background: #c41019; }
-  .btn-outline-dark { display: inline-flex; align-items: center; border: 1px solid rgba(245,243,239,0.22); color: rgba(245,243,239,0.5); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; background: transparent; transition: border-color 0.2s, color 0.2s; }
-  .btn-outline-dark:hover { border-color: var(--white); color: var(--white); }
+  /* ─── FILTER BAR ─── */
+  .filter-bar{position:sticky;top:var(--nav-h);z-index:50;background:rgba(10,10,10,0.96);backdrop-filter:blur(12px)}
+  .filter-bar-row{padding:0 80px;max-width:1440px;margin:0 auto;display:flex;align-items:center;height:52px}
+  .filter-group{display:flex;align-items:center;gap:0}
+  .filter-sep{width:1px;height:16px;background:rgba(255,255,255,0.08);margin:0 10px;flex-shrink:0}
+  .filter-btn{background:transparent;border:none;cursor:pointer;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.3);padding:5px 10px;border-radius:2px;transition:color 0.15s,background 0.15s;white-space:nowrap}
+  .filter-btn:hover{color:rgba(245,243,239,0.75)}
+  .filter-btn.active{color:var(--white);background:rgba(255,255,255,0.08)}
+  .act-pills{display:flex;align-items:center;gap:4px}
+  .act-pill{background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.11em;text-transform:uppercase;color:rgba(245,243,239,0.3);padding:4px 9px;transition:background 0.15s,border-color 0.15s,color 0.15s;white-space:nowrap}
+  .act-pill:hover{border-color:rgba(255,255,255,0.28);color:rgba(245,243,239,0.65)}
+  .act-pill.active{background:rgba(237,28,36,0.15);border-color:rgba(237,28,36,0.6);color:#ff6b6e}
+  .filter-count{margin-left:auto;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.2);padding-left:12px;flex-shrink:0}
+  /* ─── HERO ─── */
+  .sol-hero-wrap{max-width:1440px;margin:0 auto;padding:12px 80px 0}
+  .sol-hero{border-radius:4px;overflow:hidden;background:#000;display:grid;grid-template-columns:2fr 3fr;min-height:460px;max-height:520px}
+  .sol-hero-left{padding:48px 56px;display:flex;flex-direction:column;justify-content:center;background:#000}
+  .sol-hero-right{display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:20px 0 0;background:#000}
+  .sol-hero-left .btn-primary{display:inline-flex;width:auto;align-self:flex-start}
+  .sol-hero-eyebrow{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .sol-hero-title{font-family:"Gunterz",sans-serif;font-size:38px;line-height:1.05;letter-spacing:0.02em;color:var(--white);margin-bottom:16px}
+  .sol-hero-title em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(245,243,239,0.35)}
+  .sol-hero-desc{font-size:14px;font-weight:200;line-height:1.65;color:rgba(245,243,239,0.5);margin-bottom:24px;max-width:380px}
+  /* ─── CATALOG ─── */
+  .sol-catalog{max-width:1440px;margin:0 auto;padding:12px 80px 0}
+  .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  /* ─── PRODUCT CARD ─── */
+  .prod-card{background:#f5f5f5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:background 0.2s,box-shadow 0.2s}
+  .prod-card:hover{background:#efefef;box-shadow:0 4px 24px rgba(0,0,0,0.18)}
+  .prod-card-image{aspect-ratio:4/3;background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:24px 24px 0}
+  .prod-card-image img{width:75%;object-fit:contain;object-position:center bottom;display:block}
+  .prod-card-image.bg-blue{background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%)}
+  .prod-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .prod-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .prod-card-name{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;letter-spacing:0.03em;color:#0a0a0a;margin-bottom:8px}
+  .prod-card-desc{font-size:13px;font-weight:400;line-height:1.5;color:rgba(10,10,10,0.5);flex:1;margin-bottom:20px}
+  .prod-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px}
+  .prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.6);border:1px solid rgba(10,10,10,0.2);border-radius:2px;padding:6px 12px;transition:all 0.15s}
+  .prod-card:hover .prod-card-cta{color:#0a0a0a;border-color:rgba(10,10,10,0.6);background:rgba(10,10,10,0.05)}
+  .prod-card-tag{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(10,10,10,0.3);padding:3px 8px;border:1px solid rgba(10,10,10,0.1);border-radius:2px}
+  /* ─── EDITORIAL ─── */
+  .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
+  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);border-top:1px solid rgba(255,255,255,0.07);padding:32px 0 24px}
+  .sol-editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s}
+  .ed-card:hover{opacity:0.85}
+  .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
+  .ed-card-icon svg{color:rgba(245,243,239,0.6)}
+  .ed-card-content{margin-top:40px}
+  .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
+  .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
+  .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
+  .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
+  /* ─── BUTTONS ─── */
+  .btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;transition:background 0.2s}
+  .btn-primary:hover{background:#c41019}
+  .btn-outline-dark{display:inline-flex;align-items:center;border:1px solid rgba(245,243,239,0.22);color:rgba(245,243,239,0.5);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;background:transparent;transition:border-color 0.2s,color 0.2s}
+  .btn-outline-dark:hover{border-color:var(--white);color:var(--white)}
 /* ─── FOOTER CTA ─── */
   .footer-cta {
     background: var(--carbon);
@@ -3131,8 +3184,7 @@
       <button class="act-pill" data-act="efi">EFi</button>
       <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
     </div>
-    <div class="filter-sep"></div>
-    <button class="act-pill" id="act-reset">Reset</button>
+    <button class="act-pill act-reset-pill" id="act-reset" style="margin-left:10px">Reset</button>
     <span class="filter-count" id="filter-count"></span>
   </div>
 </div>
@@ -3153,7 +3205,7 @@
 
 <div class="sol-catalog">
   <div class="sol-grid">
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi eui eup crp" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="crdi eui eup crp" data-authorized="true">
       <div class="prod-card-image bg-blue"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3165,7 +3217,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crp">
+    <a href="#" class="prod-card" data-market="specialists" data-act="crp">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3177,7 +3229,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="crdi" data-authorized="true">
       <div class="prod-card-image bg-blue"><img src="assets/images/ITBRX_800.webp" alt="ITB4R-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3189,7 +3241,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui eup heui" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="eui eup heui" data-authorized="true">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3201,7 +3253,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="crdi" data-authorized="true">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3213,7 +3265,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="crdi crp" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="crdi crp" data-authorized="true">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3225,7 +3277,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj gdi-pump" data-authorized="true">
+    <a href="#" class="prod-card" data-market="specialists" data-act="gdi-inj gdi-pump" data-authorized="true">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3237,7 +3289,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="eui eup">
+    <a href="#" class="prod-card" data-market="specialists" data-act="eui eup">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3249,7 +3301,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="diesel" data-act="heui engine">
+    <a href="#" class="prod-card" data-market="specialists" data-act="heui engine">
       <div class="prod-card-image bg-blue"><img src="assets/images/HK1400_800.webp" alt="HTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3261,7 +3313,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj efi">
+    <a href="#" class="prod-card" data-market="specialists" data-act="gdi-inj efi">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3273,7 +3325,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="specialists" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
+    <a href="#" class="prod-card" data-market="specialists" data-act="gdi-inj gdi-pump">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
@@ -3285,7 +3337,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crdi crp">
+    <a href="#" class="prod-card" data-market="workshops" data-act="crdi crp">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3297,7 +3349,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="efi">
+    <a href="#" class="prod-card" data-market="workshops" data-act="efi">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3309,7 +3361,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="efi">
+    <a href="#" class="prod-card" data-market="workshops" data-act="efi">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3321,7 +3373,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crdi crp">
+    <a href="#" class="prod-card" data-market="workshops" data-act="crdi crp">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3333,7 +3385,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crdi crp">
+    <a href="#" class="prod-card" data-market="workshops" data-act="crdi crp">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3345,7 +3397,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="diesel" data-act="crp engine">
+    <a href="#" class="prod-card" data-market="workshops" data-act="crp engine">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3357,7 +3409,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="gdi-inj gdi-pump">
+    <a href="#" class="prod-card" data-market="workshops" data-act="gdi-inj gdi-pump">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3369,7 +3421,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="prod-card" data-market="workshops" data-fuel="gasoline" data-act="gdi-inj efi">
+    <a href="#" class="prod-card" data-market="workshops" data-act="gdi-inj efi">
       <div class="prod-card-image"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Workshops</div>
@@ -3407,62 +3459,44 @@
 
 <script src="components.js"></script>
 <script>
-  (document.getElementById("featured-all") || document.getElementById("featured-all")).classList.add("active");
-  });
 
-const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
-  const cards    = document.querySelectorAll(".prod-card");
-  const countEl  = document.getElementById("filter-count");
-  let activeFuel = "all";
+  // ── Actuator filters ──
+  const cards   = document.querySelectorAll(".prod-card");
+  const countEl = document.getElementById("filter-count");
   let activeActs = new Set();
 
   function applyFilters() {
     let n = 0;
-    cards.forEach(c => {
-      const f    = c.dataset.fuel; // 'diesel', 'gasoline', or 'both'
-      const fuelOk = activeFuel === "all"
-                  || f === activeFuel
-                  || f === "both";
-      const cActs = (c.dataset.act || "").split(" ");
-      const actOk = activeActs.size === 0 || [...activeActs].some(a => cActs.includes(a));
-      c.style.display = (fuelOk && actOk) ? "" : "none";
-      if (fuelOk && actOk) n++;
+    cards.forEach(card => {
+      const cActs = (card.dataset.act || "").split(" ");
+      const ok = activeActs.size === 0 || [...activeActs].some(a => cActs.includes(a));
+      card.style.display = ok ? "" : "none";
+      if (ok) n++;
     });
-    countEl.textContent = n + " Systems";
+    countEl.textContent = activeActs.size > 0 ? n + " Systems" : "";
   }
 
-  fuelBtns.forEach(b => b.addEventListener("click", () => {
-    fuelBtns.forEach(x => x.classList.remove("active"));
-    b.classList.add("active"); activeFuel = b.dataset.fuel; applyFilters();
-  }));
-  document.querySelectorAll(".act-pill").forEach(p => p.addEventListener("click", () => {
-    const a = p.dataset.act;
-    if (activeActs.has(a)) { activeActs.delete(a); p.classList.remove("active"); }
-    else { activeActs.add(a); p.classList.add("active"); }
-    applyFilters();
-  }));
+  document.querySelectorAll(".act-pill:not(#act-reset)").forEach(pill => {
+    pill.addEventListener("click", () => {
+      const acts = pill.dataset.act.split(" ");
+      const allActive = acts.every(a => activeActs.has(a));
+      if (allActive) {
+        acts.forEach(a => activeActs.delete(a));
+        pill.classList.remove("active");
+      } else {
+        acts.forEach(a => activeActs.add(a));
+        pill.classList.add("active");
+      }
+      applyFilters();
+    });
+  });
+
   document.getElementById("act-reset").addEventListener("click", () => {
     activeActs.clear();
-    document.querySelectorAll(".act-pill").forEach(p => p.classList.remove("active"));
-    fuelBtns.forEach(x => x.classList.remove("active"));
-    document.querySelector(".filter-group [data-fuel='all']").classList.add("active");
-    activeFuel = "all"; applyFilters();
-  });
-  applyFilters();
-  }));
-  document.querySelectorAll(".act-pill").forEach(p => p.addEventListener("click", () => {
-    const a = p.dataset.act;
-    if (activeActs.has(a)) { activeActs.delete(a); p.classList.remove("active"); }
-    else { activeActs.add(a); p.classList.add("active"); }
+    document.querySelectorAll(".act-pill:not(#act-reset)").forEach(p => p.classList.remove("active"));
     applyFilters();
-  }));
-  document.getElementById("act-reset").addEventListener("click", () => {
-    activeActs.clear();
-    document.querySelectorAll(".act-pill").forEach(p => p.classList.remove("active"));
-    fuelBtns.forEach(x => x.classList.remove("active"));
-    document.querySelector("[data-fuel='all']").classList.add("active");
-    activeFuel = "all"; applyFilters();
   });
+
   applyFilters();
 
   // Nav scroll
@@ -3474,7 +3508,7 @@ const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
     onScroll();
   })();
 
-  login {
+login {
     padding: 8px 14px;
     border: none;
     background: transparent;
@@ -4123,27 +4157,88 @@ const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
     display: flex;
   }
 
+  .featured-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
 
+  .featured-content {
+    width: 50%;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
 
+  .featured-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
 
+  .featured-name {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 42px;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
 
+  .featured-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.5);
+    letter-spacing: 0.04em;
+    margin-bottom: 36px;
+  }
 
+  .spec-row {
+    display: flex; gap: 48px;
+    margin-bottom: 40px;
+  }
 
+  .spec-item { display: flex; flex-direction: column; gap: 4px; }
 
+  .spec-value {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
 
+  .spec-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
 
+  .spec-label {
+    font-size: 11px;
+    color: var(--mid);
+    font-weight: 300;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  .featured-visual {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 52%;
+    background:
+      radial-gradient(ellipse at center, #2a1a0a 0%, #0d0d0d 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
   .machine-placeholder {
     width: 80%;
@@ -4180,7 +4275,13 @@ const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
   }
 
   /* gradient fade left edge */
-
+  .featured-visual::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 120px;
+    background: linear-gradient(to right, var(--carbon), transparent);
+    z-index: 1;
+  }
 
   /* ─── CLOUDX ─── */
   .cloudx {
@@ -6125,7 +6226,6 @@ const fuelBtns = document.querySelectorAll(".filter-group [data-fuel]");
         dot.className = 'dot' + (i === current ? ' active' : '');
         dot.setAttribute('aria-label', 'Show event ' + (i + 1));
         dot.addEventListener('click', function() { goTo(i); resetTimer(); });
-
 </script>
 </body>
 </html>
