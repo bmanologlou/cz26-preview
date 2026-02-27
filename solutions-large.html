@@ -213,8 +213,8 @@
     height: 16px;
     display: none;
   }
-  .nav-item.mega-open::after { display: block; }
-  .nav-item.mega-open .mega { opacity: 1; pointer-events: all; transform: translateY(0); }
+  .nav-item:hover::after { display: block; }
+  .nav-item:hover .mega { opacity: 1; pointer-events: all; transform: translateY(0); }
 
   .mega {
     position: fixed;
@@ -460,8 +460,8 @@
     height: 16px;
     display: none;
   }
-  .nav-item.mega-open::after { display: block; }
-  .nav-item.mega-open .mega { opacity: 1; pointer-events: all; transform: translateY(0); }
+  .nav-item:hover::after { display: block; }
+  .nav-item:hover .mega { opacity: 1; pointer-events: all; transform: translateY(0); }
 
   .mega {
     position: fixed;
@@ -2379,13 +2379,13 @@
   .sol-hero {
     border-radius: 4px; overflow: hidden; background: #0a0a0a;
     display: grid; grid-template-columns: 2fr 3fr;
-    min-height: 320px; max-height: 380px;
+    min-height: 380px; max-height: 440px;
   }
   .sol-hero-left {
     padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; gap: 0;
     background: #0a0a0a;
   }
-  .sol-hero-right {
+  .sol-hero-right { background: #0a0a0a;
     display: flex; align-items: flex-end; justify-content: center;
     overflow: hidden; padding: 20px 0 0;
   }
@@ -3317,7 +3317,7 @@
 
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li class="nav-item" id="solutions-nav-item">
+    <li class="nav-item">
       <a href="solutions.html">Solutions</a>
       <div class="mega">
 
@@ -3440,7 +3440,7 @@
     <div class="sol-hero-eyebrow">Carbon Zapp — Large Engines</div>
     <h1 class="sol-hero-title">BUILT FOR<br>THE<br><em>BIG ONES.</em></h1>
     <p class="sol-hero-desc">Heavy-duty injection service equipment for large diesel engines.</p>
-    <a href="#" class="btn-outline-dark" style="border-color:rgba(245,243,239,0.35);color:rgba(245,243,239,0.7);font-size:11px;letter-spacing:0.1em;padding:10px 20px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:2px;transition:all 0.2s;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Brochure</a>
+    <a href="#" class="btn-primary">Download Brochure</a>
   </div>
   <div class="sol-hero-right" style="background:#000;justify-content:flex-start;padding-left:40px;">
     <img src="assets/images/EO_CZ_Photo_Solutions_black_02n.webp" alt="XSeries" style="width:95%;object-fit:contain;object-position:bottom left;">
