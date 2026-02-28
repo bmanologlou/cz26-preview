@@ -25,7 +25,10 @@
     const page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(a => {
       const href = a.getAttribute('href') || '';
-      if (href === page || (page === '' && href === 'index.html')) {
+      const exactMatch = href === page || (page === '' && href === 'index.html');
+      // Match all solutions-*.html pages to the solutions.html nav link
+      const solutionsMatch = href === 'solutions.html' && page.startsWith('solutions');
+      if (exactMatch || solutionsMatch) {
         a.classList.add('active');
       }
     });
