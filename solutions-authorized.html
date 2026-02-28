@@ -2355,7 +2355,7 @@
   /* ─── EDITORIAL ─── */
   .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
   .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
-  .sol-editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .sol-editorial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s}
   .ed-card:hover{opacity:0.85}
   .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
@@ -3157,6 +3157,22 @@
 
   
 
+  /* ── Newsletter card ── */
+  .sol-editorial-grid{grid-template-columns:repeat(4,1fr)}
+  .nl-card{border-radius:4px;min-height:280px;padding:32px;background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);display:flex;flex-direction:column}
+  .nl-card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .nl-card-icon svg{color:rgba(245,243,239,0.55)}
+  .nl-card-content{margin-top:auto;padding-top:32px}
+  .nl-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
+  .nl-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
+  .nl-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.4);line-height:1.55;margin-bottom:16px}
+  .nl-card-form{display:flex;gap:6px}
+  .nl-card-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:8px 12px;font-family:"Public Sans",sans-serif;font-size:12px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s;min-width:0}
+  .nl-card-input::placeholder{color:rgba(245,243,239,0.2)}
+  .nl-card-input:focus{border-color:rgba(255,255,255,0.3)}
+  .nl-card-submit-row{margin-top:8px}
+  .nl-card-submit{background:transparent;border:none;cursor:pointer;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.4);padding:0;transition:color 0.15s}
+  .nl-card-submit:hover{color:var(--white)}
 </style>
 </head>
 <body>
@@ -3284,6 +3300,63 @@
 
 <div class="sol-editorial">
   <div class="sol-editorial-label">Explore More</div>
+  <div class="sol-editorial-grid">
+
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Digital Platform</div>
+        <div class="ed-card-title">CloudX <span style="font-family:inherit;font-size:inherit;letter-spacing:inherit">IoT</span></div>
+        <div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div>
+        <div class="ed-card-cta">Explore CloudX →</div>
+      </div>
+    </a>
+
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Video Series</div>
+        <div class="ed-card-title">CZ Experts</div>
+        <div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div>
+        <div class="ed-card-cta">Watch Now →</div>
+      </div>
+    </a>
+
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div>
+        <div class="ed-card-title">Innovation Driven</div>
+        <div class="ed-card-sub">35 years of continuous development. See what's coming next.</div>
+        <div class="ed-card-cta">Explore Innovation →</div>
+      </div>
+    </a>
+
+    <div class="nl-card">
+      <div class="nl-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+          <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+          <circle cx="12" cy="20" r="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="nl-card-content">
+        <div class="nl-card-eyebrow">Newsletter</div>
+        <div class="nl-card-title">Stay Updated</div>
+        <div class="nl-card-sub">Product updates and technical bulletins — straight to your inbox.</div>
+        <div class="nl-card-form">
+          <input class="nl-card-input" type="email" placeholder="your@email.com">
+        </div>
+        <div class="nl-card-submit-row">
+          <button class="nl-card-submit">Subscribe →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   <div class="sol-editorial-grid">
     <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
       <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
