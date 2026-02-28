@@ -74,7 +74,7 @@
     font-weight: 900; font-style: italic; font-display: swap;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--accent2:#146cf7;--nav-h:68px}
+  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--accent2:#146cf7;--mid:#868685;--nav-h:68px}
   html{scroll-behavior:smooth}
   body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 /* ─── NAV ─── */
@@ -2351,7 +2351,6 @@
   .prod-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px}
   .prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.6);border:1px solid rgba(10,10,10,0.2);border-radius:2px;padding:6px 12px;transition:all 0.15s}
   .prod-card:hover .prod-card-cta{color:#0a0a0a;border-color:rgba(10,10,10,0.6);background:rgba(10,10,10,0.05)}
-  .prod-card-tag{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(10,10,10,0.3);padding:3px 8px;border:1px solid rgba(10,10,10,0.1);border-radius:2px}
   /* ─── EDITORIAL ─── */
   .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
   .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
@@ -3154,18 +3153,6 @@
     transition: color 0.2s;
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
-/* ─── NEWSLETTER STRIP (footer) ─── */
-  .footer-nl-strip { display:grid;grid-template-columns:2.2fr 3fr;align-items:center;padding:20px 0 16px;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:0; }
-  .footer-nl-left { display:flex;align-items:center; }
-  .footer-nl-label { font-family:"DM Mono",monospace;font-size:10px;line-height:1.7;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.35); }
-  .footer-nl-right { display:flex;align-items:center; }
-  .footer-nl-form { display:flex;align-items:center;gap:10px; }
-  .footer-nl-input { width:200px;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s; }
-  .footer-nl-input::placeholder { color:rgba(245,243,239,0.2); }
-  .footer-nl-input:focus { border-bottom-color:rgba(255,255,255,0.4); }
-  .footer-nl-btn { background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;transition:all 0.15s;white-space:nowrap;flex-shrink:0; }
-  .footer-nl-btn:hover { border-color:rgba(255,255,255,0.4);color:var(--white); }
-  .footer-nl-note { margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -3224,19 +3211,17 @@
         <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
     <a href="#" class="prod-card" data-market="specialists" data-act="crp">
-      <div class="prod-card-image"></div>
+      <div class="prod-card-image bg-blue"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
       <div class="prod-card-body">
         <div class="prod-card-eyebrow">Specialists</div>
         <div class="prod-card-name">PTBR-X</div>
         <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3248,7 +3233,6 @@
         <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3260,7 +3244,6 @@
         <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3272,7 +3255,6 @@
         <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3284,7 +3266,6 @@
         <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3296,7 +3277,6 @@
         <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3308,7 +3288,6 @@
         <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3320,7 +3299,6 @@
         <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3332,7 +3310,6 @@
         <div class="prod-card-desc">Gasoline 4-Rail Test Bench. GDi + EFi.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3344,7 +3321,6 @@
         <div class="prod-card-desc">Gasoline Direct Injection Unit Tester.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3356,7 +3332,6 @@
         <div class="prod-card-desc">Diesel Service & Repair Station.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3368,7 +3343,6 @@
         <div class="prod-card-desc">Gasoline 4-Channel Service Station.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3380,7 +3354,6 @@
         <div class="prod-card-desc">Gasoline 8-Channel Service Station.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3392,7 +3365,6 @@
         <div class="prod-card-desc">Fuel System Tester.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3404,7 +3376,6 @@
         <div class="prod-card-desc">Fuel System Tester High-Flow.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3416,7 +3387,6 @@
         <div class="prod-card-desc">Electronic Pump & Injector Tester.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Diesel</span>
         </div>
       </div>
     </a>
@@ -3428,7 +3398,6 @@
         <div class="prod-card-desc">Electronic GDi Service Station.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
@@ -3440,7 +3409,6 @@
         <div class="prod-card-desc">Gasoline Diagnostic & Repair System.</div>
         <div class="prod-card-footer">
           <span class="prod-card-cta">Discover</span>
-          <span class="prod-card-tag">Gasoline</span>
         </div>
       </div>
     </a>
