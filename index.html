@@ -1546,10 +1546,16 @@
 
 
   /* ─── NEWSLETTER STRIP (footer) ─── */
-  .footer-nl-strip { display:flex;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:32px; }
-  .footer-nl-label { font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.3);white-space:nowrap;margin-right:20px; }
-  .footer-nl-sep { width:1px;height:14px;background:rgba(255,255,255,0.08);margin-right:20px;flex-shrink:0; }
-  .footer-nl-form { display:flex;align-items:center;gap:8px;flex:1;max-width:360px; }
+  .footer-nl-strip {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 24px 0;
+    margin-bottom: 24px;
+  }
+  .footer-nl-label { font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.3);white-space:nowrap; }
+  .footer-nl-form { display:flex;align-items:center;gap:8px;grid-column:2 / 4; }
   .footer-nl-input { flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s; }
   .footer-nl-input::placeholder { color:rgba(245,243,239,0.2); }
   .footer-nl-input:focus { border-bottom-color:rgba(255,255,255,0.4); }
