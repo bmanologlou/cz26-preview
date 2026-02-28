@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Newsletter — Test</title>
+<title>Newsletter Footer Test</title>
 <link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@
     font-weight: 900; font-style: italic; font-display: swap;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--mid:#868685;--light:#dadadb;--nav-h:68px}
+  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--mid:#868685;--nav-h:68px}
   html{scroll-behavior:smooth}
   body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 /* ─── NAV ─── */
@@ -1712,6 +1712,19 @@
   }
   .footer-col a:hover { color: var(--white); }
 
+
+  /* ─── NEWSLETTER STRIP (footer) ─── */
+  .footer-nl-strip { display:grid;grid-template-columns:2.2fr 3fr;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:32px; }
+  .footer-nl-left { display:flex;align-items:center; }
+  .footer-nl-label { font-family:"DM Mono",monospace;font-size:10px;line-height:1.7;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.35); }
+  .footer-nl-right { display:flex;align-items:center; }
+  .footer-nl-form { display:flex;align-items:center;gap:10px;flex:1; }
+  .footer-nl-input { flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s; }
+  .footer-nl-input::placeholder { color:rgba(245,243,239,0.2); }
+  .footer-nl-input:focus { border-bottom-color:rgba(255,255,255,0.4); }
+  .footer-nl-btn { background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;transition:all 0.15s;white-space:nowrap;flex-shrink:0; }
+  .footer-nl-btn:hover { border-color:rgba(255,255,255,0.4);color:var(--white); }
+  .footer-nl-note { margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;flex-shrink:0; }
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -2311,89 +2324,74 @@
 
   
 
-  /* ── EDITORIAL GRID (4 cards) ── */
-  .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px 80px}
-  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
-  .sol-editorial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-
-  .ed-card{
-    border-radius:4px;display:flex;flex-direction:column;
-    text-decoration:none;color:inherit;min-height:280px;padding:32px;transition:opacity 0.2s;
+  /* ── NEWSLETTER STRIP — mirrors .footer-top grid exactly ── */
+  .footer-nl-strip {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 32px;
+    align-items: center;
   }
-  .ed-card:hover{opacity:0.85}
-  .ed-card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .ed-card-icon svg{color:rgba(245,243,239,0.55)}
-  .ed-card-content{margin-top:auto;padding-top:32px}
-  .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
-  .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
-  .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
-  .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
-  .ed-card:hover .ed-card-cta{color:var(--white)}
-
-  /* Newsletter card — same height logic, icon top, content bottom */
-  .nl-card{
-    border-radius:4px;min-height:280px;padding:32px;
-    background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);
-    display:flex;flex-direction:column;
+  .footer-nl-label {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.35);
   }
-  .nl-card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .nl-card-icon svg{color:rgba(245,243,239,0.55)}
-  .nl-card-content{margin-top:auto;padding-top:32px}
-  .nl-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
-  .nl-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
-  .nl-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.4);line-height:1.55;margin-bottom:16px}
-  .nl-card-form{display:flex;gap:6px}
-  .nl-card-input{
-    flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
-    border-radius:2px;padding:8px 12px;font-family:"Public Sans",sans-serif;
-    font-size:12px;font-weight:200;color:var(--white);outline:none;
-    transition:border-color 0.2s;min-width:0;
+  /* form spans columns 2-4 */
+  .footer-nl-right {
+    grid-column: 2 / 5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  .nl-card-input::placeholder{color:rgba(245,243,239,0.2)}
-  .nl-card-input:focus{border-color:rgba(255,255,255,0.3)}
-  .nl-card-btn{
-    background:var(--accent);border:none;border-radius:2px;cursor:pointer;
-    color:#fff;padding:8px 14px;transition:background 0.2s;
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  .footer-nl-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 5px 0;
+    font-family: "Public Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
   }
-  .nl-card-btn:hover{background:#c41019}
-
-  /* ── FOOTER NEWSLETTER STRIP (inside footer) ── */
-  .footer-nl-strip{
-    display:flex;align-items:center;gap:0;
-    padding:18px 0;
-    border-bottom:1px solid rgba(255,255,255,0.07);
-    margin-bottom:32px;
+  .footer-nl-input::placeholder { color: rgba(245,243,239,0.22); }
+  .footer-nl-input:focus { border-bottom-color: rgba(255,255,255,0.4); }
+  .footer-nl-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.4);
+    padding: 6px 16px;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .footer-nl-label{
-    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;
-    text-transform:uppercase;color:rgba(245,243,239,0.3);
-    white-space:nowrap;margin-right:20px;
-  }
-  .footer-nl-sep{width:1px;height:14px;background:rgba(255,255,255,0.08);margin-right:20px;flex-shrink:0}
-  .footer-nl-form{display:flex;align-items:center;gap:8px;flex:1;max-width:380px}
-  .footer-nl-input{
-    flex:1;background:transparent;border:none;
-    border-bottom:1px solid rgba(255,255,255,0.12);
-    padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;
-    color:var(--white);outline:none;transition:border-color 0.2s;
-  }
-  .footer-nl-input::placeholder{color:rgba(245,243,239,0.2)}
-  .footer-nl-input:focus{border-bottom-color:rgba(255,255,255,0.4)}
-  .footer-nl-btn{
-    background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;
-    cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;
-    text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;
-    transition:all 0.15s;white-space:nowrap;
-  }
-  .footer-nl-btn:hover{border-color:rgba(255,255,255,0.4);color:var(--white)}
-  .footer-nl-note{
-    margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;
-    letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;
+  .footer-nl-btn:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+  .footer-nl-note {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: rgba(245,243,239,0.15);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto;
   }
 
-  /* Footer CSS embedded for test */
-  /* ─── FOOTER CTA ─── */
+  .btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;transition:background 0.2s}
+/* ─── FOOTER CTA ─── */
   .footer-cta {
     background: var(--carbon);
     padding: 140px 0;
@@ -2486,7 +2484,6 @@
     align-items: center;
   }
 
-  
   /* ─── FOOTER ─── */
   footer {
     background: var(--black);
@@ -2581,6 +2578,19 @@
   }
   .footer-col a:hover { color: var(--white); }
 
+
+  /* ─── NEWSLETTER STRIP (footer) ─── */
+  .footer-nl-strip { display:grid;grid-template-columns:2.2fr 3fr;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:32px; }
+  .footer-nl-left { display:flex;align-items:center; }
+  .footer-nl-label { font-family:"DM Mono",monospace;font-size:10px;line-height:1.7;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.35); }
+  .footer-nl-right { display:flex;align-items:center; }
+  .footer-nl-form { display:flex;align-items:center;gap:10px;flex:1; }
+  .footer-nl-input { flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s; }
+  .footer-nl-input::placeholder { color:rgba(245,243,239,0.2); }
+  .footer-nl-input:focus { border-bottom-color:rgba(255,255,255,0.4); }
+  .footer-nl-btn { background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;transition:all 0.15s;white-space:nowrap;flex-shrink:0; }
+  .footer-nl-btn:hover { border-color:rgba(255,255,255,0.4);color:var(--white); }
+  .footer-nl-note { margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;flex-shrink:0; }
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -3179,89 +3189,34 @@
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
   
-
-  .btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;transition:background 0.2s}
-  .btn-primary:hover{background:#c41019}
 </style>
 </head>
 <body>
-
 <div id="nav-placeholder"></div>
-
-<!-- ── 4-card editorial grid ── -->
-<div class="sol-editorial">
-  <div class="sol-editorial-label">Explore More</div>
-  <div class="sol-editorial-grid">
-
-    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
-      <div class="ed-card-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg>
-      </div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Digital Platform</div>
-        <div class="ed-card-title">CloudX <span style="font-family:inherit;font-size:inherit;letter-spacing:inherit">IoT</span></div>
-        <div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div>
-        <div class="ed-card-cta">Explore CloudX →</div>
-      </div>
-    </a>
-
-    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
-      <div class="ed-card-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      </div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Video Series</div>
-        <div class="ed-card-title">CZ Experts</div>
-        <div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div>
-        <div class="ed-card-cta">Watch Now →</div>
-      </div>
-    </a>
-
-    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
-      <div class="ed-card-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-      </div>
-      <div class="ed-card-content">
-        <div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div>
-        <div class="ed-card-title">Innovation Driven</div>
-        <div class="ed-card-sub">35 years of continuous development. See what's coming next.</div>
-        <div class="ed-card-cta">Explore →</div>
-      </div>
-    </a>
-
-    <!-- 4th — Newsletter, same dark grey as CZExperts -->
-    <div class="nl-card">
-      <div class="nl-card-icon">
-        <!-- Broadcast / signal icon -->
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
-          <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
-          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
-          <circle cx="12" cy="20" r="1" fill="currentColor"/>
-        </svg>
-      </div>
-      <div class="nl-card-content">
-        <div class="nl-card-eyebrow">Newsletter</div>
-        <div class="nl-card-title">Stay Updated</div>
-        <div class="nl-card-sub">Product updates and technical bulletins — straight to your inbox.</div>
-        <div class="nl-card-form">
-          <input class="nl-card-input" type="email" placeholder="your@email.com">
-        </div>
-        <div class="nl-card-submit-row">
-          <button class="nl-card-submit">Subscribe →</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 <div id="footer-cta-placeholder"></div>
 <div id="footer-placeholder"></div>
-
 <script src="components.js"></script>
 <script>
+// Override footer render to inject newsletter strip
+const _origFetch = window.fetch;
 document.addEventListener("DOMContentLoaded", function() {
+  // After footer loads, inject strip before footer-bottom
+  setTimeout(() => {
+    const footerBottom = document.querySelector('.footer-bottom');
+    if (footerBottom) {
+      const strip = document.createElement('div');
+      strip.className = 'footer-nl-strip';
+      strip.innerHTML = `
+        <div class="footer-nl-label">Stay tuned with<br>CZ Newsletter</div>
+        <div class="footer-nl-right">
+          <input class="footer-nl-input" type="email" placeholder="your@email.com">
+          <button class="footer-nl-btn">Subscribe</button>
+          <span class="footer-nl-note">No spam · Unsubscribe anytime</span>
+        </div>`;
+      footerBottom.parentNode.insertBefore(strip, footerBottom);
+    }
+  }, 300);
+
   var nav = document.querySelector("nav");
   if (nav) {
     function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 80); }
@@ -4585,6 +4540,19 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   .footer-col a:hover { color: var(--white); }
 
+
+  /* ─── NEWSLETTER STRIP (footer) ─── */
+  .footer-nl-strip { display:grid;grid-template-columns:2.2fr 3fr;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:32px; }
+  .footer-nl-left { display:flex;align-items:center; }
+  .footer-nl-label { font-family:"DM Mono",monospace;font-size:10px;line-height:1.7;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.35); }
+  .footer-nl-right { display:flex;align-items:center; }
+  .footer-nl-form { display:flex;align-items:center;gap:10px;flex:1; }
+  .footer-nl-input { flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s; }
+  .footer-nl-input::placeholder { color:rgba(245,243,239,0.2); }
+  .footer-nl-input:focus { border-bottom-color:rgba(255,255,255,0.4); }
+  .footer-nl-btn { background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;transition:all 0.15s;white-space:nowrap;flex-shrink:0; }
+  .footer-nl-btn:hover { border-color:rgba(255,255,255,0.4);color:var(--white); }
+  .footer-nl-note { margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;flex-shrink:0; }
   .footer-bottom {
     display: flex;
     justify-content: space-between;
