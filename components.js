@@ -25,10 +25,12 @@
     const page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(a => {
       const href = a.getAttribute('href') || '';
-      const exactMatch = href === page || (page === '' && href === 'index.html');
+      const exactMatch = href === page || (page === '' && href === 'index.html') || (page === 'index.html' && href === 'index.html');
       // Match all solutions-*.html pages to the solutions.html nav link
       const solutionsMatch = href === 'solutions.html' && page.startsWith('solutions');
-      if (exactMatch || solutionsMatch) {
+      // Match home
+      const homeMatch = href === 'index.html' && (page === '' || page === 'index.html');
+      if (exactMatch || solutionsMatch || homeMatch) {
         a.classList.add('active');
       }
     });
