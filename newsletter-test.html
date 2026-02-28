@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Newsletter — Test Options</title>
+<title>Newsletter — Test</title>
 <link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -2311,153 +2311,91 @@
 
   
 
-  /* ── PAGE LAYOUT ── */
-  .test-wrap{max-width:1440px;margin:0 auto;padding:80px}
-  .test-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,243,239,0.2);margin-bottom:16px}
-  .test-title{font-family:"Gunterz",sans-serif;font-size:20px;color:rgba(245,243,239,0.4);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.06)}
-  .test-section{margin-bottom:80px}
-  .option-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+  /* ── PAGE ── */
+  .test-wrap{max-width:1440px;margin:0 auto;padding:80px 80px 0}
+  .test-section-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+  .section-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:64px 0}
 
-  /* ═══════════════════════════════════════
-     OPTION A — FOOTER STRIP
-  ═══════════════════════════════════════ */
-  .nl-strip{
-    background:#0a0a0a;
-    border-top:1px solid rgba(255,255,255,0.06);
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    padding:20px 0;
-  }
-  .nl-strip-inner{
-    max-width:1440px;margin:0 auto;padding:0 80px;
-    display:flex;align-items:center;gap:32px;
-  }
-  .nl-strip-label{
-    font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.18em;
-    text-transform:uppercase;color:rgba(245,243,239,0.35);white-space:nowrap;
-  }
-  .nl-strip-divider{width:1px;height:16px;background:rgba(255,255,255,0.08);flex-shrink:0}
-  .nl-strip-form{display:flex;align-items:center;gap:8px;flex:1;max-width:480px}
-  .nl-strip-input{
-    flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.15);
-    padding:6px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;
-    color:var(--white);outline:none;transition:border-color 0.2s;
-  }
-  .nl-strip-input::placeholder{color:rgba(245,243,239,0.25)}
-  .nl-strip-input:focus{border-bottom-color:rgba(255,255,255,0.5)}
-  .nl-strip-btn{
-    background:transparent;border:1px solid rgba(255,255,255,0.15);border-radius:2px;
-    cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;
-    text-transform:uppercase;color:rgba(245,243,239,0.5);padding:6px 16px;
-    transition:all 0.15s;white-space:nowrap;
-  }
-  .nl-strip-btn:hover{border-color:rgba(255,255,255,0.4);color:var(--white)}
-  .nl-strip-note{
-    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;
-    color:rgba(245,243,239,0.18);margin-left:auto;white-space:nowrap;
-  }
-
-  /* ═══════════════════════════════════════
-     OPTION B — PRE-FOOTER SECTION
-  ═══════════════════════════════════════ */
-  .nl-section{
-    background:#0f0f0f;
-    padding:56px 0;
-    border-top:1px solid rgba(255,255,255,0.06);
-  }
-  .nl-section-inner{
-    max-width:1440px;margin:0 auto;padding:0 80px;
-    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-  }
-  .nl-section-left .eyebrow{
-    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;
-    text-transform:uppercase;color:var(--accent);margin-bottom:12px;
-  }
-  .nl-section-left h3{
-    font-family:"Gunterz",sans-serif;font-size:28px;line-height:1;
-    color:var(--white);margin-bottom:10px;
-  }
-  .nl-section-left p{
-    font-size:13px;font-weight:200;line-height:1.65;color:rgba(245,243,239,0.4);max-width:380px;
-  }
-  .nl-section-form{display:flex;gap:8px;align-items:flex-end}
-  .nl-section-field{flex:1}
-  .nl-section-field label{
-    display:block;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.16em;
-    text-transform:uppercase;color:rgba(245,243,239,0.25);margin-bottom:8px;
-  }
-  .nl-section-input{
-    width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
-    border-radius:2px;padding:11px 16px;font-family:"Public Sans",sans-serif;font-size:13px;
-    font-weight:200;color:var(--white);outline:none;transition:border-color 0.2s;
-  }
-  .nl-section-input::placeholder{color:rgba(245,243,239,0.2)}
-  .nl-section-input:focus{border-color:rgba(255,255,255,0.25)}
-  .nl-section-submit{
-    background:var(--accent);border:none;border-radius:2px;cursor:pointer;
-    font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;
-    text-transform:uppercase;color:#fff;padding:11px 24px;transition:background 0.2s;white-space:nowrap;
-  }
-  .nl-section-submit:hover{background:#c41019}
-  .nl-section-note{
-    margin-top:10px;font-family:"DM Mono",monospace;font-size:9px;
-    letter-spacing:0.1em;color:rgba(245,243,239,0.18);
-  }
-
-  /* ═══════════════════════════════════════
-     OPTION C — EDITORIAL CARD (4th card)
-  ═══════════════════════════════════════ */
-  .editorial-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-  }
-  .ed-card{
-    border-radius:4px;display:flex;flex-direction:column;
-    text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s;
-  }
+  /* ── EDITORIAL GRID (4 cards) ── */
+  .sol-editorial{max-width:1440px;margin:0 auto;padding:0 80px 80px}
+  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
+  .sol-editorial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:280px;padding:32px;transition:opacity 0.2s}
   .ed-card:hover{opacity:0.85}
-  .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
-  .ed-card-icon svg{color:rgba(245,243,239,0.6)}
-  .ed-card-content{margin-top:40px}
+  .ed-card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+  .ed-card-icon svg{color:rgba(245,243,239,0.55)}
+  .ed-card-content{margin-top:auto;padding-top:40px}
   .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
   .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
   .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
   .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
   .ed-card:hover .ed-card-cta{color:var(--white)}
 
-  /* Newsletter card variant */
+  /* Newsletter card — 4th */
   .nl-card{
-    border-radius:4px;min-height:260px;padding:32px;
-    background:linear-gradient(160deg,#141414 0%,#0f0f0f 100%);
+    border-radius:4px;min-height:280px;padding:32px;
+    background:linear-gradient(160deg,#161616 0%,#111 100%);
     border:1px solid rgba(255,255,255,0.07);
     display:flex;flex-direction:column;
   }
-  .nl-card-eyebrow{
-    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;
-    text-transform:uppercase;color:var(--accent);margin-bottom:auto;
-  }
-  .nl-card-title{
-    font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;
-    color:var(--white);margin-bottom:8px;margin-top:40px;
-  }
-  .nl-card-sub{
-    font-size:13px;font-weight:200;color:rgba(245,243,239,0.4);
-    line-height:1.55;margin-bottom:20px;
-  }
+  .nl-card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+  .nl-card-icon svg{color:rgba(245,243,239,0.55)}
+  .nl-card-content{margin-top:auto;padding-top:40px}
+  .nl-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
+  .nl-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
+  .nl-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.4);line-height:1.55;margin-bottom:16px}
   .nl-card-form{display:flex;gap:6px}
   .nl-card-input{
     flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
-    border-radius:2px;padding:7px 12px;font-family:"Public Sans",sans-serif;
+    border-radius:2px;padding:8px 12px;font-family:"Public Sans",sans-serif;
     font-size:12px;font-weight:200;color:var(--white);outline:none;
     transition:border-color 0.2s;min-width:0;
   }
   .nl-card-input::placeholder{color:rgba(245,243,239,0.2)}
-  .nl-card-input:focus{border-color:rgba(255,255,255,0.25)}
+  .nl-card-input:focus{border-color:rgba(255,255,255,0.3)}
   .nl-card-btn{
     background:var(--accent);border:none;border-radius:2px;cursor:pointer;
-    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;
-    text-transform:uppercase;color:#fff;padding:7px 14px;
-    transition:background 0.2s;white-space:nowrap;
+    color:#fff;padding:8px 14px;transition:background 0.2s;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
   }
   .nl-card-btn:hover{background:#c41019}
+  .nl-card-btn svg{color:#fff}
+
+  /* ── FOOTER STRIP ── */
+  .nl-footer-strip{
+    background:#0a0a0a;
+    border-top:1px solid rgba(255,255,255,0.07);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+  }
+  .nl-footer-strip-inner{
+    max-width:1440px;margin:0 auto;padding:0 80px;
+    display:flex;align-items:center;gap:0;height:56px;
+  }
+  .nl-strip-label{
+    font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;
+    text-transform:uppercase;color:rgba(245,243,239,0.3);
+    white-space:nowrap;padding-right:20px;
+  }
+  .nl-strip-sep{width:1px;height:16px;background:rgba(255,255,255,0.08);margin-right:20px;flex-shrink:0}
+  .nl-strip-form{display:flex;align-items:center;gap:8px;flex:1;max-width:400px}
+  .nl-strip-input{
+    flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);
+    padding:4px 0;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:200;
+    color:var(--white);outline:none;transition:border-color 0.2s;
+  }
+  .nl-strip-input::placeholder{color:rgba(245,243,239,0.2)}
+  .nl-strip-input:focus{border-bottom-color:rgba(255,255,255,0.4)}
+  .nl-strip-btn{
+    background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:2px;
+    cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;
+    text-transform:uppercase;color:rgba(245,243,239,0.4);padding:5px 14px;
+    transition:all 0.15s;white-space:nowrap;
+  }
+  .nl-strip-btn:hover{border-color:rgba(255,255,255,0.35);color:var(--white)}
+  .nl-strip-note{
+    margin-left:auto;font-family:"DM Mono",monospace;font-size:9px;
+    letter-spacing:0.1em;color:rgba(245,243,239,0.15);white-space:nowrap;
+  }
 
   .btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;transition:background 0.2s}
   .btn-primary:hover{background:#c41019}
@@ -3252,79 +3190,79 @@
 
 <div id="nav-placeholder"></div>
 
-<div class="test-wrap">
-  <div class="test-label">Carbon Zapp — Design Preview</div>
-  <div class="test-title">Newsletter Subscribe — 3 Options</div>
+<!-- ── EDITORIAL GRID (4 cards) ── -->
+<div class="sol-editorial">
+  <div class="sol-editorial-label">Explore More</div>
+  <div class="sol-editorial-grid">
 
-  <!-- OPTION A -->
-  <div class="test-section">
-    <div class="option-label">Option A — Footer Strip (most discrete)</div>
-    <div class="nl-strip">
-      <div class="nl-strip-inner">
-        <span class="nl-strip-label">Stay Updated</span>
-        <div class="nl-strip-divider"></div>
-        <div class="nl-strip-form">
-          <input class="nl-strip-input" type="email" placeholder="your@email.com">
-          <button class="nl-strip-btn">Subscribe</button>
-        </div>
-        <span class="nl-strip-note">No spam. Unsubscribe anytime.</span>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Digital Platform</div>
+        <div class="ed-card-title">CloudX Ecosystem</div>
+        <div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div>
+        <div class="ed-card-cta">Explore CloudX →</div>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- OPTION B -->
-  <div class="test-section">
-    <div class="option-label">Option B — Pre-footer Section</div>
-    <div class="nl-section">
-      <div class="nl-section-inner">
-        <div class="nl-section-left">
-          <div class="eyebrow">Industry Intelligence</div>
-          <h3>STAY AHEAD OF<br>THE <span style="color:var(--accent)">CURVE</span></h3>
-          <p style="margin-top:12px">Product updates, technical bulletins and industry news — delivered directly to your inbox.</p>
-        </div>
-        <div>
-          <div class="nl-section-form">
-            <div class="nl-section-field">
-              <label>Email address</label>
-              <input class="nl-section-input" type="email" placeholder="your@email.com">
-            </div>
-            <button class="nl-section-submit">Subscribe</button>
-          </div>
-          <p class="nl-section-note">Product updates · Technical bulletins · No spam</p>
-        </div>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Video Series</div>
+        <div class="ed-card-title">Watch CZExperts</div>
+        <div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div>
+        <div class="ed-card-cta">Watch Now →</div>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- OPTION C -->
-  <div class="test-section">
-    <div class="option-label">Option C — 4th Card in Editorial Grid</div>
-    <div class="editorial-grid">
-      <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
-        <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
-        <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
-      </a>
-      <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
-        <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-        <div class="ed-card-content"><div class="ed-card-eyebrow">Video Series</div><div class="ed-card-title">Watch CZExperts</div><div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div><div class="ed-card-cta">Watch Now →</div></div>
-      </a>
-      <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
-        <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-        <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div><div class="ed-card-title">Innovation Driven</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
-      </a>
-      <!-- Newsletter as 4th card -->
-      <div class="nl-card">
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
+      <div class="ed-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <div class="ed-card-content">
+        <div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div>
+        <div class="ed-card-title">Innovation Driven</div>
+        <div class="ed-card-sub">35 years of continuous development. See what's coming next.</div>
+        <div class="ed-card-cta">Explore Innovation →</div>
+      </div>
+    </a>
+
+    <!-- 4th card — Newsletter -->
+    <div class="nl-card">
+      <div class="nl-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="nl-card-content">
         <div class="nl-card-eyebrow">Newsletter</div>
         <div class="nl-card-title">STAY IN THE LOOP</div>
         <div class="nl-card-sub">Product updates and technical bulletins — straight to your inbox.</div>
         <div class="nl-card-form">
           <input class="nl-card-input" type="email" placeholder="your@email.com">
-          <button class="nl-card-btn">→</button>
+          <button class="nl-card-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
+</div>
+
+<!-- ── FOOTER STRIP (sits just above footer) ── -->
+<div class="nl-footer-strip">
+  <div class="nl-footer-strip-inner">
+    <span class="nl-strip-label">Stay Updated</span>
+    <div class="nl-strip-sep"></div>
+    <div class="nl-strip-form">
+      <input class="nl-strip-input" type="email" placeholder="your@email.com">
+      <button class="nl-strip-btn">Subscribe</button>
+    </div>
+    <span class="nl-strip-note">No spam · Unsubscribe anytime</span>
+  </div>
 </div>
 
 <div id="footer-cta-placeholder"></div>
@@ -3333,7 +3271,6 @@
 <script src="components.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Nav scroll
   var nav = document.querySelector("nav");
   if (nav) {
     function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 80); }
