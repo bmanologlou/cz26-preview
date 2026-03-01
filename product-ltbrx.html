@@ -2344,15 +2344,16 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-expand-intro{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:40px;max-width:640px;}
 .pdp-carousel-wrap{overflow:hidden;}
 .pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
-.pdp-carousel-item{flex:0 0 calc(33.33% - 16px);display:flex;flex-direction:column;gap:16px;min-width:0;}
-.pdp-carousel-img{aspect-ratio:4/3;border-radius:4px;overflow:hidden;}
+.pdp-carousel-item{flex:0 0 calc(50% - 12px);display:flex;flex-direction:row;gap:20px;align-items:flex-start;min-width:0;}
+.pdp-carousel-img{flex-shrink:0;width:120px;height:90px;border-radius:4px;overflow:hidden;order:2;}
 .pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
-.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);margin-top:4px;}
-.pdp-carousel-desc{font-size:14px;font-weight:300;line-height:1.65;color:var(--text-light);}
+.pdp-carousel-text{flex:1;order:1;display:flex;flex-direction:column;gap:8px;}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);}
+  .pdp-carousel-desc{font-size:13px;font-weight:300;line-height:1.6;color:var(--text-light);}
 .pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
 .pdp-carousel-btn{width:40px;height:40px;border:1px solid var(--grey-mid);border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-light);transition:all 0.2s;}
 .pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
-.pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
+.pdp-carousel-btn:disabled{opacity:0.25;cursor:default;pointer-events:none;}
 
 /* ─── SECTION BASE ─── */
 .pdp-sec{
@@ -3568,29 +3569,39 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <div class="pdp-carousel-wrap">
       <div class="pdp-carousel" id="pdp-carousel">
         <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Cambox Module Integration</div>
+            <div class="pdp-carousel-desc">Enables advanced pump testing scenarios requiring cam-driven operation for comprehensive performance evaluation.</div>
+          </div>
           <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
-          <div class="pdp-carousel-label">Cambox Module Integration</div>
-          <div class="pdp-carousel-desc">Enables advanced pump testing scenarios requiring cam-driven operation for comprehensive performance evaluation.</div>
         </div>
         <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Additional Rail Configurations</div>
+            <div class="pdp-carousel-desc">Expand testing capacity with supplementary high-pressure rail setups for multi-injector or specialized applications.</div>
+          </div>
           <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
-          <div class="pdp-carousel-label">Additional Rail Configurations</div>
-          <div class="pdp-carousel-desc">Expand testing capacity with supplementary high-pressure rail setups for multi-injector or specialized applications.</div>
         </div>
         <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Specialized Fixtures &amp; Adaptors</div>
+            <div class="pdp-carousel-desc">Purpose-built mounting solutions for non-standard injector and pump geometries across all major engine manufacturers.</div>
+          </div>
           <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
-          <div class="pdp-carousel-label">Specialized Fixtures &amp; Adaptors</div>
-          <div class="pdp-carousel-desc">Purpose-built mounting solutions for non-standard injector and pump geometries across all major engine manufacturers.</div>
         </div>
         <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Software Upgrade Packages</div>
+            <div class="pdp-carousel-desc">Modular AZO software expansions that unlock additional diagnostic functions and testing protocols as requirements evolve.</div>
+          </div>
           <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
-          <div class="pdp-carousel-label">Software Upgrade Packages</div>
-          <div class="pdp-carousel-desc">Modular AZO software expansions that unlock additional diagnostic functions and testing protocols as requirements evolve.</div>
         </div>
         <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Continuous Database Expansion</div>
+            <div class="pdp-carousel-desc">Automatic updates adding new engine models, injector specifications and test parameters to keep pace with market developments.</div>
+          </div>
           <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
-          <div class="pdp-carousel-label">Continuous Database Expansion</div>
-          <div class="pdp-carousel-desc">Automatic updates adding new engine models, injector specifications and test parameters to keep pace with market developments.</div>
         </div>
       </div>
       <div class="pdp-carousel-controls">
