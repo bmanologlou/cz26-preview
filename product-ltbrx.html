@@ -2310,65 +2310,12 @@
 
   
 
-  /* ── STICKY PRODUCT NAV ── */
-  .prod-nav{
-    position:sticky;
-    top:var(--nav-h);
-    z-index:40;
-    background:rgba(10,10,10,0.95);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,0.06);
-  }
-  .prod-nav-inner{
-    width:100%;
-    padding:0 40px;
-    display:flex;
-    align-items:center;
-    height:44px;
-    box-sizing:border-box;
-  }
-  .prod-nav-name{
-    font-family:"Gunterz",sans-serif;
-    font-size:14px;
-    color:#fff;
-    flex-shrink:0;
-    margin-right:32px;
-    white-space:nowrap;
-  }
-  .prod-nav-links{
-    display:flex;
-    align-items:center;
-    flex:1;
-  }
-  .prod-nav-links a{
-    font-family:"DM Mono",monospace;
-    font-size:9px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.45);
-    text-decoration:none;
-    margin-right:28px;
-    transition:color 0.15s;
-    white-space:nowrap;
-  }
-  .prod-nav-links a:hover,
-  .prod-nav-links a.active{color:#fff;}
-  .prod-nav-cta{
-    display:flex;
-    gap:8px;
-    margin-left:auto;
-    align-items:center;
-    flex-shrink:0;
-  }
-  .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:5px 14px;text-decoration:none;transition:background 0.15s;line-height:1;}
-  .btn-sm-red:hover{background:#c41019}
-  .btn-sm-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.5);padding:5px 14px;text-decoration:none;transition:all 0.15s;line-height:1;}
-  .btn-sm-ghost:hover{border-color:rgba(255,255,255,0.5);color:var(--white)}
+
 
   /* ── HERO ── */
   .pdp-hero{
     position:relative;
-    height:calc(100vh - var(--nav-h) - 44px);
+    height:calc(100vh - var(--nav-h));
     min-height:560px;
     overflow:hidden;
     display:block;
@@ -3269,24 +3216,6 @@
 <body>
 
 <div id="nav-placeholder"></div>
-
-<!-- ── STICKY PRODUCT NAV ── -->
-<div class="prod-nav" id="prod-nav">
-  <div class="prod-nav-inner">
-    <span class="prod-nav-name">LTBR-X</span>
-    <nav class="prod-nav-links">
-      <a href="#overview">Overview</a>
-      <a href="#actuators">Systems</a>
-      <a href="#specs">Tech Specs</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#related">Related</a>
-    </nav>
-    <div class="prod-nav-cta">
-      <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-sm-ghost">Download Datasheet</a>
-      <a href="#" class="btn-sm-red">Request a Quote</a>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════
      HERO
