@@ -2339,6 +2339,21 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
 
+
+/* ─── EXPANDABILITY CAROUSEL ─── */
+.pdp-expand-intro{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:40px;max-width:640px;}
+.pdp-carousel-wrap{overflow:hidden;}
+.pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
+.pdp-carousel-item{flex:0 0 calc(33.33% - 16px);display:flex;flex-direction:column;gap:16px;min-width:0;}
+.pdp-carousel-img{aspect-ratio:4/3;border-radius:4px;overflow:hidden;}
+.pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);margin-top:4px;}
+.pdp-carousel-desc{font-size:14px;font-weight:300;line-height:1.65;color:var(--text-light);}
+.pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
+.pdp-carousel-btn{width:40px;height:40px;border:1px solid var(--grey-mid);border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-light);transition:all 0.2s;}
+.pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
+.pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
+
 /* ─── SECTION BASE ─── */
 .pdp-sec{
   max-width:1440px;margin:0 auto;
