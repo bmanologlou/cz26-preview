@@ -2310,17 +2310,13 @@
 
   
 
-  /* ── PAGE WRAP ── */
-  .pdp-page-wrap{display:flex;flex-direction:column;height:calc(100vh - var(--nav-h));}
-  .pdp-page-wrap .prod-nav{flex-shrink:0;}
-  .pdp-page-wrap .pdp-hero{flex:1;height:auto !important;}
-
   /* ── STICKY PRODUCT NAV ── */
   .prod-nav{
     position:sticky;top:var(--nav-h);z-index:40;
+    height:44px;line-height:44px;
     background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);
     border-bottom:1px solid rgba(255,255,255,0.06);
-    flex-shrink:0;
+    overflow:hidden;
   }
   .prod-nav-inner{
     max-width:1440px;margin:0 auto;padding:0 80px;
@@ -2331,10 +2327,9 @@
   .prod-nav-name{font-family:"Gunterz",sans-serif;font-size:16px;letter-spacing:0.06em;color:rgba(245,243,239,0.75)}
   .prod-nav-links a{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.35);text-decoration:none;padding:0 16px;transition:color 0.15s}
   .prod-nav-links a:hover,.prod-nav-links a.active{color:var(--white)}
-  .prod-nav-cta{display:flex;gap:8px}
-  .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:7px 16px;text-decoration:none;transition:background 0.15s}
+  .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:5px 14px;text-decoration:none;transition:background 0.15s;line-height:1;}
   .btn-sm-red:hover{background:#c41019}
-  .btn-sm-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.5);padding:7px 16px;text-decoration:none;transition:all 0.15s}
+  .btn-sm-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.5);padding:5px 14px;text-decoration:none;transition:all 0.15s;line-height:1;}
   .btn-sm-ghost:hover{border-color:rgba(255,255,255,0.5);color:var(--white)}
 
   /* ── HERO ── */
@@ -2343,6 +2338,7 @@
     height:calc(100vh - var(--nav-h) - 44px);
     min-height:560px;
     overflow:hidden;
+    display:block;
   }
   .pdp-breadcrumb{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.45);margin-bottom:24px}
   .pdp-breadcrumb a{color:inherit;text-decoration:none}
@@ -3241,7 +3237,6 @@
 
 <div id="nav-placeholder"></div>
 
-<div class="pdp-page-wrap">
 <!-- ── STICKY PRODUCT NAV ── -->
 <div class="prod-nav" id="prod-nav">
   <div class="prod-nav-inner">
