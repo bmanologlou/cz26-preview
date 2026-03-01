@@ -2320,19 +2320,20 @@
     border-bottom:1px solid rgba(255,255,255,0.06);
   }
   .prod-nav-inner{
-    max-width:1440px;
-    margin:0 auto;
-    padding:0 80px;
+    width:100%;
+    padding:0 40px;
     display:flex;
     align-items:center;
     height:44px;
+    box-sizing:border-box;
   }
   .prod-nav-name{
     font-family:"Gunterz",sans-serif;
-    font-size:15px;
+    font-size:14px;
     color:#fff;
     flex-shrink:0;
-    margin-right:40px;
+    margin-right:32px;
+    white-space:nowrap;
   }
   .prod-nav-links{
     display:flex;
@@ -2341,12 +2342,12 @@
   }
   .prod-nav-links a{
     font-family:"DM Mono",monospace;
-    font-size:10px;
+    font-size:9px;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    color:rgba(255,255,255,0.4);
+    color:rgba(255,255,255,0.45);
     text-decoration:none;
-    margin-right:32px;
+    margin-right:28px;
     transition:color 0.15s;
     white-space:nowrap;
   }
@@ -2357,6 +2358,7 @@
     gap:8px;
     margin-left:auto;
     align-items:center;
+    flex-shrink:0;
   }
   .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:5px 14px;text-decoration:none;transition:background 0.15s;line-height:1;}
   .btn-sm-red:hover{background:#c41019}
