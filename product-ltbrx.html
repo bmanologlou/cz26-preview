@@ -2320,13 +2320,13 @@
   }
   .prod-nav-inner{
     max-width:1440px;margin:0 auto;padding:0 80px;
-    display:flex;align-items:center;justify-content:space-between;height:44px;
+    display:flex;align-items:center;height:44px;gap:0;
   }
-  .prod-nav-links{display:flex;gap:0;margin-left:auto;}
-  .prod-nav-cta{display:flex;gap:8px;margin-left:24px;}
-  .prod-nav-name{font-family:"Gunterz",sans-serif;font-size:15px;letter-spacing:0.04em;color:var(--white);flex-shrink:0;}
-  .prod-nav-links a{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.35);text-decoration:none;padding:0 16px;transition:color 0.15s}
+  .prod-nav-name{font-family:"Gunterz",sans-serif;font-size:15px;letter-spacing:0.04em;color:var(--white);flex-shrink:0;margin-right:48px;}
+  .prod-nav-links{display:flex;gap:0;flex:1;}
+  .prod-nav-links a{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.4);text-decoration:none;padding:0 20px 0 0;transition:color 0.15s;margin-right:4px;}
   .prod-nav-links a:hover,.prod-nav-links a.active{color:var(--white)}
+  .prod-nav-cta{display:flex;gap:8px;margin-left:auto;}
   .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:5px 14px;text-decoration:none;transition:background 0.15s;line-height:1;}
   .btn-sm-red:hover{background:#c41019}
   .btn-sm-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.5);padding:5px 14px;text-decoration:none;transition:all 0.15s;line-height:1;}
@@ -2381,7 +2381,7 @@
   .btn-outline-lg-dark{display:inline-flex;align-items:center;border:1px solid rgba(10,10,10,0.22);color:rgba(10,10,10,0.6);font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:13px 28px;border-radius:2px;transition:all 0.2s}
   .btn-outline-lg-dark:hover{border-color:var(--black);color:var(--black)}
   /* ── SECTION COMMON ── */
-  .pdp-section{max-width:1440px;margin:0 auto;padding:120px 80px;scroll-margin-top:calc(var(--nav-h) + 44px)}
+  .pdp-section{max-width:1440px;margin:0 auto;padding:100px 80px;scroll-margin-top:calc(var(--nav-h) + 44px)}
   .pdp-section-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
   .pdp-section-title{font-family:"Gunterz",sans-serif;font-size:40px;line-height:1;color:var(--white);margin-bottom:48px}
   .pdp-section-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0 80px}
@@ -2400,12 +2400,12 @@
 
   /* ── SPECS ── */
   .pdp-specs-bg{background:#0d0d0d}
-  .pdp-specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05)}
-  .pdp-spec-cell{background:#0d0d0d;padding:40px 32px}
-  .pdp-spec-num{font-family:"Gunterz",sans-serif;font-size:48px;line-height:1;color:var(--white);margin-bottom:4px}
-  .pdp-spec-unit{font-family:"Gunterz",sans-serif;font-size:20px;color:rgba(245,243,239,0.3)}
-  .pdp-spec-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-top:8px}
-  .pdp-spec-sub{font-size:12px;font-weight:200;color:rgba(245,243,239,0.25);margin-top:4px}
+  .pdp-specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+  .pdp-spec-cell{background:transparent;padding:32px 0 32px;border-top:1px solid rgba(255,255,255,0.12);margin-right:48px;}
+  .pdp-spec-num{font-family:"Gunterz",sans-serif;font-size:56px;line-height:1;color:var(--white);margin-bottom:6px}
+  .pdp-spec-unit{font-family:"Gunterz",sans-serif;font-size:24px;color:rgba(245,243,239,0.4)}
+  .pdp-spec-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.45);margin-top:4px}
+  .pdp-spec-sub{font-size:12px;font-weight:200;color:rgba(245,243,239,0.3);margin-top:6px}
   .pdp-spec-table{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05)}
   .pdp-spec-row{background:#0d0d0d;display:grid;grid-template-columns:1fr 1fr;padding:16px 24px;gap:16px}
   .pdp-spec-row-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,243,239,0.3)}
@@ -3355,23 +3355,18 @@
     <div class="pdp-specs-grid">
       <div class="pdp-spec-cell">
         <div class="pdp-spec-num">2800<span class="pdp-spec-unit">+</span></div>
-        <div class="pdp-spec-label">Bar Max Pressure</div>
+        <div class="pdp-spec-label">bar max pressure</div>
         <div class="pdp-spec-sub">High-pressure rail simulation</div>
       </div>
       <div class="pdp-spec-cell">
         <div class="pdp-spec-num">2/4</div>
-        <div class="pdp-spec-label">Stroke Engine Types</div>
+        <div class="pdp-spec-label">stroke engine types</div>
         <div class="pdp-spec-sub">Primary · Secondary · Auxiliary</div>
       </div>
       <div class="pdp-spec-cell">
-        <div class="pdp-spec-num">10+</div>
-        <div class="pdp-spec-label">AZO Test Functions</div>
+        <div class="pdp-spec-num">10<span class="pdp-spec-unit">+</span></div>
+        <div class="pdp-spec-label">AZO test functions</div>
         <div class="pdp-spec-sub">Flow · Spray · Coding · Leakage</div>
-      </div>
-      <div class="pdp-spec-cell">
-        <div class="pdp-spec-num">3</div>
-        <div class="pdp-spec-label">Side Access</div>
-        <div class="pdp-spec-sub">Transparent protective hood</div>
       </div>
     </div>
     <div class="pdp-spec-table">
