@@ -2455,7 +2455,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-eng-block{background:var(--grey);padding:40px 36px;}
 .pdp-eng-num{font-family:"Gunterz",sans-serif;font-size:13px;color:var(--accent);margin-bottom:16px;letter-spacing:0.1em;}
-.pdp-eng-title{font-family:"Gunterz",sans-serif;font-size:19px;line-height:1.2;color:var(--text);margin-bottom:12px;}
+.pdp-eng-title{font-family:"Gunterz",sans-serif;font-size:19px;line-height:1.2;color:var(--text);margin-bottom:12px;text-transform:none;}
 .pdp-eng-body{font-size:16px;font-weight:300;line-height:1.7;color:var(--text-light);}
 
 /* ─── ADVANCED FUNCTIONS ─── */
@@ -3395,27 +3395,33 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <p class="pdp-ind-intro">Optimized for high-power diesel environments where precision and reliability are critical.</p>
     <div class="pdp-ind-grid">
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17h18M5 17V7a2 2 0 012-2h10a2 2 0 012 2v10"/><path d="M8 17v-4h8v4"/><circle cx="7" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></div>
+        <!-- Ship / Anchor icon for Shipping -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><path d="M5 11h14l-2 7H7l-2-7z"/><path d="M3 20c2 1 4 1 5-1s3-2 4 0 3 1 5-1"/></svg></div>
         <div class="pdp-ind-label">Shipping</div>
       </div>
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/></svg></div>
+        <!-- Waves / propeller for Marine -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-4 6-4 8 0s6 4 8 0"/><path d="M2 17c2-4 6-4 8 0s6 4 8 0"/><path d="M2 7c2-4 6-4 8 0s6 4 8 0"/></svg></div>
         <div class="pdp-ind-label">Marine Engines</div>
       </div>
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg></div>
+        <!-- Generator / lightning bolt for Power Generation -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="pdp-ind-label">Power Generation</div>
       </div>
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <!-- Excavator arm / cog for Heavy Machinery -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M21 12h-2M5 12H3M19.07 19.07l-1.41-1.41M5.34 6.34L3.93 4.93M12 21v-2M12 5V3"/></svg></div>
         <div class="pdp-ind-label">Heavy Machinery</div>
       </div>
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="6" width="22" height="13" rx="2"/><path d="M23 13H1M5 19v2M19 19v2M5 6V4M19 6V4"/></svg></div>
+        <!-- Train for Locomotives -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M4 11h16"/><path d="M8 3v8M16 3v8"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M6 21l2-2M16 19l2 2"/></svg></div>
         <div class="pdp-ind-label">Locomotives</div>
       </div>
       <div class="pdp-ind-cell">
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <!-- Factory / industrial for Industrial Diesel -->
+        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V8l6-4v4l6-4v4l6-4v16H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg></div>
         <div class="pdp-ind-label">Industrial Diesel</div>
       </div>
     </div>
@@ -3455,6 +3461,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
         <div class="pdp-cap-title">Nozzle Opening Pressure Measurement</div>
         <div class="pdp-cap-body">Automatic electronic nozzle opening pressure testing (aNOP-PCV) for consistent and repeatable injector diagnostics.</div>
       </div>
+      <div class="pdp-cap" style="background:var(--grey);"></div>
     </div>
   </div>
 </div>
@@ -3537,19 +3544,47 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <!-- ══ 7. EXPANDABILITY ══ -->
 <div class="pdp-expand" id="expandability">
-  <div class="pdp-expand-inner">
-    <div>
-      <div class="pdp-sec-eyebrow">System Expansion</div>
-      <h2 class="pdp-sec-title" style="margin-bottom:24px;">Expandable Architecture</h2>
-      <p class="pdp-expand-body">Designed with scalability in mind, the LTBR-X can be upgraded to support emerging diesel technologies and expanded testing configurations, ensuring long-term operational relevance and investment security.</p>
-    </div>
-    <div>
-      <div class="pdp-expand-list">
-        <div class="pdp-expand-item"><div class="pdp-expand-dot"></div><div class="pdp-expand-item-text">Cambox Module Integration</div></div>
-        <div class="pdp-expand-item"><div class="pdp-expand-dot"></div><div class="pdp-expand-item-text">Additional Rail Configurations</div></div>
-        <div class="pdp-expand-item"><div class="pdp-expand-dot"></div><div class="pdp-expand-item-text">Specialized Fixtures &amp; Adaptors</div></div>
-        <div class="pdp-expand-item"><div class="pdp-expand-dot"></div><div class="pdp-expand-item-text">Software Upgrade Packages</div></div>
-        <div class="pdp-expand-item"><div class="pdp-expand-dot"></div><div class="pdp-expand-item-text">Continuous Database Expansion</div></div>
+  <div class="pdp-sec">
+    <div class="pdp-sec-eyebrow">System Expansion</div>
+    <h2 class="pdp-sec-title" style="margin-bottom:12px;">Expandable Architecture</h2>
+    <p class="pdp-expand-intro">Designed with scalability in mind, the LTBR-X can be upgraded to support emerging diesel technologies and expanded testing configurations, ensuring long-term operational relevance and investment security.</p>
+    
+    <!-- Carousel -->
+    <div class="pdp-carousel-wrap">
+      <div class="pdp-carousel" id="pdp-carousel">
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
+          <div class="pdp-carousel-label">Cambox Module Integration</div>
+          <div class="pdp-carousel-desc">Enables advanced pump testing scenarios requiring cam-driven operation for comprehensive performance evaluation.</div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
+          <div class="pdp-carousel-label">Additional Rail Configurations</div>
+          <div class="pdp-carousel-desc">Expand testing capacity with supplementary high-pressure rail setups for multi-injector or specialized applications.</div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
+          <div class="pdp-carousel-label">Specialized Fixtures &amp; Adaptors</div>
+          <div class="pdp-carousel-desc">Purpose-built mounting solutions for non-standard injector and pump geometries across all major engine manufacturers.</div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
+          <div class="pdp-carousel-label">Software Upgrade Packages</div>
+          <div class="pdp-carousel-desc">Modular AZO software expansions that unlock additional diagnostic functions and testing protocols as requirements evolve.</div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-img"><div class="pdp-carousel-img-placeholder"></div></div>
+          <div class="pdp-carousel-label">Continuous Database Expansion</div>
+          <div class="pdp-carousel-desc">Automatic updates adding new engine models, injector specifications and test parameters to keep pace with market developments.</div>
+        </div>
+      </div>
+      <div class="pdp-carousel-controls">
+        <button class="pdp-carousel-btn" id="carousel-prev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="pdp-carousel-btn" id="carousel-next" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -3678,6 +3713,31 @@ document.addEventListener("DOMContentLoaded", function() {
     onScroll();
   }
 });
+
+  // ── Expandability Carousel ──
+  (function(){
+    const track = document.getElementById('pdp-carousel');
+    if(!track) return;
+    const btnPrev = document.getElementById('carousel-prev');
+    const btnNext = document.getElementById('carousel-next');
+    const items = track.querySelectorAll('.pdp-carousel-item');
+    const visible = 3;
+    let current = 0;
+    const max = items.length - visible;
+
+    function update(){
+      const itemW = items[0].offsetWidth + 16;
+      track.style.transform = 'translateX(-' + (current * itemW) + 'px)';
+      track.style.transition = 'transform 0.4s ease';
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current >= max;
+    }
+
+    btnPrev.addEventListener('click', ()=>{ if(current>0){current--;update();} });
+    btnNext.addEventListener('click', ()=>{ if(current<max){current++;update();} });
+    update();
+  })();
+
 </script>
 </body>
 </html>
