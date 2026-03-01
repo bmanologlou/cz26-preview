@@ -2312,21 +2312,52 @@
 
   /* ── STICKY PRODUCT NAV ── */
   .prod-nav{
-    position:sticky;top:var(--nav-h);z-index:40;
-    height:44px;line-height:44px;
-    background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);
+    position:sticky;
+    top:var(--nav-h);
+    z-index:40;
+    background:rgba(10,10,10,0.95);
+    backdrop-filter:blur(20px);
     border-bottom:1px solid rgba(255,255,255,0.06);
-    overflow:hidden;
   }
   .prod-nav-inner{
-    max-width:1440px;margin:0 auto;padding:0 80px;
-    display:flex;align-items:center;height:44px;gap:0;
+    max-width:1440px;
+    margin:0 auto;
+    padding:0 80px;
+    display:flex;
+    align-items:center;
+    height:44px;
   }
-  .prod-nav-name{font-family:"Gunterz",sans-serif;font-size:15px;letter-spacing:0.04em;color:var(--white);flex-shrink:0;margin-right:48px;}
-  .prod-nav-links{display:flex;gap:0;flex:1;}
-  .prod-nav-links a{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.4);text-decoration:none;padding:0 20px 0 0;transition:color 0.15s;margin-right:4px;}
-  .prod-nav-links a:hover,.prod-nav-links a.active{color:var(--white)}
-  .prod-nav-cta{display:flex;gap:8px;margin-left:auto;}
+  .prod-nav-name{
+    font-family:"Gunterz",sans-serif;
+    font-size:15px;
+    color:#fff;
+    flex-shrink:0;
+    margin-right:40px;
+  }
+  .prod-nav-links{
+    display:flex;
+    align-items:center;
+    flex:1;
+  }
+  .prod-nav-links a{
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.4);
+    text-decoration:none;
+    margin-right:32px;
+    transition:color 0.15s;
+    white-space:nowrap;
+  }
+  .prod-nav-links a:hover,
+  .prod-nav-links a.active{color:#fff;}
+  .prod-nav-cta{
+    display:flex;
+    gap:8px;
+    margin-left:auto;
+    align-items:center;
+  }
   .btn-sm-red{background:var(--accent);border:none;border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:5px 14px;text-decoration:none;transition:background 0.15s;line-height:1;}
   .btn-sm-red:hover{background:#c41019}
   .btn-sm-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.5);padding:5px 14px;text-decoration:none;transition:all 0.15s;line-height:1;}
