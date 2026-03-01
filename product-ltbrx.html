@@ -2318,9 +2318,9 @@
   }
   .prod-nav-inner{
     max-width:1440px;margin:0 auto;padding:0 80px;
-    display:flex;align-items:center;justify-content:space-between;height:48px;
+    display:flex;align-items:center;justify-content:space-between;height:44px;
   }
-  .prod-nav-name{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
+  .prod-nav-name{font-family:"Gunterz",sans-serif;font-size:16px;letter-spacing:0.06em;color:rgba(245,243,239,0.75)}
   .prod-nav-links{display:flex;gap:0}
   .prod-nav-links a{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.35);text-decoration:none;padding:0 16px;transition:color 0.15s}
   .prod-nav-links a:hover,.prod-nav-links a.active{color:var(--white)}
@@ -2333,15 +2333,9 @@
   /* ── HERO ── */
   .pdp-hero{
     position:relative;
-    height:calc(100vh - var(--nav-h) - 48px);
+    height:calc(100vh - var(--nav-h) - 44px);
     min-height:600px;
     overflow:hidden;
-  }
-  .pdp-hero-left{
-    position:absolute;bottom:0;left:0;right:0;
-    padding:0 80px 64px;
-    background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-    z-index:2;
   }
   .pdp-breadcrumb{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.45);margin-bottom:24px}
   .pdp-breadcrumb a{color:inherit;text-decoration:none}
@@ -2362,10 +2356,27 @@
   .btn-outline-lg:hover{border-color:var(--white);color:var(--white)}
 
   /* Hero image */
-  .pdp-hero-right{position:absolute;inset:0;z-index:1;}
+  .pdp-hero-right{position:absolute;inset:0;}
   .pdp-hero-img-wrap{width:100%;height:100%;}
   .pdp-hero-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
+
+  /* ── INTRO (below hero) ── */
+  .pdp-intro{background:var(--white);color:var(--black);padding:64px 80px;}
+  .pdp-intro-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .pdp-intro .pdp-breadcrumb{color:rgba(10,10,10,0.3)}
+  .pdp-intro .pdp-breadcrumb a{color:inherit}
+  .pdp-intro .pdp-eyebrow{color:var(--accent)}
+  .pdp-intro .pdp-title{color:var(--black)}
+  .pdp-intro .pdp-subtitle{color:rgba(10,10,10,0.35)}
+  .pdp-intro .pdp-tagline{color:rgba(10,10,10,0.55)}
+  .pdp-intro-right{display:flex;flex-direction:column;gap:40px;}
+  .pdp-intro .pdp-key-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);border-radius:4px;overflow:hidden;}
+  .pdp-intro .pdp-key-spec{background:var(--white);padding:20px 24px;}
+  .pdp-intro .pdp-key-spec-val{color:var(--black)}
+  .pdp-intro .pdp-key-spec-label{color:rgba(10,10,10,0.35)}
+  .btn-outline-lg-dark{display:inline-flex;align-items:center;border:1px solid rgba(10,10,10,0.22);color:rgba(10,10,10,0.6);font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:13px 28px;border-radius:2px;transition:all 0.2s}
+  .btn-outline-lg-dark:hover{border-color:var(--black);color:var(--black)}
   /* ── SECTION COMMON ── */
   .pdp-section{max-width:1440px;margin:0 auto;padding:120px 80px}
   .pdp-section-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
@@ -3229,8 +3240,8 @@
     <span class="prod-nav-name">LTBR-X</span>
     <nav class="prod-nav-links">
       <a href="#overview">Overview</a>
-      <a href="#specs">Specs</a>
-      <a href="#actuators">Actuators</a>
+      <a href="#actuators">Systems</a>
+      <a href="#specs">Tech Specs</a>
       <a href="#gallery">Gallery</a>
       <a href="#related">Related</a>
     </nav>
@@ -3250,35 +3261,44 @@
       <img src="assets/images/LTBRX_open_sm_main_hero.webp" alt="LTBR-X Large Engines Diesel Test Bench" class="pdp-hero-img">
     </div>
   </div>
-  <div class="pdp-hero-left">
-    <div class="pdp-breadcrumb">
-      <a href="solutions.html">Solutions</a>
-      <span>/</span>
-      <a href="solutions-specialists.html">Specialists</a>
-      <span>/</span>
-      LTBR-X
+</div>
+<!-- ══════════════════════════════════════
+     INTRO (below hero)
+══════════════════════════════════════ -->
+<div class="pdp-intro">
+  <div class="pdp-intro-inner">
+    <div class="pdp-intro-left">
+      <div class="pdp-breadcrumb">
+        <a href="solutions.html">Solutions</a>
+        <span>/</span>
+        <a href="solutions-specialists.html">Specialists</a>
+        <span>/</span>
+        LTBR-X
+      </div>
+      <div class="pdp-eyebrow">Large Engines · Heavy-Duty Diesel</div>
+      <h1 class="pdp-title">LTBR-X</h1>
+      <div class="pdp-subtitle">Specialists Series · Series 2024</div>
+      <p class="pdp-tagline">The premier professional solution for large engines and heavy-duty diesel systems. From shipping and marines to locomotives and HD engines — built for specialists who demand the highest precision.</p>
     </div>
-    <div class="pdp-eyebrow">Large Engines · Heavy-Duty Diesel</div>
-    <div class="pdp-title">LTBR-X</div>
-    <div class="pdp-subtitle">Specialists Series · Series 2024</div>
-    <p class="pdp-tagline">The premier professional solution for large engines and heavy-duty diesel systems. From shipping and marines to locomotives and HD engines — built for specialists who demand the highest precision.</p>
-    <div class="pdp-key-specs">
-      <div class="pdp-key-spec">
-        <div class="pdp-key-spec-val">2800<span style="font-size:18px;color:rgba(245,243,239,0.3)"> bar+</span></div>
-        <div class="pdp-key-spec-label">Max Test Pressure</div>
+    <div class="pdp-intro-right">
+      <div class="pdp-key-specs">
+        <div class="pdp-key-spec">
+          <div class="pdp-key-spec-val">2800<span style="font-size:18px;color:rgba(10,10,10,0.3)"> bar+</span></div>
+          <div class="pdp-key-spec-label">Max Test Pressure</div>
+        </div>
+        <div class="pdp-key-spec">
+          <div class="pdp-key-spec-val">2/4</div>
+          <div class="pdp-key-spec-label">Stroke Engines</div>
+        </div>
+        <div class="pdp-key-spec">
+          <div class="pdp-key-spec-val">AZO</div>
+          <div class="pdp-key-spec-label">Software Platform</div>
+        </div>
       </div>
-      <div class="pdp-key-spec">
-        <div class="pdp-key-spec-val">2/4</div>
-        <div class="pdp-key-spec-label">Stroke Engines</div>
+      <div class="pdp-hero-ctas">
+        <a href="#" class="btn-primary-lg">Request a Quote</a>
+        <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline-lg">Download Datasheet</a>
       </div>
-      <div class="pdp-key-spec">
-        <div class="pdp-key-spec-val">AZO</div>
-        <div class="pdp-key-spec-label">Software Platform</div>
-      </div>
-    </div>
-    <div class="pdp-hero-ctas">
-      <a href="#" class="btn-primary-lg">Request a Quote</a>
-      <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline-lg">Download Datasheet</a>
     </div>
   </div>
 </div>
@@ -3469,7 +3489,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   // Sticky nav active section highlight
-  const sections = ['overview','specs','actuators','gallery','related'];
+  const sections = ['overview','actuators','specs','gallery','related'];
   const links = document.querySelectorAll('.prod-nav-links a');
 
   const observer = new IntersectionObserver((entries) => {
