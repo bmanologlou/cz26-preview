@@ -2332,13 +2332,18 @@
 
   /* ── HERO ── */
   .pdp-hero{
-    min-height:calc(100vh - var(--nav-h) - 48px);
-    display:grid;grid-template-columns:1fr 1fr;
-    max-width:1440px;margin:0 auto;padding:0 80px;
-    align-items:center;gap:80px;
+    position:relative;
+    height:calc(100vh - var(--nav-h) - 48px);
+    min-height:600px;
+    overflow:hidden;
   }
-  .pdp-hero-left{padding:80px 0}
-  .pdp-breadcrumb{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.25);margin-bottom:32px}
+  .pdp-hero-left{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:0 80px 64px;
+    background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    z-index:2;
+  }
+  .pdp-breadcrumb{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.45);margin-bottom:24px}
   .pdp-breadcrumb a{color:inherit;text-decoration:none}
   .pdp-breadcrumb a:hover{color:rgba(245,243,239,0.5)}
   .pdp-breadcrumb span{margin:0 8px;opacity:0.4}
@@ -2346,8 +2351,8 @@
   .pdp-title{font-family:"Gunterz",sans-serif;font-size:72px;line-height:0.95;letter-spacing:0.01em;color:var(--white);margin-bottom:8px}
   .pdp-subtitle{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-bottom:32px}
   .pdp-tagline{font-size:18px;font-weight:200;line-height:1.55;color:rgba(245,243,239,0.6);max-width:480px;margin-bottom:48px}
-  .pdp-key-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:4px;margin-bottom:48px;overflow:hidden}
-  .pdp-key-spec{background:var(--black);padding:20px 24px}
+  .pdp-key-specs{display:flex;gap:40px;margin-bottom:40px;}
+  .pdp-key-spec{padding:0}
   .pdp-key-spec-val{font-family:"Gunterz",sans-serif;font-size:28px;line-height:1;color:var(--white);margin-bottom:4px}
   .pdp-key-spec-label{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,243,239,0.3)}
   .pdp-hero-ctas{display:flex;gap:12px;align-items:center}
@@ -2357,14 +2362,9 @@
   .btn-outline-lg:hover{border-color:var(--white);color:var(--white)}
 
   /* Hero image */
-  .pdp-hero-right{display:flex;align-items:center;justify-content:center;position:relative}
-  .pdp-hero-img-wrap{position:relative;width:100%;max-width:640px}
-  .pdp-hero-img-wrap::before{
-    content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse 60% 50% at 50% 60%, rgba(237,28,36,0.06) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .pdp-hero-img{width:100%;object-fit:contain;display:block;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.6))}
+  .pdp-hero-right{position:absolute;inset:0;z-index:1;}
+  .pdp-hero-img-wrap{width:100%;height:100%;}
+  .pdp-hero-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
   /* ── SECTION COMMON ── */
   .pdp-section{max-width:1440px;margin:0 auto;padding:120px 80px}
@@ -3245,6 +3245,11 @@
      HERO
 ══════════════════════════════════════ -->
 <div class="pdp-hero" id="overview">
+  <div class="pdp-hero-right">
+    <div class="pdp-hero-img-wrap">
+      <img src="assets/images/LTBRX_open_sm_main_hero.webp" alt="LTBR-X Large Engines Diesel Test Bench" class="pdp-hero-img">
+    </div>
+  </div>
   <div class="pdp-hero-left">
     <div class="pdp-breadcrumb">
       <a href="solutions.html">Solutions</a>
@@ -3274,11 +3279,6 @@
     <div class="pdp-hero-ctas">
       <a href="#" class="btn-primary-lg">Request a Quote</a>
       <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline-lg">Download Datasheet</a>
-    </div>
-  </div>
-  <div class="pdp-hero-right">
-    <div class="pdp-hero-img-wrap">
-      <img src="assets/images/LTBRX_open_sm_main_hero.webp" alt="LTBR-X Large Engines Diesel Test Bench" class="pdp-hero-img">
     </div>
   </div>
 </div>
