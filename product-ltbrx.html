@@ -2310,11 +2310,17 @@
 
   
 
+  /* ── PAGE WRAP ── */
+  .pdp-page-wrap{display:flex;flex-direction:column;height:calc(100vh - var(--nav-h));}
+  .pdp-page-wrap .prod-nav{flex-shrink:0;}
+  .pdp-page-wrap .pdp-hero{flex:1;height:auto !important;}
+
   /* ── STICKY PRODUCT NAV ── */
   .prod-nav{
     position:sticky;top:var(--nav-h);z-index:40;
     background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);
     border-bottom:1px solid rgba(255,255,255,0.06);
+    flex-shrink:0;
   }
   .prod-nav-inner{
     max-width:1440px;margin:0 auto;padding:0 80px;
@@ -2335,7 +2341,7 @@
   .pdp-hero{
     position:relative;
     height:calc(100vh - var(--nav-h) - 44px);
-    min-height:600px;
+    min-height:560px;
     overflow:hidden;
   }
   .pdp-breadcrumb{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.45);margin-bottom:24px}
@@ -2379,7 +2385,7 @@
   .btn-outline-lg-dark{display:inline-flex;align-items:center;border:1px solid rgba(10,10,10,0.22);color:rgba(10,10,10,0.6);font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:13px 28px;border-radius:2px;transition:all 0.2s}
   .btn-outline-lg-dark:hover{border-color:var(--black);color:var(--black)}
   /* ── SECTION COMMON ── */
-  .pdp-section{max-width:1440px;margin:0 auto;padding:120px 80px}
+  .pdp-section{max-width:1440px;margin:0 auto;padding:120px 80px;scroll-margin-top:calc(var(--nav-h) + 44px)}
   .pdp-section-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
   .pdp-section-title{font-family:"Gunterz",sans-serif;font-size:40px;line-height:1;color:var(--white);margin-bottom:48px}
   .pdp-section-divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0 80px}
@@ -3235,6 +3241,7 @@
 
 <div id="nav-placeholder"></div>
 
+<div class="pdp-page-wrap">
 <!-- ── STICKY PRODUCT NAV ── -->
 <div class="prod-nav" id="prod-nav">
   <div class="prod-nav-inner">
