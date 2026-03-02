@@ -2451,15 +2451,16 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
-.pdp-ind-intro{font-size:16px;font-weight:300;color:var(--text-light);margin-bottom:40px;max-width:560px;}
-.pdp-ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;}
+.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
+.pdp-ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;max-width:480px;}
 .pdp-ind-cell{
-  background:var(--grey);padding:28px 20px;
-  display:flex;flex-direction:column;align-items:center;gap:12px;
-  text-align:center;
+  background:var(--grey);padding:20px 28px;
+  display:flex;align-items:center;
+  border-bottom:1px solid var(--grey-mid);
 }
-.pdp-ind-icon{color:var(--accent);opacity:0.8}
-.pdp-ind-label{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);line-height:1.4;}
+.pdp-ind-cell:nth-last-child(-n+2){border-bottom:none;}
+.pdp-ind-icon{display:none;}
+.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
 
 /* ─── CORE CAPABILITIES ─── */
 .pdp-caps{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -3414,36 +3415,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <h2 class="pdp-sec-title" style="margin-bottom:12px;">Designed for Demanding Industries</h2>
     <p class="pdp-ind-intro">Optimized for high-power diesel environments where precision and reliability are critical.</p>
     <div class="pdp-ind-grid">
-      <div class="pdp-ind-cell">
-        <!-- Ship / Anchor icon for Shipping -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><path d="M5 11h14l-2 7H7l-2-7z"/><path d="M3 20c2 1 4 1 5-1s3-2 4 0 3 1 5-1"/></svg></div>
-        <div class="pdp-ind-label">Shipping</div>
-      </div>
-      <div class="pdp-ind-cell">
-        <!-- Waves / propeller for Marine -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-4 6-4 8 0s6 4 8 0"/><path d="M2 17c2-4 6-4 8 0s6 4 8 0"/><path d="M2 7c2-4 6-4 8 0s6 4 8 0"/></svg></div>
-        <div class="pdp-ind-label">Marine Engines</div>
-      </div>
-      <div class="pdp-ind-cell">
-        <!-- Generator / lightning bolt for Power Generation -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="pdp-ind-label">Power Generation</div>
-      </div>
-      <div class="pdp-ind-cell">
-        <!-- Excavator arm / cog for Heavy Machinery -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M21 12h-2M5 12H3M19.07 19.07l-1.41-1.41M5.34 6.34L3.93 4.93M12 21v-2M12 5V3"/></svg></div>
-        <div class="pdp-ind-label">Heavy Machinery</div>
-      </div>
-      <div class="pdp-ind-cell">
-        <!-- Train for Locomotives -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M4 11h16"/><path d="M8 3v8M16 3v8"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M6 21l2-2M16 19l2 2"/></svg></div>
-        <div class="pdp-ind-label">Locomotives</div>
-      </div>
-      <div class="pdp-ind-cell">
-        <!-- Factory / industrial for Industrial Diesel -->
-        <div class="pdp-ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V8l6-4v4l6-4v4l6-4v16H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg></div>
-        <div class="pdp-ind-label">Industrial Diesel</div>
-      </div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Shipping</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Marines</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Generators</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">HD Engines</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Machinery</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Locomotives</div></div>
+      <div class="pdp-ind-cell" style="grid-column:1/-1;"><div class="pdp-ind-label" style="color:var(--text-light);">And More</div></div>
     </div>
   </div>
 </div>
