@@ -2452,13 +2452,8 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
-.pdp-ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;max-width:480px;}
-.pdp-ind-cell{
-  background:var(--grey);padding:20px 28px;
-  display:flex;align-items:center;
-  border-bottom:1px solid var(--grey-mid);
-}
-.pdp-ind-cell:nth-last-child(-n+2){border-bottom:none;}
+.pdp-ind-grid{display:flex;flex-wrap:wrap;gap:0;}
+.pdp-ind-cell{padding:0 40px 0 0;}
 .pdp-ind-icon{display:none;}
 .pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
 
@@ -3420,8 +3415,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <div class="pdp-ind-cell"><div class="pdp-ind-label">Generators</div></div>
       <div class="pdp-ind-cell"><div class="pdp-ind-label">HD Engines</div></div>
       <div class="pdp-ind-cell"><div class="pdp-ind-label">Machinery</div></div>
-      <div class="pdp-ind-cell"><div class="pdp-ind-label">Locomotives</div></div>
-      <div class="pdp-ind-cell" style="grid-column:1/-1;"><div class="pdp-ind-label" style="color:var(--text-light);">And More</div></div>
+      <div class="pdp-ind-cell" style="padding-right:0;"><div class="pdp-ind-label">Locomotives</div></div>
     </div>
   </div>
 </div>
