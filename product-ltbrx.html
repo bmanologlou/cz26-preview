@@ -2452,9 +2452,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
-.pdp-ind-grid{display:flex;flex-direction:column;gap:0;}
-.pdp-ind-row{display:flex;gap:48px;padding:16px 0;border-top:1px solid #c0c0c0;}
-.pdp-ind-row:last-child{border-bottom:1px solid #c0c0c0;}
+.pdp-ind-grid{display:flex;gap:48px;flex-wrap:wrap;}
 .pdp-ind-cell{padding:0;}
 .pdp-ind-icon{display:none;}
 .pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
@@ -3412,10 +3410,12 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <h2 class="pdp-sec-title" style="margin-bottom:12px;">Designed for Demanding Industries</h2>
     <p class="pdp-ind-intro">Optimized for high-power diesel environments where precision and reliability are critical.</p>
     <div class="pdp-ind-grid">
-      <div class="pdp-ind-row"><div class="pdp-ind-cell"><div class="pdp-ind-label">Shipping</div></div></div>
-      <div class="pdp-ind-row"><div class="pdp-ind-cell"><div class="pdp-ind-label">Marines</div></div><div class="pdp-ind-cell"><div class="pdp-ind-label">Generators</div></div></div>
-      <div class="pdp-ind-row"><div class="pdp-ind-cell"><div class="pdp-ind-label">HD Engines</div></div><div class="pdp-ind-cell"><div class="pdp-ind-label">Machinery</div></div></div>
-      <div class="pdp-ind-row"><div class="pdp-ind-cell"><div class="pdp-ind-label">Locomotives</div></div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Shipping</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Marines</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Generators</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">HD Engines</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Machinery</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Locomotives</div></div>
     </div>
   </div>
 </div>
