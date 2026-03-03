@@ -2330,11 +2330,20 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   min-height:580px;
   overflow:hidden;
 }
-.pdp-hero-img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-  display:block;
+.pdp-hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.pdp-hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.9s ease;}
+.pdp-hero-slide.active{opacity:1;}
+.pdp-hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border:none;border-radius:2px;
+  background:rgba(10,10,10,0.45);color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.2s,background 0.2s;z-index:10;
 }
+.pdp-hero:hover .pdp-hero-arrow{opacity:1;}
+.pdp-hero-arrow:hover{background:rgba(10,10,10,0.75);}
+.pdp-hero-prev{left:24px;}
+.pdp-hero-next{right:24px;}
 
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
