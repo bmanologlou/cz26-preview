@@ -3496,7 +3496,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <!-- ══ VIDEO ══ -->
 <div class="pdp-video-section">
-  <video autoplay muted loop playsinline>
+  <video id="pdp-video" muted loop playsinline>
     <source src="assets/video/CZ_LTBRX_video.mp4" type="video/mp4">
   </video>
 </div>
@@ -3798,6 +3798,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if(btnPrev) btnPrev.addEventListener('click', ()=> goTo(current - 1));
     if(btnNext) btnNext.addEventListener('click', ()=> goTo(current + 1));
+  })();
+
+  // ── Video play on scroll ──
+  (function(){
+    const video = document.getElementById('pdp-video');
+    if(!video) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(video);
   })();
 </script>
 </body>
