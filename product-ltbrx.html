@@ -3435,6 +3435,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <a href="#overview" class="pdp-sticky-link" data-section="overview">Overview</a>
       <a href="#capabilities" class="pdp-sticky-link" data-section="capabilities">Capabilities</a>
       <a href="#video" class="pdp-sticky-link" data-section="video">Video</a>
+      <a href="#expandability" class="pdp-sticky-link" data-section="expandability">Expansion</a>
       <a href="#specs" class="pdp-sticky-link" data-section="specs">Tech Specs</a>
     </div>
   </div>
@@ -3864,7 +3865,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nav = document.getElementById('pdp-sticky-nav');
     const hero = document.querySelector('.pdp-hero');
     const links = document.querySelectorAll('.pdp-sticky-link');
-    const sections = ['overview','capabilities','video','specs'];
+    const sections = ['overview','capabilities','video','expandability','specs'];
 
     // Show after hero
     const heroObserver = new IntersectionObserver((entries) => {
