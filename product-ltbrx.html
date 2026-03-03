@@ -2364,15 +2364,17 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   font-family:"Gunterz",sans-serif;font-size:15px;
   color:var(--text);letter-spacing:0.04em;
 }
-.pdp-sticky-links{display:flex;gap:32px;align-items:center;}
-.pdp-sticky-link{
-  font-family:"DM Mono",monospace;font-size:11px;
-  letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--text-light);text-decoration:none;
-  transition:color 0.2s;padding:0;
+#pdp-sticky-nav .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
+#pdp-sticky-nav .pdp-sticky-link{
+  font-family:"DM Mono",monospace !important;font-size:11px !important;
+  letter-spacing:0.1em !important;text-transform:uppercase !important;
+  color:#1a1a1a !important;text-decoration:none !important;
+  background:none !important;padding:0 !important;
+  display:inline-block !important;line-height:48px !important;
+  transition:color 0.2s;
 }
-.pdp-sticky-link:hover{color:var(--text);}
-.pdp-sticky-link.active{color:var(--accent);}
+#pdp-sticky-nav .pdp-sticky-link:hover{color:var(--accent) !important;}
+#pdp-sticky-nav .pdp-sticky-link.active{color:var(--accent) !important;}
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
 
@@ -3429,12 +3431,12 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 <div class="pdp-sticky-nav" id="pdp-sticky-nav">
   <div class="pdp-sticky-inner">
     <div class="pdp-sticky-name">LTBR-X</div>
-    <nav class="pdp-sticky-links">
+    <div class="pdp-sticky-links">
       <a href="#overview" class="pdp-sticky-link" data-section="overview">Overview</a>
       <a href="#capabilities" class="pdp-sticky-link" data-section="capabilities">Capabilities</a>
       <a href="#video" class="pdp-sticky-link" data-section="video">Video</a>
       <a href="#specs" class="pdp-sticky-link" data-section="specs">Tech Specs</a>
-    </nav>
+    </div>
   </div>
 </div>
 
