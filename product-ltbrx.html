@@ -2348,6 +2348,20 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
 
+/* ─── VIDEO SECTION ─── */
+.pdp-video-section{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  background:#000;
+}
+.pdp-video-section video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+}
+
 
 /* ─── EXPANDABILITY CAROUSEL ─── */
 .pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:640px;}
@@ -3478,6 +3492,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <div class="pdp-cap" style="background:var(--grey);"></div>
     </div>
   </div>
+</div>
+
+<!-- ══ VIDEO ══ -->
+<div class="pdp-video-section">
+  <video autoplay muted loop playsinline>
+    <source src="assets/video/CZ_LTBRX_video.mp4" type="video/mp4">
+  </video>
 </div>
 
 <hr class="pdp-sec-divider">
