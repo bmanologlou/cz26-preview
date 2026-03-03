@@ -3762,6 +3762,22 @@ document.addEventListener("DOMContentLoaded", function() {
     update();
   })();
 
+
+  // ── Hero Slider ──
+  (function(){
+    const slides = document.querySelectorAll('.pdp-hero-slide');
+    if(!slides.length) return;
+    const btnPrev = document.getElementById('hero-prev');
+    const btnNext = document.getElementById('hero-next');
+    let current = 0;
+    function goTo(n){
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+    if(btnPrev) btnPrev.addEventListener('click', ()=> goTo(current - 1));
+    if(btnNext) btnNext.addEventListener('click', ()=> goTo(current + 1));
+  })();
 </script>
 </body>
 </html>
