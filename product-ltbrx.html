@@ -2345,6 +2345,34 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-hero-prev{left:24px;}
 .pdp-hero-next{right:24px;}
 
+
+/* ─── STICKY PRODUCT NAV ─── */
+.pdp-sticky-nav{
+  position:sticky;top:var(--nav-h);z-index:90;
+  height:48px;background:var(--grey);
+  border-bottom:1px solid #c0c0c0;
+  display:flex;align-items:center;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.pdp-sticky-nav.visible{opacity:1;pointer-events:all;}
+.pdp-sticky-inner{
+  max-width:1440px;margin:0 auto;padding:0 80px;
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+}
+.pdp-sticky-name{
+  font-family:"Gunterz",sans-serif;font-size:15px;
+  color:var(--text);letter-spacing:0.04em;
+}
+.pdp-sticky-links{display:flex;gap:32px;align-items:center;}
+.pdp-sticky-link{
+  font-family:"DM Mono",monospace;font-size:11px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-light);text-decoration:none;
+  transition:color 0.2s;padding:0;
+}
+.pdp-sticky-link:hover{color:var(--text);}
+.pdp-sticky-link.active{color:var(--accent);}
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
 
@@ -3397,6 +3425,19 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <div class="pdp-body">
 
+<!-- ══ STICKY PRODUCT NAV ══ -->
+<div class="pdp-sticky-nav" id="pdp-sticky-nav">
+  <div class="pdp-sticky-inner">
+    <div class="pdp-sticky-name">LTBR-X</div>
+    <nav class="pdp-sticky-links">
+      <a href="#overview" class="pdp-sticky-link" data-section="overview">Overview</a>
+      <a href="#capabilities" class="pdp-sticky-link" data-section="capabilities">Capabilities</a>
+      <a href="#video" class="pdp-sticky-link" data-section="video">Video</a>
+      <a href="#specs" class="pdp-sticky-link" data-section="specs">Tech Specs</a>
+    </nav>
+  </div>
+</div>
+
 <!-- ══ INTRO (Hero content) ══ -->
 <div class="pdp-intro">
   <div class="pdp-intro-inner">
@@ -3495,7 +3536,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 </div>
 
 <!-- ══ VIDEO ══ -->
-<div class="pdp-video-section">
+<div class="pdp-video-section" id="video">
   <video id="pdp-video" muted loop playsinline>
     <source src="assets/video/CZ_LTBRX_video.mp4" type="video/mp4">
   </video>
@@ -3814,6 +3855,48 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }, { threshold: 0.3 });
     observer.observe(video);
+  })();
+
+  // ── Sticky Product Nav ──
+  (function(){
+    const nav = document.getElementById('pdp-sticky-nav');
+    const hero = document.querySelector('.pdp-hero');
+    const links = document.querySelectorAll('.pdp-sticky-link');
+    const sections = ['overview','capabilities','video','specs'];
+
+    // Show after hero
+    const heroObserver = new IntersectionObserver((entries) => {
+      nav.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    if(hero) heroObserver.observe(hero);
+
+    // Active link on scroll
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector('.pdp-sticky-link[data-section="' + entry.target.id + '"]');
+          if(active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) sectionObserver.observe(el);
+    });
+
+    // Smooth scroll
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if(target){
+          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) + 48;
+          window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        }
+      });
+    });
   })();
 </script>
 </body>
