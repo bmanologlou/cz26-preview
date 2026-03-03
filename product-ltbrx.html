@@ -2365,14 +2365,14 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   color:var(--text);letter-spacing:0.04em;
 }
 .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
-.pdp-sticky-link{
-  font-family:"DM Mono",monospace;font-size:11px;
+.pdp-sticky-nav .pdp-sticky-link{
+  font-family:"DM Mono",monospace !important;font-size:11px !important;
   letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--text-light);text-decoration:none;
-  transition:color 0.2s;padding:0;
+  color:#5a5a5a !important;text-decoration:none !important;
+  transition:color 0.2s;padding:0;display:inline-block;
 }
-.pdp-sticky-link:hover{color:var(--text);}
-.pdp-sticky-link.active{color:var(--accent);}
+.pdp-sticky-nav .pdp-sticky-link:hover{color:var(--text) !important;}
+.pdp-sticky-nav .pdp-sticky-link.active{color:var(--accent) !important;}
 /* ─── PAGE BODY (grey bg) ─── */
 .pdp-body{background:var(--grey);}
 
