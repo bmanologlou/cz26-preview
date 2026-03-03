@@ -3359,8 +3359,17 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 <div id="nav-placeholder"></div>
 
 <!-- ══ 1. HERO ══ -->
-<div class="pdp-hero">
-  <img src="assets/images/LTBRX_open_sm_main_hero.webp" alt="LTBR-X Large Engines Diesel Test Bench" class="pdp-hero-img">
+<div class="pdp-hero" id="pdp-hero-slider">
+  <div class="pdp-hero-slide active" style="background-image:url('assets/images/LTBRX_Hero_S1.webp')"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Hero_S2.webp')"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Hero_S3.webp')"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Hero_S4.webp')"></div>
+  <button class="pdp-hero-arrow pdp-hero-prev" id="hero-prev" aria-label="Previous">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="pdp-hero-arrow pdp-hero-next" id="hero-next" aria-label="Next">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
 </div>
 
 <div class="pdp-body">
