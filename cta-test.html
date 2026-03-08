@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CTA Button Styles — Carbon Zapp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2');
+    font-weight: 400; font-style: normal;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #c0392b;
+    --dark: #1a1a1a;
+    --mid: #2e2e2e;
+    --grey: #ebebeb;
+    --text: #1a1a1a;
+  }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    background: #f5f5f5;
+    color: var(--text);
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--dark);
+    padding: 48px 80px 40px;
+    border-bottom: 1px solid #333;
+  }
+  .page-header h1 {
+    font-family: 'Gunterz', serif;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .page-header p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 72px 80px;
+    border-bottom: 1px solid #ddd;
+  }
+  .section.dark {
+    background: var(--dark);
+    border-bottom-color: #333;
+  }
+  .section.mid {
+    background: #111;
+    border-bottom-color: #222;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .section.dark .section-label,
+  .section.mid .section-label { color: #555; }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .btn-row-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    width: 100%;
+    margin-bottom: -12px;
+  }
+
+  /* ════════════════════════════════════════
+     STYLE A — Current (existing on site)
+  ════════════════════════════════════════ */
+  .btn-a-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-a-primary:hover { background: #a93226; }
+
+  .btn-a-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid #999;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-a-outline:hover { border-color: var(--text); }
+  .section.dark .btn-a-outline,
+  .section.mid .btn-a-outline { color: #fff; border-color: #555; }
+  .section.dark .btn-a-outline:hover,
+  .section.mid .btn-a-outline:hover { border-color: #fff; }
+
+  /* ════════════════════════════════════════
+     STYLE B — Arrow pill (from screenshots)
+     Filled version
+  ════════════════════════════════════════ */
+  .btn-b-filled {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: var(--dark);
+    color: #fff;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s;
+    padding: 0;
+  }
+  .btn-b-filled .btn-b-text {
+    padding: 13px 22px 13px 24px;
+  }
+  .btn-b-filled .btn-b-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 3px 3px 3px 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-b-filled .btn-b-arrow svg { width: 14px; height: 14px; }
+  .btn-b-filled:hover { background: #333; }
+  .btn-b-filled:hover .btn-b-arrow { background: var(--accent); color: #fff; }
+
+  /* RED primary version */
+  .btn-b-filled.red {
+    background: var(--accent);
+  }
+  .btn-b-filled.red .btn-b-arrow {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+  .btn-b-filled.red:hover { background: #a93226; }
+  .btn-b-filled.red:hover .btn-b-arrow { background: rgba(255,255,255,0.25); }
+
+  /* ════════════════════════════════════════
+     STYLE B — Arrow pill
+     Outline version
+  ════════════════════════════════════════ */
+  .btn-b-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    padding: 0;
+  }
+  .btn-b-outline .btn-b-text {
+    padding: 12px 22px 12px 24px;
+  }
+  .btn-b-outline .btn-b-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 3px 3px 3px 0;
+    transition: background 0.2s;
+  }
+  .btn-b-outline .btn-b-arrow svg { width: 14px; height: 14px; }
+  .btn-b-outline:hover { border-color: var(--dark); }
+  .btn-b-outline:hover .btn-b-arrow { background: var(--accent); }
+
+  /* Dark bg version */
+  .section.dark .btn-b-outline,
+  .section.mid .btn-b-outline {
+    color: #fff;
+    border-color: #444;
+  }
+  .section.dark .btn-b-outline .btn-b-arrow,
+  .section.mid .btn-b-outline .btn-b-arrow {
+    background: #fff;
+    color: var(--dark);
+  }
+  .section.dark .btn-b-outline:hover,
+  .section.mid .btn-b-outline:hover { border-color: #fff; }
+  .section.dark .btn-b-outline:hover .btn-b-arrow,
+  .section.mid .btn-b-outline:hover .btn-b-arrow { background: var(--accent); color: #fff; }
+
+  /* ════════════════════════════════════════
+     STYLE C — Square arrow (split button)
+  ════════════════════════════════════════ */
+  .btn-c {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  .btn-c .btn-c-text {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .btn-c .btn-c-arrow {
+    width: 44px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .btn-c .btn-c-arrow svg { width: 14px; height: 14px; }
+  .btn-c:hover .btn-c-text { background: #333; }
+  .btn-c:hover .btn-c-arrow { background: #a93226; }
+
+  /* outline version */
+  .btn-c.outline .btn-c-text {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid #c0c0c0;
+    border-right: none;
+  }
+  .btn-c.outline .btn-c-arrow {
+    background: var(--dark);
+  }
+  .btn-c.outline:hover .btn-c-text { border-color: var(--dark); }
+  .btn-c.outline:hover .btn-c-arrow { background: var(--accent); }
+
+  .section.dark .btn-c.outline .btn-c-text,
+  .section.mid .btn-c.outline .btn-c-text {
+    color: #fff;
+    border-color: #444;
+  }
+
+  /* ── CONTEXT DEMO ── */
+  .context-demo {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid #333;
+  }
+  .context-demo h2 {
+    font-family: 'Gunterz', serif;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .context-demo p {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    max-width: 480px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  /* SVG arrow */
+  .arrow-svg { display: block; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>CTA Button Styles</h1>
+  <p>Carbon Zapp · UI Test · 2026</p>
+</div>
+
+<!-- Arrow SVG template -->
+<svg style="display:none">
+  <symbol id="ico-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════════════════════════
+     STYLE A — Current site style
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Style A — Current · Light background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Primary + Outline</span>
+    <a href="#" class="btn-a-primary">Request Quote</a>
+    <a href="#" class="btn-a-outline">Download Brochure</a>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="section-label">Style A — Current · Dark background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Primary + Outline</span>
+    <a href="#" class="btn-a-primary">Request Quote</a>
+    <a href="#" class="btn-a-outline">Download Brochure</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     STYLE B — Arrow Pill
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Style B — Arrow Pill · Light background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline</span>
+    <a href="#" class="btn-b-filled">
+      <span class="btn-b-text">Request Quote</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-b-outline">
+      <span class="btn-b-text">Download Brochure</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-b-filled red">
+      <span class="btn-b-text">Request Quote</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-b-outline">
+      <span class="btn-b-text">Download Brochure</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="section-label">Style B — Arrow Pill · Dark background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline</span>
+    <a href="#" class="btn-b-filled">
+      <span class="btn-b-text">Request Quote</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-b-outline">
+      <span class="btn-b-text">Download Brochure</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-b-filled red">
+      <span class="btn-b-text">Request Quote</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-b-outline">
+      <span class="btn-b-text">Download Brochure</span>
+      <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <!-- Context demo -->
+  <div class="context-demo">
+    <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin-bottom:16px;">In context — Final CTA section</p>
+    <h2>Ready to test at the next level?</h2>
+    <p>Contact our team to schedule a demo or request a quote for the LTBR-X.</p>
+    <div class="btn-row" style="margin-bottom:0">
+      <a href="#" class="btn-b-filled red">
+        <span class="btn-b-text">Request Quote</span>
+        <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+      </a>
+      <a href="#" class="btn-b-outline">
+        <span class="btn-b-text">Download Brochure</span>
+        <span class="btn-b-arrow"><svg class="arrow-svg"><use href="#ico-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     STYLE C — Square split button
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Style C — Square Split · Light background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Filled + Outline</span>
+    <a href="#" class="btn-c">
+      <span class="btn-c-text">Request Quote</span>
+      <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-c outline">
+      <span class="btn-c-text">Download Brochure</span>
+      <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="section-label">Style C — Square Split · Dark background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Filled + Outline</span>
+    <a href="#" class="btn-c">
+      <span class="btn-c-text">Request Quote</span>
+      <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-c outline">
+      <span class="btn-c-text">Download Brochure</span>
+      <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="context-demo">
+    <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin-bottom:16px;">In context — Final CTA section</p>
+    <h2>Ready to test at the next level?</h2>
+    <p>Contact our team to schedule a demo or request a quote for the LTBR-X.</p>
+    <div class="btn-row" style="margin-bottom:0">
+      <a href="#" class="btn-c">
+        <span class="btn-c-text">Request Quote</span>
+        <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+      <a href="#" class="btn-c outline">
+        <span class="btn-c-text">Download Brochure</span>
+        <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
