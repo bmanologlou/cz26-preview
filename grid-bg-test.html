@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Grid Background Options — Carbon Zapp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2');
+    font-weight: 400; font-style: normal;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #c0392b;
+    --dark: #1a1a1a;
+  }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    background: #111;
+    color: #fff;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: #0a0a0a;
+    padding: 48px 80px 40px;
+    border-bottom: 1px solid #222;
+  }
+  .page-header h1 {
+    font-family: 'Gunterz', serif;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .page-header p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .option {
+    padding: 72px 80px;
+    border-bottom: 1px solid #222;
+  }
+  .option-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  .option-label span {
+    color: #fff;
+    margin-left: 12px;
+  }
+
+  /* ── GRID ── */
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 1100px;
+  }
+
+  /* ── CARD BASE ── */
+  .prod-card {
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .prod-card:hover {
+    transform: translateY(-2px);
+  }
+  .prod-card-image {
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 24px 24px 0;
+  }
+  .prod-card-image img {
+    width: 75%;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+  }
+  .prod-card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .prod-card-eyebrow {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .prod-card-name {
+    font-family: "Gunterz", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+  .prod-card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  .prod-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+  }
+  .prod-card-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 6px 12px;
+    transition: all 0.15s;
+  }
+
+  /* ════════════════════════════════════
+     OPTION A — Pure black #0a0a0a
+     Cards: #181818, image bg: #111
+  ════════════════════════════════════ */
+  .opt-a { background: #0a0a0a; }
+  .opt-a .prod-card { background: #181818; }
+  .opt-a .prod-card:hover { background: #1f1f1f; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+  .opt-a .prod-card-image { background: #111; }
+  .opt-a .prod-card-name { color: #f0f0f0; }
+  .opt-a .prod-card-desc { color: rgba(240,240,240,0.45); }
+  .opt-a .prod-card-footer { border-top: 1px solid #2a2a2a; }
+  .opt-a .prod-card-cta { color: rgba(240,240,240,0.5); border: 1px solid rgba(240,240,240,0.15); }
+  .opt-a .prod-card:hover .prod-card-cta { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+  /* ════════════════════════════════════
+     OPTION B — Dark grey #141414
+     Cards: #1e1e1e subtle border
+  ════════════════════════════════════ */
+  .opt-b { background: #141414; }
+  .opt-b .prod-card { background: #1e1e1e; border: 1px solid #2a2a2a; }
+  .opt-b .prod-card:hover { background: #242424; box-shadow: 0 4px 32px rgba(0,0,0,0.4); border-color: #3a3a3a; }
+  .opt-b .prod-card-image { background: linear-gradient(180deg, #161616 0%, #111 100%); }
+  .opt-b .prod-card-name { color: #f0f0f0; }
+  .opt-b .prod-card-desc { color: rgba(240,240,240,0.4); }
+  .opt-b .prod-card-footer { border-top: 1px solid #2a2a2a; }
+  .opt-b .prod-card-cta { color: rgba(240,240,240,0.45); border: 1px solid #2a2a2a; }
+  .opt-b .prod-card:hover .prod-card-cta { color: #fff; border-color: #4a4a4a; }
+
+  /* ════════════════════════════════════
+     OPTION C — Dark with red accent image bg
+     Cards: #1a1a1a, image: subtle red glow
+  ════════════════════════════════════ */
+  .opt-c { background: #111; }
+  .opt-c .prod-card { background: #1a1a1a; }
+  .opt-c .prod-card:hover { background: #1f1f1f; box-shadow: 0 4px 32px rgba(192,57,43,0.12); }
+  .opt-c .prod-card-image { background: linear-gradient(180deg, #1e1212 0%, #150d0d 100%); }
+  .opt-c .prod-card-name { color: #f0f0f0; }
+  .opt-c .prod-card-desc { color: rgba(240,240,240,0.4); }
+  .opt-c .prod-card-footer { border-top: 1px solid #2a2a2a; }
+  .opt-c .prod-card-cta { color: rgba(240,240,240,0.45); border: 1px solid #2a2a2a; }
+  .opt-c .prod-card:hover .prod-card-cta { color: #fff; border-color: var(--accent); }
+
+  /* ════════════════════════════════════
+     OPTION D — Carbon texture feel
+     Cards: #1c1c1c, image: #0f0f0f
+     Section bg: very dark #0d0d0d
+  ════════════════════════════════════ */
+  .opt-d { background: #0d0d0d; }
+  .opt-d .prod-card { background: #1c1c1c; border-bottom: 2px solid #111; }
+  .opt-d .prod-card:hover { background: #222; border-bottom-color: var(--accent); }
+  .opt-d .prod-card-image { background: #0f0f0f; }
+  .opt-d .prod-card-name { color: #efefef; }
+  .opt-d .prod-card-desc { color: rgba(239,239,239,0.4); }
+  .opt-d .prod-card-footer { border-top: 1px solid #252525; }
+  .opt-d .prod-card-cta { color: rgba(239,239,239,0.45); border: 1px solid #252525; }
+  .opt-d .prod-card:hover .prod-card-cta { color: #fff; border-color: #444; }
+
+  /* ════════════════════════════════════
+     OPTION E — Seamless flat dark
+     No card bg distinction — all same dark
+     Separation via subtle top border accent
+  ════════════════════════════════════ */
+  .opt-e { background: #161616; }
+  .opt-e .prod-card { background: #161616; border-top: 1px solid #2a2a2a; border-radius: 0; }
+  .opt-e .prod-card:hover { background: #1c1c1c; }
+  .opt-e .prod-card-image { background: #111; border-bottom: 1px solid #222; }
+  .opt-e .prod-card-name { color: #f0f0f0; }
+  .opt-e .prod-card-desc { color: rgba(240,240,240,0.38); }
+  .opt-e .prod-card-footer { border-top: 1px solid #222; }
+  .opt-e .prod-card-cta { color: rgba(240,240,240,0.4); border: 1px solid #2a2a2a; border-radius: 0; }
+  .opt-e .prod-card:hover .prod-card-cta { color: #fff; border-color: #555; }
+  .opt-e .sol-grid { gap: 0; border: 1px solid #2a2a2a; }
+
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Products Grid — Background Options</h1>
+  <p>Carbon Zapp · UI Test · 2026</p>
+</div>
+
+<!-- Macro to avoid repeating card HTML - using same 3 cards each time -->
+
+<!-- ══ OPTION A ══ -->
+<div class="option opt-a">
+  <div class="option-label">Option A<span>Pure Black · Cards #181818 · No border</span></div>
+  <div class="sol-grid">
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="product-ltbrx.html" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">LTBR-X</div>
+        <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ══ OPTION B ══ -->
+<div class="option opt-b">
+  <div class="option-label">Option B<span>Dark Grey · Cards with subtle border</span></div>
+  <div class="sol-grid">
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="product-ltbrx.html" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">LTBR-X</div>
+        <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ══ OPTION C ══ -->
+<div class="option opt-c">
+  <div class="option-label">Option C<span>Dark · Red-tinted image background</span></div>
+  <div class="sol-grid">
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="product-ltbrx.html" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">LTBR-X</div>
+        <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ══ OPTION D ══ -->
+<div class="option opt-d">
+  <div class="option-label">Option D<span>Carbon Dark · Red bottom border on hover</span></div>
+  <div class="sol-grid">
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="product-ltbrx.html" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">LTBR-X</div>
+        <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ══ OPTION E ══ -->
+<div class="option opt-e">
+  <div class="option-label">Option E<span>Seamless Flat · No card separation · Grid border</span></div>
+  <div class="sol-grid">
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">MTBR-X</div>
+        <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="#" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">PTBR-X</div>
+        <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+    <a href="product-ltbrx.html" class="prod-card">
+      <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+      <div class="prod-card-body">
+        <div class="prod-card-eyebrow">Specialists</div>
+        <div class="prod-card-name">LTBR-X</div>
+        <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+        <div class="prod-card-footer"><span class="prod-card-cta">Discover</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
