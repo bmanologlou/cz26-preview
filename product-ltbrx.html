@@ -3405,6 +3405,21 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
   
+
+  /* ─── EXPLORE MORE ─── */
+  .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
+  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
+  .sol-editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s}
+  .ed-card:hover{opacity:0.85}
+  .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
+  .ed-card-icon svg{color:rgba(245,243,239,0.6)}
+  .ed-card-content{margin-top:40px}
+  .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
+  .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
+  .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
+  .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
+  .ed-card:hover .ed-card-cta{color:var(--white)}
 </style>
 </head>
 <body>
@@ -3753,6 +3768,24 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 </div>
 
 <!-- ══ RELATED PRODUCTS ══ -->
+</div>
+
+<div class="sol-editorial">
+  <div class="sol-editorial-label">Explore More</div>
+  <div class="sol-editorial-grid">
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#1a1a1a 0%,#111 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Video Series</div><div class="ed-card-title">Watch CZExperts</div><div class="ed-card-sub">Expert skills, shared knowledge. Setup, calibration, advanced ops.</div><div class="ed-card-cta">Watch Now →</div></div>
+    </a>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#0a1628 0%,#0d1f3c 60%,#0f0f14 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div><div class="ed-card-title">Innovation Driven</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
+    </a>
+  </div>
 </div>
 
 <div id="footer-cta-placeholder"></div>
