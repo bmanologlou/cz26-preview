@@ -76,8 +76,8 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
   position:relative;
 }
 
-/* top accent line on hover */
-.prod-card::before{
+/* top accent line — only on opt-a */
+.opt-a .prod-card::before{
   content:'';
   position:absolute;top:0;left:0;right:0;
   height:2px;background:var(--accent);
@@ -85,7 +85,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
   transition:transform 0.3s ease;
   z-index:2;
 }
-.prod-card:hover::before{transform:scaleX(1)}
+.opt-a .prod-card:hover::before{transform:scaleX(1)}
 
 .prod-card-image{
   aspect-ratio:4/3;
@@ -146,7 +146,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 .opt-a .prod-card:hover .prod-card-cta-btn{
   border-color:rgba(10,10,10,0.6);color:#0a0a0a;
 }
-/* dark versions */
+/* dark versions — button */
 .opt-b .prod-card-cta-btn,.opt-c .prod-card-cta-btn,
 .opt-d .prod-card-cta-btn,.opt-e .prod-card-cta-btn,
 .opt-f .prod-card-cta-btn{
@@ -157,8 +157,15 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 .opt-d .prod-card:hover .prod-card-cta-btn,
 .opt-e .prod-card:hover .prod-card-cta-btn,
 .opt-f .prod-card:hover .prod-card-cta-btn{
-  border-color:rgba(245,245,245,0.5);color:#f5f5f5;
+  border-color:var(--accent);color:var(--accent);
 }
+/* dark card hover bg */
+.opt-b .prod-card:hover,.opt-c .prod-card:hover,
+.opt-d .prod-card:hover,.opt-e .prod-card:hover,
+.opt-f .prod-card:hover{background:#191919}
+.opt-b .prod-card:hover .prod-card-body,.opt-c .prod-card:hover .prod-card-body,
+.opt-d .prod-card:hover .prod-card-body,.opt-e .prod-card:hover .prod-card-body,
+.opt-f .prod-card:hover .prod-card-body{background:#191919}
 
 /* ════════════════════════════════════
    OPTION A — Current (light cards)
@@ -177,10 +184,10 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 /* ════════════════════════════════════
    OPTION B — Pure dark #111
 ════════════════════════════════════ */
-.opt-b .prod-card{background:#111}
+.opt-b .prod-card{background:#141414}
 
 .opt-b .prod-card-image{background:#0a0a0a}
-.opt-b .prod-card-body{background:#111}
+.opt-b .prod-card-body{background:#141414}
 .opt-b .prod-card-name{color:var(--white)}
 .opt-b .prod-card-desc{color:rgba(245,245,245,0.4)}
 .opt-b .prod-card-footer{border-color:rgba(255,255,255,0.07)}
@@ -206,13 +213,13 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 /* ════════════════════════════════════
    OPTION D — Centre spotlight strong
 ════════════════════════════════════ */
-.opt-d .prod-card{background:#0f0f0f}
+.opt-d .prod-card{background:#141414}
 
 .opt-d .prod-card-image{
-  background:radial-gradient(ellipse 75% 75% at 50% 55%, #3c3c3c 0%, #141414 55%, #080808 100%);
+  background:radial-gradient(ellipse 80% 80% at 50% 50%, #505050 0%, #1e1e1e 45%, #080808 100%);
 }
 
-.opt-d .prod-card-body{background:#0f0f0f}
+.opt-d .prod-card-body{background:#141414}
 .opt-d .prod-card-name{color:var(--white)}
 .opt-d .prod-card-desc{color:rgba(245,245,245,0.4)}
 .opt-d .prod-card-footer{border-color:rgba(255,255,255,0.07)}
@@ -222,13 +229,13 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 /* ════════════════════════════════════
    OPTION E — Warm red tint spotlight
 ════════════════════════════════════ */
-.opt-e .prod-card{background:#0e0a0a}
+.opt-e .prod-card{background:#141414}
 
 .opt-e .prod-card-image{
   background:radial-gradient(ellipse 75% 75% at 50% 55%, #3a1818 0%, #160808 55%, #080404 100%);
 }
 
-.opt-e .prod-card-body{background:#0e0a0a}
+.opt-e .prod-card-body{background:#141414}
 .opt-e .prod-card-name{color:var(--white)}
 .opt-e .prod-card-desc{color:rgba(245,245,245,0.4)}
 .opt-e .prod-card-footer{border-color:rgba(255,255,255,0.07)}
@@ -238,13 +245,13 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 /* ════════════════════════════════════
    OPTION F — Side red glow (G ref)
 ════════════════════════════════════ */
-.opt-f .prod-card{background:#0d0a0a}
+.opt-f .prod-card{background:#141414}
 
 .opt-f .prod-card-image{
-  background:radial-gradient(ellipse 80% 90% at 25% 55%, rgba(120,12,12,0.55) 0%, rgba(50,5,5,0.3) 40%, #080404 80%);
+  background:radial-gradient(ellipse 90% 70% at 50% 100%, rgba(140,12,12,0.6) 0%, rgba(60,5,5,0.35) 40%, #080404 80%);
 }
 
-.opt-f .prod-card-body{background:#0d0a0a}
+.opt-f .prod-card-body{background:#141414}
 .opt-f .prod-card-name{color:var(--white)}
 .opt-f .prod-card-desc{color:rgba(245,245,245,0.4)}
 .opt-f .prod-card-footer{border-color:rgba(255,255,255,0.07)}
