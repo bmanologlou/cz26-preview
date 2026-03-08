@@ -96,9 +96,9 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
 .prod-card-image img{
   width:75%;object-fit:contain;
   object-position:center bottom;display:block;
-  transition:transform 0.4s ease;
+  
 }
-.prod-card:hover .prod-card-image img{transform:scale(1.04)}
+.prod-card:hover .prod-card-image img{}
 
 .prod-card-body{
   padding:24px;flex:1;display:flex;flex-direction:column;
@@ -149,7 +149,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
    OPTION B — Pure dark #111
 ════════════════════════════════════ */
 .opt-b .prod-card{background:#111}
-.opt-b .prod-card:hover{background:#161616;box-shadow:0 4px 32px rgba(0,0,0,0.5)}
+
 .opt-b .prod-card-image{background:#0a0a0a}
 .opt-b .prod-card-body{background:#111}
 .opt-b .prod-card-name{color:var(--white)}
@@ -162,13 +162,11 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
    OPTION C — Centre spotlight neutral
 ════════════════════════════════════ */
 .opt-c .prod-card{background:#141414}
-.opt-c .prod-card:hover{background:#1a1a1a;box-shadow:0 4px 32px rgba(0,0,0,0.5)}
+
 .opt-c .prod-card-image{
   background:radial-gradient(ellipse 80% 80% at 50% 60%, #2e2e2e 0%, #111 60%, #0a0a0a 100%);
 }
-.opt-c .prod-card:hover .prod-card-image{
-  background:radial-gradient(ellipse 80% 80% at 50% 60%, #383838 0%, #161616 60%, #0d0d0d 100%);
-}
+
 .opt-c .prod-card-body{background:#141414}
 .opt-c .prod-card-name{color:var(--white)}
 .opt-c .prod-card-desc{color:rgba(245,245,245,0.4)}
@@ -180,13 +178,11 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
    OPTION D — Centre spotlight strong
 ════════════════════════════════════ */
 .opt-d .prod-card{background:#0f0f0f}
-.opt-d .prod-card:hover{background:#181818;box-shadow:0 4px 32px rgba(0,0,0,0.6)}
+
 .opt-d .prod-card-image{
   background:radial-gradient(ellipse 75% 75% at 50% 55%, #3c3c3c 0%, #141414 55%, #080808 100%);
 }
-.opt-d .prod-card:hover .prod-card-image{
-  background:radial-gradient(ellipse 75% 75% at 50% 55%, #484848 0%, #1a1a1a 55%, #0b0b0b 100%);
-}
+
 .opt-d .prod-card-body{background:#0f0f0f}
 .opt-d .prod-card-name{color:var(--white)}
 .opt-d .prod-card-desc{color:rgba(245,245,245,0.4)}
@@ -198,13 +194,11 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
    OPTION E — Warm red tint spotlight
 ════════════════════════════════════ */
 .opt-e .prod-card{background:#0e0a0a}
-.opt-e .prod-card:hover{background:#160c0c;box-shadow:0 4px 32px rgba(150,10,10,0.2)}
+
 .opt-e .prod-card-image{
   background:radial-gradient(ellipse 75% 75% at 50% 55%, #3a1818 0%, #160808 55%, #080404 100%);
 }
-.opt-e .prod-card:hover .prod-card-image{
-  background:radial-gradient(ellipse 75% 75% at 50% 55%, #4a1e1e 0%, #1e0a0a 55%, #0b0505 100%);
-}
+
 .opt-e .prod-card-body{background:#0e0a0a}
 .opt-e .prod-card-name{color:var(--white)}
 .opt-e .prod-card-desc{color:rgba(245,245,245,0.4)}
@@ -216,13 +210,11 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
    OPTION F — Side red glow (G ref)
 ════════════════════════════════════ */
 .opt-f .prod-card{background:#0d0a0a}
-.opt-f .prod-card:hover{background:#160c0c;box-shadow:0 4px 32px rgba(150,10,10,0.25)}
+
 .opt-f .prod-card-image{
   background:radial-gradient(ellipse 80% 90% at 25% 55%, rgba(120,12,12,0.55) 0%, rgba(50,5,5,0.3) 40%, #080404 80%);
 }
-.opt-f .prod-card:hover .prod-card-image{
-  background:radial-gradient(ellipse 80% 90% at 25% 55%, rgba(150,15,15,0.65) 0%, rgba(60,5,5,0.35) 40%, #0a0505 80%);
-}
+
 .opt-f .prod-card-body{background:#0d0a0a}
 .opt-f .prod-card-name{color:var(--white)}
 .opt-f .prod-card-desc{color:rgba(245,245,245,0.4)}
@@ -272,7 +264,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -285,7 +277,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -298,7 +290,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -311,7 +303,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -324,7 +316,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -337,7 +329,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -350,7 +342,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -363,7 +355,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -376,7 +368,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -398,7 +390,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -411,7 +403,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -424,7 +416,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -437,7 +429,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -450,7 +442,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -463,7 +455,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -476,7 +468,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -489,7 +481,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -502,7 +494,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -524,7 +516,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -537,7 +529,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -550,7 +542,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -563,7 +555,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -576,7 +568,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -589,7 +581,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -602,7 +594,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -615,7 +607,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -628,7 +620,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -650,7 +642,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -663,7 +655,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -676,7 +668,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -689,7 +681,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -702,7 +694,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -715,7 +707,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -728,7 +720,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -741,7 +733,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -754,7 +746,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -776,7 +768,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -789,7 +781,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -802,7 +794,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -815,7 +807,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -828,7 +820,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -841,7 +833,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -854,7 +846,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -867,7 +859,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -880,7 +872,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -902,7 +894,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">MTBR-X</div>
     <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -915,7 +907,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">PTBR-X</div>
     <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -928,7 +920,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB4R-X</div>
     <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -941,7 +933,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">LTBR-X</div>
     <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -954,7 +946,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ITB1R-X</div>
     <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -967,7 +959,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">CTBR-X</div>
     <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -980,7 +972,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">DGFR-X</div>
     <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -993,7 +985,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">ETBR-X</div>
     <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
@@ -1006,7 +998,7 @@ body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
     <div class="prod-card-name">HTBR-X</div>
     <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
     <div class="prod-card-footer">
-      <span class="prod-card-cta">View All Systems
+      <span class="prod-card-cta">Discover
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </span>
     </div>
