@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Grid Dark BG Test — Carbon Zapp</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Public Sans';src:url('assets/fonts/PublicSans-Variable.woff2') format('woff2');font-weight:100 900}
+@font-face{font-family:'Gunterz';src:url('assets/fonts/Gunterz-Medium.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'Gunterz';src:url('assets/fonts/Gunterz-Bold.woff2') format('woff2');font-weight:700}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:#ED1C24;--white:#f5f5f5}
+body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:var(--white)}
+
+/* ── SWITCHER ── */
+.switcher{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  display:flex;align-items:center;gap:0;
+  background:rgba(8,8,8,0.97);
+  border-bottom:1px solid #222;
+  padding:0 32px;
+  height:52px;
+}
+.switcher-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:#333;margin-right:20px;white-space:nowrap;
+}
+.sw-btn{
+  background:transparent;border:none;cursor:pointer;
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:#444;padding:0 16px;height:52px;
+  border-bottom:2px solid transparent;
+  transition:color 0.15s,border-color 0.15s;
+  white-space:nowrap;
+}
+.sw-btn:hover{color:#888}
+.sw-btn.active{color:var(--white);border-bottom-color:var(--accent)}
+
+/* ── PAGE ── */
+.page-wrap{padding-top:52px}
+
+.section-header{
+  max-width:1440px;margin:0 auto;
+  padding:48px 80px 32px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.section-eyebrow{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
+}
+.section-title{
+  font-family:'Gunterz',sans-serif;font-size:32px;
+  letter-spacing:0.04em;line-height:1;
+}
+.section-sub{
+  font-size:14px;font-weight:200;
+  color:rgba(245,245,245,0.4);margin-top:8px;
+}
+
+/* ── GRID ── */
+.sol-catalog{max-width:1440px;margin:0 auto;padding:0 80px 80px}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+/* ── PRODUCT CARD — BASE ── */
+.prod-card{
+  border-radius:4px;overflow:hidden;
+  display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;
+  transition:box-shadow 0.25s;
+  position:relative;
+}
+
+/* top accent line on hover */
+.prod-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s ease;
+  z-index:2;
+}
+.prod-card:hover::before{transform:scaleX(1)}
+
+.prod-card-image{
+  aspect-ratio:4/3;
+  display:flex;align-items:flex-end;justify-content:center;
+  overflow:hidden;padding:24px 24px 0;
+  transition:background 0.3s;
+}
+.prod-card-image img{
+  width:75%;object-fit:contain;
+  object-position:center bottom;display:block;
+  transition:transform 0.4s ease;
+}
+.prod-card:hover .prod-card-image img{transform:scale(1.04)}
+
+.prod-card-body{
+  padding:24px;flex:1;display:flex;flex-direction:column;
+  transition:background 0.3s;
+}
+.prod-card-eyebrow{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.prod-card-name{
+  font-family:'Gunterz',sans-serif;font-size:22px;
+  line-height:1;letter-spacing:0.03em;margin-bottom:6px;
+}
+.prod-card-desc{
+  font-size:13px;font-weight:400;line-height:1.5;
+  flex:1;margin-bottom:20px;
+}
+.prod-card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:16px;border-top:1px solid;
+}
+.prod-card-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  transition:gap 0.2s,color 0.2s;
+}
+.prod-card:hover .prod-card-cta{gap:10px}
+.prod-card-cta svg{width:12px;height:12px;transition:transform 0.2s}
+.prod-card:hover .prod-card-cta svg{transform:translateX(2px)}
+
+/* ════════════════════════════════════
+   OPTION A — Current (light cards)
+════════════════════════════════════ */
+.opt-a .prod-card{background:#f5f5f5}
+.opt-a .prod-card:hover{background:#efefef;box-shadow:0 4px 24px rgba(0,0,0,0.18)}
+.opt-a .prod-card-image{background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%)}
+.opt-a .prod-card-body{background:#f5f5f5}
+.opt-a .prod-card-name{color:#0a0a0a}
+.opt-a .prod-card-desc{color:rgba(10,10,10,0.5)}
+.opt-a .prod-card-footer{border-color:rgba(10,10,10,0.08)}
+.opt-a .prod-card-cta{color:rgba(10,10,10,0.5)}
+.opt-a .prod-card:hover .prod-card-cta{color:#0a0a0a}
+.opt-a .section-title,.opt-a .section-sub{color:var(--white)}
+
+/* ════════════════════════════════════
+   OPTION B — Pure dark #111
+════════════════════════════════════ */
+.opt-b .prod-card{background:#111}
+.opt-b .prod-card:hover{background:#161616;box-shadow:0 4px 32px rgba(0,0,0,0.5)}
+.opt-b .prod-card-image{background:#0a0a0a}
+.opt-b .prod-card-body{background:#111}
+.opt-b .prod-card-name{color:var(--white)}
+.opt-b .prod-card-desc{color:rgba(245,245,245,0.4)}
+.opt-b .prod-card-footer{border-color:rgba(255,255,255,0.07)}
+.opt-b .prod-card-cta{color:rgba(245,245,245,0.45)}
+.opt-b .prod-card:hover .prod-card-cta{color:var(--white)}
+
+/* ════════════════════════════════════
+   OPTION C — Centre spotlight neutral
+════════════════════════════════════ */
+.opt-c .prod-card{background:#141414}
+.opt-c .prod-card:hover{background:#1a1a1a;box-shadow:0 4px 32px rgba(0,0,0,0.5)}
+.opt-c .prod-card-image{
+  background:radial-gradient(ellipse 80% 80% at 50% 60%, #2e2e2e 0%, #111 60%, #0a0a0a 100%);
+}
+.opt-c .prod-card:hover .prod-card-image{
+  background:radial-gradient(ellipse 80% 80% at 50% 60%, #383838 0%, #161616 60%, #0d0d0d 100%);
+}
+.opt-c .prod-card-body{background:#141414}
+.opt-c .prod-card-name{color:var(--white)}
+.opt-c .prod-card-desc{color:rgba(245,245,245,0.4)}
+.opt-c .prod-card-footer{border-color:rgba(255,255,255,0.07)}
+.opt-c .prod-card-cta{color:rgba(245,245,245,0.45)}
+.opt-c .prod-card:hover .prod-card-cta{color:var(--white)}
+
+/* ════════════════════════════════════
+   OPTION D — Centre spotlight strong
+════════════════════════════════════ */
+.opt-d .prod-card{background:#0f0f0f}
+.opt-d .prod-card:hover{background:#181818;box-shadow:0 4px 32px rgba(0,0,0,0.6)}
+.opt-d .prod-card-image{
+  background:radial-gradient(ellipse 75% 75% at 50% 55%, #3c3c3c 0%, #141414 55%, #080808 100%);
+}
+.opt-d .prod-card:hover .prod-card-image{
+  background:radial-gradient(ellipse 75% 75% at 50% 55%, #484848 0%, #1a1a1a 55%, #0b0b0b 100%);
+}
+.opt-d .prod-card-body{background:#0f0f0f}
+.opt-d .prod-card-name{color:var(--white)}
+.opt-d .prod-card-desc{color:rgba(245,245,245,0.4)}
+.opt-d .prod-card-footer{border-color:rgba(255,255,255,0.07)}
+.opt-d .prod-card-cta{color:rgba(245,245,245,0.45)}
+.opt-d .prod-card:hover .prod-card-cta{color:var(--white)}
+
+/* ════════════════════════════════════
+   OPTION E — Warm red tint spotlight
+════════════════════════════════════ */
+.opt-e .prod-card{background:#0e0a0a}
+.opt-e .prod-card:hover{background:#160c0c;box-shadow:0 4px 32px rgba(150,10,10,0.2)}
+.opt-e .prod-card-image{
+  background:radial-gradient(ellipse 75% 75% at 50% 55%, #3a1818 0%, #160808 55%, #080404 100%);
+}
+.opt-e .prod-card:hover .prod-card-image{
+  background:radial-gradient(ellipse 75% 75% at 50% 55%, #4a1e1e 0%, #1e0a0a 55%, #0b0505 100%);
+}
+.opt-e .prod-card-body{background:#0e0a0a}
+.opt-e .prod-card-name{color:var(--white)}
+.opt-e .prod-card-desc{color:rgba(245,245,245,0.4)}
+.opt-e .prod-card-footer{border-color:rgba(255,255,255,0.07)}
+.opt-e .prod-card-cta{color:rgba(245,245,245,0.45)}
+.opt-e .prod-card:hover .prod-card-cta{color:var(--white)}
+
+/* ════════════════════════════════════
+   OPTION F — Side red glow (G ref)
+════════════════════════════════════ */
+.opt-f .prod-card{background:#0d0a0a}
+.opt-f .prod-card:hover{background:#160c0c;box-shadow:0 4px 32px rgba(150,10,10,0.25)}
+.opt-f .prod-card-image{
+  background:radial-gradient(ellipse 80% 90% at 25% 55%, rgba(120,12,12,0.55) 0%, rgba(50,5,5,0.3) 40%, #080404 80%);
+}
+.opt-f .prod-card:hover .prod-card-image{
+  background:radial-gradient(ellipse 80% 90% at 25% 55%, rgba(150,15,15,0.65) 0%, rgba(60,5,5,0.35) 40%, #0a0505 80%);
+}
+.opt-f .prod-card-body{background:#0d0a0a}
+.opt-f .prod-card-name{color:var(--white)}
+.opt-f .prod-card-desc{color:rgba(245,245,245,0.4)}
+.opt-f .prod-card-footer{border-color:rgba(255,255,255,0.07)}
+.opt-f .prod-card-cta{color:rgba(245,245,245,0.45)}
+.opt-f .prod-card:hover .prod-card-cta{color:var(--white)}
+
+/* ── BG LABEL BADGE ── */
+.bg-label{
+  background:#0a0a0a;border-bottom:1px solid #1a1a1a;
+  padding:10px 80px;
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:0.18em;text-transform:uppercase;color:#333;
+}
+
+/* hide/show */
+.grid-variant{display:none}
+.grid-variant.active{display:block}
+</style>
+</head>
+<body>
+
+<!-- SWITCHER -->
+<div class="switcher">
+  <span class="switcher-label">BG Option:</span>
+  <button class="sw-btn active" onclick="show('a',this)">A · Current (Light)</button>
+  <button class="sw-btn" onclick="show('b',this)">B · Pure Dark</button>
+  <button class="sw-btn" onclick="show('c',this)">C · Spotlight Subtle</button>
+  <button class="sw-btn" onclick="show('d',this)">D · Spotlight Strong</button>
+  <button class="sw-btn" onclick="show('e',this)">E · Warm Red Tint</button>
+  <button class="sw-btn" onclick="show('f',this)">F · Side Red Glow</button>
+</div>
+
+<div class="page-wrap">
+
+<div class="grid-variant active" id="var-a">
+<div class="bg-label">A · Current Style (Light cards) — Current implementation</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option A</div>
+</div>
+<div class="sol-catalog opt-a"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+<div class="grid-variant " id="var-b">
+<div class="bg-label">B · Pure Dark #111 — Clean minimal dark</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option B</div>
+</div>
+<div class="sol-catalog opt-b"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+<div class="grid-variant " id="var-c">
+<div class="bg-label">C · Centre Spotlight — subtle — Radial grey centre glow, subtle</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option C</div>
+</div>
+<div class="sol-catalog opt-c"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+<div class="grid-variant " id="var-d">
+<div class="bg-label">D · Centre Spotlight — strong — Radial grey centre glow, strong</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option D</div>
+</div>
+<div class="sol-catalog opt-d"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+<div class="grid-variant " id="var-e">
+<div class="bg-label">E · Warm Red Tint Spotlight — Radial red-tinted centre</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option E</div>
+</div>
+<div class="sol-catalog opt-e"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+<div class="grid-variant " id="var-f">
+<div class="bg-label">F · Side Red Glow — Left-side red glow → black</div>
+<div class="section-header">
+<div><div class="section-eyebrow">Solutions</div><div class="section-title">All Systems</div><div class="section-sub">Hover cards to preview interaction</div></div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:#333;">Option F</div>
+</div>
+<div class="sol-catalog opt-f"><div class="sol-grid">
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/MTBRX_800.webp" alt="MTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">MTBR-X</div>
+    <div class="prod-card-desc">Multi-System Test Bench. CRDi, CRp, EUI, EUP.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/PTBRX_800.webp" alt="PTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">PTBR-X</div>
+    <div class="prod-card-desc">Common Rail Pump Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB4RX_800.webp" alt="ITB4R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB4R-X</div>
+    <div class="prod-card-desc">Standalone CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/LTBRX_800.webp" alt="LTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">LTBR-X</div>
+    <div class="prod-card-desc">Large Injector Test Bench. EUI, EUP, HEUI.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ITB1RX_800.webp" alt="ITB1R-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ITB1R-X</div>
+    <div class="prod-card-desc">Single CRDi Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/CTBRX_800.webp" alt="CTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">CTBR-X</div>
+    <div class="prod-card-desc">Common Rail Test Bench. CRDi + CRp.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/DGFRX_800.webp" alt="DGFR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">DGFR-X</div>
+    <div class="prod-card-desc">Diesel GDi Flow & Return Test System.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/ETBRX_800.webp" alt="ETBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">ETBR-X</div>
+    <div class="prod-card-desc">EUI / EUP Unit Injector Test Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+<a href="#" class="prod-card">
+  <div class="prod-card-image"><img src="assets/images/HTBRX_800.webp" alt="HTBR-X"></div>
+  <div class="prod-card-body">
+    <div class="prod-card-eyebrow">Specialists</div>
+    <div class="prod-card-name">HTBR-X</div>
+    <div class="prod-card-desc">HEUI & Engine Diagnostic Bench.</div>
+    <div class="prod-card-footer">
+      <span class="prod-card-cta">View All Systems
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+</div></div>
+</div>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.grid-variant').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.sw-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('var-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
