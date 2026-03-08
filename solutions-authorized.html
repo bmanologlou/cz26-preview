@@ -2339,18 +2339,18 @@
   .sol-catalog{max-width:1440px;margin:0 auto;padding:12px 80px 0}
   .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   /* ─── PRODUCT CARD ─── */
-  .prod-card{background:#f5f5f5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:background 0.2s,box-shadow 0.2s}
-  .prod-card:hover{background:#efefef;box-shadow:0 4px 24px rgba(0,0,0,0.18)}
-  .prod-card-image{aspect-ratio:4/3;background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:24px 24px 0}
+  .prod-card{background:#141414;outline:1px solid rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:background 0.2s,box-shadow 0.2s}
+  .prod-card:hover{background:#191919;box-shadow:0 4px 24px rgba(0,0,0,0.4)}
+  .prod-card-image{aspect-ratio:4/3;background:radial-gradient(ellipse 90% 60% at 50% 0%, #484848 0%, #1e1e1e 50%, #080808 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:24px 24px 0}
   .prod-card-image img{width:75%;object-fit:contain;object-position:center bottom;display:block}
-  .prod-card-image.bg-blue{background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%)}
+  .prod-card-image.bg-blue{background:radial-gradient(ellipse 90% 60% at 50% 0%, #484848 0%, #1e1e1e 50%, #080808 100%)}
   .prod-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
   .prod-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .prod-card-name{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;letter-spacing:0.03em;color:#0a0a0a;margin-bottom:8px}
-  .prod-card-desc{font-size:13px;font-weight:400;line-height:1.5;color:rgba(10,10,10,0.5);flex:1;margin-bottom:20px}
-  .prod-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px}
-  .prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.6);border:1px solid rgba(10,10,10,0.2);border-radius:2px;padding:6px 12px;transition:all 0.15s}
-  .prod-card:hover .prod-card-cta{color:#0a0a0a;border-color:rgba(10,10,10,0.6);background:rgba(10,10,10,0.05)}
+  .prod-card-name{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;letter-spacing:0.03em;color:#f5f5f5;margin-bottom:8px}
+  .prod-card-desc{font-size:13px;font-weight:400;line-height:1.5;color:rgba(245,245,245,0.4);flex:1;margin-bottom:20px}
+  .prod-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)}
+  .prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,245,245,0.5);border:1px solid rgba(245,245,245,0.18);border-radius:2px;padding:6px 12px;transition:all 0.15s}
+  .prod-card:hover .prod-card-cta{color:var(--accent);border-color:var(--accent);background:transparent}
   /* ─── EDITORIAL ─── */
   .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
   .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
