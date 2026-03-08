@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CZ — CTA v2 Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --red: #c0392b;
+    --red-glow: rgba(192,57,43,0.55);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Public Sans', sans-serif; background: #0d0d0d; color: #fff; }
+
+  .page-header {
+    background: #0a0a0a;
+    border-bottom: 1px solid #1e1e1e;
+    padding: 18px 60px;
+  }
+  .page-header h1 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 400;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #444;
+    padding: 48px 60px 20px;
+  }
+
+  /* ══ BUTTONS ══ */
+  .btn-section {
+    background: #0d0d0d;
+    padding: 0 60px 60px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .btn-group { display: flex; flex-direction: column; gap: 10px; }
+
+  .btn-group-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  /* ── Pill Filled ── */
+  .cta-pill-filled {
+    display: inline-flex;
+    align-items: center;
+    background: var(--red);
+    border-radius: 100px;
+    padding: 0 0 0 24px;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    /* NO transform, NO movement on hover */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-pill-filled:hover {
+    background: #8B0000;
+    box-shadow: 0 0 32px rgba(160,15,15,0.6), 0 0 8px rgba(160,15,15,0.3);
+  }
+  .cta-pill-filled .word-discover { color: #fff; transition: color 0.3s ease; }
+  .cta-pill-filled:hover .word-discover { color: var(--red); }
+  .cta-pill-filled .cta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+  .cta-pill-filled .arrow-badge {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.22);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── Pill Outline ── */
+  .cta-pill-outline {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border-radius: 100px;
+    padding: 0 0 0 24px;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1.5px solid #3a3a3a;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  .cta-pill-outline:hover {
+    border-color: var(--red);
+    box-shadow: 0 0 24px rgba(160,15,15,0.4);
+  }
+  .cta-pill-outline .word-discover { color: #888; transition: color 0.3s ease; }
+  .cta-pill-outline:hover .word-discover { color: var(--red); }
+  .cta-pill-outline .cta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+  .cta-pill-outline .arrow-badge {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: #181818;
+    border-left: 1.5px solid #2a2a2a;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin: -1.5px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .cta-pill-outline:hover .arrow-badge {
+    background: #1c0000;
+    border-color: var(--red);
+  }
+
+  /* ── Rect Outline ── */
+  .cta-rect-outline {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border-radius: 6px;
+    padding: 0 0 0 24px;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1.5px solid #3a3a3a;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-rect-outline:hover {
+    border-color: var(--red);
+    box-shadow: 0 0 24px rgba(160,15,15,0.4);
+  }
+  .cta-rect-outline .word-discover { color: #888; transition: color 0.3s ease; }
+  .cta-rect-outline:hover .word-discover { color: var(--red); }
+  .cta-rect-outline .cta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+  .cta-rect-outline .arrow-badge {
+    width: 50px; height: 50px;
+    background: #181818;
+    border-left: 1.5px solid #2a2a2a;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .cta-rect-outline:hover .arrow-badge {
+    background: var(--red);
+    border-color: var(--red);
+  }
+
+  /* ── Rect Filled ── */
+  .cta-rect-filled {
+    display: inline-flex;
+    align-items: center;
+    background: var(--red);
+    border-radius: 6px;
+    padding: 0 0 0 24px;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1.5px solid var(--red);
+    overflow: hidden;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-rect-filled:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    box-shadow: 0 0 32px rgba(160,15,15,0.6);
+  }
+  .cta-rect-filled .word-discover { color: #fff; transition: color 0.3s ease; }
+  .cta-rect-filled:hover .word-discover { color: var(--red); }
+  .cta-rect-filled .cta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+  .cta-rect-filled .arrow-badge {
+    width: 50px; height: 50px;
+    background: rgba(0,0,0,0.2);
+    border-left: 1.5px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s;
+  }
+  .cta-rect-filled:hover .arrow-badge { background: rgba(0,0,0,0.35); }
+
+  /* SVG arrow */
+  .arrow-svg { width:13px; height:13px; }
+
+  /* ══ BACKGROUNDS ══ */
+  .bg-section { padding-bottom: 0; }
+
+  .bg-panel {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 44px 60px;
+    overflow: hidden;
+  }
+
+  .bg-info { position: relative; z-index: 2; }
+
+  .bg-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .bg-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* machine placeholder */
+  .machine-ph {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 260px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .machine-ph span {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.12);
+    text-transform: uppercase;
+  }
+
+  /* product name overlay */
+  .prod-label {
+    position: absolute;
+    top: 44px;
+    left: 60px;
+    z-index: 2;
+  }
+  .prod-label .prod-cat {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .prod-label .prod-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.85);
+    line-height: 1;
+  }
+
+  .divider { height: 1px; background: #161616; }
+
+  /* ── Background definitions ── */
+
+  /* H1: Centre spotlight neutral — subtle */
+  .bg-h1 {
+    background:
+      radial-gradient(ellipse 55% 70% at 50% 50%, #2a2a2a 0%, #141414 45%, #080808 100%);
+  }
+
+  /* H2: Centre spotlight neutral — medium */
+  .bg-h2 {
+    background:
+      radial-gradient(ellipse 60% 75% at 50% 50%, #363636 0%, #1a1a1a 40%, #070707 100%);
+  }
+
+  /* H3: Centre spotlight neutral — strong */
+  .bg-h3 {
+    background:
+      radial-gradient(ellipse 65% 80% at 50% 50%, #444 0%, #1e1e1e 38%, #060606 100%);
+  }
+
+  /* H4: Centre spotlight + warm (slight red tint) */
+  .bg-h4 {
+    background:
+      radial-gradient(ellipse 60% 75% at 50% 50%, #3a2020 0%, #1a0f0f 40%, #070707 100%);
+  }
+
+  /* H5: Centre spotlight + warm strong */
+  .bg-h5 {
+    background:
+      radial-gradient(ellipse 65% 80% at 50% 50%, #4a1a1a 0%, #200a0a 40%, #060606 100%);
+  }
+
+  /* G (reference): Side red glow */
+  .bg-g {
+    background:
+      radial-gradient(ellipse 70% 90% at 20% 50%, rgba(160,15,15,0.65) 0%, rgba(80,5,5,0.4) 30%, rgba(20,0,0,0.2) 55%, #080808 80%);
+  }
+
+  .starred::after {
+    content: ' ← selected';
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Carbon Zapp · CTA Buttons & Backgrounds — v2</h1>
+</div>
+
+<!-- ══ BUTTONS ══ -->
+<div class="section-label">01 — CTA Buttons · Hover: colour only, no movement</div>
+<div class="btn-section">
+  <div class="btn-row">
+
+    <div class="btn-group">
+      <div class="btn-group-label">Pill · Filled</div>
+      <a href="#" class="cta-pill-filled">
+        <span class="cta-label"><span class="word-discover">Discover</span> LTBR-X</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+      <a href="#" class="cta-pill-filled" style="background:#1c1c1c; border:1.5px solid #2a2a2a;">
+        <span class="cta-label" style="color:#777;"><span class="word-discover" style="color:#777;">Download</span> Brochure</span>
+        <span class="arrow-badge" style="background:rgba(255,255,255,0.04);">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="btn-group">
+      <div class="btn-group-label">Pill · Outline</div>
+      <a href="#" class="cta-pill-outline">
+        <span class="cta-label"><span class="word-discover">Discover</span> LTBR-X</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+      <a href="#" class="cta-pill-outline">
+        <span class="cta-label"><span class="word-discover">Download</span> Brochure</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="btn-group">
+      <div class="btn-group-label">Rect · Outline (Idea 02)</div>
+      <a href="#" class="cta-rect-outline">
+        <span class="cta-label"><span class="word-discover">Discover</span> LTBR-X</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+      <a href="#" class="cta-rect-outline">
+        <span class="cta-label"><span class="word-discover">Download</span> Brochure</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="btn-group">
+      <div class="btn-group-label">Rect · Filled (Idea 02 variant)</div>
+      <a href="#" class="cta-rect-filled">
+        <span class="cta-label"><span class="word-discover">Discover</span> LTBR-X</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+      <a href="#" class="cta-rect-outline">
+        <span class="cta-label"><span class="word-discover">Download</span> Brochure</span>
+        <span class="arrow-badge">
+          <svg class="arrow-svg" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ BACKGROUNDS ══ -->
+<div class="section-label">02 — Centre Spotlight Backgrounds · Intensity variations</div>
+<div class="bg-section">
+
+  <!-- H1 subtle -->
+  <div class="bg-panel bg-h1">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag">H1 · Centre spotlight — subtle</span>
+      <div class="bg-desc">Radial #2a2a2a → #080808</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- H2 medium -->
+  <div class="bg-panel bg-h2">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag">H2 · Centre spotlight — medium</span>
+      <div class="bg-desc">Radial #363636 → #070707</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- H3 strong -->
+  <div class="bg-panel bg-h3">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag starred">H3 · Centre spotlight — strong</span>
+      <div class="bg-desc">Radial #444 → #060606</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- H4 warm subtle -->
+  <div class="bg-panel bg-h4">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag">H4 · Centre spotlight — warm tint</span>
+      <div class="bg-desc">Radial #3a2020 → #070707</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- H5 warm strong -->
+  <div class="bg-panel bg-h5">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag starred">H5 · Centre spotlight — warm strong</span>
+      <div class="bg-desc">Radial #4a1a1a → #060606</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- G reference -->
+  <div class="bg-panel bg-g">
+    <div class="prod-label">
+      <span class="prod-cat">Specialists</span>
+      <div class="prod-name">LTBR-X</div>
+    </div>
+    <div class="machine-ph"><span>Machine Image</span></div>
+    <div class="bg-info">
+      <span class="bg-tag starred">G · Reference — your selection</span>
+      <div class="bg-desc">Side red glow → black</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
