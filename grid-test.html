@@ -184,6 +184,123 @@
   .cz-bg-blue .cz-card-title { color: #0a0a0a; }
   .cz-bg-blue .cz-card-subtitle { color: rgba(10,10,10,0.5); }
 
+  /* ── New dark spotlight backgrounds ── */
+  .cz-bg-spot-neutral { background: radial-gradient(ellipse 65% 80% at 50% 50%, #444 0%, #1e1e1e 38%, #060606 100%) !important; }
+  .cz-bg-spot-warm    { background: radial-gradient(ellipse 65% 80% at 50% 50%, #4a1a1a 0%, #200a0a 40%, #060606 100%) !important; }
+  .cz-bg-spot-red     { background: radial-gradient(ellipse 70% 90% at 20% 50%, rgba(160,15,15,0.65) 0%, rgba(80,5,5,0.4) 30%, rgba(20,0,0,0.2) 55%, #080808 80%) !important; }
+  .cz-bg-spot-mid     { background: radial-gradient(ellipse 60% 75% at 50% 50%, #363636 0%, #1a1a1a 40%, #070707 100%) !important; }
+
+  /* ── CTA button styles ── */
+  .cta-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-arrow-btn .cta-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 20px 0 24px;
+    transition: color 0.3s ease;
+  }
+  .cta-arrow-btn .cta-badge {
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .cta-arrow-btn .cta-badge svg { width:13px; height:13px; }
+
+  /* Pill filled red */
+  .cta-pill-red {
+    background: #c0392b;
+    border-radius: 100px;
+    height: 50px;
+    border: 1.5px solid #c0392b;
+    overflow: hidden;
+  }
+  .cta-pill-red .cta-text { color: #fff; }
+  .cta-pill-red .cta-badge { background: rgba(0,0,0,0.22); border-radius: 50%; }
+  .cta-pill-red:hover { background: #8B0000; border-color: #8B0000; box-shadow: 0 0 32px rgba(160,15,15,0.6); }
+  .cta-pill-red:hover .cta-text { color: #c0392b; }
+
+  /* Pill outline */
+  .cta-pill-out {
+    background: transparent;
+    border-radius: 100px;
+    height: 50px;
+    border: 1.5px solid #3a3a3a;
+    overflow: hidden;
+  }
+  .cta-pill-out .cta-text { color: #666; }
+  .cta-pill-out .cta-badge { background: #181818; border-left: 1.5px solid #2a2a2a; border-radius: 50%; margin: -1.5px; }
+  .cta-pill-out:hover { border-color: #c0392b; box-shadow: 0 0 24px rgba(160,15,15,0.4); }
+  .cta-pill-out:hover .cta-text { color: #c0392b; }
+  .cta-pill-out:hover .cta-badge { background: #1c0000; border-color: #c0392b; }
+
+  /* Rect outline */
+  .cta-rect-out {
+    background: transparent;
+    border-radius: 6px;
+    height: 50px;
+    border: 1.5px solid #3a3a3a;
+    overflow: hidden;
+  }
+  .cta-rect-out .cta-text { color: #666; }
+  .cta-rect-out .cta-badge { background: #181818; border-left: 1.5px solid #2a2a2a; }
+  .cta-rect-out:hover { border-color: #c0392b; box-shadow: 0 0 24px rgba(160,15,15,0.4); }
+  .cta-rect-out:hover .cta-text { color: #c0392b; }
+  .cta-rect-out:hover .cta-badge { background: #c0392b; border-color: #c0392b; }
+
+  /* Rect filled */
+  .cta-rect-red {
+    background: #c0392b;
+    border-radius: 6px;
+    height: 50px;
+    border: 1.5px solid #c0392b;
+    overflow: hidden;
+  }
+  .cta-rect-red .cta-text { color: #fff; }
+  .cta-rect-red .cta-badge { background: rgba(0,0,0,0.2); border-left: 1.5px solid rgba(255,255,255,0.12); }
+  .cta-rect-red:hover { background: #8B0000; border-color: #8B0000; box-shadow: 0 0 32px rgba(160,15,15,0.6); }
+  .cta-rect-red:hover .cta-text { color: #c0392b; }
+
+  /* CTA demo section */
+  .cta-demo-section {
+    background: #0a0a0a;
+    padding: 60px 80px;
+    border-top: 1px solid #1a1a1a;
+  }
+  .cta-demo-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  .cta-demo-row {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .cta-demo-bg {
+    padding: 48px 60px;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
   /* ══════════════════════════════════════════
      LAYOUT B — EDITORIAL (text bottom-left, image dominant)
   ══════════════════════════════════════════ */
@@ -299,6 +416,7 @@
   <button onclick="showLayout('c')">C — Asymmetric</button>
   <button onclick="showLayout('d')">D — Horizontal</button>
   <button onclick="showLayout('e')">E — Masonry</button>
+  <button onclick="showLayout('f')" style="background:#c0392b;color:#fff;">F — Dark BG + CTA</button>
 </div>
 
 <div class="grid-wrap">
@@ -632,5 +750,131 @@
     event.target.classList.add('active');
   }
 </script>
+
+<!-- ══ LAYOUT F — DARK BG + CTA BUTTONS ══ -->
+<div class="layout" id="layout-f" style="padding:80px 0 0;">
+
+  <!-- CTA Buttons showcase -->
+  <div class="cta-demo-section">
+    <div class="cta-demo-title">CTA Button Styles — Hover to preview (no movement, colour only)</div>
+
+    <div style="margin-bottom:48px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;margin-bottom:20px;">Pill · Filled red + Pill · Outline</div>
+      <div class="cta-demo-row">
+        <a href="#" class="cta-arrow-btn cta-pill-red">
+          <span class="cta-text">Discover LTBR-X</span>
+          <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a href="#" class="cta-arrow-btn cta-pill-out">
+          <span class="cta-text">Download Brochure</span>
+          <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;margin-bottom:20px;">Rect · Filled red + Rect · Outline (Idea 02)</div>
+      <div class="cta-demo-row">
+        <a href="#" class="cta-arrow-btn cta-rect-red">
+          <span class="cta-text">Discover LTBR-X</span>
+          <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a href="#" class="cta-arrow-btn cta-rect-out">
+          <span class="cta-text">Download Brochure</span>
+          <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background options with cards -->
+  <div style="padding:0 0 0;">
+
+    <!-- Spotlight neutral strong -->
+    <div style="padding:8px 80px;background:#0a0a0a;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;">H3 · Centre spotlight — neutral strong</span></div>
+    <div class="cz-card cz-card-full cz-bg-spot-neutral" style="min-height:380px;flex-direction:row;align-items:center;padding:48px 60px;">
+      <div style="flex:1;">
+        <div class="cz-card-eyebrow">Specialists</div>
+        <h2 class="cz-card-title large" style="margin-bottom:10px;">LTBR-X</h2>
+        <p class="cz-card-subtitle" style="font-size:16px;margin-bottom:28px;">Large Engine Diesel Test Bench</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="cta-arrow-btn cta-pill-red">
+            <span class="cta-text">Discover LTBR-X</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="#" class="cta-arrow-btn cta-pill-out">
+            <span class="cta-text">Download Brochure</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <img src="assets/images/LTBRX_transparent.webp" alt="LTBR-X" style="height:300px;object-fit:contain;">
+    </div>
+
+    <!-- Spotlight warm strong -->
+    <div style="padding:8px 80px;background:#0a0a0a;border-top:1px solid #161616;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;">H5 · Centre spotlight — warm red strong</span></div>
+    <div class="cz-card cz-card-full cz-bg-spot-warm" style="min-height:380px;flex-direction:row;align-items:center;padding:48px 60px;">
+      <div style="flex:1;">
+        <div class="cz-card-eyebrow">Specialists</div>
+        <h2 class="cz-card-title large" style="margin-bottom:10px;">LTBR-X</h2>
+        <p class="cz-card-subtitle" style="font-size:16px;margin-bottom:28px;">Large Engine Diesel Test Bench</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="cta-arrow-btn cta-rect-red">
+            <span class="cta-text">Discover LTBR-X</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="#" class="cta-arrow-btn cta-rect-out">
+            <span class="cta-text">Download Brochure</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <img src="assets/images/LTBRX_transparent.webp" alt="LTBR-X" style="height:300px;object-fit:contain;">
+    </div>
+
+    <!-- Spotlight mid -->
+    <div style="padding:8px 80px;background:#0a0a0a;border-top:1px solid #161616;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;">H2 · Centre spotlight — medium neutral</span></div>
+    <div class="cz-card cz-card-full cz-bg-spot-mid" style="min-height:380px;flex-direction:row;align-items:center;padding:48px 60px;">
+      <div style="flex:1;">
+        <div class="cz-card-eyebrow">Specialists</div>
+        <h2 class="cz-card-title large" style="margin-bottom:10px;">MTBR-X</h2>
+        <p class="cz-card-subtitle" style="font-size:16px;margin-bottom:28px;">Advanced Diesel Specialist Solution</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="cta-arrow-btn cta-pill-red">
+            <span class="cta-text">Discover MTBR-X</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="#" class="cta-arrow-btn cta-pill-out">
+            <span class="cta-text">Download Brochure</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <img src="assets/images/MTBRX_transparent.webp" alt="MTBR-X" style="height:300px;object-fit:contain;">
+    </div>
+
+    <!-- Side red glow (G reference) -->
+    <div style="padding:8px 80px;background:#0a0a0a;border-top:1px solid #161616;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#333;">G · Side red glow — your selection</span></div>
+    <div class="cz-card cz-card-full cz-bg-spot-red" style="min-height:380px;flex-direction:row;align-items:center;padding:48px 60px;">
+      <div style="flex:1;">
+        <div class="cz-card-eyebrow">Specialists</div>
+        <h2 class="cz-card-title large" style="margin-bottom:10px;">LTBR-X</h2>
+        <p class="cz-card-subtitle" style="font-size:16px;margin-bottom:28px;">Large Engine Diesel Test Bench</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="cta-arrow-btn cta-pill-red">
+            <span class="cta-text">Discover LTBR-X</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="#" class="cta-arrow-btn cta-pill-out">
+            <span class="cta-text">Download Brochure</span>
+            <span class="cta-badge"><svg viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <img src="assets/images/LTBRX_transparent.webp" alt="LTBR-X" style="height:300px;object-fit:contain;">
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
