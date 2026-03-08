@@ -342,6 +342,159 @@
 
   /* SVG arrow */
   .arrow-svg { display: block; }
+
+  /* ════════════════════════════════════════
+     STYLE D — Faithful to screenshot
+     Filled: text left, square arrow flush right, small radius
+  ════════════════════════════════════════ */
+  .btn-d {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  .btn-d .btn-d-text {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .btn-d .btn-d-arrow {
+    width: 44px;
+    background: #fff;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-d .btn-d-arrow svg { width: 14px; height: 14px; }
+  .btn-d:hover .btn-d-text { background: #2a2a2a; }
+  .btn-d:hover .btn-d-arrow { background: var(--accent); color: #fff; }
+
+  /* Red primary */
+  .btn-d.red .btn-d-text { background: var(--accent); }
+  .btn-d.red .btn-d-arrow { background: rgba(0,0,0,0.25); color: #fff; }
+  .btn-d.red:hover .btn-d-text { background: #a93226; }
+  .btn-d.red:hover .btn-d-arrow { background: rgba(0,0,0,0.4); }
+
+  /* Outline version (idea 02) */
+  .btn-d.outline {
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+  }
+  .btn-d.outline .btn-d-text {
+    background: transparent;
+    color: var(--text);
+  }
+  .btn-d.outline .btn-d-arrow {
+    background: var(--dark);
+    color: #fff;
+  }
+  .btn-d.outline:hover { border-color: var(--dark); }
+  .btn-d.outline:hover .btn-d-text { background: transparent; color: var(--dark); }
+  .btn-d.outline:hover .btn-d-arrow { background: var(--accent); }
+
+  /* Dark bg outline */
+  .section.dark .btn-d.outline,
+  .section.mid .btn-d.outline { border-color: #444; }
+  .section.dark .btn-d.outline .btn-d-text,
+  .section.mid .btn-d.outline .btn-d-text { color: #fff; }
+  .section.dark .btn-d.outline .btn-d-arrow,
+  .section.mid .btn-d.outline .btn-d-arrow { background: #fff; color: var(--dark); }
+  .section.dark .btn-d.outline:hover,
+  .section.mid .btn-d.outline:hover { border-color: #fff; }
+  .section.dark .btn-d.outline:hover .btn-d-arrow,
+  .section.mid .btn-d.outline:hover .btn-d-arrow { background: var(--accent); color: #fff; }
+
+  /* ════════════════════════════════════════
+     STYLE E — No radius at all (sharp edges)
+     Closer to industrial/technical feel
+  ════════════════════════════════════════ */
+  .btn-e {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 0;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  .btn-e .btn-e-text {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .btn-e .btn-e-arrow {
+    width: 44px;
+    background: #fff;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-e .btn-e-arrow svg { width: 14px; height: 14px; }
+  .btn-e:hover .btn-e-text { background: #2a2a2a; }
+  .btn-e:hover .btn-e-arrow { background: var(--accent); color: #fff; }
+
+  /* Red */
+  .btn-e.red .btn-e-text { background: var(--accent); }
+  .btn-e.red .btn-e-arrow { background: rgba(0,0,0,0.25); color: #fff; }
+  .btn-e.red:hover .btn-e-text { background: #a93226; }
+  .btn-e.red:hover .btn-e-arrow { background: rgba(0,0,0,0.4); }
+
+  /* Outline */
+  .btn-e.outline {
+    border: 1.5px solid #bbb;
+  }
+  .btn-e.outline .btn-e-text {
+    background: transparent;
+    color: var(--text);
+  }
+  .btn-e.outline .btn-e-arrow {
+    background: var(--dark);
+    color: #fff;
+  }
+  .btn-e.outline:hover { border-color: var(--dark); }
+  .btn-e.outline:hover .btn-e-arrow { background: var(--accent); }
+
+  .section.dark .btn-e.outline,
+  .section.mid .btn-e.outline { border-color: #444; }
+  .section.dark .btn-e.outline .btn-e-text,
+  .section.mid .btn-e.outline .btn-e-text { color: #fff; }
+  .section.dark .btn-e.outline .btn-e-arrow,
+  .section.mid .btn-e.outline .btn-e-arrow { background: #fff; color: var(--dark); }
+  .section.dark .btn-e.outline:hover,
+  .section.mid .btn-e.outline:hover { border-color: #fff; }
+  .section.dark .btn-e.outline:hover .btn-e-arrow,
+  .section.mid .btn-e.outline:hover .btn-e-arrow { background: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
@@ -503,6 +656,157 @@
       <a href="#" class="btn-c outline">
         <span class="btn-c-text">Download Brochure</span>
         <span class="btn-c-arrow"><svg class="arrow-svg" width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     STYLE D — Screenshot faithful (6px radius, flush arrow)
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Style D — Screenshot faithful · 6px radius · Light background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline (idea 01 + idea 02)</span>
+    <a href="#" class="btn-d">
+      <span class="btn-d-text">Request Quote</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-d outline">
+      <span class="btn-d-text">Download Brochure</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-d red">
+      <span class="btn-d-text">Request Quote</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-d outline">
+      <span class="btn-d-text">Download Brochure</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="section-label">Style D — Screenshot faithful · Dark background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline</span>
+    <a href="#" class="btn-d">
+      <span class="btn-d-text">Request Quote</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-d outline">
+      <span class="btn-d-text">Download Brochure</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-d red">
+      <span class="btn-d-text">Request Quote</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-d outline">
+      <span class="btn-d-text">Download Brochure</span>
+      <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="context-demo">
+    <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin-bottom:16px;">In context — Final CTA section</p>
+    <h2>Ready to test at the next level?</h2>
+    <p>Contact our team to schedule a demo or request a quote for the LTBR-X.</p>
+    <div class="btn-row" style="margin-bottom:0">
+      <a href="#" class="btn-d red">
+        <span class="btn-d-text">Request Quote</span>
+        <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+      <a href="#" class="btn-d outline">
+        <span class="btn-d-text">Download Brochure</span>
+        <span class="btn-d-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     STYLE E — Sharp / Industrial (0 radius)
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Style E — Sharp · 0 radius · Light background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline</span>
+    <a href="#" class="btn-e">
+      <span class="btn-e-text">Request Quote</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-e outline">
+      <span class="btn-e-text">Download Brochure</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-e red">
+      <span class="btn-e-text">Request Quote</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-e outline">
+      <span class="btn-e-text">Download Brochure</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="section-label">Style E — Sharp · Dark background</div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Dark filled + Outline</span>
+    <a href="#" class="btn-e">
+      <span class="btn-e-text">Request Quote</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-e outline">
+      <span class="btn-e-text">Download Brochure</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="btn-row">
+    <span class="btn-row-label">Red filled + Outline</span>
+    <a href="#" class="btn-e red">
+      <span class="btn-e-text">Request Quote</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+    <a href="#" class="btn-e outline">
+      <span class="btn-e-text">Download Brochure</span>
+      <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+    </a>
+  </div>
+
+  <div class="context-demo">
+    <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin-bottom:16px;">In context — Final CTA section</p>
+    <h2>Ready to test at the next level?</h2>
+    <p>Contact our team to schedule a demo or request a quote for the LTBR-X.</p>
+    <div class="btn-row" style="margin-bottom:0">
+      <a href="#" class="btn-e red">
+        <span class="btn-e-text">Request Quote</span>
+        <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
+      </a>
+      <a href="#" class="btn-e outline">
+        <span class="btn-e-text">Download Brochure</span>
+        <span class="btn-e-arrow"><svg width="14" height="14"><use href="#ico-arrow"/></svg></span>
       </a>
     </div>
   </div>
