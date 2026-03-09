@@ -3174,7 +3174,7 @@
 </div>
 
 <!-- NEWS HEADER -->
-<div style="max-width:1440px;margin:0 auto;padding:60px 80px 40px;">
+<div style="max-width:1440px;margin:0 auto;padding:120px 80px 40px;">
   <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-bottom:16px;">Latest Updates</div>
   <div style="font-family:'Gunterz',sans-serif;font-size:52px;line-height:1;color:var(--white);">News</div>
 </div>
@@ -3185,7 +3185,7 @@
   .news-list-inner { border-top:1px solid rgba(245,243,239,0.08); }
   .news-row {
     display:grid;
-    grid-template-columns:120px 130px 1fr 24px;
+    grid-template-columns:140px 120px 1fr 36px;
     align-items:center;
     gap:24px;
     padding:22px 24px;
@@ -3197,21 +3197,29 @@
   }
   .news-row:hover { background:#141414; }
   .news-date { font-family:"DM Mono",monospace; font-size:11px; color:rgba(245,243,239,0.3); letter-spacing:0.05em; white-space:nowrap; }
-  .news-cat-badge {
+  .news-cat {
     font-family:"DM Mono",monospace;
     font-size:9px;
     letter-spacing:0.15em;
     text-transform:uppercase;
-    padding:4px 8px;
-    border-radius:2px;
-    display:inline-block;
+    color:rgba(245,243,239,0.3);
+    cursor:pointer;
+    transition:color 0.2s;
   }
-  .news-cat-badge.events   { background:rgba(20,108,247,0.12); color:rgba(100,160,255,0.7); }
-  .news-cat-badge.news     { background:rgba(245,243,239,0.06); color:rgba(245,243,239,0.35); }
-  .news-cat-badge.innovation { background:rgba(237,28,36,0.1); color:rgba(255,100,100,0.7); }
-  .news-headline { font-size:15px; font-weight:300; color:var(--white); line-height:1.3; }
-  .news-arrow { font-size:14px; color:rgba(245,243,239,0.15); transition:color 0.2s, transform 0.2s; text-align:right; }
-  .news-row:hover .news-arrow { color:var(--accent); transform:translateX(4px); }
+  .news-cat:hover { color:var(--white); }
+  .news-headline { font-size:15px; font-weight:300; color:rgba(245,243,239,0.6); line-height:1.3; transition:color 0.2s; }
+  .news-row:hover .news-headline { color:var(--white); }
+  .news-arrow-box {
+    width:32px; height:32px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid rgba(245,243,239,0.1);
+    border-radius:2px;
+    font-size:13px;
+    color:rgba(245,243,239,0.2);
+    transition:color 0.2s, border-color 0.2s, transform 0.2s;
+    justify-self:end;
+  }
+  .news-row:hover .news-arrow-box { color:var(--accent); border-color:rgba(237,28,36,0.4); transform:translateX(3px); }
   .news-row[data-cat].hidden { display:none; }
 </style>
 
@@ -3219,51 +3227,51 @@
   <div class="news-list-inner" id="news-list">
     <a href="#" class="news-row" data-cat="events">
       <div class="news-date">10 Jan 2026</div>
-      <div><span class="news-cat-badge events">Events</span></div>
+      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-headline">HDAW Texas 2026</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="events">
       <div class="news-date">01 Dec 2025</div>
-      <div><span class="news-cat-badge events">Events</span></div>
+      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-headline">Automechanika Dubai 2025</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="news">
       <div class="news-date">26 Nov 2025</div>
-      <div><span class="news-cat-badge news">News</span></div>
+      <div class="news-cat" data-filter="news">News</div>
       <div class="news-headline">Unlock Exclusive Black Friday Discounts</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="events">
       <div class="news-date">06 Nov 2025</div>
-      <div><span class="news-cat-badge events">Events</span></div>
+      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-headline">Expotransporte Mexico 2025</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="events">
       <div class="news-date">01 Nov 2025</div>
-      <div><span class="news-cat-badge events">Events</span></div>
+      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-headline">Automechanika Shanghai 2025</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="innovation">
       <div class="news-date">Feb 2025</div>
-      <div><span class="news-cat-badge innovation">Innovation</span></div>
+      <div class="news-cat" data-filter="innovation">Innovation</div>
       <div class="news-headline">New 10" Tablet Retrofit for Your 8" Carbon Zapp Bench</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="news">
       <div class="news-date">Oct 2019</div>
-      <div><span class="news-cat-badge news">News</span></div>
+      <div class="news-cat" data-filter="news">News</div>
       <div class="news-headline">MTBR, CRU.4R & CRU.2R Diesel Test Benches Homologated by Continental/VDO</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
     <a href="#" class="news-row" data-cat="news">
       <div class="news-date">Sep 2018</div>
-      <div><span class="news-cat-badge news">News</span></div>
+      <div class="news-cat" data-filter="news">News</div>
       <div class="news-headline">CRU.2r Homologation by VDO as Authorized Solution</div>
-      <div class="news-arrow">→</div>
+      <div class="news-arrow-box">→</div>
     </a>
   </div>
 </div>
@@ -3278,21 +3286,29 @@ const btns = document.querySelectorAll('.filter-btn[data-cat]');
 const rows = document.querySelectorAll('.news-row[data-cat]');
 const countEl = document.getElementById('news-count');
 
+function applyFilter(cat) {
+  btns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  let visible = 0;
+  rows.forEach(row => {
+    if (cat === 'all' || row.dataset.cat === cat) {
+      row.classList.remove('hidden');
+      visible++;
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+  countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
 btns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    let visible = 0;
-    rows.forEach(row => {
-      if (cat === 'all' || row.dataset.cat === cat) {
-        row.classList.remove('hidden');
-        visible++;
-      } else {
-        row.classList.add('hidden');
-      }
-    });
-    countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+  btn.addEventListener('click', () => applyFilter(btn.dataset.cat));
+});
+
+// Click on category label in row
+document.querySelectorAll('.news-cat[data-filter]').forEach(cat => {
+  cat.addEventListener('click', (e) => {
+    e.preventDefault();
+    applyFilter(cat.dataset.filter);
   });
 });
 </script>
