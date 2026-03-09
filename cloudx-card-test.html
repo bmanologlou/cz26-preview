@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudX Card Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  @font-face { font-family: "Gunterz"; src: url("assets/fonts/Gunterz.woff2") format("woff2"); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0908; padding: 60px; font-family: "Public Sans", sans-serif; }
+  h3 { color: rgba(245,243,239,0.3); font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
+  .ed-card { border-radius: 4px; display: flex; flex-direction: column; text-decoration: none; color: inherit; min-height: 260px; padding: 32px; transition: opacity 0.2s; }
+  .ed-card:hover { opacity: 0.85; }
+  .ed-card-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: auto; }
+  .ed-card-icon svg { color: rgba(245,243,239,0.6); }
+  .ed-card-content { margin-top: 40px; }
+  .ed-card-eyebrow { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.4); margin-bottom: 8px; }
+  .ed-card-title { font-family: "Gunterz", sans-serif; font-size: 20px; line-height: 1; color: #f5f3ef; margin-bottom: 8px; }
+  .ed-card-sub { font-size: 13px; font-weight: 200; color: rgba(245,243,239,0.45); line-height: 1.55; margin-bottom: 20px; }
+  .ed-card-cta { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,243,239,0.5); }
+  .label { color: #f5f3ef; font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .hex { color: rgba(245,243,239,0.35); font-family: "DM Mono", monospace; font-size: 9px; }
+</style>
+</head>
+<body>
+
+<h3 style="margin-bottom:24px;">CloudX Card — Red Gradient Variants</h3>
+
+<div class="row">
+  <!-- CURRENT -->
+  <div>
+    <div class="label">Current (too dark)</div>
+    <div class="hex">#2a0608 → #1a0305 → #0f0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#2a0608 0%,#1a0305 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- A -->
+  <div>
+    <div class="label">A — Warm Red</div>
+    <div class="hex">#3d0a0c → #220508 → #0f0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#3d0a0c 0%,#220508 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- B -->
+  <div>
+    <div class="label">B — Medium Red</div>
+    <div class="hex">#520d10 → #2a0608 → #0f0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#520d10 0%,#2a0608 60%,#0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- C -->
+  <div>
+    <div class="label">C — Vivid Red Top</div>
+    <div class="hex">#6b1014 → #2a0608 → #0a0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#6b1014 0%,#2a0608 60%,#0a0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <!-- D -->
+  <div>
+    <div class="label">D — Radial Soft</div>
+    <div class="hex">radial #3d0a0c → #0f0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:radial-gradient(ellipse 80% 60% at 30% 20%, #3d0a0c 0%, #0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- E -->
+  <div>
+    <div class="label">E — Radial Medium</div>
+    <div class="hex">radial #520d10 → #0f0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:radial-gradient(ellipse 80% 60% at 30% 20%, #520d10 0%, #0f0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- F -->
+  <div>
+    <div class="label">F — Radial Vivid</div>
+    <div class="hex">radial #6b1014 → #0a0808</div>
+    <br>
+    <a href="#" class="ed-card" style="background:radial-gradient(ellipse 80% 60% at 30% 20%, #6b1014 0%, #0a0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+
+  <!-- G -->
+  <div>
+    <div class="label">G — Accent Red Hint</div>
+    <div class="hex">#ED1C24 tint → dark</div>
+    <br>
+    <a href="#" class="ed-card" style="background:linear-gradient(160deg,#4a0d0f 0%,#1e0608 50%,#0a0808 100%);">
+      <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h2M6 10h6M6 13h4"/><rect x="14" y="7" width="4" height="6" rx="1"/></svg></div>
+      <div class="ed-card-content"><div class="ed-card-eyebrow">Digital Platform</div><div class="ed-card-title">CloudX Ecosystem</div><div class="ed-card-sub">Connect your bench. Monitor remotely. Update automatically.</div><div class="ed-card-cta">Explore CloudX →</div></div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
