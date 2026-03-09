@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News Test — Carbon Zapp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Public Sans'; src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'Gunterz'; src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2'); font-weight: 400; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --black:#0a0908; --white:#f5f3ef; --accent:#ED1C24; }
+  body { background: var(--black); color: var(--white); font-family: "Public Sans", sans-serif; min-height: 100vh; padding: 80px; }
+
+  .news-header { margin-bottom: 60px; }
+  .news-eyebrow { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.3); margin-bottom: 16px; }
+  .news-title { font-family: "Gunterz", sans-serif; font-size: 48px; line-height: 1; color: var(--white); }
+
+  .news-list { border-top: 1px solid rgba(245,243,239,0.08); }
+
+  .news-row {
+    display: grid;
+    grid-template-columns: 120px 140px 1fr 24px;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(245,243,239,0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+    cursor: pointer;
+  }
+  .news-row:hover { background: #141414; }
+
+  .news-date {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: rgba(245,243,239,0.35);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .news-category {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.35);
+  }
+  .news-headline {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .news-row:hover .news-headline { color: var(--white); }
+  .news-arrow {
+    font-size: 14px;
+    color: rgba(245,243,239,0.2);
+    transition: color 0.2s, transform 0.2s;
+    text-align: right;
+  }
+  .news-row:hover .news-arrow { color: var(--accent); transform: translateX(4px); }
+</style>
+</head>
+<body>
+
+<div class="news-header">
+  <div class="news-eyebrow">Latest Updates</div>
+  <div class="news-title">News</div>
+</div>
+
+<div class="news-list">
+  <a href="#" class="news-row">
+    <div class="news-date">10 Jan 2026</div>
+    <div class="news-category">Events</div>
+    <div class="news-headline">HDAW Texas 2026</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">01 Dec 2025</div>
+    <div class="news-category">Events</div>
+    <div class="news-headline">Automechanika Dubai 2025</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">26 Nov 2025</div>
+    <div class="news-category">Updates</div>
+    <div class="news-headline">Unlock Exclusive Black Friday Discounts</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">06 Nov 2025</div>
+    <div class="news-category">Events</div>
+    <div class="news-headline">Expotransporte Mexico 2025</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">01 Nov 2025</div>
+    <div class="news-category">Events</div>
+    <div class="news-headline">Automechanika Shanghai 2025</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">Feb 2025</div>
+    <div class="news-category">Product</div>
+    <div class="news-headline">New 10" Tablet Retrofit for Your 8" Carbon Zapp Bench</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">Oct 2019</div>
+    <div class="news-category">Homologation</div>
+    <div class="news-headline">MTBR, CRU.4R & CRU.2R Diesel Test Benches Homologated by Continental/VDO</div>
+    <div class="news-arrow">→</div>
+  </a>
+  <a href="#" class="news-row">
+    <div class="news-date">Sep 2018</div>
+    <div class="news-category">Homologation</div>
+    <div class="news-headline">CRU.2r Homologation by VDO as Authorized Solution</div>
+    <div class="news-arrow">→</div>
+  </a>
+</div>
+
+</body>
+</html>
