@@ -146,13 +146,12 @@
     color: var(--white);
     margin-bottom: 0;
   }
-  .czx-hero-title em {
-    font-style: normal;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(245,243,239,0.35);
-  }
+  .czx-hero-title .red { color: var(--accent); }
   .czx-hero-right {
     padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   .czx-hero-desc {
     font-size: 15px;
@@ -162,27 +161,7 @@
     margin-bottom: 28px;
     max-width: 460px;
   }
-  .czx-hero-stats {
-    display: flex;
-    gap: 32px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.07);
-  }
-  .czx-stat-item {}
-  .czx-stat-num {
-    font-family: 'Gunterz', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-  .czx-stat-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(245,243,239,0.3);
-  }
+  /* stats removed */
 
   /* ─── DIVIDER ─── */
   .czx-divider {
@@ -255,17 +234,17 @@
   }
   .vid-card:hover .vid-play { background: rgba(0,0,0,0.45); }
   .vid-play-btn {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     background: rgba(237,28,36,0.9);
-    border-radius: 50%;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s, transform 0.2s;
   }
   .vid-card:hover .vid-play-btn { background: var(--accent); transform: scale(1.08); }
-  .vid-play-btn svg { width: 18px; height: 18px; color: #fff; margin-left: 3px; }
+  .vid-play-btn svg { width: 18px; height: 18px; color: #fff; margin-left: 2px; }
 
   /* Card body */
   .vid-body {
@@ -316,7 +295,7 @@
     gap: 6px;
     transition: color 0.2s;
   }
-  .vid-card:hover .vid-watch-label { color: rgba(245,243,239,0.6); }
+  .vid-card:hover .vid-watch-label { color: var(--accent); }
   .vid-watch-label svg { width: 10px; height: 10px; }
   .vid-product-link {
     font-family: 'DM Mono', monospace;
@@ -452,24 +431,10 @@
 <div class="czx-hero">
   <div class="czx-hero-left">
     <div class="czx-hero-eyebrow">CZ Experts Series</div>
-    <h1 class="czx-hero-title">TRAINING.<br><em>IN DEPTH.</em></h1>
+    <h1 class="czx-hero-title">TRAINING<br>IN <span class="red">DEPTH</span></h1>
   </div>
   <div class="czx-hero-right">
     <p class="czx-hero-desc">Step-by-step tutorials and technical training videos for every XSeries machine. From setup and calibration to advanced diagnostics — built for specialists who demand precision.</p>
-    <div class="czx-hero-stats">
-      <div class="czx-stat-item">
-        <div class="czx-stat-num">4+</div>
-        <div class="czx-stat-label">Videos</div>
-      </div>
-      <div class="czx-stat-item">
-        <div class="czx-stat-num">3</div>
-        <div class="czx-stat-label">Categories</div>
-      </div>
-      <div class="czx-stat-item">
-        <div class="czx-stat-num">New</div>
-        <div class="czx-stat-label">Content Added Regularly</div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -584,7 +549,7 @@
   <div class="czx-subscribe-inner">
     <div class="czx-subscribe-left">
       <div class="czx-subscribe-eyebrow">CZ YouTube Channel</div>
-      <div class="czx-subscribe-title">More videos. New content. Always free.</div>
+      <div class="czx-subscribe-title">More videos. New content.</div>
       <p class="czx-subscribe-sub">Subscribe to the Carbon Zapp channel and get notified when new tutorials, training sessions, and product demos go live.</p>
     </div>
     <div class="czx-subscribe-actions">
