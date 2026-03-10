@@ -3176,7 +3176,7 @@
 <!-- NEWS HEADER -->
 <div style="max-width:1440px;margin:0 auto;padding:120px 80px 40px;">
   <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-bottom:16px;">Latest Updates</div>
-  <div style="font-family:'Gunterz',sans-serif;font-size:52px;line-height:1;color:var(--white);">News</div>
+  <div style="font-family:'Gunterz',sans-serif;font-size:52px;line-height:1;color:var(--white);">News &amp; Events</div>
 </div>
 
 <!-- NEWS LIST -->
@@ -3185,9 +3185,9 @@
   .news-list-inner { border-top:1px solid rgba(245,243,239,0.08); }
   .news-row {
     display:grid;
-    grid-template-columns:140px 120px 1fr 36px;
+    grid-template-columns:120px 100px 1fr 32px;
     align-items:center;
-    gap:24px;
+    gap:16px;
     padding:22px 24px;
     border-bottom:1px solid rgba(245,243,239,0.08);
     text-decoration:none;
@@ -3196,7 +3196,6 @@
     cursor:pointer;
   }
   .news-row:hover { background:#141414; }
-  .news-date { font-family:"DM Mono",monospace; font-size:11px; color:rgba(245,243,239,0.3); letter-spacing:0.05em; white-space:nowrap; }
   .news-cat {
     font-family:"DM Mono",monospace;
     font-size:9px;
@@ -3207,6 +3206,7 @@
     transition:color 0.2s;
   }
   .news-cat:hover { color:var(--white); }
+  .news-date { font-family:"DM Mono",monospace; font-size:11px; color:rgba(245,243,239,0.25); letter-spacing:0.04em; white-space:nowrap; }
   .news-headline { font-size:15px; font-weight:300; color:rgba(245,243,239,0.6); line-height:1.3; transition:color 0.2s; }
   .news-row:hover .news-headline { color:var(--white); }
   .news-arrow-box {
@@ -3214,64 +3214,65 @@
     display:flex; align-items:center; justify-content:center;
     border:1px solid rgba(245,243,239,0.1);
     border-radius:2px;
-    font-size:13px;
-    color:rgba(245,243,239,0.2);
-    transition:color 0.2s, border-color 0.2s, transform 0.2s;
+    color:rgba(245,243,239,0.25);
+    transition:color 0.2s, border-color 0.2s, background 0.2s;
     justify-self:end;
+    flex-shrink:0;
   }
-  .news-row:hover .news-arrow-box { color:var(--accent); border-color:rgba(237,28,36,0.4); transform:translateX(3px); }
+  .news-arrow-box svg { width:12px; height:12px; }
+  .news-row:hover .news-arrow-box { color:#fff; border-color:var(--accent); background:var(--accent); }
   .news-row[data-cat].hidden { display:none; }
 </style>
 
 <div class="news-list">
   <div class="news-list-inner" id="news-list">
     <a href="#" class="news-row" data-cat="events">
-      <div class="news-date">10 Jan 2026</div>
       <div class="news-cat" data-filter="events">Events</div>
+      <div class="news-date">10 Jan 2026</div>
       <div class="news-headline">HDAW Texas 2026</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="events">
-      <div class="news-date">01 Dec 2025</div>
       <div class="news-cat" data-filter="events">Events</div>
+      <div class="news-date">01 Dec 2025</div>
       <div class="news-headline">Automechanika Dubai 2025</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="news">
-      <div class="news-date">26 Nov 2025</div>
       <div class="news-cat" data-filter="news">News</div>
+      <div class="news-date">26 Nov 2025</div>
       <div class="news-headline">Unlock Exclusive Black Friday Discounts</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="events">
+      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-date">06 Nov 2025</div>
-      <div class="news-cat" data-filter="events">Events</div>
       <div class="news-headline">Expotransporte Mexico 2025</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="events">
-      <div class="news-date">01 Nov 2025</div>
       <div class="news-cat" data-filter="events">Events</div>
+      <div class="news-date">01 Nov 2025</div>
       <div class="news-headline">Automechanika Shanghai 2025</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="innovation">
-      <div class="news-date">Feb 2025</div>
       <div class="news-cat" data-filter="innovation">Innovation</div>
+      <div class="news-date">Feb 2025</div>
       <div class="news-headline">New 10" Tablet Retrofit for Your 8" Carbon Zapp Bench</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="news">
+      <div class="news-cat" data-filter="news">News</div>
       <div class="news-date">Oct 2019</div>
-      <div class="news-cat" data-filter="news">News</div>
       <div class="news-headline">MTBR, CRU.4R & CRU.2R Diesel Test Benches Homologated by Continental/VDO</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
     <a href="#" class="news-row" data-cat="news">
-      <div class="news-date">Sep 2018</div>
       <div class="news-cat" data-filter="news">News</div>
+      <div class="news-date">Sep 2018</div>
       <div class="news-headline">CRU.2r Homologation by VDO as Authorized Solution</div>
-      <div class="news-arrow-box">→</div>
+      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
     </a>
   </div>
 </div>
