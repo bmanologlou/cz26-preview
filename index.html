@@ -2427,7 +2427,7 @@
       35 years of precision injection service equipment. Trusted by OEM partners and specialists in 98 countries.
     </p>
     <div class="hero-ctas">
-      <a href="#solutions" class="btn-primary">Discover the XSeries</a>
+      <a href="solutions.html" class="btn-primary">Discover the XSeries</a>
     </div>
   </div>
 
@@ -2505,7 +2505,7 @@
         <h2 class="cz-card-title" style="color:#0a0a0a;">MTBR-X</h2>
         <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Multi-System Platform</p>
         <div class="cz-card-actions">
-          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+          <a href="solutions.html" class="btn-primary" style="background:#146cf7;">Discover</a>
         </div>
       </div>
       <div class="card-image" style="background:linear-gradient(180deg,#eaf2fc,#f5f5f5);">
@@ -2518,7 +2518,7 @@
         <h2 class="cz-card-title" style="color:#0a0a0a;">ITB4R-X</h2>
         <p class="cz-card-subtitle" style="color:rgba(10,10,10,0.5);">Standalone CRDi Test Bench</p>
         <div class="cz-card-actions">
-          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+          <a href="solutions.html" class="btn-primary" style="background:#146cf7;">Discover</a>
           <a href="#" class="btn-outline-light">Order</a>
         </div>
       </div>
@@ -2549,7 +2549,7 @@
         <h2 class="cz-card-title">HK1400A-CZ</h2>
         <p class="cz-card-subtitle">Hartridge Cambox Test Bench</p>
         <div class="cz-card-actions">
-          <a href="#" class="btn-primary" style="background:#146cf7;">Discover</a>
+          <a href="solutions.html" class="btn-primary" style="background:#146cf7;">Discover</a>
         </div>
       </div>
       <div class="card-image" style="background:linear-gradient(180deg,#000,#1e1e1e);">
@@ -2573,8 +2573,8 @@
         Automatic injector data updates, remote performance monitoring and instant access to factory support, all managed through a secure cloud environment built for professional service centers.
       </p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:40px;">
-        <a href="#" class="btn-primary">Explore CloudX</a>
-        <a href="#" class="btn-login" style="display:inline-block;padding:14px 24px;">Login →</a>
+        <a href="cloudx.html" class="btn-primary">Explore CloudX</a>
+        <a href="https://cloudx.carbonzapp.com/client" target="_blank" rel="noopener" class="btn-login" style="display:inline-block;padding:14px 24px;">Login →</a>
       </div>
     </div>
 
@@ -2747,8 +2747,8 @@
       <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
     </div>
     <div class="footer-cta-actions">
-      <a href="#" class="btn-primary">Explore Solutions</a>
-      <a href="#" class="link-arrow">Find a Distributor →</a>
+      <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+      <a href="assets/pdfs/CZ_GLOBAL_REPR.pdf" target="_blank" rel="noopener" class="link-arrow">Find a Distributor →</a>
     </div>
   </div>
 </section>
@@ -2977,6 +2977,15 @@
     } else {
       buildDots(); showEvent(0, false); resetTimer();
     }
+  })();
+
+  // ── Nav scroll ──
+  (function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 80); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   })();
 
   // ── Preloader — once per session ──
