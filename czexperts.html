@@ -148,10 +148,7 @@
   }
   .czx-hero-title .red { color: var(--accent); }
   .czx-hero-right {
-    padding-bottom: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    padding-bottom: 0;
   }
   .czx-hero-desc {
     font-size: 15px;
@@ -412,6 +409,13 @@
   .footer-crafted { font-size:11px; font-weight:300; color:rgba(245,243,239,0.2); letter-spacing:0.03em; }
   .footer-crafted a { color:rgba(245,243,239,0.35); text-decoration:none; }
   .footer-crafted a:hover { color:rgba(245,243,239,0.6); }
+  .footer-brand-col { display:flex; flex-direction:column; gap:0; }
+  .footer-contact-block { margin-top:24px; display:flex; flex-direction:column; gap:10px; }
+  .footer-contact-line { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:300; color:rgba(245,243,239,0.5); text-decoration:none; transition:color 0.15s; }
+  .footer-contact-line:hover { color:var(--white); }
+  .footer-contact-line svg { color:var(--accent); flex-shrink:0; }
+  .footer-hours { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:300; color:rgba(245,243,239,0.35); font-family:'DM Mono',monospace; letter-spacing:0.04em; }
+  .footer-hours svg { color:var(--mid); flex-shrink:0; }
 
   /* ─── VIDEO OVERLAY ─── */
   .vid-overlay {
