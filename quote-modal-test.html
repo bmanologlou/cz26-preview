@@ -3161,8 +3161,7 @@
 /* ─── MODAL OVERLAY ─── */
 .modal-overlay {
   position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.6);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
   transition: opacity 0.25s ease;
@@ -3171,7 +3170,9 @@
 
 /* ─── MODAL BOX ─── */
 .modal {
-  background: #111110;
+  background: rgba(14,13,12,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(245,243,239,0.08);
   border-radius: 4px;
   width: 100%;
