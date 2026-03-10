@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CZ Experts — Carbon Zapp</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('assets/fonts/Switzer-Variable.woff2') format('woff2'),
+         url('assets/fonts/Switzer-Variable.woff') format('woff');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Regular.woff') format('woff');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Italic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Italic.woff') format('woff');
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Medium.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Medium.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Bold.woff') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Black.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Black.woff') format('woff');
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --black:#0a0a0a; --white:#f5f5f5; --accent:#ED1C24; --mid:#868685; --nav-h:68px; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Public Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto; height: 100%;
+    display: flex; align-items: center; padding: 0 80px; gap: 0;
+  }
+  .nav-logo {
+    display: flex; align-items: center; text-decoration: none;
+    flex-shrink: 0; margin-right: 72px; position: relative;
+    width: 200px; height: 30px; min-width: 28px;
+  }
+  .nav-logo .cz-logo-svg,
+  .nav-logo .cz-brandmark-svg {
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  }
+  .nav-logo .cz-logo-svg { color: var(--accent); height: 30px; width: auto; opacity: 1; transition: opacity 0.25s ease; }
+  .nav-logo .cz-brandmark-svg { color: var(--accent); height: 30px; width: auto; opacity: 0; transition: opacity 0.25s ease; pointer-events: none; }
+  nav.scrolled .cz-logo-svg { opacity: 0; pointer-events: none; }
+  nav.scrolled .cz-brandmark-svg { opacity: 1; pointer-events: all; }
+  .nav-logo:hover .cz-logo-svg,
+  .nav-logo:hover .cz-brandmark-svg { color: #c8151c; }
+  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; flex-shrink: 0; }
+  .nav-links a { font-family: 'Switzer', sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; color: #868685; text-decoration: none; transition: color 0.2s; white-space: nowrap; padding: 4px 0; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+  .btn-store, .btn-login { padding: 8px 14px; border: none; background: transparent; color: #868685; cursor: pointer; font-family: 'Switzer', sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: color 0.2s; display: flex; align-items: center; }
+  .btn-store:hover, .btn-login:hover { color: var(--accent); }
+
+  /* ─── MEGA MENU ─── */
+  .nav-item { position: relative; }
+  .nav-item::after { content: ''; position: absolute; top: 100%; left: -20px; right: -20px; height: 16px; display: none; }
+  .nav-item:hover::after { display: block; }
+  .nav-item:hover .mega { opacity: 1; pointer-events: all; transform: translateY(0); }
+  .mega { position: fixed; top: var(--nav-h); left: 0; right: 0; transform: translateY(-6px); background: rgba(245,245,245,0.96); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 36px 80px 52px; opacity: 0; pointer-events: none; transition: opacity 0.18s ease, transform 0.18s ease; display: grid; grid-template-columns: 1.1fr 1fr 1.4fr; gap: 0; z-index: 99; }
+  .mega::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+  .mega-col { padding: 0 28px 0 0; margin-right: 28px; }
+  .mega-col:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .mega-col-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.35); margin-bottom: 16px; }
+  .mega-links { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .mega-links a { font-family: 'Switzer', sans-serif; font-size: 14px; font-weight: 400; color: rgba(10,10,10,0.75); text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 0.15s; display: flex; align-items: center; gap: 8px; }
+  .mega-links a:hover { color: var(--accent); }
+  .mega-new-block { background: rgba(10,10,10,0.04); border: 1px solid rgba(10,10,10,0.08); border-radius: 6px; padding: 14px 16px; }
+  .mega-new-badge { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; }
+  .mega-new-name { font-family: 'Gunterz', sans-serif; font-size: 18px; letter-spacing: 0.08em; color: #0a0a0a; margin-bottom: 5px; }
+  .mega-new-desc { font-size: 11px; font-weight: 300; color: rgba(10,10,10,0.4); line-height: 1.5; }
+  .mega-footer { border-top: 1px solid rgba(10,10,10,0.08); margin-top: 24px; padding-top: 16px; display: flex; gap: 24px; }
+  .mega-footer a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,10,10,0.4); text-decoration: none; transition: color 0.15s; }
+  .mega-footer a:hover { color: var(--accent); }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary { display: inline-flex; align-items: center; background: var(--accent); color: #fff; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; transition: background 0.2s; border: none; cursor: pointer; }
+  .btn-primary:hover { background: #c41019; }
+  .btn-outline { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(245,243,239,0.22); color: rgba(245,243,239,0.6); font-family: 'Public Sans', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 2px; background: transparent; transition: border-color 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+  /* ─── PAGE HERO ─── */
+  .czx-hero {
+    padding: calc(var(--nav-h) + 80px) 80px 72px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+  .czx-hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .czx-hero-title {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 48px;
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 0;
+  }
+  .czx-hero-title em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(245,243,239,0.35);
+  }
+  .czx-hero-right {
+    padding-bottom: 6px;
+  }
+  .czx-hero-desc {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245,243,239,0.5);
+    margin-bottom: 28px;
+    max-width: 460px;
+  }
+  .czx-hero-stats {
+    display: flex;
+    gap: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .czx-stat-item {}
+  .czx-stat-num {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .czx-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.3);
+  }
+
+  /* ─── DIVIDER ─── */
+  .czx-divider {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+  .czx-divider hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* ─── VIDEO GRID ─── */
+  .czx-grid-wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 64px 80px 80px;
+  }
+  .czx-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.22);
+    margin-bottom: 24px;
+  }
+  .czx-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ─── VIDEO CARD ─── */
+  .vid-card {
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid rgba(255,255,255,0.07);
+    transition: outline-color 0.2s;
+    cursor: pointer;
+  }
+  .vid-card:hover { outline-color: rgba(255,255,255,0.18); }
+
+  .vid-thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+  .vid-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.2s;
+  }
+  .vid-card:hover .vid-thumb img { transform: scale(1.03); }
+
+  /* Play button */
+  .vid-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.25);
+    transition: background 0.2s;
+  }
+  .vid-card:hover .vid-play { background: rgba(0,0,0,0.45); }
+  .vid-play-btn {
+    width: 52px;
+    height: 52px;
+    background: rgba(237,28,36,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .vid-card:hover .vid-play-btn { background: var(--accent); transform: scale(1.08); }
+  .vid-play-btn svg { width: 18px; height: 18px; color: #fff; margin-left: 3px; }
+
+  /* Card body */
+  .vid-body {
+    padding: 20px 24px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .vid-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .vid-title {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .vid-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(245,243,239,0.42);
+    flex: 1;
+    margin-bottom: 18px;
+  }
+  .vid-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .vid-watch-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .vid-card:hover .vid-watch-label { color: rgba(245,243,239,0.6); }
+  .vid-watch-label svg { width: 10px; height: 10px; }
+  .vid-product-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,0.3);
+    text-decoration: none;
+    border: 1px solid rgba(245,243,239,0.12);
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .vid-product-link:hover { color: var(--accent); border-color: rgba(237,28,36,0.4); }
+
+  /* ─── SUBSCRIBE STRIP ─── */
+  .czx-subscribe {
+    background: #0f0f0f;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 56px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .czx-subscribe::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 200px;
+    background: radial-gradient(ellipse at center, rgba(237,28,36,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .czx-subscribe-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  .czx-subscribe-left {}
+  .czx-subscribe-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .czx-subscribe-title {
+    font-family: 'Gunterz', sans-serif;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+  .czx-subscribe-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(245,243,239,0.4);
+    margin-top: 8px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+  .czx-subscribe-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ─── VIDEO OVERLAY ─── */
+  .vid-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .vid-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .vid-overlay-inner {
+    position: relative;
+    width: 90vw;
+    max-width: 1100px;
+    aspect-ratio: 16/9;
+  }
+  .vid-overlay-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+  }
+  .vid-overlay-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2px;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .vid-overlay-close:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ─── HERO ─── -->
+<div class="czx-hero">
+  <div class="czx-hero-left">
+    <div class="czx-hero-eyebrow">CZ Experts Series</div>
+    <h1 class="czx-hero-title">TRAINING.<br><em>IN DEPTH.</em></h1>
+  </div>
+  <div class="czx-hero-right">
+    <p class="czx-hero-desc">Step-by-step tutorials and technical training videos for every XSeries machine. From setup and calibration to advanced diagnostics — built for specialists who demand precision.</p>
+    <div class="czx-hero-stats">
+      <div class="czx-stat-item">
+        <div class="czx-stat-num">4+</div>
+        <div class="czx-stat-label">Videos</div>
+      </div>
+      <div class="czx-stat-item">
+        <div class="czx-stat-num">3</div>
+        <div class="czx-stat-label">Categories</div>
+      </div>
+      <div class="czx-stat-item">
+        <div class="czx-stat-num">New</div>
+        <div class="czx-stat-label">Content Added Regularly</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="czx-divider"><hr></div>
+
+<!-- ─── VIDEO GRID ─── -->
+<div class="czx-grid-wrap">
+  <div class="czx-section-label">Latest Videos</div>
+  <div class="czx-grid">
+
+    <!-- Card 1 -->
+    <div class="vid-card" data-video="71cRZgBapU0">
+      <div class="vid-thumb">
+        <img src="https://img.youtube.com/vi/71cRZgBapU0/maxresdefault.jpg" alt="MTB-iR Tutorial">
+        <div class="vid-play">
+          <div class="vid-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="vid-body">
+        <div class="vid-tag">Tutorial</div>
+        <div class="vid-title">MTB-iR Tutorial</div>
+        <p class="vid-desc">Full walkthrough of the MTB-iR system — from initial setup and calibration steps to running your first test cycle with precision.</p>
+        <div class="vid-footer">
+          <span class="vid-watch-label">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Now
+          </span>
+          <a href="#" class="vid-product-link">View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="vid-card" data-video="Et4def3mjAw">
+      <div class="vid-thumb">
+        <img src="https://img.youtube.com/vi/Et4def3mjAw/maxresdefault.jpg" alt="CRU4R CRU2R Tutorial">
+        <div class="vid-play">
+          <div class="vid-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="vid-body">
+        <div class="vid-tag">Tutorial</div>
+        <div class="vid-title">CRU4R / CRU2R Tutorial</div>
+        <p class="vid-desc">Complete operational guide for the CRU4R and CRU2R units. Covers connection, configuration, and full Common Rail injector testing procedures.</p>
+        <div class="vid-footer">
+          <span class="vid-watch-label">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Now
+          </span>
+          <a href="#" class="vid-product-link">View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="vid-card" data-video="Z5MJMCTpPNU">
+      <div class="vid-thumb">
+        <img src="https://img.youtube.com/vi/Z5MJMCTpPNU/maxresdefault.jpg" alt="TBCr Injectors Tutorial">
+        <div class="vid-play">
+          <div class="vid-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="vid-body">
+        <div class="vid-tag">Tutorial</div>
+        <div class="vid-title">TBCr Injectors Tutorial</div>
+        <p class="vid-desc">Step-by-step injector testing guide for the TBCr platform. Focuses on CRDi injector mounting, software workflow, and result interpretation.</p>
+        <div class="vid-footer">
+          <span class="vid-watch-label">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Now
+          </span>
+          <a href="#" class="vid-product-link">View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="vid-card" data-video="vHi_C175vZQ">
+      <div class="vid-thumb">
+        <img src="https://img.youtube.com/vi/vHi_C175vZQ/maxresdefault.jpg" alt="DS1R Tutorial">
+        <div class="vid-play">
+          <div class="vid-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="vid-body">
+        <div class="vid-tag">Tutorial</div>
+        <div class="vid-title">DS1R Tutorial</div>
+        <p class="vid-desc">In-depth training on the DS1R diesel service module. From hardware connections to AZO software operation and diagnostic output review.</p>
+        <div class="vid-footer">
+          <span class="vid-watch-label">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Now
+          </span>
+          <a href="#" class="vid-product-link">View Product</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── SUBSCRIBE STRIP ─── -->
+<div class="czx-subscribe">
+  <div class="czx-subscribe-inner">
+    <div class="czx-subscribe-left">
+      <div class="czx-subscribe-eyebrow">CZ YouTube Channel</div>
+      <div class="czx-subscribe-title">More videos. New content. Always free.</div>
+      <p class="czx-subscribe-sub">Subscribe to the Carbon Zapp channel and get notified when new tutorials, training sessions, and product demos go live.</p>
+    </div>
+    <div class="czx-subscribe-actions">
+      <a href="#" class="btn-outline" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        Watch Full Playlist
+      </a>
+      <a href="https://www.youtube.com/user/CarbonZapp" class="btn-primary" target="_blank">Subscribe</a>
+    </div>
+  </div>
+</div>
+
+<div id="footer-cta-placeholder"></div>
+<div id="footer-placeholder"></div>
+
+<!-- ─── VIDEO OVERLAY ─── -->
+<div class="vid-overlay" id="vidOverlay">
+  <div class="vid-overlay-inner">
+    <button class="vid-overlay-close" id="vidClose">✕</button>
+    <iframe id="vidFrame" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  // Nav scroll
+  var nav = document.querySelector("nav");
+  if (nav) {
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 80); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Video overlay
+  const overlay = document.getElementById("vidOverlay");
+  const frame   = document.getElementById("vidFrame");
+  const closeBtn = document.getElementById("vidClose");
+
+  function openVideo(id) {
+    frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1";
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeVideo() {
+    overlay.classList.remove("active");
+    frame.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".vid-card").forEach(card => {
+    card.addEventListener("click", function(e) {
+      if (e.target.closest(".vid-product-link")) return;
+      openVideo(this.dataset.video);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeVideo);
+  overlay.addEventListener("click", function(e) {
+    if (e.target === overlay) closeVideo();
+  });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeVideo();
+  });
+
+});
+</script>
+</body>
+</html>
