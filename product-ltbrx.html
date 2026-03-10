@@ -3420,6 +3420,139 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
   .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
   .ed-card:hover .ed-card-cta{color:var(--white)}
+
+  /* ─── MODAL OVERLAY ─── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+/* ─── MODAL BOX ─── */
+.modal {
+  background: rgba(14,13,12,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  transform: translateY(16px);
+  transition: transform 0.25s ease;
+  position: relative;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-close {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: rgba(245,243,239,0.3); font-size: 18px;
+  transition: color 0.2s; line-height: 1;
+  padding: 4px;
+}
+.modal-close:hover { color: var(--white); }
+
+.modal-eyebrow {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.modal-title {
+  font-family: "Gunterz", sans-serif; font-size: 26px;
+  line-height: 1; color: var(--white); margin-bottom: 6px;
+}
+.modal-sub {
+  font-size: 13px; font-weight: 200;
+  color: rgba(245,243,239,0.4); margin-bottom: 32px;
+}
+
+/* ─── MACHINE TAG ─── */
+.modal-machine {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(237,28,36,0.3);
+  border-radius: 2px; padding: 6px 12px;
+  margin-bottom: 28px;
+}
+.modal-machine-label {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(245,243,239,0.3);
+}
+.modal-machine-name {
+  font-family: "DM Mono", monospace; font-size: 11px;
+  letter-spacing: 0.1em; color: #ff8080;
+}
+
+/* ─── FORM FIELDS ─── */
+.modal-fields { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+.modal-field { display: flex; flex-direction: column; gap: 6px; }
+.modal-field-label {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(245,243,239,0.3);
+}
+.modal-input {
+  background: rgba(245,243,239,0.04);
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 2px;
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  font-size: 14px; font-weight: 300;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.modal-input::placeholder { color: rgba(245,243,239,0.2); }
+.modal-input:focus { border-color: rgba(245,243,239,0.25); }
+
+.modal-input-hint {
+  font-size: 11px; font-weight: 200;
+  color: rgba(245,243,239,0.2);
+}
+
+/* ─── CONTACT METHOD TOGGLE ─── */
+.modal-toggle { display: flex; gap: 8px; margin-bottom: 4px; }
+.modal-toggle-btn {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 2px; cursor: pointer;
+  border: 1px solid rgba(245,243,239,0.1);
+  background: transparent; color: rgba(245,243,239,0.3);
+  transition: all 0.15s;
+}
+.modal-toggle-btn.active {
+  background: rgba(245,243,239,0.08);
+  border-color: rgba(245,243,239,0.2);
+  color: var(--white);
+}
+
+/* ─── SUBMIT ─── */
+.modal-submit {
+  width: 100%;
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 2px;
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.modal-submit:hover { background: #c41019; border-color: #c41019; }
+
+.modal-disclaimer {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 200;
+  color: rgba(245,243,239,0.2);
+  text-align: center; line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -3475,7 +3608,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   </div>
   <div style="max-width:1440px;margin:0 auto;padding:12px 80px 40px;">
     <div class="pdp-intro-ctas">
-      <a href="#" class="btn-primary">Request Quote</a>
+      <a href="#" onclick="openModal();return false;" class="btn-primary">Request Quote</a>
       <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline">Download Brochure</a>
     </div>
   </div>
@@ -3761,7 +3894,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <div class="pdp-final-cta-title">Built for Specialists</div>
     <p class="pdp-final-cta-sub">A professional-grade diesel test bench engineered to deliver precision, durability and long-term operational reliability for large engine applications.</p>
     <div class="pdp-final-ctas">
-      <a href="#" class="btn-primary-light">Request Quote</a>
+      <a href="#" onclick="openModal();return false;" class="btn-primary-light">Request Quote</a>
       <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline-cta">Download Brochure</a>
     </div>
   </div>
@@ -3785,6 +3918,51 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <div class="ed-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
       <div class="ed-card-content"><div class="ed-card-eyebrow">Innovation &amp; R&amp;D</div><div class="ed-card-title">Innovation Driven</div><div class="ed-card-sub">35 years of continuous development. See what's coming next.</div><div class="ed-card-cta">Explore Innovation →</div></div>
     </a>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-eyebrow">Contact Sales</div>
+    <div class="modal-title">Request a Quote</div>
+    <div class="modal-sub">Our team will get back to you within 24–72 hours.</div>
+
+    <div class="modal-machine">
+      <span class="modal-machine-label">Machine</span>
+      <span class="modal-machine-name">LTBR-X</span>
+    </div>
+
+    <div class="modal-fields">
+      <div class="modal-field">
+        <label class="modal-field-label">Full Name</label>
+        <input type="text" class="modal-input" placeholder="John Smith">
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Contact</label>
+        <div class="modal-toggle" style="margin-bottom:8px;">
+          <button class="modal-toggle-btn active" onclick="setContact('email', this)">Email</button>
+          <button class="modal-toggle-btn" onclick="setContact('whatsapp', this)">WhatsApp</button>
+        </div>
+        <input type="text" class="modal-input" id="contact-input" placeholder="your@email.com">
+        <span class="modal-input-hint" id="contact-hint">We'll reply to your email</span>
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Country</label>
+        <input type="text" class="modal-input" placeholder="Greece">
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Message <span style="color:rgba(245,243,239,0.2);font-size:9px;">— Optional</span></label>
+        <textarea class="modal-input" rows="3" placeholder="Any specific requirements..." style="resize:none;"></textarea>
+      </div>
+    </div>
+
+    <button class="modal-submit">Send Request</button>
   </div>
 </div>
 
@@ -3900,6 +4078,38 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   })();
+function openModal() {
+  document.getElementById('quoteModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('quoteModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.getElementById('quoteModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelector('.modal-submit').addEventListener('click', function() {
+  closeModal();
+});
+
+function setContact(type, btn) {
+  document.querySelectorAll('.modal-toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const input = document.getElementById('contact-input');
+  const hint = document.getElementById('contact-hint');
+  if (type === 'email') {
+    input.placeholder = 'your@email.com';
+    hint.textContent = "We'll reply to your email";
+  } else {
+    input.placeholder = '+30 690 000 0000';
+    hint.textContent = "We'll message you on WhatsApp";
+  }
+}
 </script>
 </body>
 </html>
