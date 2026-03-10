@@ -3175,8 +3175,8 @@
 
 <!-- NEWS HEADER -->
 <div style="max-width:1440px;margin:0 auto;padding:120px 80px 40px;">
-  <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-bottom:16px;">Latest Updates</div>
-  <div style="font-family:'Gunterz',sans-serif;font-size:52px;line-height:1;color:var(--white);">News &amp; Events</div>
+  <div id="news-eyebrow" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.3);margin-bottom:16px;">Latest Updates</div>
+  <div id="news-title" style="font-family:'Gunterz',sans-serif;font-size:52px;line-height:1;color:var(--white);">News &amp; Events</div>
 </div>
 
 <!-- NEWS LIST -->
@@ -3286,6 +3286,15 @@
 const btns = document.querySelectorAll('.filter-btn[data-cat]');
 const rows = document.querySelectorAll('.news-row[data-cat]');
 const countEl = document.getElementById('news-count');
+const titleEl = document.getElementById('news-title');
+const eyebrowEl = document.getElementById('news-eyebrow');
+
+const titleMap = {
+  all:        { eyebrow: 'Latest Updates',    title: 'News &amp; Events' },
+  events:     { eyebrow: 'Upcoming &amp; Past', title: 'Events Calendar' },
+  news:       { eyebrow: 'Press &amp; Updates', title: 'Latest News' },
+  innovation: { eyebrow: 'R&amp;D &amp; Technology', title: 'CZ Innovations' }
+};
 
 function applyFilter(cat) {
   btns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
@@ -3299,6 +3308,10 @@ function applyFilter(cat) {
     }
   });
   countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+  if (titleMap[cat]) {
+    titleEl.innerHTML = titleMap[cat].title;
+    eyebrowEl.innerHTML = titleMap[cat].eyebrow;
+  }
 }
 
 btns.forEach(btn => {
