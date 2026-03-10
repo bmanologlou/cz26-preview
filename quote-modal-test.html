@@ -3272,15 +3272,16 @@
 .modal-submit {
   width: 100%;
   background: var(--accent);
-  border: none; border-radius: 2px;
+  border: 1.5px solid var(--accent);
+  border-radius: 2px;
   color: var(--white);
   font-family: "DM Mono", monospace;
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
   padding: 14px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
-.modal-submit:hover { background: #c41019; }
+.modal-submit:hover { background: #c41019; border-color: #c41019; }
 
 .modal-disclaimer {
   margin-top: 14px;
@@ -3310,7 +3311,7 @@
 
     <div class="modal-eyebrow">Get a Quote</div>
     <div class="modal-title">Request a Quote</div>
-    <div class="modal-sub">Our team will get back to you within 24 hours.</div>
+    <div class="modal-sub">Our team will get back to you within 24–72 hours.</div>
 
     <div class="modal-machine">
       <span class="modal-machine-label">Machine</span>
@@ -3344,8 +3345,7 @@
       </div>
     </div>
 
-    <button class="modal-submit">Send Request →</button>
-    <div class="modal-disclaimer">No spam. Your data is used only to process this request.</div>
+    <button class="modal-submit">Send Request</button>
   </div>
 </div>
 
