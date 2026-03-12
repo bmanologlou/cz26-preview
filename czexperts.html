@@ -621,7 +621,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const closeBtn = document.getElementById("vidClose");
 
   function openVideo(id) {
-    frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1";
+    frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white&controls=1";
     overlay.classList.add("active");
     document.body.style.overflow = "hidden";
   }
