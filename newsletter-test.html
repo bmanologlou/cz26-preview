@@ -8,122 +8,233 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #111; font-family: 'Public Sans', sans-serif; color: #f5f3ef; }
+  body { background: #0a0a0a; font-family: 'Public Sans', sans-serif; color: #f5f3ef; }
 
-  .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; color: rgba(245,243,239,.3); text-transform: uppercase; padding: 48px 48px 16px; }
-  .spacer { height: 60px; }
+  /* ── FULL FOOTER (reference) ── */
+  .footer { background: #0a0a0a; padding: 64px 48px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+  .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; }
+  .footer-brand-col {}
+  .footer-logo { width: 100px; margin-bottom: 16px; opacity: .9; }
+  .footer-tagline { font-size: 12px; color: rgba(245,243,239,.35); line-height: 1.6; margin-bottom: 24px; }
+  .footer-contact-line { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(245,243,239,.45); text-decoration: none; margin-bottom: 8px; }
+  .footer-contact-line:hover { color: #f5f3ef; }
+  .footer-hours { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(245,243,239,.3); margin-top: 4px; }
+  .footer-col h6 { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; color: rgba(245,243,239,.35); text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(245,243,239,.5); text-decoration: none; transition: color .2s; }
+  .footer-col ul li a:hover { color: #f5f3ef; }
 
-  /* ── FOOTER BOTTOM REF ── */
-  .footer-bottom-ref { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(245,243,239,.3); }
-  .footer-bottom-ref a { color: rgba(245,243,239,.3); text-decoration: none; }
-  .footer-bottom-ref a:hover { color: #f5f3ef; }
-  .sep { margin: 0 8px; }
+  /* ── NEWSLETTER STRIP ── */
+  .nl-strip {
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 22px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .nl-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: #ED1C24;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nl-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .nl-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* Input as single bottom border only */
+  .nl-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #f5f3ef;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    padding: 6px 0;
+    outline: none;
+    width: 200px;
+    transition: border-color .2s;
+  }
+  .nl-input::placeholder { color: rgba(245,243,239,.3); }
+  .nl-input:focus { border-color: rgba(255,255,255,0.5); }
+  /* Button — outline only, turns red on hover */
+  .nl-btn {
+    background: transparent;
+    color: rgba(245,243,239,.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+    white-space: nowrap;
+  }
+  .nl-btn:hover { color: #ED1C24; border-color: #ED1C24; }
+  /* Checkbox — outline only */
+  .nl-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: rgba(245,243,239,.5);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .nl-check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: border-color .2s;
+  }
+  .nl-check input[type="checkbox"]:checked {
+    border-color: #ED1C24;
+    background: #ED1C24;
+  }
+  .nl-check input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    width: 5px;
+    height: 8px;
+    border: 1.5px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+  .nl-check:hover input[type="checkbox"] { border-color: rgba(255,255,255,0.6); }
 
-  /* ── VARIANT A — Single line, ultra minimal ── */
-  .va { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-  .va-left { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-  .va-title { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; color: rgba(245,243,239,.45); text-transform: uppercase; white-space: nowrap; }
-  .va-form { display: flex; gap: 0; }
-  .va-input { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-right: none; color: #f5f3ef; font-family: 'Public Sans', sans-serif; font-size: 13px; padding: 9px 16px; outline: none; width: 220px; transition: border-color .2s; }
-  .va-input::placeholder { color: rgba(245,243,239,.25); }
-  .va-input:focus { border-color: rgba(255,255,255,0.25); }
-  .va-btn { background: #ED1C24; color: #fff; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 10px 20px; border: none; cursor: pointer; transition: opacity .2s; white-space: nowrap; }
-  .va-btn:hover { opacity: .85; }
-  .va-check { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(245,243,239,.3); cursor: pointer; white-space: nowrap; }
-  .va-check input { accent-color: #ED1C24; width: 13px; height: 13px; cursor: pointer; }
-
-  /* ── VARIANT B — 2 columns ── */
-  .vb { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 48px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
-  .vb-title { font-size: 13px; font-weight: 600; color: #f5f3ef; margin-bottom: 4px; }
-  .vb-sub { font-size: 12px; color: rgba(245,243,239,.4); }
-  .vb-right { display: flex; flex-direction: column; gap: 10px; }
-  .vb-row { display: flex; gap: 0; }
-  .vb-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-right: none; color: #f5f3ef; font-family: 'Public Sans', sans-serif; font-size: 13px; padding: 10px 16px; outline: none; transition: border-color .2s; }
-  .vb-input::placeholder { color: rgba(245,243,239,.25); }
-  .vb-input:focus { border-color: rgba(255,255,255,0.25); }
-  .vb-btn { background: #ED1C24; color: #fff; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 11px 24px; border: none; cursor: pointer; transition: opacity .2s; white-space: nowrap; }
-  .vb-btn:hover { opacity: .85; }
-  .vb-check { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; color: rgba(245,243,239,.3); cursor: pointer; line-height: 1.5; }
-  .vb-check input { accent-color: #ED1C24; width: 13px; height: 13px; cursor: pointer; margin-top: 2px; flex-shrink: 0; }
-
-  /* ── VARIANT C — Centered ── */
-  .vc { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-  .vc-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .14em; color: #ED1C24; text-transform: uppercase; }
-  .vc-title { font-size: 13px; font-weight: 400; color: rgba(245,243,239,.6); }
-  .vc-form { display: flex; width: 100%; max-width: 420px; }
-  .vc-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-right: none; color: #f5f3ef; font-family: 'Public Sans', sans-serif; font-size: 13px; padding: 10px 16px; outline: none; transition: border-color .2s; }
-  .vc-input::placeholder { color: rgba(245,243,239,.25); }
-  .vc-input:focus { border-color: rgba(255,255,255,0.25); }
-  .vc-btn { background: #ED1C24; color: #fff; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 10px 20px; border: none; cursor: pointer; transition: opacity .2s; white-space: nowrap; }
-  .vc-btn:hover { opacity: .85; }
-  .vc-check { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(245,243,239,.28); cursor: pointer; }
-  .vc-check input { accent-color: #ED1C24; width: 13px; height: 13px; cursor: pointer; }
+  /* ── FOOTER BOTTOM ── */
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-legal { font-size: 11px; color: rgba(245,243,239,.25); display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .footer-legal a { color: rgba(245,243,239,.25); text-decoration: none; }
+  .footer-legal a:hover { color: rgba(245,243,239,.6); }
+  .footer-legal-sep { margin: 0 4px; }
+  .footer-social { display: flex; gap: 20px; }
+  .footer-social a { font-size: 11px; color: rgba(245,243,239,.3); text-decoration: none; transition: color .2s; }
+  .footer-social a:hover { color: #f5f3ef; }
+  .footer-crafted { font-size: 11px; color: rgba(245,243,239,.2); }
+  .footer-crafted a { color: rgba(245,243,239,.2); text-decoration: none; }
+  .footer-crafted a:hover { color: rgba(245,243,239,.5); }
 </style>
 </head>
 <body>
 
-<div class="label">Variant A — Single line, ultra minimal</div>
-<div class="va">
-  <div class="va-left">
-    <span class="va-title">Stay in the loop</span>
-    <div class="va-form">
-      <input type="email" class="va-input" placeholder="Your email address">
-      <button class="va-btn">Subscribe</button>
+<!-- Full footer for context -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <div class="footer-logo">
+        <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="#ED1C24">
+          <path d="M227.72,86.07l-43.93-73.13C178.94,4.93,170.27,0,160.94,0H73.91c-9.33,0-18,4.93-22.85,12.95L7.13,86.07c-5.17,8.56-5.17,19.28,0,27.89l43.92,73.11c4.85,8,13.53,12.93,22.85,12.93h87.03c9.33,0,18-4.92,22.85-12.93l43.93-73.11C232.89,105.36,232.89,94.63,227.72,86.07z"/>
+        </svg>
+      </div>
+      <p class="footer-tagline">Engineering precision injection service equipment since 1989.</p>
+      <a href="mailto:sales@carbonzapp.com" class="footer-contact-line">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        sales@carbonzapp.com
+      </a>
+      <a href="tel:+302109856110" class="footer-contact-line">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +30 210 98 56 110
+      </a>
+      <div class="footer-hours">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Mon–Fri 08:00–16:00 (UTC+2)
+      </div>
+    </div>
+    <div class="footer-col">
+      <h6>Company</h6>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Innovation & R&D</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>Solutions</h6>
+      <ul>
+        <li><a href="#">Specialists</a></li>
+        <li><a href="#">Workshops</a></li>
+        <li><a href="#">Large Engines</a></li>
+        <li><a href="#">CloudX</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>Discover</h6>
+      <ul>
+        <li><a href="#">Global Network</a></li>
+        <li><a href="#">Product Catalog</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
     </div>
   </div>
-  <label class="va-check">
-    <input type="checkbox">
-    I agree to receive updates from Carbon Zapp
-  </label>
-</div>
-<div class="footer-bottom-ref">
-  <span>© 2026 Carbon Zapp. All Rights Reserved.<span class="sep">·</span><a href="#">Privacy Policy</a></span>
-  <span>Crafted by <a href="#">Eternal Optimists</a></span>
-</div>
 
-<div class="spacer"></div>
-
-<div class="label">Variant B — 2 columns, title + subtitle</div>
-<div class="vb">
-  <div>
-    <div class="vb-title">Stay informed.</div>
-    <div class="vb-sub">News, events and product updates from Carbon Zapp.</div>
-  </div>
-  <div class="vb-right">
-    <div class="vb-row">
-      <input type="email" class="vb-input" placeholder="Your email address">
-      <button class="vb-btn">Subscribe</button>
+  <!-- Newsletter strip -->
+  <div class="nl-strip">
+    <span class="nl-title">Stay in the loop</span>
+    <div class="nl-right">
+      <div class="nl-form">
+        <input type="email" class="nl-input" placeholder="Your email address">
+        <button class="nl-btn">Subscribe</button>
+      </div>
+      <label class="nl-check">
+        <input type="checkbox">
+        I agree to receive updates from Carbon Zapp
+      </label>
     </div>
-    <label class="vb-check">
-      <input type="checkbox">
-      I agree to receive news and updates from Carbon Zapp. No spam, unsubscribe anytime.
-    </label>
   </div>
-</div>
-<div class="footer-bottom-ref">
-  <span>© 2026 Carbon Zapp. All Rights Reserved.<span class="sep">·</span><a href="#">Privacy Policy</a></span>
-  <span>Crafted by <a href="#">Eternal Optimists</a></span>
-</div>
 
-<div class="spacer"></div>
-
-<div class="label">Variant C — Centered, με eyebrow label</div>
-<div class="vc">
-  <span class="vc-eyebrow">Newsletter</span>
-  <span class="vc-title">Stay up to date with Carbon Zapp</span>
-  <div class="vc-form">
-    <input type="email" class="vc-input" placeholder="Your email address">
-    <button class="vc-btn">Subscribe</button>
+  <!-- Footer bottom -->
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      © 2026 Carbon Zapp. All Rights Reserved.
+      <span class="footer-legal-sep">·</span>
+      <a href="#">Privacy Policy</a>
+      <span class="footer-legal-sep">·</span>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">YouTube</a>
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Facebook</a>
+    </div>
+    <div class="footer-crafted">Crafted by <a href="#">Eternal Optimists</a></div>
   </div>
-  <label class="vc-check">
-    <input type="checkbox">
-    I agree to receive updates from Carbon Zapp
-  </label>
-</div>
-<div class="footer-bottom-ref">
-  <span>© 2026 Carbon Zapp. All Rights Reserved.<span class="sep">·</span><a href="#">Privacy Policy</a></span>
-  <span>Crafted by <a href="#">Eternal Optimists</a></span>
-</div>
+</footer>
 
 </body>
 </html>
