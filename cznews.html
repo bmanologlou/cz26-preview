@@ -3272,7 +3272,7 @@ function renderRows(articles) {
   listEl.innerHTML = articles.map(a => {
     const primaryCat = a.categories[0];
     const label = catLabels[primaryCat] || primaryCat;
-    return `<a href="articles/${a.id}.html" class="news-row" data-cat="${primaryCat}">
+    return `<a href="news/${a.id}.html" class="news-row" data-cat="${primaryCat}">
       <div class="news-cat" data-filter="${primaryCat}">${label}</div>
       <div class="news-date">${a.date_display}</div>
       <div class="news-headline">${a.title}</div>

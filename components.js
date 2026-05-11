@@ -76,7 +76,7 @@
       }
     }
 
-    const basePath = window.location.pathname.includes('/articles/') ? '../' : '';
+    const basePath = window.location.pathname.includes('/news/') ? '../' : '';
 
     if (navPlaceholder) {
       pending++;
