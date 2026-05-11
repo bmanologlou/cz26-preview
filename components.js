@@ -78,7 +78,8 @@
 
     if (navPlaceholder) {
       pending++;
-      fetch('_nav.html')
+      const basePath = window.location.pathname.includes('/news/') ? '../' : '';
+      fetch(basePath + '_nav.html')
         .then(r => r.text())
         .then(html => {
           navPlaceholder.outerHTML = html;
@@ -88,14 +89,14 @@
 
     if (footerCtaPlaceholder) {
       pending++;
-      fetch('_footer-cta.html')
+      fetch(basePath + '_footer-cta.html')
         .then(r => r.text())
         .then(html => { footerCtaPlaceholder.outerHTML = html; done(); });
     }
 
     if (footerPlaceholder) {
       pending++;
-      fetch('_footer.html')
+      fetch(basePath + '_footer.html')
         .then(r => r.text())
         .then(html => { footerPlaceholder.outerHTML = html; done(); });
     }
