@@ -2897,7 +2897,27 @@
 
     function goTo(idx)  { current = idx; showEvent(current, true); }
     function next()     { current = (current + 1) % events.length; showEvent(current, true); }
+    function prev()     { current = (current - 1 + events.length) % events.length; showEvent(current, true); }
     function resetTimer() { clearInterval(timer); timer = setInterval(next, 4500); }
+
+    // ── Swipe support ──
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var panel = document.getElementById('hero-event-link');
+    if (panel) {
+      panel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      panel.addEventListener('touchend', function(e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+          if (dx < 0) { next(); } else { prev(); }
+          resetTimer();
+        }
+      }, { passive: true });
+    }
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { buildDots(); showEvent(0, false); resetTimer(); });
