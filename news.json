@@ -41,7 +41,7 @@
         "events"
       ],
       "excerpt": "Carbon Zapp invites you to Automechanika Dubai 2025, the leading international trade fair for the automotive aftermarket in the Middle East.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Dubai_25-938x577w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Dubai_25-600x315w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Dubai_25-600x315w.jpg",
       "event_date": "December 9–11, 2025",
       "event_location": "Dubai World Trade Centre, Dubai, UAE",
@@ -57,11 +57,11 @@
         "events"
       ],
       "excerpt": "Carbon Zapp participates in Expotransporte Anpact 2025, Mexico's leading heavy transport and automotive trade show.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_EXPOTRANSPORTE-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_EXPOTRANSPORTE-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_MEXICO-600x315w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_MEXICO-600x315w.png",
       "event_date": "November 2025",
       "event_location": "Mexico",
-      "event_link": "#",
+      "event_link": "https://www.expotransporte.com.mx/",
       "body": "Carbon Zapp participates in Expotransporte Anpact 2025, Mexico's leading heavy transport and automotive trade show, showcasing the latest CZ XSeries innovations."
     },
     {
@@ -73,11 +73,11 @@
         "events"
       ],
       "excerpt": "Carbon Zapp joins Automechanika Shanghai 2025, Asia's largest trade fair for the automotive service industry.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Shanghai-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Shanghai-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AMF_Shanghai_25-600x315w.jpg",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AMF_Shanghai_25-600x315w.jpg",
       "event_date": "November 2025",
       "event_location": "Shanghai, China",
-      "event_link": "#",
+      "event_link": "https://automechanika-shanghai.messefrankfurt.com/",
       "body": "Carbon Zapp joins Automechanika Shanghai 2025, Asia's largest trade fair for the automotive service industry, showcasing the CZ XSeries range."
     },
     {
@@ -158,8 +158,8 @@
         "news"
       ],
       "excerpt": "Carbon Zapp celebrates 35 years of engineering excellence, precision innovation, and global impact in automotive injection service technology.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_35YEARS-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_35YEARS-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Celebrate_24-02-600x315w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Celebrate_24-02-600x315w.png",
       "body": "Carbon Zapp proudly marks 35 years of engineering excellence and precision innovation in automotive injection service technology.\n\nSince 1989, we have been at the forefront of developing smarter, cleaner, and more efficient solutions for workshops and specialists worldwide.\n\nThank you to our global network of partners, distributors, and customers who have been part of this journey."
     }
   ]
