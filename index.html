@@ -2410,17 +2410,17 @@
 
   <!-- UPCOMING EVENT CARD -->
   <div class="hero-event" id="hero-event-card">
-    <div class="hero-event-label">Next Appearance</div>
+    <div class="hero-event-label" id="hero-event-label">Next Appearance</div>
 
     <a class="hero-event-body" id="hero-event-link" href="#" target="_blank">
+      <div class="hero-event-date">
+        <div class="hero-event-date-val" id="hero-event-dates">—</div>
+        <div class="hero-event-countdown" id="event-countdown">—</div>
+      </div>
       <div class="hero-event-name" id="hero-event-name">—</div>
       <div class="hero-event-location" id="hero-event-location">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <span id="hero-event-venue">—</span>
-      </div>
-      <div class="hero-event-date">
-        <div class="hero-event-date-val" id="hero-event-dates">—</div>
-        <div class="hero-event-countdown" id="event-countdown">—</div>
       </div>
       <div id="hero-event-action"></div>
     </a>
@@ -2886,7 +2886,17 @@
           venueEl.textContent = ev.venue;
           datesEl.textContent = ev.dates;
           countEl.textContent = daysUntil(ev);
-          var actionEl = document.getElementById('hero-event-action');
+          var labelEl = document.getElementById('hero-event-label');
+          if (labelEl) {
+            var now = new Date();
+            var start = new Date(ev.start + 'T00:00:00');
+            var end = ev.end ? new Date(ev.end + 'T23:59:59') : start;
+            if (!ev.url) labelEl.textContent = 'Upcoming';
+            else if (now >= start && now <= end) labelEl.textContent = 'Now On';
+            else if (now > end) labelEl.textContent = 'Recent Event';
+            else labelEl.textContent = 'Next Appearance';
+          }
+                    var actionEl = document.getElementById('hero-event-action');
           if (ev.url) {
             body.href = ev.url;
             body.style.pointerEvents = '';
@@ -2907,7 +2917,17 @@
         venueEl.textContent = ev.venue;
         datesEl.textContent = ev.dates;
         countEl.textContent = daysUntil(ev);
-        var actionEl = document.getElementById('hero-event-action');
+          var labelEl = document.getElementById('hero-event-label');
+          if (labelEl) {
+            var now = new Date();
+            var start = new Date(ev.start + 'T00:00:00');
+            var end = ev.end ? new Date(ev.end + 'T23:59:59') : start;
+            if (!ev.url) labelEl.textContent = 'Upcoming';
+            else if (now >= start && now <= end) labelEl.textContent = 'Now On';
+            else if (now > end) labelEl.textContent = 'Recent Event';
+            else labelEl.textContent = 'Next Appearance';
+          }
+                  var actionEl = document.getElementById('hero-event-action');
         if (ev.url) {
           body.href = ev.url;
           body.style.pointerEvents = '';
