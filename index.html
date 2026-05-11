@@ -1905,8 +1905,8 @@
     transition: color 0.15s;
   }
   .hero-event-all:hover { color: var(--white); }
-  .event-action-btn { display: inline-block; margin-top: 12px; font-family: 'Public Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(237,28,36,.5); padding: 6px 14px; transition: background .2s, color .2s; }
-  .event-action-btn:hover { background: var(--accent); color: #fff; }
+  .event-action-btn { display: inline-block; margin-top: 12px; font-family: 'Public Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); transition: opacity .2s; }
+  .event-action-btn:hover { opacity: .7; }
   .event-coming-soon { display: inline-block; margin-top: 12px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,243,239,.3); border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; }
 
   /* Fade transition for event content */
@@ -2849,7 +2849,7 @@
       if (diff === 0) return 'Today';
       if (diff > 0 && diff <= 60) return diff + ' days';
       if (diff > 60) return '~' + Math.round(diff / 30) + ' months';
-      return 'Past Event';
+      return '';
     }
 
     function buildDots() {
