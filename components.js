@@ -76,9 +76,10 @@
       }
     }
 
+    const basePath = window.location.pathname.includes('/news/') ? '../' : '';
+
     if (navPlaceholder) {
       pending++;
-      const basePath = window.location.pathname.includes('/news/') ? '../' : '';
       fetch(basePath + '_nav.html')
         .then(r => r.text())
         .then(html => {
