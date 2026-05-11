@@ -2423,7 +2423,7 @@
 
     <div class="hero-event-nav">
       <div class="hero-event-dots" id="hero-event-dots"></div>
-      <a href="/innovation/news-events" class="hero-event-all">All Events →</a>
+      <a href="cznews.html?filter=events" class="hero-event-all">All Events →</a>
     </div>
   </div>
 
@@ -2823,6 +2823,7 @@
               venue: a.event_location || '',
               dates: a.event_date || a.date_display,
               start: a.date,
+              end: a.event_end || a.date,
               url: 'news/' + a.id + '.html'
             };
           });
@@ -2834,13 +2835,15 @@
     var current = 0;
     var timer;
 
-    function daysUntil(dateStr) {
-      var target = new Date(dateStr + 'T00:00:00');
+    function daysUntil(ev) {
+      var start = new Date(ev.start + 'T00:00:00');
+      var end = ev.end ? new Date(ev.end + 'T23:59:59') : start;
       var now = new Date();
-      var diff = Math.floor((target - now) / (1000 * 60 * 60 * 24));
+      if (now >= start && now <= end) return 'On now';
+      var diff = Math.floor((start - now) / (1000 * 60 * 60 * 24));
       if (diff > 0) return diff + ' days';
       if (diff === 0) return 'Today';
-      return 'On now';
+      return 'Past event';
     }
 
     function buildDots() {
@@ -2876,7 +2879,7 @@
           nameEl.textContent  = ev.name;
           venueEl.textContent = ev.venue;
           datesEl.textContent = ev.dates;
-          countEl.textContent = daysUntil(ev.start);
+          countEl.textContent = daysUntil(ev);
           body.href = ev.url;
           body.classList.remove('fade-out');
           body.classList.add('fade-in');
@@ -2886,7 +2889,7 @@
         nameEl.textContent  = ev.name;
         venueEl.textContent = ev.venue;
         datesEl.textContent = ev.dates;
-        countEl.textContent = daysUntil(ev.start);
+        countEl.textContent = daysUntil(ev);
         body.href = ev.url;
       }
       updateDots();

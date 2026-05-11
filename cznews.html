@@ -3310,7 +3310,9 @@ fetch('news.json')
   .then(r => r.json())
   .then(data => {
     allArticles = data.articles;
-    applyFilter('all');
+    // Check URL for filter param e.g. ?filter=events
+    const urlFilter = new URLSearchParams(window.location.search).get('filter');
+    applyFilter(urlFilter || 'all');
     document.querySelectorAll('.filter-btn[data-cat]').forEach(btn => {
       btn.addEventListener('click', () => applyFilter(btn.dataset.cat));
     });
