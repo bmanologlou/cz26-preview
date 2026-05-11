@@ -29,31 +29,41 @@
   .nl-strip {
     background: #0a0a0a;
     border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 22px 48px;
+    padding: 24px 48px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    flex-wrap: wrap;
+    gap: 0;
+  }
+  .nl-left {
+    width: 417px;
+    flex-shrink: 0;
+    padding-right: 48px;
   }
   .nl-title {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: .1em;
     color: #ED1C24;
     text-transform: uppercase;
-    white-space: nowrap;
+    margin-bottom: 4px;
+  }
+  .nl-sub {
+    font-size: 11px;
+    color: rgba(245,243,239,.38);
+    line-height: 1.5;
   }
   .nl-right {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 0;
+    flex: 1;
   }
   .nl-form {
     display: flex;
     align-items: center;
     gap: 8px;
+    width: 356px;
+    flex-shrink: 0;
   }
   /* Input as single bottom border only */
   .nl-input {
@@ -204,7 +214,10 @@
 
   <!-- Newsletter strip -->
   <div class="nl-strip">
-    <span class="nl-title">Stay in the loop</span>
+    <div class="nl-left">
+      <div class="nl-title">Stay in the loop</div>
+      <div class="nl-sub">News, events and product updates<br>from Carbon Zapp.</div>
+    </div>
     <div class="nl-right">
       <div class="nl-form">
         <input type="email" class="nl-input" placeholder="Your email address">
