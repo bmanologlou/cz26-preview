@@ -5,7 +5,9 @@
       "title": "TTM Poznań 2026",
       "date": "2026-04-06",
       "date_display": "06 Apr 2026",
-      "categories": ["events"],
+      "categories": [
+        "events"
+      ],
       "excerpt": "Carbon Zapp, in collaboration with Gładysek sp.j., invites you to join us at TTM 2026, one of the key automotive industry events in Central and Eastern Europe.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_TTM-938x577w.png",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_TTM-600x315w.png",
@@ -19,7 +21,9 @@
       "title": "HDAW Texas 2026",
       "date": "2026-01-10",
       "date_display": "10 Jan 2026",
-      "categories": ["events"],
+      "categories": [
+        "events"
+      ],
       "excerpt": "Carbon Zapp, together with Williams Diesel Service and SRN-MI Srl, invites you to Heavy Duty Aftermarket Week 2026 in Grapevine, Texas.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_HDAW_Texas-938x577w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_HDAW_Texas-600x315w.jpg",
@@ -33,7 +37,9 @@
       "title": "Automechanika Dubai 2025",
       "date": "2025-12-01",
       "date_display": "01 Dec 2025",
-      "categories": ["events"],
+      "categories": [
+        "events"
+      ],
       "excerpt": "Carbon Zapp invites you to Automechanika Dubai 2025, the leading international trade fair for the automotive aftermarket in the Middle East.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Dubai_25-938x577w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Dubai_25-600x315w.jpg",
@@ -47,7 +53,9 @@
       "title": "Expotransporte Mexico 2025",
       "date": "2025-11-06",
       "date_display": "06 Nov 2025",
-      "categories": ["events"],
+      "categories": [
+        "events"
+      ],
       "excerpt": "Carbon Zapp participates in Expotransporte Anpact 2025, Mexico's leading heavy transport and automotive trade show.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_EXPOTRANSPORTE-938x577w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_EXPOTRANSPORTE-600x315w.jpg",
@@ -61,7 +69,9 @@
       "title": "Automechanika Shanghai 2025",
       "date": "2025-11-01",
       "date_display": "01 Nov 2025",
-      "categories": ["events"],
+      "categories": [
+        "events"
+      ],
       "excerpt": "Carbon Zapp joins Automechanika Shanghai 2025, Asia's largest trade fair for the automotive service industry.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Shanghai-938x577w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_AUM_Shanghai-600x315w.jpg",
@@ -75,7 +85,10 @@
       "title": "New CZ RSP Adapter & Sensor",
       "date": "2025-07-31",
       "date_display": "31 Jul 2025",
-      "categories": ["news", "innovation"],
+      "categories": [
+        "news",
+        "innovation"
+      ],
       "excerpt": "Upgraded RSP Discharge Adapter & Sensor, now engineered for enhanced durability and simplified maintenance with a new modular construction.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_RSP-938x577w.png",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_RSP-600x315w.png",
@@ -86,10 +99,13 @@
       "title": "New Cummins XPI Injector Coding Now Available",
       "date": "2025-05-19",
       "date_display": "19 May 2025",
-      "categories": ["news", "innovation"],
+      "categories": [
+        "news",
+        "innovation"
+      ],
       "excerpt": "Carbon Zapp expands its coding library with full support for Cummins XPI injectors, available now via CloudX platform.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_CUMMINS_XPI-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_CUMMINS_XPI-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_XPI-938x577w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_XPI-600x315w.png",
       "body": "Carbon Zapp is pleased to announce the availability of Cummins XPI Injector Coding, now fully supported on the CZ XSeries platform.\n\nThis new coding solution extends the CZ XSeries compatibility to cover one of the most widely used heavy-duty injector systems in North America and global markets.\n\nAvailable immediately via the CloudX platform for all registered CZ XSeries users."
     },
     {
@@ -97,10 +113,13 @@
       "title": "New Coding Release: Delphi F2P Injector EU6 for DAF Systems",
       "date": "2025-02-13",
       "date_display": "13 Feb 2025",
-      "categories": ["news", "innovation"],
+      "categories": [
+        "news",
+        "innovation"
+      ],
       "excerpt": "Carbon Zapp releases new coding support for Delphi F2P EU6 injectors used in DAF truck systems, expanding XSeries compatibility.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_DELPHI_F2P-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_DELPHI_F2P-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_F2Pn-938x577w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_F2Pn-600x315w.png",
       "body": "Carbon Zapp announces the release of new coding support for Delphi F2P EU6 injectors used in DAF truck systems.\n\nThis release further expands the CZ XSeries compatibility library, enabling specialists to service a broader range of heavy-duty vehicles with full precision and confidence.\n\nUpdate available now via the CloudX platform."
     },
     {
@@ -108,10 +127,13 @@
       "title": "New 10\" Tablet Retrofit for Your 8\" Carbon Zapp Bench",
       "date": "2025-02-10",
       "date_display": "10 Feb 2025",
-      "categories": ["news", "innovation"],
+      "categories": [
+        "news",
+        "innovation"
+      ],
       "excerpt": "Upgrade your existing 8-inch Carbon Zapp bench with the new 10-inch tablet retrofit kit for a larger, more responsive interface.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_TABLET-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_TABLET-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Tablet-938x577w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Tablet-600x315w.png",
       "body": "Carbon Zapp introduces the new 10-inch Tablet Retrofit Kit, designed to upgrade existing 8-inch Carbon Zapp benches.\n\nThe larger display delivers a more responsive, clearer interface for technicians, improving workflow efficiency in busy workshop environments.\n\nThe retrofit kit is available through your authorized Carbon Zapp distributor."
     },
     {
@@ -119,10 +141,12 @@
       "title": "Unlock Exclusive Black Friday Discounts",
       "date": "2025-11-26",
       "date_display": "26 Nov 2025",
-      "categories": ["news"],
+      "categories": [
+        "news"
+      ],
       "excerpt": "Carbon Zapp Black Friday 2025 — exclusive discounts on CZ Credits and selected XSeries accessories. Limited time offer.",
-      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_BLACKFRIDAY-938x577w.jpg",
-      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_BLACKFRIDAY-600x315w.jpg",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Black_Friday_2025-01-938x577w.png",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Black_Friday_2025-01-600x315w.png",
       "body": "Carbon Zapp Black Friday 2025 is here. Take advantage of exclusive discounts on CZ Credits and selected XSeries accessories.\n\nVisit the Carbon Zapp store and unlock your Black Friday savings — limited time only."
     },
     {
@@ -130,7 +154,9 @@
       "title": "Celebrating 35 Years of Innovation",
       "date": "2024-08-06",
       "date_display": "06 Aug 2024",
-      "categories": ["news"],
+      "categories": [
+        "news"
+      ],
       "excerpt": "Carbon Zapp celebrates 35 years of engineering excellence, precision innovation, and global impact in automotive injection service technology.",
       "image": "https://carbonzapp.com/image/cache/catalog/CZ_35YEARS-938x577w.jpg",
       "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_35YEARS-600x315w.jpg",
