@@ -2824,7 +2824,7 @@
               dates: a.event_date || a.date_display,
               start: a.date,
               end: a.event_end || a.date,
-              url: 'news/' + a.id + '.html'
+              url: a.id ? 'news/' + a.id + '.html' : null
             };
           });
         buildDots();
@@ -2836,6 +2836,7 @@
     var timer;
 
     function daysUntil(ev) {
+      if (!ev.url) return 'Coming Soon';
       var start = new Date(ev.start + 'T00:00:00');
       var end = ev.end ? new Date(ev.end + 'T23:59:59') : start;
       var now = new Date();
@@ -2843,7 +2844,7 @@
       var diff = Math.floor((start - now) / (1000 * 60 * 60 * 24));
       if (diff > 0) return diff + ' days';
       if (diff === 0) return 'Today';
-      return 'Past event';
+      return 'View Recap';
     }
 
     function buildDots() {
@@ -2880,7 +2881,15 @@
           venueEl.textContent = ev.venue;
           datesEl.textContent = ev.dates;
           countEl.textContent = daysUntil(ev);
-          body.href = ev.url;
+          if (ev.url) {
+            body.href = ev.url;
+            body.style.pointerEvents = '';
+            body.style.cursor = '';
+          } else {
+            body.href = 'javascript:void(0)';
+            body.style.pointerEvents = 'none';
+            body.style.cursor = 'default';
+          }
           body.classList.remove('fade-out');
           body.classList.add('fade-in');
           setTimeout(function() { body.classList.remove('fade-in'); }, 300);
@@ -2890,7 +2899,15 @@
         venueEl.textContent = ev.venue;
         datesEl.textContent = ev.dates;
         countEl.textContent = daysUntil(ev);
-        body.href = ev.url;
+        if (ev.url) {
+          body.href = ev.url;
+          body.style.pointerEvents = '';
+          body.style.cursor = '';
+        } else {
+          body.href = 'javascript:void(0)';
+          body.style.pointerEvents = 'none';
+          body.style.cursor = 'default';
+        }
       }
       updateDots();
     }
