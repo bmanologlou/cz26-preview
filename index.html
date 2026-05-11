@@ -2842,8 +2842,9 @@
       var now = new Date();
       if (now >= start && now <= end) return 'On now';
       var diff = Math.floor((start - now) / (1000 * 60 * 60 * 24));
-      if (diff > 0) return diff + ' days';
       if (diff === 0) return 'Today';
+      if (diff > 0 && diff <= 60) return diff + ' days';
+      if (diff > 60) return '~' + Math.round(diff / 30) + ' months';
       return 'View Recap';
     }
 
