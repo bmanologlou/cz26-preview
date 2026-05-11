@@ -2808,29 +2808,28 @@
 <script>
   // ── Events rotator ──
   (function() {
-    var events = [
-      {
-        name: 'Automechanika Dubai',
-        venue: 'Dubai World Trade Centre — UAE',
-        dates: 'JUN 9–11, 2026',
-        start: '2026-06-09',
-        url: '/innovation/news-events/automechanika-dubai-2026'
-      },
-      {
-        name: 'Automechanika Shanghai',
-        venue: 'National Exhibition & Convention Centre — China',
-        dates: 'NOV 4–7, 2026',
-        start: '2026-11-04',
-        url: '/innovation/news-events/automechanika-shanghai-2026'
-      },
-      {
-        name: 'HDAW 2027',
-        venue: 'Gaylord Texan Resort — Texas, USA',
-        dates: 'JAN 2027',
-        start: '2027-01-25',
-        url: '/innovation/news-events/hdaw-2027'
-      }
-    ];
+    var events = [];
+
+    // Load events dynamically from news.json
+    fetch('news.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        events = data.articles
+          .filter(function(a) { return a.categories.includes('events'); })
+          .slice(0, 5)
+          .map(function(a) {
+            return {
+              name: a.title,
+              venue: a.event_location || '',
+              dates: a.event_date || a.date_display,
+              start: a.date,
+              url: 'news/' + a.id + '.html'
+            };
+          });
+        buildDots();
+        showEvent(0, false);
+        resetTimer();
+      });
 
     var current = 0;
     var timer;
