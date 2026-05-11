@@ -3,7 +3,7 @@ import json, os
 with open('news.json') as f:
     data = json.load(f)
 
-os.makedirs('news', exist_ok=True)
+os.makedirs('articles', exist_ok=True)
 
 TEMPLATE = '''<!DOCTYPE html>
 <html lang="en">
@@ -136,7 +136,7 @@ for article in data['articles']:
         event_html=event_html
     )
     
-    filepath = f'news/{slug}.html'
+    filepath = f'articles/{slug}.html'
     with open(filepath, 'w') as f:
         f.write(html)
     print(f'✅ {filepath}')
