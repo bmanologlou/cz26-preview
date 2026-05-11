@@ -3241,54 +3241,7 @@
 
 <div class="news-list">
   <div class="news-list-inner" id="news-list">
-    <a href="#" class="news-row" data-cat="events">
-      <div class="news-cat" data-filter="events">Events</div>
-      <div class="news-date">10 Jan 2026</div>
-      <div class="news-headline">HDAW Texas 2026</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="events">
-      <div class="news-cat" data-filter="events">Events</div>
-      <div class="news-date">01 Dec 2025</div>
-      <div class="news-headline">Automechanika Dubai 2025</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="news">
-      <div class="news-cat" data-filter="news">News</div>
-      <div class="news-date">26 Nov 2025</div>
-      <div class="news-headline">Unlock Exclusive Black Friday Discounts</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="events">
-      <div class="news-cat" data-filter="events">Events</div>
-      <div class="news-date">06 Nov 2025</div>
-      <div class="news-headline">Expotransporte Mexico 2025</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="events">
-      <div class="news-cat" data-filter="events">Events</div>
-      <div class="news-date">01 Nov 2025</div>
-      <div class="news-headline">Automechanika Shanghai 2025</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="innovation">
-      <div class="news-cat" data-filter="innovation">Innovation</div>
-      <div class="news-date">Feb 2025</div>
-      <div class="news-headline">New 10" Tablet Retrofit for Your 8" Carbon Zapp Bench</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="news">
-      <div class="news-cat" data-filter="news">News</div>
-      <div class="news-date">Oct 2019</div>
-      <div class="news-headline">MTBR, CRU.4R & CRU.2R Diesel Test Benches Homologated by Continental/VDO</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
-    <a href="#" class="news-row" data-cat="news">
-      <div class="news-cat" data-filter="news">News</div>
-      <div class="news-date">Sep 2018</div>
-      <div class="news-headline">CRU.2r Homologation by VDO as Authorized Solution</div>
-      <div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </a>
+    <!-- Loaded dynamically from news.json -->
   </div>
 </div>
 
@@ -3297,12 +3250,10 @@
 
 <script src="components.js"></script>
 <script>
-// Filter logic
-const btns = document.querySelectorAll('.filter-btn[data-cat]');
-const rows = document.querySelectorAll('.news-row[data-cat]');
 const countEl = document.getElementById('news-count');
 const titleEl = document.getElementById('news-title');
 const eyebrowEl = document.getElementById('news-eyebrow');
+const listEl = document.getElementById('news-list');
 
 const titleMap = {
   all:        { eyebrow: 'Latest Updates',    title: 'News &amp; Events' },
@@ -3311,33 +3262,57 @@ const titleMap = {
   innovation: { eyebrow: 'R&amp;D &amp; Technology', title: 'CZ Innovations' }
 };
 
-function applyFilter(cat) {
-  btns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
-  let visible = 0;
-  rows.forEach(row => {
-    if (cat === 'all' || row.dataset.cat === cat) {
-      row.classList.remove('hidden');
-      visible++;
-    } else {
-      row.classList.add('hidden');
-    }
+const catLabels = { events: 'Event', news: 'News', innovation: 'Innovation' };
+const arrowSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+
+let allArticles = [];
+let activeFilter = 'all';
+
+function renderRows(articles) {
+  listEl.innerHTML = articles.map(a => {
+    const primaryCat = a.categories[0];
+    const label = catLabels[primaryCat] || primaryCat;
+    return `<a href="news/${a.id}.html" class="news-row" data-cat="${primaryCat}">
+      <div class="news-cat" data-filter="${primaryCat}">${label}</div>
+      <div class="news-date">${a.date_display}</div>
+      <div class="news-headline">${a.title}</div>
+      <div class="news-arrow-box">${arrowSVG}</div>
+    </a>`;
+  }).join('');
+
+  // Re-attach cat click handlers
+  listEl.querySelectorAll('.news-cat[data-filter]').forEach(cat => {
+    cat.addEventListener('click', (e) => {
+      e.preventDefault();
+      applyFilter(cat.dataset.filter);
+    });
   });
-  countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
+function applyFilter(cat) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn[data-cat]').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === cat);
+  });
+  const filtered = cat === 'all'
+    ? allArticles
+    : allArticles.filter(a => a.categories.includes(cat));
+  renderRows(filtered);
+  countEl.textContent = filtered.length + ' article' + (filtered.length !== 1 ? 's' : '');
   if (titleMap[cat]) {
     titleEl.innerHTML = titleMap[cat].title;
     eyebrowEl.innerHTML = titleMap[cat].eyebrow;
   }
 }
 
-btns.forEach(btn => {
-  btn.addEventListener('click', () => applyFilter(btn.dataset.cat));
-});
-
-// Click on category label in row
-document.querySelectorAll('.news-cat[data-filter]').forEach(cat => {
-  cat.addEventListener('click', (e) => {
-    e.preventDefault();
-    applyFilter(cat.dataset.filter);
+// Load news.json
+fetch('news.json')
+  .then(r => r.json())
+  .then(data => {
+    allArticles = data.articles;
+    applyFilter('all');
+    document.querySelectorAll('.filter-btn[data-cat]').forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.cat));
+    });
   });
-});
 </script>
