@@ -1905,6 +1905,9 @@
     transition: color 0.15s;
   }
   .hero-event-all:hover { color: var(--white); }
+  .event-action-btn { display: inline-block; margin-top: 12px; font-family: 'Public Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(237,28,36,.5); padding: 6px 14px; transition: background .2s, color .2s; }
+  .event-action-btn:hover { background: var(--accent); color: #fff; }
+  .event-coming-soon { display: inline-block; margin-top: 12px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,243,239,.3); border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; }
 
   /* Fade transition for event content */
   .hero-event-body.fade-out { opacity: 0; transition: opacity 0.25s; }
@@ -2419,6 +2422,7 @@
         <div class="hero-event-date-val" id="hero-event-dates">—</div>
         <div class="hero-event-countdown" id="event-countdown">—</div>
       </div>
+      <div id="hero-event-action"></div>
     </a>
 
     <div class="hero-event-nav">
@@ -2836,7 +2840,7 @@
     var timer;
 
     function daysUntil(ev) {
-      if (!ev.url) return 'Coming Soon';
+      if (!ev.url) return ev.dates ? '' : '';
       var start = new Date(ev.start + 'T00:00:00');
       var end = ev.end ? new Date(ev.end + 'T23:59:59') : start;
       var now = new Date();
@@ -2845,7 +2849,7 @@
       if (diff === 0) return 'Today';
       if (diff > 0 && diff <= 60) return diff + ' days';
       if (diff > 60) return '~' + Math.round(diff / 30) + ' months';
-      return 'View Recap';
+      return 'Past Event';
     }
 
     function buildDots() {
@@ -2882,14 +2886,17 @@
           venueEl.textContent = ev.venue;
           datesEl.textContent = ev.dates;
           countEl.textContent = daysUntil(ev);
+          var actionEl = document.getElementById('hero-event-action');
           if (ev.url) {
             body.href = ev.url;
             body.style.pointerEvents = '';
             body.style.cursor = '';
+            if (actionEl) actionEl.innerHTML = '<span class="event-action-btn">View Event →</span>';
           } else {
             body.href = 'javascript:void(0)';
             body.style.pointerEvents = 'none';
             body.style.cursor = 'default';
+            if (actionEl) actionEl.innerHTML = '<span class="event-coming-soon">Coming Soon</span>';
           }
           body.classList.remove('fade-out');
           body.classList.add('fade-in');
@@ -2900,14 +2907,17 @@
         venueEl.textContent = ev.venue;
         datesEl.textContent = ev.dates;
         countEl.textContent = daysUntil(ev);
+        var actionEl = document.getElementById('hero-event-action');
         if (ev.url) {
           body.href = ev.url;
           body.style.pointerEvents = '';
           body.style.cursor = '';
+          if (actionEl) actionEl.innerHTML = '<span class="event-action-btn">View Event →</span>';
         } else {
           body.href = 'javascript:void(0)';
           body.style.pointerEvents = 'none';
           body.style.cursor = 'default';
+          if (actionEl) actionEl.innerHTML = '<span class="event-coming-soon">Coming Soon</span>';
         }
       }
       updateDots();
