@@ -18,7 +18,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <meta property="og:image" content="{image}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fonts/gunterz.css">
+<link rel="stylesheet" href="https://czsite26.eoflux.com/assets/fonts/gunterz.css">
 <style>
   nav {
     position: fixed; top: 0; left: 0; right: 0;
@@ -1761,6 +1761,7 @@ TEMPLATE = '''<!DOCTYPE html>
   .nl-check input[type="checkbox"] {{ appearance: none; -webkit-appearance: none; width: 13px; height: 13px; border: 1px solid rgba(255,255,255,0.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; transition: border-color .2s; }}
   .nl-check input[type="checkbox"]:checked {{ border-color: #ED1C24; background: #ED1C24; }}
 </style>
+<script src="components.js" defer></script>
 </head>
 <body>
 
