@@ -130,13 +130,13 @@ for article in data['articles']:
   </div>'''
 
     html = TEMPLATE
-    html = html.replace('{{title}}', article['title'])
-    html = html.replace('{{excerpt}}', article['excerpt'])
-    html = html.replace('{{image}}', article['image'])
-    html = html.replace('{{date_display}}', article['date_display'])
-    html = html.replace('{{cats_html}}', cats_html)
-    html = html.replace('{{body_html}}', body_html)
-    html = html.replace('{{event_html}}', event_html)
+    html = html.replace('{title}', article['title'])
+    html = html.replace('{excerpt}', article['excerpt'])
+    html = html.replace('{image}', article['image'])
+    html = html.replace('{date_display}', article['date_display'])
+    html = html.replace('{cats_html}', cats_html)
+    html = html.replace('{body_html}', body_html)
+    html = html.replace('{event_html}', event_html)
 
     filepath = f'news/{slug}.html'
     with open(filepath, 'w') as f:
