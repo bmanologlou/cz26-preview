@@ -2,26 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<base href="../">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>New Coding Release: Delphi F2P Injector EU6 for DAF Systems — Carbon Zapp</title>
-<meta name="description" content="Carbon Zapp releases new coding support for Delphi F2P EU6 injectors used in DAF truck systems, expanding XSeries compatibility.">
-<meta property="og:title" content="New Coding Release: Delphi F2P Injector EU6 for DAF Systems — Carbon Zapp">
-<meta property="og:description" content="Carbon Zapp releases new coding support for Delphi F2P EU6 injectors used in DAF truck systems, expanding XSeries compatibility.">
-<meta property="og:image" content="https://carbonzapp.com/image/cache/catalog/CZ_EVENT_F2Pn-938x577w.png">
+<title>LTBR-X — Large Engines Diesel Test Bench — Carbon Zapp</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://czsite26.eoflux.com/assets/fonts/gunterz.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --nav-h: 64px;
-    --accent: #ED1C24;
-    --black: #0a0a0a;
-    --white: #f5f3ef;
+  @font-face {
+    font-family: 'Public Sans';
+    src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
+         url('assets/fonts/PublicSans-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: "Public Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+  @font-face {
+    font-family: 'Switzer';
+    src: url('assets/fonts/Switzer-Variable.woff2') format('woff2'),
+         url('assets/fonts/Switzer-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Regular.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Regular.woff') format('woff');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Italic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Italic.woff') format('woff');
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Medium.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Medium.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-MediumItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-MediumItalic.woff') format('woff');
+    font-weight: 500; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Bold.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Bold.woff') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BoldItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BoldItalic.woff') format('woff');
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-Black.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-Black.woff') format('woff');
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Gunterz';
+    src: url('assets/fonts/Gunterz-BlackItalic.woff2') format('woff2'),
+         url('assets/fonts/Gunterz-BlackItalic.woff') format('woff');
+    font-weight: 900; font-style: italic; font-display: swap;
+  }
+
+/* ─── RESET & ROOT ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;
+  --white:#f5f3ef;
+  --grey:#ebebeb;
+  --grey-mid:#e4e4e4;
+  --accent:#ED1C24;
+  --mid:#868685;
+  --text:#1a1a1a;
+  --text-light:rgba(26,26,26,0.5);
+  --nav-h:68px;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+
+
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     height: var(--nav-h);
@@ -1705,7 +1773,30 @@
     transition: color 0.15s;
   }
   .footer-crafted a:hover { color: var(--white); }
-/* ── NEWSLETTER STRIP ── */
+
+  /* ── ARTICLE ── */
+  .article-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+  .article-hero { padding: 100px 0 40px; }
+  .article-meta { font-family: "DM Mono", monospace; font-size: 11px; color: rgba(245,243,239,.4); letter-spacing: .05em; margin-bottom: 12px; }
+  .article-title { font-family: "Gunterz", sans-serif; font-size: 48px; line-height: 1.05; margin-bottom: 16px; }
+  .article-cats { display: flex; gap: 8px; margin-bottom: 0; }
+  .article-cat { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(237,28,36,.4); padding: 4px 10px; }
+  .article-image { padding: 40px 0 40px; }
+  .article-image img { width: 100%; height: auto; display: block; }
+  .article-body p { font-size: 17px; line-height: 1.75; color: rgba(245,243,239,.8); margin-bottom: 24px; }
+  .article-body { padding-bottom: 40px; }
+  .article-event-info { padding-bottom: 48px; }
+  .event-card { border: 1px solid rgba(255,255,255,.1); padding: 24px 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .event-field label { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,243,239,.35); display: block; margin-bottom: 6px; }
+  .event-field span { font-size: 14px; color: var(--white); }
+  .event-link { margin-top: 8px; grid-column: 1/-1; }
+  .event-link a { font-family: "Public Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 10px 24px; display: inline-block; transition: background .2s, color .2s; }
+  .event-link a:hover { background: var(--accent); color: #fff; }
+  .article-back { padding-bottom: 80px; }
+  .article-back a { font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(245,243,239,.4); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color .2s; }
+  .article-back a:hover { color: var(--white); }
+
+  /* Newsletter */
   .nl-strip { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 48px 24px 0; display: flex; align-items: center; gap: 0; margin: 0 48px; }
   .nl-left { width: auto; flex-shrink: 0; padding-right: 160px; }
   .nl-title { font-family: "DM Mono", monospace; font-size: 13px; letter-spacing: .1em; color: #ED1C24; text-transform: uppercase; white-space: nowrap; }
@@ -1713,86 +1804,36 @@
   .nl-form { display: flex; align-items: center; gap: 8px; width: 356px; flex-shrink: 0; }
   .nl-input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: #f5f3ef; font-family: "Public Sans", sans-serif; font-size: 13px; padding: 6px 0; outline: none; flex: 1; transition: border-color .2s; }
   .nl-input::placeholder { color: rgba(245,243,239,.3); }
-  .nl-input:focus { border-color: rgba(255,255,255,0.5); }
   .nl-btn { background: transparent; color: rgba(245,243,239,.55); border: 1px solid rgba(255,255,255,0.2); font-family: "Public Sans", sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 7px 16px; cursor: pointer; transition: color .2s, border-color .2s; white-space: nowrap; }
   .nl-btn:hover { color: #ED1C24; border-color: #ED1C24; }
   .nl-check { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(245,243,239,.5); cursor: pointer; white-space: nowrap; margin-left: 48px; }
-  .nl-check input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 13px; height: 13px; border: 1px solid rgba(255,255,255,0.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; transition: border-color .2s; }
+  .nl-check input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 13px; height: 13px; border: 1px solid rgba(255,255,255,0.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; }
   .nl-check input[type="checkbox"]:checked { border-color: #ED1C24; background: #ED1C24; }
+
 </style>
-<style>
-  :root {{ --nav-h: 64px; --accent: #ED1C24; --black: #0a0a0a; --white: #f5f3ef; }}
-  *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ background: var(--black); color: var(--white); font-family: "Public Sans", sans-serif; }}
-
-  .article-wrap {{ max-width: 1100px; margin: 0 auto; padding: 0 48px; }}
-  .article-hero {{ padding: 120px 0 40px; }}
-  .article-cats {{ display: flex; gap: 8px; margin-bottom: 16px; }}
-  .article-cat {{ font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(237,28,36,.4); padding: 4px 10px; }}
-  .article-title {{ font-family: "Gunterz", sans-serif; font-size: 52px; line-height: 1.05; margin-bottom: 16px; }}
-  .article-meta {{ font-family: "DM Mono", monospace; font-size: 11px; color: rgba(245,243,239,.4); letter-spacing: .05em; margin-bottom: 12px; }}
-
-  .article-image {{ padding-bottom: 48px; }}
-  .article-image img {{ width: 100%; height: auto; display: block; }}
-
-  .article-body p {{ font-size: 17px; line-height: 1.75; color: rgba(245,243,239,.8); margin-bottom: 24px; }}
-
-  .article-event-info {{ padding-bottom: 48px; }}
-  .event-card {{ border: 1px solid rgba(255,255,255,.1); padding: 24px 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }}
-  .event-field label {{ font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,243,239,.35); display: block; margin-bottom: 6px; }}
-  .event-field span {{ font-size: 14px; color: var(--white); }}
-  .event-link {{ margin-top: 8px; grid-column: 1/-1; }}
-  .event-link a {{ font-family: "Public Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 10px 24px; display: inline-block; transition: background .2s, color .2s; }}
-  .event-link a:hover {{ background: var(--accent); color: #fff; }}
-
-  .article-back {{ padding-bottom: 80px; }}
-  .article-back a {{ font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(245,243,239,.4); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color .2s; }}
-  .article-back a:hover {{ color: var(--white); }}
-
-  /* Newsletter strip */
-  .nl-strip {{ background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 48px 24px 0; display: flex; align-items: center; gap: 0; margin: 0 48px; }}
-  .nl-left {{ width: auto; flex-shrink: 0; padding-right: 160px; }}
-  .nl-title {{ font-family: "DM Mono", monospace; font-size: 13px; letter-spacing: .1em; color: #ED1C24; text-transform: uppercase; white-space: nowrap; }}
-  .nl-right {{ display: flex; align-items: center; gap: 0; flex: 1; }}
-  .nl-form {{ display: flex; align-items: center; gap: 8px; width: 356px; flex-shrink: 0; }}
-  .nl-input {{ background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: #f5f3ef; font-family: "Public Sans", sans-serif; font-size: 13px; padding: 6px 0; outline: none; flex: 1; transition: border-color .2s; }}
-  .nl-input::placeholder {{ color: rgba(245,243,239,.3); }}
-  .nl-btn {{ background: transparent; color: rgba(245,243,239,.55); border: 1px solid rgba(255,255,255,0.2); font-family: "Public Sans", sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 7px 16px; cursor: pointer; transition: color .2s, border-color .2s; white-space: nowrap; }}
-  .nl-btn:hover {{ color: #ED1C24; border-color: #ED1C24; }}
-  .nl-check {{ display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(245,243,239,.5); cursor: pointer; white-space: nowrap; margin-left: 48px; }}
-  .nl-check input[type="checkbox"] {{ appearance: none; -webkit-appearance: none; width: 13px; height: 13px; border: 1px solid rgba(255,255,255,0.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; transition: border-color .2s; }}
-  .nl-check input[type="checkbox"]:checked {{ border-color: #ED1C24; background: #ED1C24; }}
-</style>
-<script src="components.js" defer></script>
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
+<script src="components.js" defer></script>
 
 <article>
-  <div class="article-hero">
-    <div class="article-breadcrumb">
-      <a href="cznews.html">News &amp; Events</a>
-      <span>›</span>
-      New Coding Release: Delphi F2P Injector EU6 for DAF Systems
+  <div class="article-wrap">
+    <div class="article-hero">
+      <div class="article-meta">13 Feb 2025</div>
+      <h1 class="article-title">New Coding Release: Delphi F2P Injector EU6 for DAF Systems</h1>
+      <div class="article-cats"><span class="article-cat">News</span><span class="article-cat">Innovation</span></div>
     </div>
-    <div class="article-cats"><span class="article-cat">News</span><span class="article-cat">Innovation</span></div>
-    <h1 class="article-title">New Coding Release: Delphi F2P Injector EU6 for DAF Systems</h1>
-    <div class="article-meta">13 Feb 2025</div>
-  </div>
-
-  <div class="article-image">
-    <img src="https://carbonzapp.com/image/cache/catalog/CZ_EVENT_F2Pn-938x577w.png" alt="New Coding Release: Delphi F2P Injector EU6 for DAF Systems">
-  </div>
-
-  <div class="article-body">
-    <p>Carbon Zapp announces the release of new coding support for Delphi F2P EU6 injectors used in DAF truck systems.</p><p>This release further expands the CZ XSeries compatibility library, enabling specialists to service a broader range of heavy-duty vehicles with full precision and confidence.</p><p>Update available now via the CloudX platform.</p>
-  </div>
-
-  
-
-  <div class="article-back">
-    <a href="cznews.html">← Back to News &amp; Events</a>
+    <div class="article-image">
+      <img src="https://carbonzapp.com/image/cache/catalog/CZ_EVENT_F2Pn-938x577w.png" alt="New Coding Release: Delphi F2P Injector EU6 for DAF Systems">
+    </div>
+    <div class="article-body">
+      <p>Carbon Zapp announces the release of new coding support for Delphi F2P EU6 injectors used in DAF truck systems.</p><p>This release further expands the CZ XSeries compatibility library, enabling specialists to service a broader range of heavy-duty vehicles with full precision and confidence.</p><p>Update available now via the CloudX platform.</p>
+    </div>
+    
+    <div class="article-back">
+      <a href="cznews.html">← Back to News &amp; Events</a>
+    </div>
   </div>
 </article>
 
