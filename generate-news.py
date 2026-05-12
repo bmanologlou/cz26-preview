@@ -19,8 +19,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/fonts/gunterz.css">
-<link rel="stylesheet" href="assets/css/shared.css">
-<script src="components.js" defer></script>
+<link rel="stylesheet" href="shared.css">
 <style>
   :root {{ --nav-h: 64px; --accent: #ED1C24; --black: #0a0a0a; --white: #f5f3ef; }}
   *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -130,15 +129,14 @@ for article in data['articles']:
     </div>
   </div>'''
 
-    html = TEMPLATE.format(
-        title=article['title'],
-        excerpt=article['excerpt'],
-        image=article['image'],
-        date_display=article['date_display'],
-        cats_html=cats_html,
-        body_html=body_html,
-        event_html=event_html
-    )
+    html = TEMPLATE
+    html = html.replace('{{title}}', article['title'])
+    html = html.replace('{{excerpt}}', article['excerpt'])
+    html = html.replace('{{image}}', article['image'])
+    html = html.replace('{{date_display}}', article['date_display'])
+    html = html.replace('{{cats_html}}', cats_html)
+    html = html.replace('{{body_html}}', body_html)
+    html = html.replace('{{event_html}}', event_html)
 
     filepath = f'news/{slug}.html'
     with open(filepath, 'w') as f:
