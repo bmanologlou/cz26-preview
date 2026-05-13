@@ -2515,22 +2515,16 @@
     .cloudx-desc { font-size: 15px !important; line-height: 1.4 !important; }
     .cloudx-dashboard { width: 100% !important; transform: none !important; }
     .cloudx-dashboard .dashboard-body { padding: 16px !important; }
-    .cloudx-dashboard .db-row {
-      grid-template-columns: 1fr 1fr !important;
-      gap: 8px !important;
-      margin-bottom: 0 !important;
-    }
-    .cloudx-dashboard .db-bar-container { display: none !important; }
-    .cloudx-dashboard [style*="height:12px"] { display: none !important; }
     .cloudx-dashboard .dashboard-body {
       display: grid !important;
-      grid-template-columns: 1fr 1fr 1fr 1fr !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
       gap: 8px !important;
       padding: 12px !important;
     }
-    .cloudx-dashboard .db-row {
-      display: contents !important;
-    }
+    .cloudx-dashboard .db-row { display: contents !important; }
+    .cloudx-dashboard .db-bar-container { display: none !important; }
+    .cloudx-dashboard [style*="height:12px"] { display: none !important; }
+    .cloudx-dashboard .db-row:last-child .db-card:last-child { display: none !important; }
     .cloudx-dashboard .db-card { padding: 12px !important; }
     .cloudx-dashboard .db-card-value { font-size: 20px !important; }
     .cloudx-dashboard .db-card-label { font-size: 7px !important; }
