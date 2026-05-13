@@ -547,8 +547,8 @@
   .hero-bg {
     position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.0) 15%, rgba(10,10,10,0.0) 60%, rgba(10,10,10,0.95) 100%),
-      linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.0) 25%, rgba(10,10,10,0.0) 70%, rgba(10,10,10,0.9) 100%);
+      linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.0) 20%, rgba(10,10,10,0.0) 55%, rgba(10,10,10,0.95) 100%),
+      linear-gradient(90deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.0) 30%, rgba(10,10,10,0.0) 65%, rgba(10,10,10,0.85) 100%);
     z-index: 1;
   }
 
@@ -558,6 +558,8 @@
     inset: 0;
     z-index: 0;
     background: #080808;
+    -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 55%, transparent 100%);
   }
 
   .hero-video-bg video {
@@ -2374,7 +2376,7 @@
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero">
   <!-- Hero image background -->
-  <div class="hero-video-bg" style="background-image:url('assets/images/hero-home.webp');background-size:90%;background-position:center center;background-repeat:no-repeat;"></div>
+  <div class="hero-video-bg" style="background-image:url('assets/images/hero-home.webp');background-size:cover;background-position:center center;"></div>
 
   <div class="hero-bg"></div>
 
