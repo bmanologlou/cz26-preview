@@ -2367,15 +2367,16 @@
     .hero-actions { flex-wrap: wrap; gap: 12px; }
 
     /* ── EVENTS PANEL ── */
-    .hero-event {
-      position: absolute !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
+    /* panel inside hero — hide on mobile, JS moves it out */
+    .hero .hero-event { display: none !important; }
+    /* panel outside hero — show with correct styling */
+    #after-hero-event .hero-event {
+      display: block !important;
+      position: relative !important;
+      right: auto !important;
+      bottom: auto !important;
       width: 100% !important;
-      border-radius: 0 !important;
-      border-left: none !important;
-      border-right: none !important;
+      border-radius: 8px !important;
       margin: 0 !important;
       padding: 20px 16px !important;
     }
