@@ -3311,6 +3311,38 @@
     }
   })();
 
+  // ── Restructure dashboard on mobile ──
+  (function() {
+    function restructureDashboard() {
+      var body = document.querySelector('.cloudx-dashboard .dashboard-body');
+      if (!body) return;
+
+      if (window.innerWidth <= 480) {
+        if (body.dataset.restructured) return;
+        body.dataset.restructured = '1';
+
+        // Get all cards and bars
+        var cards = Array.from(body.querySelectorAll('.db-card'));
+        var bars = Array.from(body.querySelectorAll('.db-bar-container'));
+
+        // Clear body
+        body.innerHTML = '';
+        body.style.cssText = 'display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px;';
+
+        // Add first 3 cards
+        cards.slice(0, 3).forEach(function(c) { body.appendChild(c); });
+
+        // Add bars full width
+        bars.forEach(function(b) {
+          b.style.gridColumn = '1 / -1';
+          body.appendChild(b);
+        });
+      }
+    }
+    document.addEventListener('DOMContentLoaded', restructureDashboard);
+    if (document.readyState !== 'loading') restructureDashboard();
+  })();
+
   // ── Fix card inline styles on mobile ──
   (function() {
     function fixCardStyles() {
