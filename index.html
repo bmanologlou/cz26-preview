@@ -2399,13 +2399,7 @@
     .cz-grid { padding: 0 !important; }
     .cz-row { flex-direction: column !important; }
     .card-full { padding: 32px 16px !important; min-height: 260px !important; }
-    .card-horizontal {
-      flex-direction: column !important;
-      min-height: auto !important;
-    }
-    .card-horizontal .card-text { padding: 32px 16px !important; }
-    .card-horizontal .card-image { height: 200px !important; }
-    .card-horizontal .card-image img { width: 55% !important; }
+    .card-horizontal { min-height: auto !important; }
 
     /* ── PROMO GRID ── */
     .promo-grid { grid-template-columns: 1fr !important; }
@@ -2471,14 +2465,15 @@
     /* ── CZ GRID CARD ── */
     .card-horizontal {
       flex-direction: column-reverse !important;
+      min-height: auto !important;
     }
-    .card-image {
+    .card-horizontal .card-image {
       height: 240px !important;
       padding-left: 0 !important;
       justify-content: center !important;
     }
-    .card-image img { width: 80% !important; }
-    .card-text {
+    .card-horizontal .card-image img { width: 80% !important; }
+    .card-horizontal .card-text {
       padding: 32px 16px !important;
     }
     .cz-card-title { font-size: 28px !important; }
@@ -3277,6 +3272,23 @@
     } else {
       buildDots(); showEvent(0, false); resetTimer();
     }
+  })();
+
+  // ── Fix card inline styles on mobile ──
+  (function() {
+    function fixCardStyles() {
+      var cardImg = document.querySelector('.cz-card-img-xseries');
+      var cardImgEl = document.querySelector('.xseries-img');
+      if (window.innerWidth <= 480) {
+        if (cardImg) { cardImg.style.justifyContent = 'center'; cardImg.style.paddingLeft = '0'; }
+        if (cardImgEl) cardImgEl.style.width = '85%';
+      } else {
+        if (cardImg) { cardImg.style.justifyContent = 'flex-start'; cardImg.style.paddingLeft = '40px'; }
+        if (cardImgEl) cardImgEl.style.width = '95%';
+      }
+    }
+    fixCardStyles();
+    window.addEventListener('resize', fixCardStyles);
   })();
 
   // ── Move event panel on mobile ──
