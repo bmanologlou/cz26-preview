@@ -2247,6 +2247,128 @@
     transition: border-color 0.2s, color 0.2s;
   }
   .btn-outline-white:hover { border-color: #fff; color: #fff; }
+
+  /* ═══════════════════════════════════════
+     MOBILE — max-width: 768px
+  ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── NAV ── */
+    nav { height: 56px; }
+    .nav-inner { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-actions { display: none; }
+    .nav-logo { width: 100px; }
+
+    /* Hamburger */
+    .nav-hamburger { display: none; }
+  @media (max-width: 768px) {
+  .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      margin-left: auto;
+    }
+  }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      transition: all .3s;
+    }
+
+    /* Mobile menu overlay */
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-family: 'Gunterz', sans-serif;
+      font-size: 32px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+    .nav-mobile-menu a:hover { color: var(--accent); }
+    .nav-mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      color: rgba(245,243,239,.5);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+    .nav-mobile-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    /* ── HERO ── */
+    .hero { min-height: 100svh; }
+    .hero-content-wrap { padding: 80px 24px 40px; flex-direction: column; gap: 32px; }
+    .hero-content { max-width: 100%; }
+    .hero-title { font-size: 40px; line-height: 1.05; }
+    .hero-eyebrow { font-size: 10px; }
+    .hero-sub { font-size: 15px; }
+    .hero-actions { flex-wrap: wrap; gap: 12px; }
+    .hero-event { width: 100%; max-width: 100%; }
+
+    /* ── CZ GRID ── */
+    .cz-grid { max-width: 100%; padding: 0; }
+    .cz-row { flex-direction: column; }
+    .card-full { min-height: 280px; padding: 32px 24px; }
+    .card-horizontal { flex-direction: column; min-height: auto; }
+    .card-horizontal .card-text { padding: 32px 24px; }
+    .card-horizontal .card-image { height: 200px; }
+    .card-horizontal .card-image img { width: 60%; }
+
+    /* ── PROMO GRID ── */
+    .promo-grid { grid-template-columns: 1fr; gap: 0; }
+    .promo-card { padding: 40px 24px; min-height: 200px; }
+    .promo-card-title { font-size: 28px; }
+
+    /* ── SOLUTIONS TEASER ── */
+    .solutions-teaser-inner { flex-direction: column; padding: 48px 24px; gap: 32px; }
+    .solutions-teaser-left { max-width: 100%; }
+    .solutions-teaser-title { font-size: 36px; }
+    .solutions-grid { grid-template-columns: 1fr 1fr; gap: 16px; padding: 0; }
+    .solution-card { padding: 24px 20px; }
+
+    /* ── FOOTER ── */
+    .footer { padding: 48px 24px 0; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
+    .footer-social { justify-content: center; }
+
+    /* ── NEWSLETTER ── */
+    .nl-strip { flex-direction: column; align-items: flex-start; gap: 16px; margin: 0 24px; padding: 24px 0; }
+    .nl-left { padding-right: 0; }
+    .nl-right { flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; }
+    .nl-form { width: 100%; }
+    .nl-input { width: 100%; }
+    .nl-check { white-space: normal; margin-left: 0; }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta-inner { flex-direction: column; gap: 24px; padding: 48px 24px; }
+    .footer-cta-title { font-size: 36px; }
+    .footer-cta-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -2370,8 +2492,28 @@
     <a href="https://carbonzapp.com/all-machines/" target="_blank" rel="noopener" class="btn-store">Store</a>
     <a href="https://cloudx.carbonzapp.com/client" target="_blank" rel="noopener" class="btn-login">Login</a>
   </div>
+
+  <!-- Hamburger -->
+  <div class="nav-hamburger" id="nav-hamburger" onclick="document.getElementById('nav-mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
 </div>
 </nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <button class="nav-mobile-close" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">✕</button>
+  <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Home</a>
+  <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Solutions</a>
+  <a href="innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Innovation</a>
+  <a href="cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">CloudX</a>
+  <a href="cznews.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">News</a>
+  <a href="contact.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Contact</a>
+  <div class="nav-mobile-actions">
+    <a href="https://carbonzapp.com/all-machines/" target="_blank" class="btn-store">Store</a>
+    <a href="https://cloudx.carbonzapp.com/client" target="_blank" class="btn-login">Login</a>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero">
