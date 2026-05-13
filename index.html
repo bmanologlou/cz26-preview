@@ -1846,6 +1846,7 @@
     padding: 3px 8px;
     border-radius: 3px;
   }
+  .hero-event-countdown:empty { display: none; }
   .hero-event-link {
     display: block;
     margin-top: 14px;
@@ -1867,7 +1868,7 @@
     margin: 0 -6px;
     padding: 6px;
   }
-  .hero-event-body:hover { background: rgba(255,255,255,0.04); }
+  .hero-event-body:hover { background: transparent; }
 
   .hero-event-nav {
     display: flex;
@@ -2363,7 +2364,7 @@
       width: 100vw !important;
       max-width: 100vw !important;
       overflow: hidden !important;
-      gap: 12px;
+      gap: 8px;
     }
     .hero-content { max-width: 100% !important; }
     .hero-title { font-size: 36px !important; line-height: 1.05; }
@@ -2418,7 +2419,7 @@
     .footer-cta-inner {
       flex-direction: column !important;
       padding: 48px 16px !important;
-      gap: 12px;
+      gap: 8px;
     }
     .footer-cta-title { font-size: 32px !important; }
     .footer-cta-actions { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
@@ -2645,7 +2646,7 @@
     <a class="hero-event-body" id="hero-event-link" href="#" target="_blank">
       <div class="hero-event-date">
         <div class="hero-event-date-val" id="hero-event-dates">—</div>
-        <div class="hero-event-countdown" id="event-countdown">—</div>
+        <div class="hero-event-countdown" id="event-countdown"></div>
       </div>
       <div class="hero-event-name" id="hero-event-name">—</div>
       <div class="hero-event-location" id="hero-event-location">
