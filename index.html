@@ -185,7 +185,7 @@
     height: 30px;
     min-width: 28px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .nav-logo { width: 28px; }
   }
 
@@ -2253,7 +2253,7 @@
   /* ═══════════════════════════════════════
      MOBILE — max-width: 768px
   ═══════════════════════════════════════ */
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
 
     /* ── GLOBAL ── */
     * { box-sizing: border-box; }
@@ -3207,6 +3207,34 @@
     } else {
       buildDots(); showEvent(0, false); resetTimer();
     }
+  })();
+
+  // ── Move event panel on mobile ──
+  (function() {
+    function moveEventPanel() {
+      var panel = document.getElementById('hero-event-card');
+      var hero = document.querySelector('.hero');
+      var afterHero = document.getElementById('after-hero-event');
+      if (!panel || !hero) return;
+      if (window.innerWidth <= 480) {
+        if (!afterHero) {
+          var wrap = document.createElement('div');
+          wrap.id = 'after-hero-event';
+          wrap.style.cssText = 'background:var(--black);padding:16px;';
+          hero.parentNode.insertBefore(wrap, hero.nextSibling);
+          wrap.appendChild(panel);
+          panel.style.cssText = 'position:relative;right:auto;bottom:auto;width:100%;border-radius:8px;margin:0;';
+        }
+      } else {
+        if (afterHero && panel.parentNode === afterHero) {
+          hero.appendChild(panel);
+          panel.style.cssText = '';
+          afterHero.parentNode.removeChild(afterHero);
+        }
+      }
+    }
+    moveEventPanel();
+    window.addEventListener('resize', moveEventPanel);
   })();
 
   // ── Nav scroll ──
