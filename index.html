@@ -2367,7 +2367,7 @@
     .hero-actions { flex-wrap: wrap; gap: 12px; }
 
     /* ── EVENTS PANEL ── */
-    /* panel inside hero — hide on mobile, JS moves it out */
+    /* hide panel in hero on mobile — JS moves it below */
     .hero .hero-event { display: none !important; }
     /* panel outside hero — show with correct styling */
     #after-hero-event .hero-event {
@@ -3222,7 +3222,13 @@
           var wrap = document.createElement('div');
           wrap.id = 'after-hero-event';
           wrap.style.cssText = 'background:var(--black);padding:16px;';
-          hero.parentNode.insertBefore(wrap, hero.nextSibling);
+          // Insert after the problem section (second section after hero)
+          var problemSection = hero.nextElementSibling;
+          if (problemSection) {
+            problemSection.parentNode.insertBefore(wrap, problemSection.nextSibling);
+          } else {
+            hero.parentNode.insertBefore(wrap, hero.nextSibling);
+          }
           wrap.appendChild(panel);
           panel.style.cssText = 'position:relative;right:auto;bottom:auto;width:100%;border-radius:8px;margin:0;';
         }
