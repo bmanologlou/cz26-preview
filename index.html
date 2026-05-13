@@ -2411,6 +2411,20 @@
     .nl-form { width: 100% !important; }
     .nl-input { width: 100% !important; }
     .nl-check { white-space: normal !important; margin-left: 0 !important; }
+
+    /* Fix glow overflow on mobile */
+    .footer-cta, .solutions-teaser, .why-section { overflow: hidden !important; }
+    
+    /* Fix any remaining overflow */
+    html, body { overflow-x: hidden !important; width: 100% !important; }
+    
+    /* Hero content wrap fix */
+    .hero-content-wrap { 
+      width: 100vw !important; 
+      max-width: 100vw !important;
+      overflow: hidden !important;
+    }
+
   }
 </style>
 </head>
