@@ -2294,11 +2294,13 @@
       position: fixed;
       top: 56px; left: 0;
       width: 100vw;
-      background: rgba(10,10,10,0.98);
+      height: calc(100vh - 56px);
+      background: #0a0a0a;
       z-index: 9998;
       flex-direction: column;
       align-items: flex-start;
-      padding: 24px 32px 32px;
+      justify-content: center;
+      padding: 24px 32px 48px;
       gap: 0;
       overflow: hidden;
       border-top: 1px solid rgba(255,255,255,.08);
@@ -2582,7 +2584,7 @@
   </div>
 
   <!-- Hamburger -->
-  <div class="nav-hamburger" id="nav-hamburger" onclick="var m=document.getElementById('nav-mobile-menu');var h=this;m.classList.toggle('open');h.classList.toggle('open')">
+  <div class="nav-hamburger" id="nav-hamburger" onclick="var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.style.overflow=open?'hidden':''">
     <span></span><span></span><span></span>
   </div>
 </div>
@@ -2591,12 +2593,12 @@
 <!-- Mobile menu -->
 <div class="nav-mobile-menu" id="nav-mobile-menu">
 
-  <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Home</a>
-  <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Solutions</a>
-  <a href="innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Innovation</a>
-  <a href="cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">CloudX</a>
-  <a href="cznews.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">News</a>
-  <a href="contact.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open')">Contact</a>
+  <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Home</a>
+  <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Solutions</a>
+  <a href="innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Innovation</a>
+  <a href="cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">CloudX</a>
+  <a href="cznews.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">News</a>
+  <a href="contact.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Contact</a>
   <div class="nav-mobile-actions">
     <a href="https://carbonzapp.com/all-machines/" target="_blank" class="btn-store">Store</a>
     <a href="https://cloudx.carbonzapp.com/client" target="_blank" class="btn-login">Login</a>
