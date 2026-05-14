@@ -192,6 +192,7 @@
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
   #nl-drawer-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: rgba(245,243,239,.4); font-size: 18px; cursor: pointer; }
+  @media (min-width: 481px) { #nl-drawer-panel, #nl-drawer-overlay { display: none !important; } }
 
   @media (min-width: 481px) {
     #nl-btn-mobile { display: none !important; }
@@ -2273,6 +2274,7 @@
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
   #nl-drawer-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: rgba(245,243,239,.4); font-size: 18px; cursor: pointer; }
+  @media (min-width: 481px) { #nl-drawer-panel, #nl-drawer-overlay { display: none !important; } }
 
   @media (min-width: 481px) {
     #nl-btn-mobile { display: none !important; }
@@ -2652,9 +2654,9 @@
       width: 100% !important;
       box-sizing: border-box !important;
     }
-    .footer-social { order: 1 !important; justify-content: flex-start !important; flex-wrap: wrap !important; gap: 16px !important; width: 100% !important; }
-    .footer-legal { order: 2 !important; font-size: 10px !important; justify-content: flex-start !important; flex-wrap: wrap !important; width: 100% !important; }
-    .footer-crafted { display: block !important; order: 3 !important; font-size: 10px !important; text-align: left !important; width: 100% !important; }
+    .footer-social { order: 1 !important; justify-content: flex-start !important; flex-wrap: wrap !important; gap: 16px !important; width: 100% !important; padding-left: 0 !important; margin-left: 0 !important; }
+    .footer-legal { order: 2 !important; font-size: 10px !important; justify-content: flex-start !important; flex-wrap: wrap !important; width: 100% !important; padding-left: 0 !important; margin-left: 0 !important; }
+    .footer-crafted { display: block !important; order: 3 !important; font-size: 10px !important; text-align: left !important; width: 100% !important; padding-left: 0 !important; margin-left: 0 !important; }
     .footer-social { justify-content: center !important; }
     .footer-crafted { display: none !important; }
 
@@ -3309,6 +3311,8 @@
         © 1989—2026 Carbon Zapp
         <span class="footer-legal-sep">·</span>
         <a href="#">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#">Terms</a>
       </div>
       <div class="footer-social">
         <a href="https://www.linkedin.com/company/CarbonZapp" target="_blank">LinkedIn</a>
