@@ -2647,11 +2647,13 @@
       flex-direction: column !important;
       gap: 12px !important;
       padding: 20px 20px !important;
-      text-align: left;
+      text-align: left !important;
       align-items: flex-start !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
-    .footer-social { order: 1 !important; justify-content: flex-start !important; }
-    .footer-legal { order: 2 !important; font-size: 10px !important; justify-content: flex-start !important; }
+    .footer-social { order: 1 !important; justify-content: flex-start !important; flex-wrap: wrap !important; gap: 16px !important; }
+    .footer-legal { order: 2 !important; font-size: 10px !important; justify-content: flex-start !important; flex-wrap: wrap !important; }
     .footer-crafted { display: block !important; order: 3 !important; font-size: 10px !important; text-align: left !important; }
     .footer-social { justify-content: center !important; }
     .footer-crafted { display: none !important; }
