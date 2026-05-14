@@ -2419,8 +2419,25 @@
       padding: 48px 20px !important;
       gap: 8px;
     }
-    .footer-cta-title { font-size: 32px !important; }
-    .footer-cta-actions { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+    .footer-cta-title { font-size: 32px !important; line-height: 1.0 !important; }
+    .footer-cta-title br { display: none !important; }
+    .cta-word { display: block !important; }
+    .cta-word-accent { color: var(--accent) !important; }
+    .footer-cta-actions {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 16px !important;
+      width: 100% !important;
+    }
+    .footer-cta-actions .btn-primary {
+      width: 100% !important;
+      text-align: center !important;
+      display: block !important;
+    }
+    .footer-cta-actions .link-arrow {
+      display: block !important;
+      text-align: center !important;
+    }
 
     /* ── FOOTER ── */
     .footer { padding: 48px 20px 0 !important; }
@@ -3015,7 +3032,7 @@
 <section class="footer-cta">
   <div class="footer-cta-inner">
     <div>
-      <h2 class="footer-cta-title">READY TO<br>MOVE <span>FORWARD?</span></h2>
+      <h2 class="footer-cta-title"><span class="cta-word">READY</span> <span class="cta-word">TO</span> <span class="cta-word">MOVE</span> <span class="cta-word cta-word-accent">FORWARD?</span></h2>
       <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
     </div>
     <div class="footer-cta-actions">
