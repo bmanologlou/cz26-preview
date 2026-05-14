@@ -3572,14 +3572,6 @@
     });
   })();
 
-  // ── Show newsletter button on mobile only ──
-  (function() {
-    if (window.innerWidth <= 480) {
-      var btn = document.getElementById('nl-btn-mobile');
-      if (btn) btn.style.display = 'flex';
-    }
-  })();
-
   // ── Newsletter Drawer ──
   (function() {
     function openDrawer() {
@@ -3588,8 +3580,20 @@
     function closeDrawer() {
       document.body.classList.remove('nl-drawer-open');
     }
+
+    // Show button on mobile + attach click
     var btn = document.getElementById('nl-btn-mobile');
-    if (btn) btn.addEventListener('click', function(e) { e.preventDefault(); openDrawer(); });
+    if (btn) {
+      if (window.innerWidth <= 480) {
+        btn.style.cssText = 'display:flex!important;';
+      }
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openDrawer();
+      });
+    }
+
     var closeBtn = document.getElementById('nl-drawer-close');
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     var overlay = document.getElementById('nl-drawer-overlay');
