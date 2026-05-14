@@ -2306,7 +2306,8 @@
       overflow: hidden;
       border-top: 1px solid rgba(255,255,255,.08);
     }
-    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu { display: none; }
+    .nav-mobile-menu.open { display: flex !important; }
     .nav-mobile-menu > a {
       font-family: 'Gunterz', sans-serif;
       font-size: 24px;
@@ -2840,14 +2841,14 @@
   </div>
 
   <!-- Hamburger -->
-  <div class="nav-hamburger" id="nav-hamburger" onclick="var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.style.overflow=open?'hidden':''">
+  <div class="nav-hamburger" id="nav-hamburger" onclick="var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.style.overflow=open?'hidden':'';if(open){m.style.display='flex';}else{m.style.display='';}" >
     <span></span><span></span><span></span>
   </div>
 </div>
 </nav>
 
 <!-- Mobile menu -->
-<div class="nav-mobile-menu" id="nav-mobile-menu" style="display:none;">
+<div class="nav-mobile-menu" id="nav-mobile-menu">
 
   <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Home</a>
   <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.style.overflow=''">Solutions</a>
@@ -3219,7 +3220,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Mon–Fri 08:00–16:00 (UTC+2)
           </div>
-          <button class="nl-btn-mobile" id="nl-btn-mobile" style="display:none;">
+          <button class="nl-btn-mobile" id="nl-btn-mobile">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
             <span class="nl-btn-mobile-text">Get CZ Newsletter</span>
           </button>
