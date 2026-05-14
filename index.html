@@ -187,7 +187,7 @@
   }
   /* ── NEWSLETTER DRAWER ── */
   #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity .3s; }
-  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
+  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 80px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
   body.nl-drawer-open #nl-drawer-overlay { opacity: 1; pointer-events: all; }
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
@@ -2271,7 +2271,7 @@
   ═══════════════════════════════════════ */
   /* ── NEWSLETTER DRAWER ── */
   #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity .3s; }
-  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
+  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 80px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
   body.nl-drawer-open #nl-drawer-overlay { opacity: 1; pointer-events: all; }
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
@@ -2701,6 +2701,9 @@
     body.nl-drawer-open #nl-drawer-overlay { opacity: 1; pointer-events: all; }
     body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
     body.nl-drawer-open { overflow: hidden; }
+    body.nl-drawer-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.nl-drawer-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    body.nl-drawer-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     #nl-drawer-close {
       position: absolute !important;
       top: 20px !important;
@@ -2870,7 +2873,7 @@
   </div>
 
   <!-- Hamburger -->
-  <div class="nav-hamburger" id="nav-hamburger" onclick="var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.classList.toggle('nav-open',open);" >
+  <div class="nav-hamburger" id="nav-hamburger" onclick="var nl=document.body.classList.contains('nl-drawer-open');if(nl){document.body.classList.remove('nl-drawer-open');document.documentElement.style.overflow='';return;}var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.classList.toggle('nav-open',open);" >
     <span></span><span></span><span></span>
   </div>
 </div>
@@ -3637,11 +3640,11 @@
 </script>
 <div id="nl-drawer-overlay"></div>
 <div id="nl-drawer-panel">
-  <button id="nl-drawer-close" style="position:fixed;top:64px;right:20px;background:rgba(10,10,10,.8);border:1px solid rgba(255,255,255,.15);color:rgba(245,243,239,.8);font-size:18px;cursor:pointer;line-height:1;padding:8px 12px;z-index:10000;border-radius:2px;">✕</button>
+  
   <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ED1C24;margin-bottom:8px;">Newsletter</div>
   <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop<br>with Carbon Zapp</h3>
   <input type="email" placeholder="Your email address" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;box-sizing:border-box;">
   <button style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:pointer;margin-top:12px;width:100%;box-sizing:border-box;">Subscribe</button>
-  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;color:rgba(245,243,239,.4);cursor:pointer;line-height:1.5;margin-top:12px;"><input type="checkbox" id="nl-agree" style="appearance:none;-webkit-appearance:none;width:14px;height:14px;border:1px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;flex-shrink:0;margin-top:2px;position:relative;"> <label for="nl-agree" style="cursor:pointer;margin-left:4px;">I agree to receive updates from Carbon Zapp</label></label>
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;color:rgba(245,243,239,.4);cursor:pointer;line-height:1.5;margin-top:12px;"><input type="checkbox" id="nl-agree" style="width:14px;height:14px;accent-color:#ED1C24;cursor:pointer;flex-shrink:0;margin-top:2px;"> <label for="nl-agree" style="cursor:pointer;margin-left:4px;">I agree to receive updates from Carbon Zapp</label></label>
 </div>
 </html>
