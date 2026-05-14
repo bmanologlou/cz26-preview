@@ -2419,10 +2419,11 @@
       padding: 48px 20px !important;
       gap: 8px;
     }
-    .footer-cta-title { font-size: 32px !important; line-height: 1.0 !important; }
+    .footer-cta-title { font-size: 32px !important; line-height: 1.05 !important; }
     .footer-cta-title br { display: none !important; }
     .cta-word { display: block !important; }
     .cta-word-accent { color: var(--accent) !important; }
+    .footer-cta-sub { font-size: 15px !important; line-height: 1.4 !important; }
     .footer-cta-actions {
       flex-direction: column !important;
       align-items: stretch !important;
@@ -2615,43 +2616,41 @@
     .footer-col { display: none !important; }
     .footer-brand-col { margin-bottom: 24px !important; }
     .footer-tagline { margin-bottom: 16px !important; font-size: 12px !important; }
-    .footer-hours { display: none !important; }
+    .footer-hours { display: flex !important; font-size: 11px !important; }
     .footer-bottom {
       flex-direction: column !important;
       gap: 16px !important;
       padding: 20px 20px !important;
       text-align: center;
     }
+    .footer-social { order: 1 !important; }
+    .footer-legal { order: 2 !important; font-size: 10px !important; }
+    .footer-crafted { display: none !important; }
     .footer-social { justify-content: center !important; }
     .footer-crafted { display: none !important; }
 
     /* ── NEWSLETTER STRIP → BUTTON ── */
-    .nl-strip > div { display: none !important; }
-    .nl-strip {
-      margin: 0 !important;
-      padding: 16px 20px !important;
-      border-top: 1px solid rgba(255,255,255,.07) !important;
+    .nl-strip { display: none !important; }
+    .nl-btn-mobile {
       display: flex !important;
-      justify-content: flex-start !important;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      width: 100%;
+      text-align: left;
     }
-    .nl-strip::before {
-      content: 'CZ Newsletter';
+    .nl-btn-mobile-text {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: rgba(245,243,239,.5);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    .nl-strip::after {
-      content: '→';
-      font-size: 14px;
-      color: var(--accent);
-      cursor: pointer;
-    }
+    .nl-btn-mobile-arrow { font-size: 14px; color: var(--accent); }
 
     /* ── NEWSLETTER DRAWER ── */
     #nl-drawer { display: block !important; }
@@ -3139,7 +3138,7 @@
 <section class="footer-cta">
   <div class="footer-cta-inner">
     <div>
-      <h2 class="footer-cta-title"><span class="cta-word">READY</span> <span class="cta-word">TO MOVE</span> <span class="cta-word cta-word-accent">FORWARD?</span></h2>
+      <h2 class="footer-cta-title"><span class="cta-word">READY</span> <span class="cta-word">TO MOVE</span> <span class="cta-word">FOR<span class="cta-word-accent">WARD?</span></span></h2>
       <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
     </div>
     <div class="footer-cta-actions">
@@ -3259,6 +3258,7 @@
     </div>
 
 
+  <button class="nl-btn-mobile" id="nl-btn-mobile" style="display:none;"><span class="nl-btn-mobile-text">CZ Newsletter</span><span class="nl-btn-mobile-arrow">→</span></button>
   <div class="nl-strip" style="margin:0;padding-left:0;padding-right:0;"><div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:0;width:100%;">
     <div class="nl-left">
       <div class="nl-title">Stay in the loop with Carbon Zapp Newsletter</div>
