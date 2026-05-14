@@ -185,6 +185,10 @@
     height: 30px;
     min-width: 28px;
   }
+  @media (min-width: 481px) {
+    #nl-btn-mobile { display: none !important; }
+  }
+
   @media (max-width: 480px) {
     .nav-logo { width: 28px; }
   }
@@ -2254,6 +2258,10 @@
   /* ═══════════════════════════════════════
      MOBILE — max-width: 768px
   ═══════════════════════════════════════ */
+  @media (min-width: 481px) {
+    #nl-btn-mobile { display: none !important; }
+  }
+
   @media (max-width: 480px) {
 
     /* ── GLOBAL ── */
@@ -2634,6 +2642,7 @@
 
     /* ── NEWSLETTER STRIP → BUTTON ── */
     .nl-strip { display: none !important; }
+    .nl-btn-mobile:active { opacity: 0.6; }
     .nl-btn-mobile {
       display: flex !important;
       align-items: center;
