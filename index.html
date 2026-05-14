@@ -186,8 +186,8 @@
     min-width: 28px;
   }
   /* ── NEWSLETTER DRAWER ── */
-  #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 8888; opacity: 0; pointer-events: none; transition: opacity .3s; }
-  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 8889; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
+  #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
   body.nl-drawer-open #nl-drawer-overlay { opacity: 1; pointer-events: all; }
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
@@ -2270,8 +2270,8 @@
      MOBILE — max-width: 768px
   ═══════════════════════════════════════ */
   /* ── NEWSLETTER DRAWER ── */
-  #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 8888; opacity: 0; pointer-events: none; transition: opacity .3s; }
-  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 8889; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
+  #nl-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  #nl-drawer-panel { position: fixed; top: 0; left: 0; width: 100vw; max-width: 100vw; height: 100vh; background: #0a0a0a; border-right: 1px solid rgba(255,255,255,.08); z-index: 9999; padding: 100px 24px 32px; transform: translateX(-100%); transition: transform .3s ease; display: flex; flex-direction: column; gap: 16px; }
   body.nl-drawer-open #nl-drawer-overlay { opacity: 1; pointer-events: all; }
   body.nl-drawer-open #nl-drawer-panel { transform: translateX(0); }
   body.nl-drawer-open { overflow: hidden !important; }
@@ -2688,7 +2688,7 @@
     #nl-drawer-overlay {
       position: fixed; inset: 0;
       background: rgba(0,0,0,.6);
-      z-index: 8888;
+      z-index: 9998;
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s;
@@ -3639,7 +3639,7 @@
 <div id="nl-drawer-panel">
   <button id="nl-drawer-close" style="position:absolute;top:20px;right:20px;background:none;border:none;color:rgba(245,243,239,.5);font-size:20px;cursor:pointer;line-height:1;padding:4px;">✕</button>
   <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ED1C24;margin-bottom:8px;">Newsletter</div>
-  <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop with Carbon Zapp</h3>
+  <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop<br>with Carbon Zapp</h3>
   <input type="email" placeholder="Your email address" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;box-sizing:border-box;">
   <button style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:pointer;margin-top:12px;width:100%;box-sizing:border-box;">Subscribe</button>
   <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;color:rgba(245,243,239,.4);cursor:pointer;line-height:1.5;margin-top:12px;"><input type="checkbox" style="appearance:none;-webkit-appearance:none;width:13px;height:13px;border:1px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;flex-shrink:0;margin-top:3px;"> <span style="margin-left:4px;">I agree to receive updates from Carbon Zapp</span></label>
