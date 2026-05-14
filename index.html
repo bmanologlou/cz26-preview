@@ -3528,7 +3528,7 @@
       } else {
         if (afterHero && panel.parentNode === afterHero) {
           hero.appendChild(panel);
-          panel.style.cssText = '';
+          panel.removeAttribute('style');
           afterHero.parentNode.removeChild(afterHero);
         }
       }
