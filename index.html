@@ -2619,13 +2619,14 @@
     .footer-hours { display: flex !important; font-size: 11px !important; }
     .footer-bottom {
       flex-direction: column !important;
-      gap: 16px !important;
+      gap: 12px !important;
       padding: 20px 20px !important;
-      text-align: center;
+      text-align: left;
+      align-items: flex-start !important;
     }
-    .footer-social { order: 1 !important; }
-    .footer-legal { order: 2 !important; font-size: 10px !important; }
-    .footer-crafted { display: none !important; }
+    .footer-social { order: 1 !important; justify-content: flex-start !important; }
+    .footer-legal { order: 2 !important; font-size: 10px !important; justify-content: flex-start !important; }
+    .footer-crafted { display: block !important; order: 3 !important; font-size: 10px !important; text-align: left !important; }
     .footer-social { justify-content: center !important; }
     .footer-crafted { display: none !important; }
 
