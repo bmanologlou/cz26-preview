@@ -2631,6 +2631,7 @@
 
     /* ── NEWSLETTER STRIP → BUTTON ── */
     .nl-strip { display: none !important; }
+    #nl-btn-mobile { display: flex !important; }
     .nl-btn-mobile {
       display: flex !important;
       align-items: center;
@@ -3218,7 +3219,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Mon–Fri 08:00–16:00 (UTC+2)
           </div>
-          <button class="nl-btn-mobile" id="nl-btn-mobile" style="display:none;">
+          <button class="nl-btn-mobile" id="nl-btn-mobile">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
             <span class="nl-btn-mobile-text">Get CZ Newsletter</span>
           </button>
@@ -3561,6 +3562,22 @@
         setTimeout(function() { preloader.style.display = 'none'; }, 600);
       }, 400);
     });
+  })();
+
+  // ── Newsletter Drawer ──
+  (function() {
+    function openDrawer() {
+      document.body.classList.add('nl-drawer-open');
+    }
+    function closeDrawer() {
+      document.body.classList.remove('nl-drawer-open');
+    }
+    var btn = document.getElementById('nl-btn-mobile');
+    if (btn) btn.addEventListener('click', function(e) { e.preventDefault(); openDrawer(); });
+    var closeBtn = document.getElementById('nl-drawer-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    var overlay = document.getElementById('nl-drawer-overlay');
+    if (overlay) overlay.addEventListener('click', closeDrawer);
   })();
 </script>
 </html>
