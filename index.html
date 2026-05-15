@@ -3665,6 +3665,8 @@
       m.textContent='Please enter a valid email address.';
     }
     m.style.display='block';m.style.opacity='1';
+    var inp=document.getElementById('nl-email');var btn=document.getElementById('nl-sub-btn');
+    inp.value='';btn.disabled=true;btn.style.opacity='0.35';btn.style.cursor='not-allowed';
     setTimeout(function(){m.style.opacity='0';setTimeout(function(){m.style.display='none';m.style.opacity='1';},600);},2500);
   " style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:not-allowed;margin-top:12px;width:100%;box-sizing:border-box;opacity:0.35;transition:opacity .2s;">Subscribe</button>
   <div style="display:flex;align-items:flex-start;gap:10px;margin-top:12px;cursor:pointer;" onclick="var cb=document.getElementById('nl-agree');cb.checked=!cb.checked;cb.dispatchEvent(new Event('change'));">
