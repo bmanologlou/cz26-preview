@@ -3239,6 +3239,29 @@
   .news-row[data-cat].hidden { display:none; }
 </style>
 
+
+<!-- PAGE HEADER -->
+<div class="page-header" style="margin-top:var(--nav-h);">
+  <div style="width:100%;height:100%;background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 100%);display:flex;align-items:flex-end;">
+    <div style="position:absolute;inset:0;background:url('assets/images/EO_CZ_Header_Specialists_Dark_x2_rd2.webp') center/cover;opacity:0.3;"></div>
+  </div>
+  <div class="page-header-overlay"></div>
+  <div class="page-header-content">
+    <div class="page-header-eyebrow">Latest from CZ</div>
+    <h1 class="page-header-title">News &amp;<br>Events</h1>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="news-filter-bar">
+  <div class="news-filter-row">
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="events">Events</button>
+    <button class="filter-btn" data-cat="news">News</button>
+    <button class="filter-btn" data-cat="innovation">Innovation</button>
+  </div>
+</div>
+
 <div class="news-list">
   <div class="news-list-inner" id="news-list">
     <!-- Loaded dynamically from news.json -->
