@@ -393,4 +393,180 @@ a { color:inherit; text-decoration:none; }
 <div id="footer-placeholder"></div>
 
 </body>
+</html><!-- CONTACT HERO -->
+<style>
+  .contact-hero-wrap { position: relative; overflow: hidden; margin-top: var(--nav-h); }
+  .contact-hero-img { width: 100%; height: 520px; object-fit: cover; object-position: right center; display: block; }
+  .contact-hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.6) 45%, rgba(10,10,10,0.1) 100%),
+      linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.7) 100%);
+  }
+  .contact-hero-content {
+    position: absolute; bottom: 56px; left: 80px;
+  }
+  .contact-hero-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .contact-hero-title {
+    font-family: 'Gunterz', sans-serif; font-size: 52px; line-height: 1.0;
+    color: var(--white); margin-bottom: 16px;
+  }
+  .contact-hero-sub {
+    font-size: 15px; font-weight: 300; line-height: 1.6;
+    color: rgba(245,243,239,0.6); max-width: 500px;
+  }
+
+  /* ── GLOBAL CONNECTION ── */
+  .contact-global { max-width: 1440px; margin: 0 auto; padding: 96px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-global-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .contact-global-title { font-family: 'Gunterz', sans-serif; font-size: 36px; line-height: 1.05; color: var(--white); margin-bottom: 24px; }
+  .contact-global-body { font-size: 15px; font-weight: 300; line-height: 1.75; color: rgba(245,243,239,0.6); margin-bottom: 32px; }
+  .contact-global-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; border: 1px solid rgba(237,28,36,0.4); padding: 10px 20px; transition: background .2s, color .2s; }
+  .contact-global-link:hover { background: var(--accent); color: #fff; }
+  .contact-global-right { display: flex; flex-direction: column; gap: 0; }
+  .contact-info-block { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .contact-info-block:first-child { padding-top: 0; }
+  .contact-info-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,243,239,0.3); margin-bottom: 10px; }
+  .contact-info-block a { display: block; font-size: 14px; color: rgba(245,243,239,0.7); text-decoration: none; margin-bottom: 4px; transition: color .2s; }
+  .contact-info-block a:hover { color: var(--white); }
+  .contact-info-block p { font-size: 13px; color: rgba(245,243,239,0.45); line-height: 1.6; margin: 0; }
+
+  /* ── CONTACT FORM ── */
+  .contact-form-wrap { background: #0d0d0d; border-top: 1px solid rgba(255,255,255,0.06); }
+  .contact-form-inner { max-width: 1440px; margin: 0 auto; padding: 96px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-form-left h2 { font-family: 'Gunterz', sans-serif; font-size: 36px; line-height: 1.05; color: var(--white); margin-bottom: 16px; }
+  .contact-form-left p { font-size: 14px; font-weight: 300; line-height: 1.7; color: rgba(245,243,239,0.5); }
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .contact-field { display: flex; flex-direction: column; gap: 6px; }
+  .contact-field label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,243,239,0.3); }
+  .contact-field input, .contact-field textarea, .contact-field select {
+    background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.15);
+    color: var(--white); font-family: 'Public Sans', sans-serif; font-size: 14px;
+    padding: 8px 0; outline: none; transition: border-color .2s; width: 100%;
+  }
+  .contact-field input:focus, .contact-field textarea:focus, .contact-field select:focus { border-color: rgba(255,255,255,0.4); }
+  .contact-field input::placeholder, .contact-field textarea::placeholder { color: rgba(245,243,239,0.2); }
+  .contact-field textarea { resize: none; min-height: 100px; }
+  .contact-field select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+  .contact-field select option { background: #111; color: #f5f3ef; }
+  .contact-submit { background: var(--accent); color: #fff; border: none; font-family: 'Public Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px; cursor: pointer; align-self: flex-start; transition: background .2s; }
+  .contact-submit:hover { background: #c41019; }
+
+  /* ── NEWSLETTER ── */
+  .contact-nl-wrap { max-width: 1440px; margin: 0 auto; padding: 64px 80px 96px; }
+  .contact-nl-inner { border: 1px solid rgba(255,255,255,0.08); padding: 40px 48px; display: flex; align-items: center; gap: 80px; }
+  .contact-nl-left { flex-shrink: 0; }
+  .contact-nl-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .contact-nl-title { font-family: 'Gunterz', sans-serif; font-size: 22px; color: var(--white); line-height: 1.1; }
+  .contact-nl-form { display: flex; align-items: center; gap: 12px; flex: 1; }
+  .contact-nl-input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: var(--white); font-family: 'Public Sans', sans-serif; font-size: 14px; padding: 8px 0; outline: none; flex: 1; }
+  .contact-nl-input::placeholder { color: rgba(245,243,239,0.3); }
+  .contact-nl-btn { background: transparent; color: rgba(245,243,239,0.55); border: 1px solid rgba(255,255,255,0.2); font-family: 'Public Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 20px; cursor: pointer; transition: color .2s, border-color .2s; white-space: nowrap; }
+  .contact-nl-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .contact-nl-check { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(245,243,239,0.4); cursor: pointer; white-space: nowrap; }
+  .contact-nl-check input { accent-color: var(--accent); }
+</style>
+
+<div class="contact-hero-wrap">
+  <img class="contact-hero-img" src="assets/images/cz_hero_contact.webp" alt="Carbon Zapp Global Network">
+  <div class="contact-hero-overlay"></div>
+  <div class="contact-hero-content">
+    <div class="contact-hero-eyebrow">Global Connection</div>
+    <h1 class="contact-hero-title">Let's Connect and<br>Discover Future<br>Opportunities.</h1>
+    <p class="contact-hero-sub">We are constantly growing our global network. Connect with us and learn how we can support your vision and fulfil your market's needs.</p>
+  </div>
+</div>
+
+<!-- GLOBAL NETWORK + CONTACT INFO -->
+<section class="contact-global">
+  <div class="contact-global-left">
+    <div class="contact-global-eyebrow">Carbon Zapp Global Network</div>
+    <h2 class="contact-global-title">5 Continents.<br>65+ Countries.</h2>
+    <p class="contact-global-body">Carbon Zapp is an independently owned company with entities in Greece and Germany, and a vast network and presence in all 5 continents and over 65 countries worldwide. With a logistics centre in Athens, Greece, Carbon Zapp can effectively export its products globally.</p>
+    <a href="assets/pdfs/CZ_GLOBAL_REPR.pdf" target="_blank" rel="noopener" class="contact-global-link">Contact Our Global Network</a>
+  </div>
+  <div class="contact-global-right">
+    <div class="contact-info-block">
+      <div class="contact-info-label">Sales Enquiries</div>
+      <p style="font-size:12px;color:rgba(245,243,239,.4);margin-bottom:8px;">For product information, pricing, and distribution opportunities.</p>
+      <a href="mailto:sales@carbonzapp.com">sales@carbonzapp.com</a>
+    </div>
+    <div class="contact-info-block">
+      <div class="contact-info-label">General</div>
+      <p style="font-size:12px;color:rgba(245,243,239,.4);margin-bottom:8px;">For press, partnerships, and other enquiries.</p>
+      <a href="mailto:info@carbonzapp.com">info@carbonzapp.com</a>
+      <a href="tel:+302109856110">+30 210 985 6110</a>
+      <p>Mon–Fri, 08:00–16:00 (UTC+2)</p>
+      <p>Isiodou 18 (Industrial Park)<br>194 00 Koropi, Attica — Greece</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<div class="contact-form-wrap">
+  <div class="contact-form-inner">
+    <div class="contact-form-left">
+      <h2>Contact Us</h2>
+      <p>Fill in the form and a member of the Carbon Zapp team will get back to you shortly.</p>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="contact-form-row">
+        <div class="contact-field">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" required>
+        </div>
+        <div class="contact-field">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" required>
+        </div>
+      </div>
+      <div class="contact-form-row">
+        <div class="contact-field">
+          <label>Country</label>
+          <input type="text" placeholder="United Kingdom">
+        </div>
+        <div class="contact-field">
+          <label>Company</label>
+          <input type="text" placeholder="Company Name">
+        </div>
+      </div>
+      <div class="contact-field">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+44 ...">
+      </div>
+      <div class="contact-field">
+        <label>How can we help *</label>
+        <textarea placeholder="Tell us about your operation and what you're looking for..." required></textarea>
+      </div>
+      <button type="submit" class="contact-submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="contact-nl-wrap">
+  <div class="contact-nl-inner">
+    <div class="contact-nl-left">
+      <div class="contact-nl-eyebrow">Newsletter</div>
+      <div class="contact-nl-title">Stay in the loop with<br>Carbon Zapp Newsletter</div>
+    </div>
+    <div class="contact-nl-form">
+      <input type="email" class="contact-nl-input" placeholder="Your email address">
+      <button class="contact-nl-btn">Subscribe</button>
+    </div>
+    <label class="contact-nl-check">
+      <input type="checkbox">
+      I agree to receive updates from Carbon Zapp
+    </label>
+  </div>
+</div>
+
+<div id="footer-cta-placeholder"></div>
+<div id="footer-placeholder"></div>
+
+</body>
 </html>
