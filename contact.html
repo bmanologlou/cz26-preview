@@ -5734,6 +5734,25 @@
      ════════════════════════════════ */
   @media (max-width: 480px) {
 
+
+    /* ── CONTACT SECTIONS OVERFLOW FIX ── */
+    #contact-global-inner {
+      grid-template-columns: 1fr !important;
+      padding: 48px 20px !important;
+      gap: 32px !important;
+    }
+    #contact-form-inner {
+      grid-template-columns: 1fr !important;
+      padding: 48px 20px !important;
+      gap: 24px !important;
+    }
+    .contact-form-row-mobile {
+      grid-template-columns: 1fr !important;
+    }
+    .contact-form-wrap { width: 100% !important; overflow: hidden !important; }
+    button[type="submit"] { width: 100% !important; }
+    html, body { overflow-x: hidden !important; }
+
     /* ── HERO ── */
     .contact-hero-wrap > div {
       grid-template-columns: 1fr !important;
@@ -5815,7 +5834,7 @@
 </div>
 
 <!-- GLOBAL NETWORK + CONTACT INFO -->
-<div style="max-width:1440px;margin:0 auto;padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+<div id="contact-global-inner" style="max-width:1440px;margin:0 auto;padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
   <div>
     <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ED1C24;margin-bottom:12px;">Carbon Zapp Global Network</div>
     <h2 style="font-family:'Gunterz',sans-serif;font-size:36px;line-height:1.05;color:#f5f3ef;margin-bottom:24px;">5 Continents.<br>98+ Countries</h2>
@@ -5841,13 +5860,13 @@
 
 <!-- CONTACT FORM -->
 <div style="background:#000;border-top:1px solid rgba(255,255,255,.06);">
-  <div style="max-width:1440px;margin:0 auto;padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+  <div id="contact-form-inner" style="max-width:1440px;margin:0 auto;padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
     <div>
       <h2 style="font-family:'Gunterz',sans-serif;font-size:36px;line-height:1.05;color:#f5f3ef;margin-bottom:16px;">Contact Us</h2>
       <p style="font-size:14px;font-weight:300;line-height:1.7;color:rgba(245,243,239,.5);">Fill in the form and a member of the Carbon Zapp team will get back to you shortly.</p>
     </div>
     <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:20px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="contact-form-row-mobile" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Full Name *</label>
           <input type="text" placeholder="John Smith" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
@@ -5857,7 +5876,7 @@
           <input type="email" placeholder="john@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="contact-form-row-mobile" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Country</label>
           <input type="text" placeholder="United Kingdom" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
