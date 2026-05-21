@@ -3168,6 +3168,70 @@
     transition: color 0.2s;
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
+
+  /* ════════════════════════════════
+     CONTACT PAGE — MOBILE (≤480px)
+     ════════════════════════════════ */
+  @media (max-width: 480px) {
+
+    /* ── HERO ── */
+    .contact-hero-wrap > div {
+      grid-template-columns: 1fr !important;
+      min-height: auto !important;
+      max-height: none !important;
+    }
+    .contact-hero-wrap > div > div:first-child {
+      padding: 48px 20px 32px !important;
+      order: 2 !important;
+    }
+    .contact-hero-wrap > div > div:last-child {
+      order: 1 !important;
+      height: 200px !important;
+    }
+    .contact-hero-wrap > div > div:last-child img {
+      height: 200px !important;
+    }
+    .contact-hero-title {
+      font-size: 28px !important;
+      line-height: 1.05 !important;
+    }
+    .contact-hero-eyebrow { margin-bottom: 8px !important; }
+    .contact-hero-sub { font-size: 13px !important; }
+
+    /* ── GLOBAL NETWORK ── */
+    .contact-global {
+      grid-template-columns: 1fr !important;
+      padding: 48px 20px !important;
+      gap: 40px !important;
+    }
+    .contact-global-title { font-size: 26px !important; }
+
+    /* ── CONTACT FORM ── */
+    .contact-form-wrap .contact-form-inner {
+      grid-template-columns: 1fr !important;
+      padding: 48px 20px !important;
+      gap: 32px !important;
+    }
+    .contact-form-row {
+      grid-template-columns: 1fr !important;
+    }
+    .contact-form-title { font-size: 26px !important; }
+    .contact-submit { width: 100% !important; }
+
+    /* ── NEWSLETTER ── */
+    .contact-nl-wrap {
+      padding: 32px 20px 48px !important;
+    }
+    .contact-nl-inner {
+      grid-template-columns: 1fr !important;
+      padding: 28px 20px !important;
+      gap: 20px !important;
+    }
+    .contact-nl-right { grid-column: 1 !important; }
+    .contact-nl-title { font-size: 18px !important; }
+    .contact-nl-btn { width: 100% !important; padding: 12px !important; }
+
+  }
 </style>
 </head>
 <body>
