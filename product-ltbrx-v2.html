@@ -2377,7 +2377,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-sticky-name{
   font-family:"Gunterz",sans-serif;font-size:15px;
-  color:var(--text);letter-spacing:0.04em;
+  color:rgba(245,243,239,.9);letter-spacing:0.04em;
 }
 #pdp-sticky-nav .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
 #pdp-sticky-nav .pdp-sticky-link{
@@ -2409,18 +2409,18 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 
 /* ─── EXPANDABILITY CAROUSEL ─── */
-.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:640px;}
+.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);margin-bottom:40px;max-width:640px;}
 .pdp-carousel-wrap{overflow:hidden;}
 .pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
 .pdp-carousel-item{flex:0 0 calc(50% - 12px);flex-shrink:0;display:flex;flex-direction:row;gap:28px;align-items:flex-start;}
 .pdp-carousel-img{flex-shrink:0;width:320px;height:320px;border-radius:4px;overflow:hidden;order:2;}
 .pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
 .pdp-carousel-text{flex:1;order:1;display:flex;flex-direction:column;gap:8px;}
-.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);margin-bottom:6px;}
-  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(245,243,239,.9);margin-bottom:6px;}
+  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);}
 .pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
-.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:all 0.2s;}
-.pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
+.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(245,243,239,.9);transition:all 0.2s;}
+.pdp-carousel-btn:hover{border-color:rgba(245,243,239,.9);color:rgba(245,243,239,.9);}
 .pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
 
 /* ─── SECTION BASE ─── */
@@ -2435,7 +2435,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-sec-title{
   font-family:"Gunterz",sans-serif;font-size:26px;
-  line-height:1.1;color:var(--text);margin-bottom:0;
+  line-height:1.1;color:rgba(245,243,239,.9);margin-bottom:0;
 }
 .pdp-sec-divider{
   border:none;border-top:1px solid var(--grey-mid);
@@ -2451,10 +2451,10 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-intro-breadcrumb{
   font-family:"DM Mono",monospace;font-size:9px;
   letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--text-light);margin-bottom:20px;
+  color:rgba(245,243,239,.6);margin-bottom:20px;
 }
 .pdp-intro-breadcrumb a{color:inherit;text-decoration:none}
-.pdp-intro-breadcrumb a:hover{color:var(--text)}
+.pdp-intro-breadcrumb a:hover{color:rgba(245,243,239,.9)}
 .pdp-intro-breadcrumb span{margin:0 6px;opacity:0.4}
 .pdp-intro-category{
   font-family:"DM Mono",monospace;font-size:11px;
@@ -2463,11 +2463,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-intro-name{
   font-family:"Gunterz",sans-serif;font-size:52px;
-  line-height:0.95;color:var(--text);margin-bottom:16px;
+  line-height:0.95;color:rgba(245,243,239,.9);margin-bottom:16px;
 }
 .pdp-intro-tagline{
   font-size:22px;font-weight:500;line-height:1.2;
-  color:var(--text-light);max-width:560px;
+  color:rgba(245,243,239,.6);max-width:560px;
 }
 .pdp-highlights{
   display:grid;grid-template-columns:1fr 1fr;gap:0 32px;
@@ -2481,7 +2481,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-hl-dot{display:none;}
 .pdp-hl-text{
   font-family:"DM Mono",monospace;font-size:14px;
-  letter-spacing:0.05em;color:var(--text);line-height:1.5;
+  letter-spacing:0.05em;color:rgba(245,243,239,.9);line-height:1.5;
 }
 .pdp-intro-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;margin-top:28px;}
 .btn-primary{
@@ -2495,13 +2495,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .btn-primary:hover{background:#c41019}
 .btn-outline{
   display:inline-flex;align-items:center;
-  border:1px solid rgba(26,26,26,0.25);color:var(--text-light);
+  border:1px solid rgba(26,26,26,0.25);color:rgba(245,243,239,.6);
   font-family:"Public Sans",sans-serif;font-size:12px;
   letter-spacing:0.04em;text-transform:uppercase;
   text-decoration:none;padding:12px 24px;border-radius:2px;
   transition:all 0.2s;white-space:nowrap;
 }
-.btn-outline:hover{border-color:var(--text);color:var(--text)}
+.btn-outline:hover{border-color:rgba(245,243,239,.9);color:rgba(245,243,239,.9)}
 
 /* ─── OVERVIEW ─── */
 .pdp-overview{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2513,51 +2513,51 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-overview-inner .pdp-overview-body{max-width:70%;}
 .pdp-overview-body{
   font-size:18px;font-weight:300;line-height:1.2;
-  color:var(--text-light);margin-top:24px;
+  color:rgba(245,243,239,.6);margin-top:24px;
 }
 .pdp-overview-body p+p{margin-top:16px}
 
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
-.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
+.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);margin-bottom:40px;max-width:560px;}
 .pdp-ind-grid{display:flex;gap:48px;flex-wrap:wrap;}
 .pdp-ind-cell{padding:0;}
 .pdp-ind-icon{display:none;}
-.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
+.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,243,239,.9);line-height:1.4;}
 
 /* ─── CORE CAPABILITIES ─── */
 .pdp-caps{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-cap{background:var(--grey);padding:32px 28px;}
 .pdp-cap-num{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:12px;letter-spacing:0.1em;}
-.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:var(--text);margin-bottom:12px;}
-.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(245,243,239,.9);margin-bottom:12px;}
+.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);}
 
 /* ─── ENGINEERING HIGHLIGHTS ─── */
 .pdp-eng{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-eng-block{background:var(--grey);padding:40px 36px;}
 .pdp-eng-num{font-family:"Gunterz",sans-serif;font-size:11px;color:var(--accent);margin-bottom:16px;letter-spacing:0.1em;}
-.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);margin-bottom:12px;text-transform:none;}
-.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:rgba(245,243,239,.9);margin-bottom:12px;text-transform:none;}
+.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);}
 
 /* ─── ADVANCED FUNCTIONS ─── */
 .pdp-adv{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-adv-card{background:var(--grey);padding:28px 24px;}
 .pdp-adv-code{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.1em;}
-.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text);margin-bottom:10px;line-height:1.3;}
-.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(245,243,239,.9);margin-bottom:10px;line-height:1.3;}
+.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);}
 
 /* ─── EXPANDABILITY ─── */
 .pdp-expand{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-inner{max-width:1440px;margin:0 auto;padding:80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:32px;}
+.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:rgba(245,243,239,.6);margin-bottom:32px;}
 .pdp-expand-list{display:flex;flex-direction:column;gap:0;}
 .pdp-expand-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-item:first-child{border-top:1px solid var(--grey-mid);}
 .pdp-expand-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
-.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-light);}
+.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(245,243,239,.6);}
 
 /* ─── SOFTWARE ECOSYSTEM ─── */
 .pdp-soft{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2565,7 +2565,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-soft-inner .pdp-sec-eyebrow,
 .pdp-soft-inner h2,
 .pdp-soft-inner .pdp-soft-body{max-width:70%;}
-.pdp-soft-body{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-soft-body{font-size:18px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.6);}
 .pdp-soft-body p+p{margin-top:16px}
 .pdp-soft-tags{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:32px;max-width:none !important;}
 .pdp-soft-tag{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#868685;padding:0 20px;}
@@ -2576,12 +2576,12 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-specs{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table{width:100%;border-collapse:collapse;margin-top:48px;}
 .pdp-specs-table thead tr{border-bottom:2px solid var(--grey-mid);}
-.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);padding:12px 16px;text-align:left;font-weight:400;}
+.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,243,239,.6);padding:12px 16px;text-align:left;font-weight:400;}
 .pdp-specs-table tbody tr{border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table tbody tr:hover{background:rgba(0,0,0,0.02);}
 .pdp-specs-cat{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);padding:20px 16px 8px;font-weight:400;}
-.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:var(--text-light);padding:14px 16px;}
-.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:var(--text);padding:14px 16px;}
+.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:rgba(245,243,239,.6);padding:14px 16px;}
+.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:rgba(245,243,239,.9);padding:14px 16px;}
 .pdp-specs-yes{color:var(--accent);}
 
 /* ─── FINAL CTA ─── */
@@ -3599,14 +3599,14 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <p class="pdp-intro-tagline">The flagship benchmark for Heavy-Duty and Large Engine Diesel diagnostics.</p>
     </div>
     <div style="padding-top:8px;">
-      <p style="font-size:15px;font-weight:300;line-height:1.75;color:var(--text-light);margin-bottom:32px;">Built for the industries that never stop — Shipping, Marine, Gensets, HD Engines, Machinery, Locomotives, Mining.</p>
+      <p style="font-size:15px;font-weight:300;line-height:1.75;color:rgba(245,243,239,.6);margin-bottom:32px;">Built for the industries that never stop — Shipping, Marine, Gensets, HD Engines, Machinery, Locomotives, Mining.</p>
       <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#ED1C24;margin-bottom:14px;">Key Capabilities</div>
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:36px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>3,000+ bar high-pressure capability</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>45 kW / 60 HP drive power rigs</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Supports 2-stroke &amp; 4-stroke diesel</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Advanced AZO diagnostic software</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>11,000+ part-number database powered by CloudX</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>3,000+ bar high-pressure capability</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>45 kW / 60 HP drive power rigs</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Supports 2-stroke &amp; 4-stroke diesel</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Advanced AZO diagnostic software</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>11,000+ part-number database powered by CloudX</div>
       </div>
     </div>
   </div>
@@ -3662,11 +3662,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
     <div>
       <p class="pdp-overview-text">Optimized for high-power diesel environments where precision and reliability are critical.</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin:24px 0;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Marine &amp; Shipping</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Power Generation</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Rail &amp; Heavy Industry</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Mining &amp; Off-Highway</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Dual-Fuel Platforms</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Marine &amp; Shipping</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Power Generation</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Rail &amp; Heavy Industry</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Mining &amp; Off-Highway</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,243,239,.6);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Dual-Fuel Platforms</div>
       </div>
       <p class="pdp-overview-text">Supports conventional, common-rail and dual-fuel diesel applications across shipyards, service centers, power plants, rail depots, mining operations and industrial facilities.</p>
     </div>
