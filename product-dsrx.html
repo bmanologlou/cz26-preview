@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Workshops — Carbon Zapp</title>
+<title>LTBR-X — Large Engines Diesel Test Bench — Carbon Zapp</title>
 <link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-
   @font-face {
     font-family: 'Public Sans';
     src: url('assets/fonts/PublicSans-Variable.woff2') format('woff2'),
@@ -73,11 +72,24 @@
          url('assets/fonts/Gunterz-BlackItalic.woff') format('woff');
     font-weight: 900; font-style: italic; font-display: swap;
   }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--black:#0a0a0a;--white:#f5f5f5;--accent:#ED1C24;--accent2:#146cf7;--mid:#868685;--nav-h:68px}
-  html{scroll-behavior:smooth}
-  body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
-/* ─── NAV ─── */
+
+/* ─── RESET & ROOT ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;
+  --white:#f5f3ef;
+  --grey:#ebebeb;
+  --grey-mid:#e4e4e4;
+  --accent:#ED1C24;
+  --mid:#868685;
+  --text:#1a1a1a;
+  --text-light:rgba(26,26,26,0.5);
+  --nav-h:68px;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+
+
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     height: var(--nav-h);
@@ -153,7 +165,7 @@
   .btn-login {
     padding: 8px 14px;
     border: none;
-    background: transparent;
+    background: rgba(0,0,0,0.35);
     color: #868685;
     cursor: pointer;
     font-family: 'Switzer', sans-serif;
@@ -440,7 +452,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* ─── MEGA MENU ─── */
+  
   .nav-item { position: relative; }
 
   /* Invisible bridge fills the gap between link and dropdown */
@@ -1665,7 +1677,7 @@
     display: grid;
     grid-template-columns: 2.2fr 1fr 1fr 1fr;
     gap: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
     align-items: end;
   }
 
@@ -1712,7 +1724,6 @@
     transition: color 0.15s;
   }
   .footer-col a:hover { color: var(--white); }
-
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -1919,7 +1930,7 @@
     font-family: 'DM Mono', monospace;
     letter-spacing: 0.04em;
   }
-  .footer-hours svg { color: var(--mid); flex-shrink: 0; }
+  .footer-hours svg { color: var(--accent); flex-shrink: 0; }
 
 
   /* ─── HERO EVENT CARD ─── */
@@ -2138,7 +2149,7 @@
   .btn-outline-dark {
     font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
     border: 1px solid rgba(245,243,239,0.25); color: rgba(245,243,239,0.55);
-    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    background: rgba(0,0,0,0.35); text-decoration: none; display: inline-flex; align-items: center;
     font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
@@ -2147,7 +2158,7 @@
   .btn-outline-light {
     font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
     border: 1px solid rgba(10,10,10,0.3); color: #3a3a3a;
-    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    background: rgba(0,0,0,0.35); text-decoration: none; display: inline-flex; align-items: center;
     font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
@@ -2227,7 +2238,7 @@
   .btn-secondary {
     display: inline-flex;
     align-items: center;
-    background: transparent;
+    background: rgba(0,0,0,0.35);
     color: rgba(245,243,239,0.6);
     font-size: 14px;
     font-family: 'Public Sans', sans-serif;
@@ -2242,7 +2253,7 @@
   }
   .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
 
-  /* ─── LOGIN DROPDOWN ─── */
+  
   .login-wrap {
     position: relative;
   }
@@ -2326,66 +2337,306 @@
   .login-link:hover { color: rgba(245,243,239,0.7); }
 
   
-  /* ─── FILTER BAR ─── */
-  .filter-bar{position:sticky;top:var(--nav-h);z-index:50;background:rgba(10,10,10,0.96);backdrop-filter:blur(12px)}
-  .filter-bar-row{padding:0 80px;max-width:1440px;margin:0 auto;display:flex;align-items:center;height:52px}
-  .filter-group{display:flex;align-items:center;gap:0}
-  .filter-sep{width:1px;height:16px;background:rgba(255,255,255,0.08);margin:0 10px;flex-shrink:0}
-  .filter-btn{background:transparent;border:none;cursor:pointer;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.3);padding:5px 10px;border-radius:2px;transition:color 0.15s,background 0.15s;white-space:nowrap}
-  .filter-btn:hover{color:rgba(245,243,239,0.75)}
-  .filter-btn.active{color:var(--white);background:rgba(255,255,255,0.08)}
-  .act-pills{display:flex;align-items:center;gap:4px}
-  .act-pill{background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:2px;cursor:pointer;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.11em;text-transform:uppercase;color:rgba(245,243,239,0.3);padding:4px 9px;transition:background 0.15s,border-color 0.15s,color 0.15s;white-space:nowrap}
-  .act-pill:hover{border-color:rgba(255,255,255,0.28);color:rgba(245,243,239,0.65)}
-  .act-pill.active{background:rgba(237,28,36,0.18);border-color:rgba(237,28,36,0.7);color:#ff8080}
-  .filter-count{margin-left:auto;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.2);padding-left:12px;flex-shrink:0}
-  /* ─── HERO ─── */
-  .sol-hero-wrap{max-width:1440px;margin:0 auto;padding:12px 80px 0}
-  .sol-hero{border-radius:4px;overflow:hidden;background:#000;display:grid;grid-template-columns:2fr 3fr;min-height:460px;max-height:520px}
-  .sol-hero-left{padding:100px 56px 48px;display:flex;flex-direction:column;justify-content:flex-start;background:#000}
-  .sol-hero-right{display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:20px 0 0;background:#000}
-  .sol-hero-left .btn-primary{display:inline-flex;width:auto;align-self:flex-start}
-  .sol-hero-eyebrow{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-  .sol-hero-title{font-family:"Gunterz",sans-serif;font-size:38px;line-height:1.05;letter-spacing:0.02em;color:var(--white);margin-bottom:16px}
-  .hero-red{color:var(--accent)}
-  .sol-hero-title em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(245,243,239,0.35)}
-  .sol-hero-desc{font-size:14px;font-weight:200;line-height:1.65;color:rgba(245,243,239,0.5);margin-bottom:24px;max-width:380px}
-  /* ─── CATALOG ─── */
-  .sol-catalog{max-width:1440px;margin:0 auto;padding:12px 80px 0}
-  .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  /* ─── PRODUCT CARD ─── */
-  .prod-card{background:#141414;outline:1px solid rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:background 0.2s,box-shadow 0.2s}
-  .prod-card:hover{background:#191919;box-shadow:0 4px 24px rgba(0,0,0,0.4)}
-  .prod-card-image{aspect-ratio:4/3;background:radial-gradient(ellipse 90% 60% at 50% 0%, #4d4740 0%, #201c18 50%, #0a0908 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:24px 24px 0}
-  .prod-card-image img{width:75%;object-fit:contain;object-position:center bottom;display:block}
-  .prod-card-image.bg-blue{background:radial-gradient(ellipse 90% 60% at 50% 0%, #4d4740 0%, #201c18 50%, #0a0908 100%)}
-  .prod-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
-  .prod-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .prod-card-name{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;letter-spacing:0.03em;color:#f5f5f5;margin-bottom:8px}
-  .prod-card-desc{font-size:13px;font-weight:400;line-height:1.5;color:rgba(245,245,245,0.4);flex:1;margin-bottom:20px}
-  .prod-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)}
-  .prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,245,245,0.5);border:1px solid rgba(245,245,245,0.18);border-radius:2px;padding:6px 12px;transition:all 0.15s}
-  .prod-card:hover .prod-card-cta{color:var(--accent);border-color:var(--accent);background:transparent}
-  /* ─── EDITORIAL ─── */
-  .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
-  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
-  .sol-editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s}
-  .ed-card:hover{opacity:0.85}
-  .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
-  .ed-card-icon svg{color:rgba(245,243,239,0.6)}
-  .ed-card-content{margin-top:40px}
-  .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
-  .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
-  .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
-  .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
-  .ed-card:hover .ed-card-cta{color:var(--white)}
-  /* ─── BUTTONS ─── */
-  .btn-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;transition:background 0.2s}
-  .btn-primary:hover{background:#c41019}
-  .btn-outline-dark{display:inline-flex;align-items:center;border:1px solid rgba(245,243,239,0.22);color:rgba(245,243,239,0.5);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:2px;background:transparent;transition:border-color 0.2s,color 0.2s}
-  .btn-outline-dark:hover{border-color:var(--white);color:var(--white)}
-/* ─── FOOTER CTA ─── */
+
+/* ─── HERO ─── */
+.pdp-hero{
+  position:relative;
+  height:calc(100vh - var(--nav-h));
+  min-height:580px;
+  overflow:hidden;
+}
+.pdp-hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.pdp-hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.9s ease;}
+.pdp-hero-slide.active{opacity:1;}
+.pdp-hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border:none;border-radius:2px;
+  background:rgba(10,10,10,0.45);color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.2s,background 0.2s;z-index:10;
+}
+.pdp-hero:hover .pdp-hero-arrow{opacity:1;}
+.pdp-hero-arrow:hover{background:rgba(10,10,10,0.75);}
+.pdp-hero-prev{left:24px;}
+.pdp-hero-next{right:24px;}
+
+
+/* ─── STICKY PRODUCT NAV ─── */
+.pdp-sticky-nav{
+  position:sticky;top:var(--nav-h);z-index:90;
+  height:48px;background:var(--grey);
+  border-bottom:1px solid #c0c0c0;
+  display:flex;align-items:center;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.pdp-sticky-nav.visible{opacity:1;pointer-events:all;}
+.pdp-sticky-inner{
+  max-width:1440px;margin:0 auto;padding:0 80px;
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+}
+.pdp-sticky-name{
+  font-family:"Gunterz",sans-serif;font-size:15px;
+  color:var(--text);letter-spacing:0.04em;
+}
+#pdp-sticky-nav .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
+#pdp-sticky-nav .pdp-sticky-link{
+  font-family:"DM Mono",monospace !important;font-size:11px !important;
+  letter-spacing:0.1em !important;text-transform:uppercase !important;
+  color:#1a1a1a !important;text-decoration:none !important;
+  background:none !important;padding:0 !important;
+  display:inline-block !important;line-height:48px !important;
+  transition:color 0.2s;
+}
+#pdp-sticky-nav .pdp-sticky-link:hover{color:var(--accent) !important;}
+#pdp-sticky-nav .pdp-sticky-link.active{color:var(--accent) !important;}
+/* ─── PAGE BODY (grey bg) ─── */
+.pdp-body{background:var(--grey);}
+
+/* ─── VIDEO SECTION ─── */
+.pdp-video-section{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  background:#000;
+}
+.pdp-video-section video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+}
+
+
+/* ─── EXPANDABILITY CAROUSEL ─── */
+.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:640px;}
+.pdp-carousel-wrap{overflow:hidden;}
+.pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
+.pdp-carousel-item{flex:0 0 calc(50% - 12px);flex-shrink:0;display:flex;flex-direction:row;gap:28px;align-items:flex-start;}
+.pdp-carousel-img{flex-shrink:0;width:320px;height:320px;border-radius:4px;overflow:hidden;order:2;}
+.pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
+.pdp-carousel-text{flex:1;order:1;display:flex;flex-direction:column;gap:8px;}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);margin-bottom:6px;}
+  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
+.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:all 0.2s;}
+.pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
+.pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
+
+/* ─── SECTION BASE ─── */
+.pdp-sec{
+  max-width:1440px;margin:0 auto;
+  padding:80px 80px;
+}
+.pdp-sec-eyebrow{
+  font-family:"DM Mono",monospace;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
+}
+.pdp-sec-title{
+  font-family:"Gunterz",sans-serif;font-size:26px;
+  line-height:1.1;color:var(--text);margin-bottom:0;
+}
+.pdp-sec-divider{
+  border:none;border-top:1px solid var(--grey-mid);
+  margin:0;
+}
+
+/* ─── HERO INTRO (section below hero) ─── */
+.pdp-intro{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-intro-inner{
+  max-width:1440px;margin:0 auto;padding:72px 80px 0;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.pdp-intro-breadcrumb{
+  font-family:"DM Mono",monospace;font-size:9px;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:20px;
+}
+.pdp-intro-breadcrumb a{color:inherit;text-decoration:none}
+.pdp-intro-breadcrumb a:hover{color:var(--text)}
+.pdp-intro-breadcrumb span{margin:0 6px;opacity:0.4}
+.pdp-intro-category{
+  font-family:"DM Mono",monospace;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
+}
+.pdp-intro-name{
+  font-family:"Gunterz",sans-serif;font-size:52px;
+  line-height:0.95;color:var(--text);margin-bottom:16px;
+}
+.pdp-intro-tagline{
+  font-size:22px;font-weight:500;line-height:1.2;
+  color:var(--text-light);max-width:560px;
+}
+.pdp-highlights{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 32px;
+  margin-bottom:32px;
+}
+.pdp-hl{
+  padding:16px 0;
+  border-top:1px solid #b0b0b0;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.pdp-hl-dot{display:none;}
+.pdp-hl-text{
+  font-family:"DM Mono",monospace;font-size:14px;
+  letter-spacing:0.05em;color:var(--text);line-height:1.5;
+}
+.pdp-intro-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;margin-top:28px;}
+.btn-primary{
+  display:inline-flex;align-items:center;
+  background:var(--accent);color:#fff;
+  font-family:"Public Sans",sans-serif;font-size:12px;
+  letter-spacing:0.04em;text-transform:uppercase;
+  text-decoration:none;padding:12px 24px;border-radius:2px;
+  transition:background 0.2s;white-space:nowrap;
+}
+.btn-primary:hover{background:#c41019}
+.btn-outline{
+  display:inline-flex;align-items:center;
+  border:1px solid rgba(26,26,26,0.25);color:var(--text-light);
+  font-family:"Public Sans",sans-serif;font-size:12px;
+  letter-spacing:0.04em;text-transform:uppercase;
+  text-decoration:none;padding:12px 24px;border-radius:2px;
+  transition:all 0.2s;white-space:nowrap;
+}
+.btn-outline:hover{border-color:var(--text);color:var(--text)}
+
+/* ─── OVERVIEW ─── */
+.pdp-overview{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-overview-inner{
+  max-width:1440px;margin:0 auto;padding:80px 80px;
+}
+.pdp-overview-inner .pdp-sec-eyebrow,
+.pdp-overview-inner h2,
+.pdp-overview-inner .pdp-overview-body{max-width:70%;}
+.pdp-overview-body{
+  font-size:18px;font-weight:300;line-height:1.2;
+  color:var(--text-light);margin-top:24px;
+}
+.pdp-overview-body p+p{margin-top:16px}
+
+/* ─── INDUSTRIES ─── */
+.pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
+.pdp-ind-grid{display:flex;gap:48px;flex-wrap:wrap;}
+.pdp-ind-cell{padding:0;}
+.pdp-ind-icon{display:none;}
+.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
+
+/* ─── CORE CAPABILITIES ─── */
+.pdp-caps{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
+.pdp-cap{background:var(--grey);padding:32px 28px;}
+.pdp-cap-num{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:12px;letter-spacing:0.1em;}
+.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:var(--text);margin-bottom:12px;}
+.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+
+/* ─── ENGINEERING HIGHLIGHTS ─── */
+.pdp-eng{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
+.pdp-eng-block{background:var(--grey);padding:40px 36px;}
+.pdp-eng-num{font-family:"Gunterz",sans-serif;font-size:11px;color:var(--accent);margin-bottom:16px;letter-spacing:0.1em;}
+.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);margin-bottom:12px;text-transform:none;}
+.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+
+/* ─── ADVANCED FUNCTIONS ─── */
+.pdp-adv{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
+.pdp-adv-card{background:var(--grey);padding:28px 24px;}
+.pdp-adv-code{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.1em;}
+.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text);margin-bottom:10px;line-height:1.3;}
+.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
+
+/* ─── EXPANDABILITY ─── */
+.pdp-expand{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-expand-inner{max-width:1440px;margin:0 auto;padding:80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:32px;}
+.pdp-expand-list{display:flex;flex-direction:column;gap:0;}
+.pdp-expand-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--grey-mid);}
+.pdp-expand-item:first-child{border-top:1px solid var(--grey-mid);}
+.pdp-expand-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-light);}
+
+/* ─── SOFTWARE ECOSYSTEM ─── */
+.pdp-soft{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-soft-inner{max-width:1440px;margin:0 auto;padding:80px 80px;}
+.pdp-soft-inner .pdp-sec-eyebrow,
+.pdp-soft-inner h2,
+.pdp-soft-inner .pdp-soft-body{max-width:70%;}
+.pdp-soft-body{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);}
+.pdp-soft-body p+p{margin-top:16px}
+.pdp-soft-tags{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:32px;max-width:none !important;}
+.pdp-soft-tag{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#868685;padding:0 20px;}
+.pdp-soft-tag:first-child{padding-left:0;}
+.pdp-soft-sep{width:1px;height:14px;background:#c0c0c0;flex-shrink:0;}
+
+/* ─── TECH SPECS ─── */
+.pdp-specs{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
+.pdp-specs-table{width:100%;border-collapse:collapse;margin-top:48px;}
+.pdp-specs-table thead tr{border-bottom:2px solid var(--grey-mid);}
+.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);padding:12px 16px;text-align:left;font-weight:400;}
+.pdp-specs-table tbody tr{border-bottom:1px solid var(--grey-mid);}
+.pdp-specs-table tbody tr:hover{background:rgba(0,0,0,0.02);}
+.pdp-specs-cat{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);padding:20px 16px 8px;font-weight:400;}
+.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:var(--text-light);padding:14px 16px;}
+.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:var(--text);padding:14px 16px;}
+.pdp-specs-yes{color:var(--accent);}
+
+/* ─── FINAL CTA ─── */
+.pdp-final-cta{
+  background:#1a1a1a;
+  padding:72px 80px;
+}
+.pdp-final-cta-inner{
+  max-width:1440px;margin:0 auto;padding:72px 80px;
+}
+.pdp-final-cta-title{
+  font-family:"Gunterz",sans-serif;font-size:26px;
+  line-height:1.1;color:var(--white);margin-bottom:16px;
+}
+.pdp-final-cta-sub{
+  font-size:18px;font-weight:300;line-height:1.1;
+  color:rgba(245,243,239,0.5);max-width:640px;
+  margin:0 0 36px;
+}
+.pdp-final-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary-light{
+  display:inline-flex;align-items:center;
+  background:var(--accent);color:#fff;
+  font-family:"Public Sans",sans-serif;font-size:12px;
+  letter-spacing:0.04em;text-transform:uppercase;
+  text-decoration:none;padding:12px 24px;border-radius:2px;
+  transition:background 0.2s;
+}
+.btn-primary-light:hover{background:#c41019}
+.btn-outline-light{
+  display:inline-flex;align-items:center;
+  border:1px solid #6b6b6b;color:#9a9a9a;
+  font-family:"Public Sans",sans-serif;font-size:12px;
+  letter-spacing:0.04em;text-transform:uppercase;
+  text-decoration:none;padding:12px 24px;border-radius:2px;
+  transition:all 0.2s;
+}
+.btn-outline-light:hover{border-color:#d0d0d0;color:#d0d0d0;}
+.btn-outline-cta{display:inline-flex;align-items:center;border:1px solid #6b6b6b !important;color:#9a9a9a !important;font-family:"Public Sans",sans-serif;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:2px;transition:all 0.2s;}
+.btn-outline-cta:hover{border-color:#d0d0d0 !important;color:#d0d0d0 !important;}
+
+/* ─── RELATED ─── */
+.pdp-related{background:var(--black);}
+.pdp-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;}
+.prod-card{background:#f5f5f5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:background 0.2s}
+.prod-card:hover{background:#efefef}
+.prod-card-image{aspect-ratio:4/3;background:linear-gradient(180deg,#e8eef5 0%,#dde5ee 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:24px 24px 0}
+.prod-card-image img{width:75%;object-fit:contain;object-position:center bottom;display:block}
+.prod-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.prod-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.prod-card-name{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:#0a0a0a;margin-bottom:8px}
+.prod-card-desc{font-size:13px;font-weight:400;line-height:1.5;color:rgba(10,10,10,0.5);flex:1;margin-bottom:20px}
+.prod-card-cta{display:inline-flex;align-items:center;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.5);border:1px solid rgba(10,10,10,0.2);border-radius:2px;padding:6px 12px}
+
+
   .footer-cta {
     background: var(--carbon);
     padding: 140px 0;
@@ -2478,7 +2729,7 @@
     align-items: center;
   }
 
-  /* ─── FOOTER ─── */
+  
   footer {
     background: var(--black);
     padding: 80px 0 60px;
@@ -2524,7 +2775,7 @@
     display: grid;
     grid-template-columns: 2.2fr 1fr 1fr 1fr;
     gap: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
     align-items: end;
   }
 
@@ -2571,7 +2822,6 @@
     transition: color 0.15s;
   }
   .footer-col a:hover { color: var(--white); }
-
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -2763,7 +3013,7 @@
     font-family: 'DM Mono', monospace;
     letter-spacing: 0.04em;
   }
-  .footer-hours svg { color: var(--mid); flex-shrink: 0; }
+  .footer-hours svg { color: var(--accent); flex-shrink: 0; }
 
 
   /* ─── HERO EVENT CARD ─── */
@@ -2982,7 +3232,7 @@
   .btn-outline-dark {
     font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
     border: 1px solid rgba(245,243,239,0.25); color: rgba(245,243,239,0.55);
-    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    background: rgba(0,0,0,0.35); text-decoration: none; display: inline-flex; align-items: center;
     font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
@@ -2991,7 +3241,7 @@
   .btn-outline-light {
     font-size: 11px; padding: 9px 18px; letter-spacing: 0.08em; border-radius: 2px;
     border: 1px solid rgba(10,10,10,0.3); color: #3a3a3a;
-    background: transparent; text-decoration: none; display: inline-flex; align-items: center;
+    background: rgba(0,0,0,0.35); text-decoration: none; display: inline-flex; align-items: center;
     font-family: 'Public Sans', sans-serif; font-weight: 400; text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
@@ -3071,7 +3321,7 @@
   .btn-secondary {
     display: inline-flex;
     align-items: center;
-    background: transparent;
+    background: rgba(0,0,0,0.35);
     color: rgba(245,243,239,0.6);
     font-size: 14px;
     font-family: 'Public Sans', sans-serif;
@@ -3168,132 +3418,220 @@
     transition: color 0.2s;
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
+
+  
+
+  /* ─── EXPLORE MORE ─── */
+  .sol-editorial{max-width:1440px;margin:80px auto 0;padding:0 80px}
+  .sol-editorial-label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.22);padding:32px 0 24px}
+  .sol-editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .ed-card{border-radius:4px;display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:260px;padding:32px;transition:opacity 0.2s}
+  .ed-card:hover{opacity:0.85}
+  .ed-card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:auto}
+  .ed-card-icon svg{color:rgba(245,243,239,0.6)}
+  .ed-card-content{margin-top:40px}
+  .ed-card-eyebrow{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:8px}
+  .ed-card-title{font-family:"Gunterz",sans-serif;font-size:20px;line-height:1;color:var(--white);margin-bottom:8px}
+  .ed-card-sub{font-size:13px;font-weight:200;color:rgba(245,243,239,0.45);line-height:1.55;margin-bottom:20px}
+  .ed-card-cta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,243,239,0.5)}
+  .ed-card:hover .ed-card-cta{color:var(--white)}
+
+  /* ─── MODAL OVERLAY ─── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+/* ─── MODAL BOX ─── */
+.modal {
+  background: rgba(14,13,12,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  transform: translateY(16px);
+  transition: transform 0.25s ease;
+  position: relative;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-close {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: rgba(245,243,239,0.3); font-size: 18px;
+  transition: color 0.2s; line-height: 1;
+  padding: 4px;
+}
+.modal-close:hover { color: var(--white); }
+
+.modal-eyebrow {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.modal-title {
+  font-family: "Gunterz", sans-serif; font-size: 26px;
+  line-height: 1; color: var(--white); margin-bottom: 6px;
+}
+.modal-sub {
+  font-size: 13px; font-weight: 200;
+  color: rgba(245,243,239,0.4); margin-bottom: 32px;
+}
+
+/* ─── MACHINE TAG ─── */
+.modal-machine {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(237,28,36,0.3);
+  border-radius: 2px; padding: 6px 12px;
+  margin-bottom: 28px;
+}
+.modal-machine-label {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(245,243,239,0.3);
+}
+.modal-machine-name {
+  font-family: "DM Mono", monospace; font-size: 11px;
+  letter-spacing: 0.1em; color: #ff8080;
+}
+
+/* ─── FORM FIELDS ─── */
+.modal-fields { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+.modal-field { display: flex; flex-direction: column; gap: 6px; }
+.modal-field-label {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(245,243,239,0.3);
+}
+.modal-input {
+  background: rgba(245,243,239,0.04);
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 2px;
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  font-size: 14px; font-weight: 300;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.modal-input::placeholder { color: rgba(245,243,239,0.2); }
+.modal-input:focus { border-color: rgba(245,243,239,0.25); }
+
+.modal-input-hint {
+  font-size: 11px; font-weight: 200;
+  color: rgba(245,243,239,0.2);
+}
+
+/* ─── CONTACT METHOD TOGGLE ─── */
+.modal-toggle { display: flex; gap: 8px; margin-bottom: 4px; }
+.modal-toggle-btn {
+  font-family: "DM Mono", monospace; font-size: 9px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 2px; cursor: pointer;
+  border: 1px solid rgba(245,243,239,0.1);
+  background: rgba(0,0,0,0.35); color: rgba(245,243,239,0.3);
+  transition: all 0.15s;
+}
+.modal-toggle-btn.active {
+  background: rgba(245,243,239,0.08);
+  border-color: rgba(245,243,239,0.2);
+  color: var(--white);
+}
+
+/* ─── SUBMIT ─── */
+.modal-submit {
+  width: 100%;
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 2px;
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.modal-submit:hover { background: #c41019; border-color: #c41019; }
+
+.modal-disclaimer {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 200;
+  color: rgba(245,243,239,0.2);
+  text-align: center; line-height: 1.5;
+}
 </style>
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<div class="filter-bar">
-  <div class="filter-bar-row">
-    <div class="filter-group">
-      <button class="filter-btn" onclick="location.href='solutions.html'">All</button>
-      <button class="filter-btn" onclick="location.href='solutions-specialists.html'">Specialists</button>
-      <button class="filter-btn active" onclick="location.href='solutions-workshops.html'">Workshops</button>
-      <button class="filter-btn" onclick="location.href='solutions-large.html'">Large Engines</button>
-      <button class="filter-btn" onclick="location.href='solutions-authorized.html'">Authorized</button>
+<!-- HERO SLIDER -->
+<div class="pdp-hero" id="pdp-hero-slider">
+  <div class="pdp-hero-slide active" style="background-image:url('assets/images/cz_dsrx_slider_01.webp');"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/cz_dsrx_slider_02.webp');"></div>
+  <button class="pdp-hero-arrow pdp-hero-prev" id="hero-prev" aria-label="Previous">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="pdp-hero-arrow pdp-hero-next" id="hero-next" aria-label="Next">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<div class="pdp-body">
+
+<!-- INTRO -->
+<div class="pdp-intro">
+  <div class="pdp-intro-inner" style="grid-template-columns:1fr;gap:0;">
+  <div style="max-width:760px;">
+    <div>
+      <div class="pdp-intro-category">Diesel Service &amp; Repair Station</div>
+      <div class="pdp-intro-name">DSR-X</div>
+      <p class="pdp-intro-tagline">Compact CRDi Workshop Solution</p>
     </div>
-    <div class="act-pills" style="margin-left:10px">
-      <button class="act-pill" data-act="crdi">CRDi</button>
-      <button class="act-pill" data-act="crp">CRp</button>
-      <button class="act-pill" data-act="eui eup">EUi/EUP</button>
-      <button class="act-pill" data-act="heui">HEUi</button>
-      <button class="act-pill" data-act="engine">Engine</button>
+    <div style="padding-top:8px;">
+      <p style="font-size:15px;font-weight:300;line-height:1.75;color:var(--text-light);margin-bottom:32px;">Compact and affordable Diesel Common Rail injector test bench designed for workshops servicing passenger cars and light-duty diesel vehicles.</p>
+
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#ED1C24;opacity:1;margin-bottom:14px;">Key Capabilities</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:36px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);">
+          <span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>CRDi Injector Diagnostics
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);">
+          <span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Compact Workshop Design
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);">
+          <span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>EU6 Technologies Support
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);">
+          <span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Air-Operated System
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);">
+          <span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>EU6 Technologies Support
+        </div>
+      </div>
+
+      <p style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-light);opacity:.6;margin-bottom:0;">More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.</p>
     </div>
-    <div class="filter-sep"></div>
-    <div class="act-pills">
-      <button class="act-pill" data-act="gdi-inj">GDi Inj</button>
-      <button class="act-pill" data-act="efi">EFi</button>
-      <button class="act-pill" data-act="gdi-pump">GDi Pump</button>
+  </div>
+  </div>
+  <div style="max-width:1440px;margin:0 auto;padding:40px 80px 56px;">
+    <div class="pdp-intro-ctas">
+      <a href="https://carbonzapp.com/workshops/dsr-x" target="_blank" rel="noopener" class="btn-primary">View Product Details</a>
+      <a href="assets/pdfs/CZ_DIESEL_WORKSHOP_DSRX.pdf" target="_blank" class="btn-outline">Download Brochure</a>
     </div>
-    <div class="filter-sep"></div>
-    <button class="act-pill" id="act-reset">Reset</button>
-    <span class="filter-count" id="filter-count"></span>
   </div>
 </div>
 
-<div class="sol-hero-wrap">
-<div class="sol-hero">
-    <div class="sol-hero-left">
-    <div class="sol-hero-eyebrow">Workshop Injection Systems</div>
-    <h1 class="sol-hero-title">SOLUTIONS FOR<br><span class="hero-red">WORKSHOPS</span></h1>
-    <p class="sol-hero-desc">Reliable, compact and easy-to-operate systems built for high-volume Diesel and Gasoline service environments.</p>
-    <a href="assets/pdfs/CZ_Workshops_Catalog.pdf" target="_blank" rel="noopener" class="btn-primary">Download Brochure</a>
-  </div>
-  <div class="sol-hero-right" style="overflow:hidden;padding:0;">
-    <img src="assets/images/EO_CZ_Header_Workshops_dark_x2_rd2.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:right center;display:block;">
-  </div>
-</div>
-</div>
-
-<div class="sol-catalog">
-  <div class="sol-grid">
-    
-    <a href="product-dsrx.html" class="prod-card" data-market="workshops" data-act="crdi crp">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_DSRX.webp" alt="DSR-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">DSR-X</div>
-        <div class="prod-card-desc">Diesel Service & Repair Station.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="product-gs4.html" class="prod-card" data-market="workshops" data-act="efi">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_GS4.webp" alt="GS4"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">GS4</div>
-        <div class="prod-card-desc">Gasoline 4-Channel Service Station.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="product-gs8.html" class="prod-card" data-market="workshops" data-act="efi">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_GS8.webp" alt="GS8"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">GS8</div>
-        <div class="prod-card-desc">Gasoline 8-Channel Service Station.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="product-fst.html" class="prod-card" data-market="workshops" data-act="crdi crp">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_FST_HF.webp" alt="FST-HF"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">FST / FST-HF</div>
-        <div class="prod-card-desc">Fuel System Tester High-Flow.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="#" class="prod-card" data-market="workshops" data-act="crp engine">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_EPX.webp" alt="EP-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">EP-X</div>
-        <div class="prod-card-desc">Electronic Pump & Injector Tester.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="#" class="prod-card" data-market="workshops" data-act="gdi-inj gdi-pump">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_ESX.webp" alt="ES-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">ES-X</div>
-        <div class="prod-card-desc">Electronic GDi Service Station.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-<a href="#" class="prod-card" data-market="workshops" data-act="gdi-inj efi">
-      <div class="prod-card-image"><img src="assets/images/All_Machine_Workshops_800x800_01_GDRX.webp" alt="GDR-X"></div>
-      <div class="prod-card-body">
-        <div class="prod-card-name">GDR-X</div>
-        <div class="prod-card-desc">Gasoline Diagnostic & Repair System.</div>
-        <div class="prod-card-footer">
-          <span class="prod-card-cta">Discover</span>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-
-  </div>
-</div>
+</div><!-- /pdp-body -->
 
 <div class="sol-editorial">
   <div class="sol-editorial-label">Explore More</div>
@@ -3316,56 +3654,26 @@
 <div id="footer-cta-placeholder"></div>
 <div id="footer-placeholder"></div>
 
-<script src="components.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // ── Actuator filters ──
-  const cards   = document.querySelectorAll(".prod-card");
-  const countEl = document.getElementById("filter-count");
-  let activeActs = new Set();
+  // ── Hero Slider ──
+  (function(){
+    const slides = document.querySelectorAll('.pdp-hero-slide');
+    if(!slides.length) return;
+    const btnPrev = document.getElementById('hero-prev');
+    const btnNext = document.getElementById('hero-next');
+    let current = 0;
+    function goTo(n){
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+    if(btnPrev) btnPrev.addEventListener('click', ()=> goTo(current - 1));
+    if(btnNext) btnNext.addEventListener('click', ()=> goTo(current + 1));
 
-  function applyFilters() {
-    let n = 0;
-    cards.forEach(card => {
-      const cActs = (card.dataset.act || "").split(" ");
-      const ok = activeActs.size === 0 || [...activeActs].some(a => cActs.includes(a));
-      card.style.display = ok ? "" : "none";
-      if (ok) n++;
-    });
-    countEl.textContent = activeActs.size > 0 ? n + " Systems" : "";
-  }
-
-  document.querySelectorAll(".act-pill:not(#act-reset)").forEach(pill => {
-    pill.addEventListener("click", () => {
-      const acts = pill.dataset.act.split(" ");
-      const allActive = acts.every(a => activeActs.has(a));
-      if (allActive) {
-        acts.forEach(a => activeActs.delete(a));
-        pill.classList.remove("active");
-      } else {
-        acts.forEach(a => activeActs.add(a));
-        pill.classList.add("active");
-      }
-      applyFilters();
-    });
-  });
-
-  document.getElementById("act-reset").addEventListener("click", () => {
-    activeActs.clear();
-    document.querySelectorAll(".act-pill:not(#act-reset)").forEach(p => p.classList.remove("active"));
-    applyFilters();
-  });
-
-  applyFilters();
-
-  // Nav scroll
-  var nav = document.querySelector("nav");
-  if (nav) {
-    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 80); }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-});
+  })();
 </script>
+<script src="components.js"></script>
+
+
 </body>
 </html>
