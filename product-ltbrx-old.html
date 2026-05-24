@@ -2377,7 +2377,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-sticky-name{
   font-family:"Gunterz",sans-serif;font-size:15px;
-  color:rgba(26,26,26,.9);letter-spacing:0.04em;
+  color:var(--text);letter-spacing:0.04em;
 }
 #pdp-sticky-nav .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
 #pdp-sticky-nav .pdp-sticky-link{
@@ -2409,18 +2409,18 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 
 /* ─── EXPANDABILITY CAROUSEL ─── */
-.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);margin-bottom:40px;max-width:640px;}
+.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:640px;}
 .pdp-carousel-wrap{overflow:hidden;}
 .pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
 .pdp-carousel-item{flex:0 0 calc(50% - 12px);flex-shrink:0;display:flex;flex-direction:row;gap:28px;align-items:flex-start;}
 .pdp-carousel-img{flex-shrink:0;width:320px;height:320px;border-radius:4px;overflow:hidden;order:2;}
 .pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
 .pdp-carousel-text{flex:1;order:1;display:flex;flex-direction:column;gap:8px;}
-.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:6px;}
-  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);margin-bottom:6px;}
+  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 .pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
-.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(26,26,26,.9);transition:all 0.2s;}
-.pdp-carousel-btn:hover{border-color:rgba(26,26,26,.9);color:rgba(26,26,26,.9);}
+.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:all 0.2s;}
+.pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
 .pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
 
 /* ─── SECTION BASE ─── */
@@ -2434,20 +2434,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   color:var(--accent);margin-bottom:12px;
 }
 .pdp-sec-title{
-  font-family:"Gunterz",sans-serif;font-size:34px;
-  line-height:1.05;color:rgba(26,26,26,.9);margin-bottom:0;
+  font-family:"Gunterz",sans-serif;font-size:26px;
+  line-height:1.1;color:var(--text);margin-bottom:0;
 }
 .pdp-sec-divider{
   border:none;border-top:1px solid var(--grey-mid);
   margin:0;
 }
-.pdp-highlights{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-bottom:32px;}
-.pdp-hl{padding:16px 0;border-top:1px solid #b0b0b0;display:flex;align-items:flex-start;gap:12px;}
-.pdp-hl-dot{display:none;}
-.pdp-hl-text{font-family:"DM Mono",monospace;font-size:16px;letter-spacing:0.03em;color:rgba(26,26,26,.85);line-height:1.5;}
-.pdp-overview-inner{max-width:1440px;margin:0 auto;padding:80px 80px;}
-.pdp-overview-inner .pdp-overview-text{max-width:70%;}
-.pdp-overview-text{font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);margin-bottom:20px;}
 
 /* ─── HERO INTRO (section below hero) ─── */
 .pdp-intro{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2458,10 +2451,10 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-intro-breadcrumb{
   font-family:"DM Mono",monospace;font-size:9px;
   letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(26,26,26,.6);margin-bottom:20px;
+  color:var(--text-light);margin-bottom:20px;
 }
 .pdp-intro-breadcrumb a{color:inherit;text-decoration:none}
-.pdp-intro-breadcrumb a:hover{color:rgba(26,26,26,.9)}
+.pdp-intro-breadcrumb a:hover{color:var(--text)}
 .pdp-intro-breadcrumb span{margin:0 6px;opacity:0.4}
 .pdp-intro-category{
   font-family:"DM Mono",monospace;font-size:11px;
@@ -2470,11 +2463,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-intro-name{
   font-family:"Gunterz",sans-serif;font-size:52px;
-  line-height:0.95;color:rgba(26,26,26,.9);margin-bottom:16px;
+  line-height:0.95;color:var(--text);margin-bottom:16px;
 }
 .pdp-intro-tagline{
   font-size:22px;font-weight:500;line-height:1.2;
-  color:rgba(26,26,26,.6);max-width:560px;
+  color:var(--text-light);max-width:560px;
 }
 .pdp-highlights{
   display:grid;grid-template-columns:1fr 1fr;gap:0 32px;
@@ -2488,7 +2481,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-hl-dot{display:none;}
 .pdp-hl-text{
   font-family:"DM Mono",monospace;font-size:14px;
-  letter-spacing:0.05em;color:rgba(26,26,26,.9);line-height:1.5;
+  letter-spacing:0.05em;color:var(--text);line-height:1.5;
 }
 .pdp-intro-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;margin-top:28px;}
 .btn-primary{
@@ -2502,13 +2495,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .btn-primary:hover{background:#c41019}
 .btn-outline{
   display:inline-flex;align-items:center;
-  border:1px solid rgba(26,26,26,0.25);color:rgba(26,26,26,.6);
+  border:1px solid rgba(26,26,26,0.25);color:var(--text-light);
   font-family:"Public Sans",sans-serif;font-size:12px;
   letter-spacing:0.04em;text-transform:uppercase;
   text-decoration:none;padding:12px 24px;border-radius:2px;
   transition:all 0.2s;white-space:nowrap;
 }
-.btn-outline:hover{border-color:rgba(26,26,26,.9);color:rgba(26,26,26,.9)}
+.btn-outline:hover{border-color:var(--text);color:var(--text)}
 
 /* ─── OVERVIEW ─── */
 .pdp-overview{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2520,53 +2513,51 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-overview-inner .pdp-overview-body{max-width:70%;}
 .pdp-overview-body{
   font-size:18px;font-weight:300;line-height:1.2;
-  color:rgba(26,26,26,.6);margin-top:24px;
+  color:var(--text-light);margin-top:24px;
 }
 .pdp-overview-body p+p{margin-top:16px}
 
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
-.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);margin-bottom:40px;max-width:560px;}
+.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
 .pdp-ind-grid{display:flex;gap:48px;flex-wrap:wrap;}
 .pdp-ind-cell{padding:0;}
 .pdp-ind-icon{display:none;}
-.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,26,.9);line-height:1.4;}
+.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
 
 /* ─── CORE CAPABILITIES ─── */
 .pdp-caps{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-cap{background:var(--grey);padding:32px 28px;}
 .pdp-cap-num{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:12px;letter-spacing:0.1em;}
-.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:12px;}
-.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:var(--text);margin-bottom:12px;}
+.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── ENGINEERING HIGHLIGHTS ─── */
 .pdp-eng{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-eng-block{background:var(--grey);padding:40px 36px;}
 .pdp-eng-num{font-family:"Gunterz",sans-serif;font-size:11px;color:var(--accent);margin-bottom:16px;letter-spacing:0.1em;}
-.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:rgba(26,26,26,.9);margin-bottom:12px;text-transform:none;}
-.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);margin-bottom:12px;text-transform:none;}
+.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── ADVANCED FUNCTIONS ─── */
 .pdp-adv{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-adv-card{background:var(--grey);padding:28px 24px;}
-#hardware-grid .pdp-adv-card{background:var(--grey);}
-#hardware-grid{background:var(--grey);}
 .pdp-adv-code{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.1em;}
-.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:10px;line-height:1.3;}
-.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text);margin-bottom:10px;line-height:1.3;}
+.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── EXPANDABILITY ─── */
 .pdp-expand{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-inner{max-width:1440px;margin:0 auto;padding:80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:rgba(26,26,26,.6);margin-bottom:32px;}
+.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:32px;}
 .pdp-expand-list{display:flex;flex-direction:column;gap:0;}
 .pdp-expand-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-item:first-child{border-top:1px solid var(--grey-mid);}
 .pdp-expand-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
-.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(26,26,26,.6);}
+.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-light);}
 
 /* ─── SOFTWARE ECOSYSTEM ─── */
 .pdp-soft{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2574,7 +2565,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-soft-inner .pdp-sec-eyebrow,
 .pdp-soft-inner h2,
 .pdp-soft-inner .pdp-soft-body{max-width:70%;}
-.pdp-soft-body{font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);}
+.pdp-soft-body{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);}
 .pdp-soft-body p+p{margin-top:16px}
 .pdp-soft-tags{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:32px;max-width:none !important;}
 .pdp-soft-tag{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#868685;padding:0 20px;}
@@ -2585,12 +2576,12 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-specs{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table{width:100%;border-collapse:collapse;margin-top:48px;}
 .pdp-specs-table thead tr{border-bottom:2px solid var(--grey-mid);}
-.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,26,.6);padding:12px 16px;text-align:left;font-weight:400;}
+.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);padding:12px 16px;text-align:left;font-weight:400;}
 .pdp-specs-table tbody tr{border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table tbody tr:hover{background:rgba(0,0,0,0.02);}
 .pdp-specs-cat{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);padding:20px 16px 8px;font-weight:400;}
-.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:rgba(26,26,26,.6);padding:14px 16px;}
-.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.9);padding:14px 16px;}
+.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:var(--text-light);padding:14px 16px;}
+.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:var(--text);padding:14px 16px;}
 .pdp-specs-yes{color:var(--accent);}
 
 /* ─── FINAL CTA ─── */
@@ -3583,11 +3574,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <div id="nav-placeholder"></div>
 
-<!-- HERO SLIDER -->
+<!-- ══ 1. HERO ══ -->
 <div class="pdp-hero" id="pdp-hero-slider">
   <div class="pdp-hero-slide active" style="background-image:url('assets/images/LTBRX_Hero_S1.webp');"></div>
-  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Slidern_S3_new_rrd2.webp');background-size:cover;background-position:center center;"></div>
-  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Slidern_S2_new_rrd2.webp');background-size:cover;background-position:center center;"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Slidern_S3_new_rrd2.webp'); background-size:cover; background-position:center center;"></div>
+  <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Slidern_S2_new_rrd2.webp'); background-size:cover; background-position:center center;"></div>
   <div class="pdp-hero-slide" style="background-image:url('assets/images/LTBRX_Hero_S4.webp');"></div>
   <button class="pdp-hero-arrow pdp-hero-prev" id="hero-prev" aria-label="Previous">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
@@ -3599,90 +3590,82 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <div class="pdp-body">
 
-<!-- ══ INTRO ══ -->
+<!-- ══ STICKY PRODUCT NAV ══ -->
+<div class="pdp-sticky-nav" id="pdp-sticky-nav">
+  <div class="pdp-sticky-inner">
+    <div class="pdp-sticky-name">LTBR-X</div>
+    <div class="pdp-sticky-links">
+      <a href="#overview" class="pdp-sticky-link" data-section="overview">Overview</a>
+      <a href="#capabilities" class="pdp-sticky-link" data-section="capabilities">Capabilities</a>
+      <a href="#video" class="pdp-sticky-link" data-section="video">Video</a>
+      <a href="#expandability" class="pdp-sticky-link" data-section="expandability">Expansion</a>
+      <a href="#specs" class="pdp-sticky-link" data-section="specs">Tech Specs</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INTRO (Hero content) ══ -->
 <div class="pdp-intro">
   <div class="pdp-intro-inner">
     <div>
       <div class="pdp-intro-category">Large Engines Diesel Test Bench</div>
       <div class="pdp-intro-name">LTBR-X</div>
-      <p class="pdp-intro-tagline">The flagship benchmark for Heavy-Duty and Large Engine Diesel diagnostics. Built for the industries that never stop. Shipping, Marine, Gensets, HD Engines, Machinery, Locomotives, Mining.</p>
+      <p class="pdp-intro-tagline">The benchmark for Heavy-Duty and Large Engine Diesel diagnostics.</p>
     </div>
     <div style="padding-top:40px;">
       <div class="pdp-highlights">
-        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">3,000+ Bar High-Pressure Capability</div></div>
-        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">45 kW / 60 HP Drive Power Rigs</div></div>
-        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">Supports 2-Stroke &amp; 4-Stroke Diesel</div></div>
+        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">2800+ Bar High-Pressure Capability</div></div>
+        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">Supports 2-Stroke &amp; 4-Stroke Diesel Systems</div></div>
         <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">Advanced AZO Diagnostic Software</div></div>
-        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">11,000+ Part Numbers via CloudX</div></div>
+        <div class="pdp-hl"><div class="pdp-hl-dot"></div><div class="pdp-hl-text">Built for Marine, Locomotive &amp; Industrial Engines</div></div>
       </div>
     </div>
   </div>
-  <div style="max-width:1440px;margin:0 auto;padding:40px 80px 56px;">
+  <div style="max-width:1440px;margin:0 auto;padding:12px 80px 40px;">
     <div class="pdp-intro-ctas">
-      <a href="https://carbonzapp.com/specialists/ltbrx-w" target="_blank" rel="noopener" class="btn-primary">View Product Details</a>
-      <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX.pdf" target="_blank" class="btn-outline">Download Brochure</a>
+      <a href="#" onclick="event.preventDefault();openModal();" class="btn-primary">Request Quote</a>
+      <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline">Download Brochure</a>
     </div>
   </div>
 </div>
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ OVERVIEW ══ -->
+<!-- ══ 2. PRODUCT OVERVIEW ══ -->
 <div class="pdp-overview" id="overview">
   <div class="pdp-overview-inner">
     <div>
       <div class="pdp-sec-eyebrow">Product Overview</div>
-      <h2 class="pdp-sec-title">Engineered for Large Engine Specialists</h2>
+      <h2 class="pdp-sec-title">Engineered for Large Engines Specialists</h2>
     </div>
-    <div>
-      <p class="pdp-overview-text">The LTBR-X is a standalone Heavy-Duty and Large Engine Diesel Test Bench designed for professionals who require uncompromising precision in fuel system diagnostics and maintenance.</p>
-      <p class="pdp-overview-text">Developed to support modern 2-stroke and 4-stroke diesel engines, including conventional, electronic and dual-fuel systems, it delivers stable and reliable performance across marine, locomotive, generator and heavy industrial applications.</p>
-      <p class="pdp-overview-text">Built on Carbon Zapp's engineering expertise, the LTBR-X integrates advanced hardware architecture with AZO software control and CloudX connectivity.</p>
-      <div style="margin-top:32px;">
-        <div style="font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,26,26,.5);margin-bottom:16px;">Coverage includes</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Cummins</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Caterpillar</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>MAN Energy Solutions</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Rolls-Royce MTU</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Wärtsilä</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Mitsubishi Heavy Industries</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Volvo Penta</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Hyundai Heavy Industries</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Doosan</div>
-        </div>
-      </div>
-      <div style="margin-top:48px;font-size:20px;font-weight:600;color:#ED1C24;font-style:normal;letter-spacing:.01em;">Complete Coverage. Complete Confidence. One Complete Bench.</div>
+    <div class="pdp-overview-body">
+      <p>The LTBR-X is a standalone Heavy-Duty and Large Engine Diesel Test Bench designed for professionals who require uncompromising precision in fuel system diagnostics and maintenance.</p>
+      <p>Developed to support modern 2-stroke and 4-stroke diesel engines, including conventional, electronic and dual-fuel systems, it delivers stable and reliable performance across marine, locomotive, generator and heavy industrial applications.</p>
+      <p>Built on Carbon Zapp's engineering expertise, the LTBR-X integrates cutting-edge hardware architecture with advanced AZO software control.</p>
     </div>
   </div>
 </div>
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ INDUSTRY APPLICATIONS ══ -->
-<div class="pdp-overview" id="industries">
-  <div class="pdp-overview-inner">
-    <div>
-      <div class="pdp-sec-eyebrow">Industry Applications</div>
-      <h2 class="pdp-sec-title">Designed for Demanding Industries</h2>
-    </div>
-    <div>
-      <p class="pdp-overview-text">Optimized for high-power diesel environments where precision and reliability are critical.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin:24px 0;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Marine &amp; Shipping</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Power Generation</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Rail &amp; Heavy Industry</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Mining &amp; Off-Highway</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Dual-Fuel Platforms</div>
-      </div>
-      <p class="pdp-overview-text">Supports conventional, common-rail and dual-fuel diesel applications across shipyards, service centers, power plants, rail depots, mining operations and industrial facilities.</p>
+<!-- ══ 3. INDUSTRY APPLICATIONS ══ -->
+<div class="pdp-industries" id="industries">
+  <div class="pdp-sec">
+    <div class="pdp-sec-eyebrow">Industry Applications</div>
+    <h2 class="pdp-sec-title" style="margin-bottom:12px;">Designed for Demanding Industries</h2>
+    <p class="pdp-ind-intro">Optimized for high-power diesel environments where precision and reliability are critical.</p>
+    <div class="pdp-ind-grid">
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Shipping</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Marines Generators</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">HD Engines Machinery</div></div>
+      <div class="pdp-ind-cell"><div class="pdp-ind-label">Locomotives</div></div>
     </div>
   </div>
 </div>
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ TESTING CAPABILITIES ══ -->
+<!-- ══ 4. CORE CAPABILITIES ══ -->
 <div class="pdp-caps" id="capabilities">
   <div class="pdp-sec">
     <div class="pdp-sec-eyebrow">Testing Capabilities</div>
@@ -3691,70 +3674,67 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <div class="pdp-cap">
         <div class="pdp-cap-num">01</div>
         <div class="pdp-cap-title">Injector Testing</div>
-        <div class="pdp-cap-body">Supports conventional, electronically controlled and piezo-actuated injectors across modern 2-stroke and 4-stroke diesel engines, ensuring accurate performance validation and trim-file generation across heavy-duty applications.</div>
+        <div class="pdp-cap-body">Supports conventional and electronic injectors for 2-stroke and 4-stroke diesel engines, ensuring accurate performance validation across heavy-duty applications.</div>
       </div>
       <div class="pdp-cap">
         <div class="pdp-cap-num">02</div>
-        <div class="pdp-cap-title">Large-Bore Pump Testing</div>
-        <div class="pdp-cap-body">Handles large-diameter pumps using a reinforced flatbed base engineered for exceptional stability and load-support capacity in marine, locomotive and mining applications.</div>
+        <div class="pdp-cap-title">Pump Testing</div>
+        <div class="pdp-cap-body">Handles large-diameter pumps using a reinforced flatbed base designed for stability and high-load operation.</div>
       </div>
       <div class="pdp-cap">
         <div class="pdp-cap-num">03</div>
         <div class="pdp-cap-title">Electronic Flow Rate Measurement</div>
-        <div class="pdp-cap-body">Accurate volumetric flow measurement across multiple test plans with Integrated Synchronous Acquisition (ISA) for high-precision injection-event detection.</div>
+        <div class="pdp-cap-body">Accurate flow measurement across multiple volumetric test plans (pVMs) with Integrated Synchronous Acquisition (ISA) detection.</div>
       </div>
       <div class="pdp-cap">
         <div class="pdp-cap-num">04</div>
         <div class="pdp-cap-title">Static &amp; Dynamic Leakage Testing</div>
-        <div class="pdp-cap-body">Electronic leakage measurement under both static and dynamic conditions for evaluating injector sealing and high-pressure path integrity.</div>
+        <div class="pdp-cap-body">Electronic leakage measurement under both static and dynamic conditions for comprehensive injector and pump evaluation (LKT).</div>
       </div>
       <div class="pdp-cap">
         <div class="pdp-cap-num">05</div>
-        <div class="pdp-cap-title">Automatic Nozzle Opening Pressure</div>
-        <div class="pdp-cap-body">Fully automated electronic nozzle opening pressure measurement for consistent and repeatable injector diagnostics.</div>
+        <div class="pdp-cap-title">Nozzle Opening Pressure Measurement</div>
+        <div class="pdp-cap-body">Automatic electronic nozzle opening pressure testing (aNOP-PCV) for consistent and repeatable injector diagnostics.</div>
       </div>
-      <div class="pdp-cap">
-        <div class="pdp-cap-num">06</div>
-        <div class="pdp-cap-title">Dynamic Spray Pattern Analysis</div>
-        <div class="pdp-cap-body">Integrated illuminated multilayer glass chamber enables real-time spray pattern analysis during testing, combined with built-in response-time sensors monitoring injector efficiency.</div>
-      </div>
+      <div class="pdp-cap" style="background:var(--grey);"></div>
     </div>
   </div>
 </div>
 
+<!-- ══ VIDEO ══ -->
+<div class="pdp-video-section" id="video">
+  <video id="pdp-video" muted loop playsinline>
+    <source src="assets/video/CZ_LTBRX_video.mp4" type="video/mp4">
+  </video>
+</div>
+
 <hr class="pdp-sec-divider">
 
-<!-- ══ HARDWARE ENGINEERING ══ -->
-<div class="pdp-overview" id="hardware">
-  <div class="pdp-overview-inner">
+<!-- ══ 5. ENGINEERING HIGHLIGHTS ══ -->
+<div class="pdp-eng" id="engineering">
+  <div class="pdp-sec">
     <div class="pdp-sec-eyebrow">Hardware Engineering</div>
     <h2 class="pdp-sec-title">Engineered for Precision</h2>
-    <p class="pdp-overview-text" style="max-width:640px;margin-bottom:48px;">Every component of the LTBR-X is engineered to operate where reliability is the only acceptable standard. Built for shipyards, depots and power plants.</p>
-    <div class="pdp-adv-grid" id="hardware-grid">
-      <div class="pdp-adv-card">
-        <div class="pdp-adv-code">01</div>
-        <div class="pdp-adv-title">Versatile Injector Rail &amp; Illuminated Spray Chamber</div>
-        <div class="pdp-adv-body">Fully adjustable injector rail system compatible with all types and sizes of diesel injectors. Integrated illuminated multilayer glass chamber enables dynamic spray pattern analysis during real-time testing.</div>
+    <div class="pdp-eng-grid">
+      <div class="pdp-eng-block">
+        <div class="pdp-eng-num">01</div>
+        <div class="pdp-eng-title">Versatile Injector Rail &amp; Illuminated Spray Chamber</div>
+        <div class="pdp-eng-body">Fully adjustable injector rail system compatible with various injector types and sizes. The integrated illuminated multilayer glass chamber enables dynamic spray pattern analysis during real-time testing, while built-in response time sensors monitor internal injector efficiency.</div>
       </div>
-      <div class="pdp-adv-card">
-        <div class="pdp-adv-code">02</div>
-        <div class="pdp-adv-title">Reinforced Flatbed Base for Large Pumps</div>
-        <div class="pdp-adv-body">The reinforced flatbed design exceeds standard industry dimensions, providing exceptional stability and support for large-diameter pumps used in heavy-duty engines.</div>
+      <div class="pdp-eng-block">
+        <div class="pdp-eng-num">02</div>
+        <div class="pdp-eng-title">Reinforced Flatbed Base for Large Pumps</div>
+        <div class="pdp-eng-body">The reinforced flatbed design exceeds standard industry dimensions, providing exceptional stability and support for large-diameter pumps used in heavy-duty engines.</div>
       </div>
-      <div class="pdp-adv-card">
-        <div class="pdp-adv-code">03</div>
-        <div class="pdp-adv-title">Comprehensive Hydraulic Control Panel</div>
-        <div class="pdp-adv-body">Integrated control of oil supply, low-pressure feed, vacuum regulation and hydraulic oil setup for the Cambox ensures full operational command during pump testing.</div>
+      <div class="pdp-eng-block">
+        <div class="pdp-eng-num">03</div>
+        <div class="pdp-eng-title">Comprehensive Hydraulic Control Panel</div>
+        <div class="pdp-eng-body">Integrated control of oil supply, low-pressure systems, vacuum regulation and hydraulic configuration for Cambox applications ensures full operational command during pump testing.</div>
       </div>
-      <div class="pdp-adv-card">
-        <div class="pdp-adv-code">04</div>
-        <div class="pdp-adv-title">Enhanced Accessibility &amp; Safety</div>
-        <div class="pdp-adv-body">Designed with ample working space and three-side access to the testing area, enhancing operational efficiency while maintaining full visibility and operator safety.</div>
-      </div>
-      <div class="pdp-adv-card">
-        <div class="pdp-adv-code">05</div>
-        <div class="pdp-adv-title">Accessible High-Pressure Rail System</div>
-        <div class="pdp-adv-body">Convenient access to the high-pressure rails connected to the DRVs facilitates efficient maintenance and ensures optimal system performance and reliability.</div>
+      <div class="pdp-eng-block">
+        <div class="pdp-eng-num">04</div>
+        <div class="pdp-eng-title">Accessible High-Pressure Rail System</div>
+        <div class="pdp-eng-body">Convenient access to high-pressure rails connected to DRV control units allows accurate pressure regulation and simplified maintenance procedures.</div>
       </div>
     </div>
   </div>
@@ -3762,12 +3742,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ DIAGNOSTIC INTELLIGENCE ══ -->
-<div class="pdp-adv" id="diagnostics">
-  <div class="pdp-overview-inner">
+<!-- ══ 6. ADVANCED FUNCTIONS ══ -->
+<div class="pdp-adv" id="advanced">
+  <div class="pdp-sec">
     <div class="pdp-sec-eyebrow">Diagnostic Intelligence</div>
     <h2 class="pdp-sec-title">Advanced Diagnostic Functions</h2>
-    <p class="pdp-overview-text" style="max-width:640px;margin-bottom:48px;">Six diagnostic modules. One unified workflow. Engineered to give large-engine specialists the depth of insight the engines themselves demand.</p>
     <div class="pdp-adv-grid">
       <div class="pdp-adv-card">
         <div class="pdp-adv-code">IC</div>
@@ -3782,7 +3761,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
       <div class="pdp-adv-card">
         <div class="pdp-adv-code">PvS</div>
         <div class="pdp-adv-title">Pressure vs Speed Testing</div>
-        <div class="pdp-adv-body">Evaluates pump performance across varying speeds to analyze pressure behavior and detect anomalies.</div>
+        <div class="pdp-adv-body">Evaluates pump performance across varying speeds to analyze pressure behavior.</div>
       </div>
       <div class="pdp-adv-card">
         <div class="pdp-adv-code">SvP</div>
@@ -3795,9 +3774,9 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
         <div class="pdp-adv-body">Advanced electronic diagnosis and measurement of electrical valve functionality.</div>
       </div>
       <div class="pdp-adv-card">
-        <div class="pdp-adv-code">CBX</div>
+        <div class="pdp-adv-code">OPT</div>
         <div class="pdp-adv-title">Cambox Integration</div>
-        <div class="pdp-adv-body">Optional module supporting advanced cam-driven testing scenarios for unit injectors and unit pumps.</div>
+        <div class="pdp-adv-body">Optional module supporting advanced testing scenarios requiring Cambox connectivity.</div>
       </div>
     </div>
   </div>
@@ -3805,65 +3784,139 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ SOFTWARE & CONNECTIVITY ══ -->
-<div class="pdp-soft" id="software">
-  <div class="pdp-soft-inner">
-    <div>
-      <div class="pdp-sec-eyebrow">Software &amp; Connectivity</div>
-      <h2 class="pdp-sec-title">Powered by AZO Software &amp; CloudX</h2>
-    </div>
-    <div>
-      <p class="pdp-soft-body" style="margin-bottom:24px;">The LTBR-X integrates advanced AZO software delivering real-time diagnostics, electronic flow measurement, injector coding and continuously updated database support for EU6 / EU7-ready applications.</p>
-      <p class="pdp-soft-body" style="margin-bottom:32px;">CloudX integration enables centralized control, data synchronization and future-ready digital expansion across the Carbon Zapp ecosystem.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>AZO Control Software</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>CloudX Integration</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>EU6 / EU7-Ready Database</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>11,000+ Part Numbers</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Injector Coding</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Continuous Updates</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="pdp-sec-divider">
-
-<!-- ══ OEM ECOSYSTEM ══ -->
-<div class="pdp-overview" id="oem">
-  <div class="pdp-overview-inner">
-    <div>
-      <div class="pdp-sec-eyebrow">OEM Diagnostic Ecosystem</div>
-      <h2 class="pdp-sec-title">OEM-Trusted &amp; Authorized</h2>
-    </div>
-    <div>
-      <p class="pdp-overview-text" style="font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);margin-bottom:24px;">Built to OEM testing standards across major diesel platforms, combining advanced diagnostics, CloudX connectivity and scalable testing architecture.</p>
-      <p class="pdp-overview-text" style="font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);margin-bottom:24px;">Authorized by Schaeffler (Continental / VDO) and built to OEM testing standards across Bosch, Delphi, Denso, Stanadyne, Caterpillar, Liebherr, MTU, L'Orange, and Cummins platforms. Additional authorizations pending.</p>
-      <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(26,26,26,.1);">
-        <div style="font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,26,26,.5);margin-bottom:16px;">Certified Third-Party Repair Solutions</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Hard-to-source parts from trusted third-party suppliers</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Additional test plans and repair support for legacy platforms</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Calibrations and repair guides from approved specialists</div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(26,26,26,.75);"><span style="width:5px;height:5px;background:#ED1C24;border-radius:50%;flex-shrink:0;"></span>Optional and clearly identified integrations</div>
+<!-- ══ 7. EXPANDABILITY ══ -->
+<div class="pdp-expand" id="expandability">
+  <div class="pdp-sec">
+    <div class="pdp-sec-eyebrow">System Expansion</div>
+    <h2 class="pdp-sec-title" style="margin-bottom:12px;">Expandable Architecture</h2>
+    <p class="pdp-expand-intro">Designed with scalability in mind, the LTBR-X can be upgraded to support emerging diesel technologies and expanded testing configurations, ensuring long-term operational relevance and investment security.</p>
+    
+    <!-- Carousel -->
+    <div class="pdp-carousel-wrap">
+      <div class="pdp-carousel" id="pdp-carousel">
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Cambox Module Integration</div>
+            <div class="pdp-carousel-desc">Enables advanced pump testing scenarios requiring cam-driven operation for comprehensive performance evaluation.</div>
+          </div>
+          <div class="pdp-carousel-img"><img src="assets/images/EO_CZ_Carousel_ltbrx_02.webp" alt="Additional Rail Configurations" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Additional Rail Configurations</div>
+            <div class="pdp-carousel-desc">Expand testing capacity with supplementary high-pressure rail setups for multi-injector or specialized applications.</div>
+          </div>
+          <div class="pdp-carousel-img"><img src="assets/images/EO_CZ_Carousel_ltbrx_03.webp" alt="Specialized Fixtures & Adaptors" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Specialized Fixtures &amp; Adaptors</div>
+            <div class="pdp-carousel-desc">Purpose-built mounting solutions for non-standard injector and pump geometries across all major engine manufacturers.</div>
+          </div>
+          <div class="pdp-carousel-img"><img src="assets/images/EO_CZ_Carousel_ltbrx_04.webp" alt="Software Upgrade Packages" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+        <div class="pdp-carousel-item">
+          <div class="pdp-carousel-text">
+            <div class="pdp-carousel-label">Software Upgrade Packages</div>
+            <div class="pdp-carousel-desc">Modular AZO software expansions that unlock additional diagnostic functions and testing protocols as requirements evolve.</div>
+          </div>
+          <div class="pdp-carousel-img"><img src="assets/images/EO_CZ_Carousel_ltbrx_01.webp" alt="Continuous Database Expansion" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
       </div>
+      <div class="pdp-carousel-controls">
+        <button class="pdp-carousel-btn" id="carousel-prev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="pdp-carousel-btn" id="carousel-next" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
 <hr class="pdp-sec-divider">
 
-<!-- ══ CLOSING STATEMENT ══ -->
-<div class="pdp-overview">
-  <div class="pdp-overview-inner">
-    <div class="pdp-sec-eyebrow">The Carbon Zapp Standard</div>
-    <h2 class="pdp-sec-title">Engineered for the Engines That Never Stop</h2>
-    <p class="pdp-overview-text">Built for specialists operating in the world's most demanding diesel environments — marine, rail, power generation and heavy industry. Built by specialists and trusted by specialists. Engineered to outlast the demands of the workshop.</p>
+<!-- ══ 8. SOFTWARE ECOSYSTEM ══ -->
+<div class="pdp-soft" id="software">
+  <div class="pdp-soft-inner">
+    <div class="pdp-sec-eyebrow">Software Integration</div>
+    <h2 class="pdp-sec-title" style="margin-bottom:24px;">Powered by AZO Software &amp; CloudX</h2>
+    <div class="pdp-soft-body">
+      <p>The LTBR-X integrates advanced AZO software delivering real-time diagnostics, electronic flow measurement, injector coding and continuously updated database support for EU6 applications.</p>
+      <p>CloudX integration enables centralized control, data synchronization and future-ready digital expansion across Carbon Zapp systems.</p>
+    </div>
+    <div class="pdp-soft-tags">
+      <span class="pdp-soft-tag">AZO Control Software</span>
+      <span class="pdp-soft-sep"></span>
+      <span class="pdp-soft-tag">CloudX IoT</span>
+      <span class="pdp-soft-sep"></span>
+      <span class="pdp-soft-tag">EU6 Database</span>
+      <span class="pdp-soft-sep"></span>
+      <span class="pdp-soft-tag">Injector Coding</span>
+      <span class="pdp-soft-sep"></span>
+      <span class="pdp-soft-tag">Continuous Updates</span>
+      <span class="pdp-soft-sep"></span>
+      <span class="pdp-soft-tag">Remote Diagnostics</span>
+    </div>
   </div>
 </div>
 
-</div><!-- /pdp-body -->
+<hr class="pdp-sec-divider">
+
+<!-- ══ 9. TECH SPECS ══ -->
+<div class="pdp-specs" id="specs">
+  <div class="pdp-sec">
+    <div class="pdp-sec-eyebrow">Tech Specs</div>
+    <h2 class="pdp-sec-title">Technical Specifications</h2>
+    <table class="pdp-specs-table">
+      <thead>
+        <tr><th>Specification</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="pdp-specs-cat" colspan="2">General</td></tr>
+        <tr><td class="pdp-specs-label">Product Type</td><td class="pdp-specs-val">Large Engines Diesel Test Bench</td></tr>
+        <tr><td class="pdp-specs-label">Configuration</td><td class="pdp-specs-val">Standalone HD &amp; LE System</td></tr>
+        <tr><td class="pdp-specs-label">Series</td><td class="pdp-specs-val">2024 · Production Q2/2025</td></tr>
+
+        <tr><td class="pdp-specs-cat" colspan="2">Performance</td></tr>
+        <tr><td class="pdp-specs-label">Maximum Pressure</td><td class="pdp-specs-val">2800+ Bar</td></tr>
+        <tr><td class="pdp-specs-label">Supported Engines</td><td class="pdp-specs-val">2-Stroke &amp; 4-Stroke Diesel</td></tr>
+        <tr><td class="pdp-specs-label">Dual-Fuel Compatibility</td><td class="pdp-specs-val pdp-specs-yes">Supported</td></tr>
+
+        <tr><td class="pdp-specs-cat" colspan="2">Testing Capabilities</td></tr>
+        <tr><td class="pdp-specs-label">Injector Coding</td><td class="pdp-specs-val pdp-specs-yes">Yes</td></tr>
+        <tr><td class="pdp-specs-label">Flow Measurement</td><td class="pdp-specs-val">Electronic with ISA</td></tr>
+        <tr><td class="pdp-specs-label">Leakage Testing</td><td class="pdp-specs-val">Static &amp; Dynamic</td></tr>
+        <tr><td class="pdp-specs-label">Spray Pattern Analysis</td><td class="pdp-specs-val">Dynamic Illuminated Chamber</td></tr>
+        <tr><td class="pdp-specs-label">Nozzle Response Time</td><td class="pdp-specs-val pdp-specs-yes">Yes</td></tr>
+        <tr><td class="pdp-specs-label">Volumetric Test Plans</td><td class="pdp-specs-val">Multiple Load Profiles (pVMs)</td></tr>
+
+        <tr><td class="pdp-specs-cat" colspan="2">Software</td></tr>
+        <tr><td class="pdp-specs-label">Control Software</td><td class="pdp-specs-val">AZO</td></tr>
+        <tr><td class="pdp-specs-label">Database Updates</td><td class="pdp-specs-val">Continuous · EU6 Ready</td></tr>
+        <tr><td class="pdp-specs-label">CloudX Integration</td><td class="pdp-specs-val pdp-specs-yes">Supported</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- end pdp-body -->
+
+<!-- ══ 10. FINAL CTA ══ -->
+<div class="pdp-final-cta">
+  <div class="pdp-final-cta-inner">
+    <div class="pdp-final-cta-title">Built for Specialists</div>
+    <p class="pdp-final-cta-sub">A professional-grade diesel test bench engineered to deliver precision, durability and long-term operational reliability for large engine applications.</p>
+    <div class="pdp-final-ctas">
+      <a href="#" onclick="event.preventDefault();openModal();" class="btn-primary-light">Request Quote</a>
+      <a href="assets/pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf" target="_blank" class="btn-outline-cta">Download Brochure</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RELATED PRODUCTS ══ -->
+</div>
 
 <div class="sol-editorial">
   <div class="sol-editorial-label">Explore More</div>
@@ -3883,11 +3936,195 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   </div>
 </div>
 
+<!-- MODAL -->
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-eyebrow">Contact Sales</div>
+    <div class="modal-title">Request a Quote</div>
+    <div class="modal-sub">Our team will get back to you within 24–72 hours.</div>
+
+    <div class="modal-machine">
+      <span class="modal-machine-label">Machine</span>
+      <span class="modal-machine-name">LTBR-X</span>
+    </div>
+
+    <div class="modal-fields">
+      <div class="modal-field">
+        <label class="modal-field-label">Full Name</label>
+        <input type="text" class="modal-input" placeholder="John Smith">
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Contact</label>
+        <div class="modal-toggle" style="margin-bottom:8px;">
+          <button class="modal-toggle-btn active" onclick="setContact('email', this)">Email</button>
+          <button class="modal-toggle-btn" onclick="setContact('whatsapp', this)">WhatsApp</button>
+        </div>
+        <input type="text" class="modal-input" id="contact-input" placeholder="your@email.com">
+        <span class="modal-input-hint" id="contact-hint">We'll reply to your email</span>
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Country</label>
+        <input type="text" class="modal-input" placeholder="Greece">
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-field-label">Message <span style="color:rgba(245,243,239,0.2);font-size:9px;">— Optional</span></label>
+        <textarea class="modal-input" rows="3" placeholder="Any specific requirements..." style="resize:none;"></textarea>
+      </div>
+    </div>
+
+    <button class="modal-submit">Send Request</button>
+  </div>
+</div>
+
 <div id="footer-cta-placeholder"></div>
 <div id="footer-placeholder"></div>
 
 <script src="components.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var nav = document.querySelector('nav');
+  if (nav) {
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 80); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+});
+
+  // ── Expandability Carousel ──
+  (function(){
+    const track = document.getElementById('pdp-carousel');
+    if(!track) return;
+    const btnPrev = document.getElementById('carousel-prev');
+    const btnNext = document.getElementById('carousel-next');
+    const items = track.querySelectorAll('.pdp-carousel-item');
+    const visible = 2;
+    let current = 0;
+    const max = items.length - visible;
+
+    function update(){
+      const itemW = items[0].offsetWidth + 16;
+      track.style.transform = 'translateX(-' + (current * itemW) + 'px)';
+      track.style.transition = 'transform 0.4s ease';
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current >= max;
+    }
+
+    btnPrev.addEventListener('click', ()=>{ if(current>0){current--;update();} });
+    btnNext.addEventListener('click', ()=>{ if(current<max){current++;update();} });
+    update();
+  })();
 
 
+  // ── Hero Slider ──
+  (function(){
+    const slides = document.querySelectorAll('.pdp-hero-slide');
+    if(!slides.length) return;
+    const btnPrev = document.getElementById('hero-prev');
+    const btnNext = document.getElementById('hero-next');
+    let current = 0;
+    function goTo(n){
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+    if(btnPrev) btnPrev.addEventListener('click', ()=> goTo(current - 1));
+    if(btnNext) btnNext.addEventListener('click', ()=> goTo(current + 1));
+  })();
+
+  // ── Video play on scroll ──
+  (function(){
+    const video = document.getElementById('pdp-video');
+    if(!video) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(video);
+  })();
+
+  // ── Sticky Product Nav ──
+  (function(){
+    const nav = document.getElementById('pdp-sticky-nav');
+    const hero = document.querySelector('.pdp-hero');
+    const links = document.querySelectorAll('.pdp-sticky-link');
+    const sections = ['overview','capabilities','video','expandability','specs'];
+
+    // Show after hero
+    const heroObserver = new IntersectionObserver((entries) => {
+      nav.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    if(hero) heroObserver.observe(hero);
+
+    // Active link on scroll
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector('.pdp-sticky-link[data-section="' + entry.target.id + '"]');
+          if(active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) sectionObserver.observe(el);
+    });
+
+    // Smooth scroll
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if(target){
+          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) + 48;
+          window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+function openModal() {
+  document.getElementById('quoteModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('quoteModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.getElementById('quoteModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelector('.modal-submit').addEventListener('click', function() {
+  closeModal();
+});
+
+function setContact(type, btn) {
+  document.querySelectorAll('.modal-toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const input = document.getElementById('contact-input');
+  const hint = document.getElementById('contact-hint');
+  if (type === 'email') {
+    input.placeholder = 'your@email.com';
+    hint.textContent = "We'll reply to your email";
+  } else {
+    input.placeholder = '+30 690 000 0000';
+    hint.textContent = "We'll message you on WhatsApp";
+  }
+}
+</script>
 </body>
 </html>
