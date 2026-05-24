@@ -1,6 +1,23 @@
 {
   "articles": [
     {
+      "id": "posidonia-2026",
+      "title": "Posidonia 2026",
+      "date": "2026-05-01",
+      "excerpt": "Carbon Zapp will be present at Posidonia 2026 — Hall 1, Stand 1.215. The Next Standard for Marine Injection Service.",
+      "body": "Carbon Zapp will be present at Posidonia 2026, bringing advanced engineering expertise to one of the world's leading maritime exhibitions.\n\nThe Next Standard for Marine Injection Service marks our focus for this year's presence: precision technologies engineered for marine power, large engine systems, and demanding operating conditions.\n\nJoin us at Posidonia 2026 in Metropolitan Expo, Athens, from 01 to 5 June 2026. Visit us at Hall 1, Stand 1.215 and explore our latest diagnostic and service innovations engineered to power the future of Diesel and Gasoline systems.\n\nWith 35+ years of innovation, a global network across 98 countries, a complete platform range, and OEM-trusted technology, Carbon Zapp continues to deliver Engineering Forward Mobility Solutions for professionals worldwide.\n\nDon't miss out! Book a meeting at sales@carbonzapp.com and explore the NEW CZ XSeries tailored to your workshop's needs.",
+      "image": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Poseidonia-938x577w.png",
+      "event_date": "2026-06-01",
+      "event_end": "2026-06-05",
+      "event_location": "Metropolitan Expo, Athens — Hall 1, Stand 1.215",
+      "event_link": "https://posidonia-events.com/",
+      "categories": [
+        "events"
+      ],
+      "date_display": "May 2026",
+      "image_thumb": "https://carbonzapp.com/image/cache/catalog/CZ_EVENT_Poseidonia-600x315w.png"
+    },
+    {
       "id": "ttm-poznan-2026",
       "title": "TTM Poznań 2026",
       "date": "2026-04-06",
