@@ -3347,8 +3347,8 @@
               name: a.title,
               venue: a.event_location || '',
               dates: a.event_date || a.date_display,
-              start: a.date,
-              end: a.event_end || a.date,
+              start: a.event_date || a.date,
+              end: a.event_end || a.event_date || a.date,
               url: a.id ? 'news/' + a.id + '.html' : null
             };
           });
