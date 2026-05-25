@@ -17,6 +17,545 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
+
+/* =========================================================
+   MOBILE FIRST RESPONSIVE OVERRIDES | PHASE 1
+   Carbon Zapp Homepage
+   ========================================================= */
+
+:root {
+  --container-padding: 20px;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- Base mobile layout ---------- */
+
+nav {
+  height: 64px;
+}
+
+.nav-inner {
+  padding: 0 var(--container-padding);
+}
+
+.nav-logo {
+  width: 160px;
+  height: 30px;
+  margin-right: 0;
+}
+
+.nav-links,
+.nav-actions {
+  display: none;
+}
+
+/* Keep full logo visible on mobile */
+nav.scrolled .cz-logo-svg {
+  opacity: 1;
+  pointer-events: all;
+}
+
+nav.scrolled .cz-brandmark-svg {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Hero mobile ---------- */
+
+.hero {
+  height: auto;
+  min-height: 100svh;
+  padding-top: var(--nav-h) !important;
+  overflow: hidden;
+}
+
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.hero-video-bg video,
+.hero-video-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,0.96) 100%),
+    linear-gradient(90deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.45) 100%);
+}
+
+.hero-content-wrap {
+  position: relative;
+  inset: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  padding: 110px var(--container-padding) 48px;
+  pointer-events: auto;
+}
+
+.hero-content {
+  max-width: 100%;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: clamp(36px, 12vw, 54px);
+  line-height: 0.92;
+  margin-bottom: 22px;
+}
+
+.hero-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-solutions {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+/* Hero event card becomes normal block on mobile */
+.hero-event {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  margin-top: 36px;
+  padding: 20px;
+}
+
+.hero-scroll {
+  display: none;
+}
+
+/* ---------- Global section spacing ---------- */
+
+.problem-eyebrow-row,
+.problem-inner,
+.cloudx-inner,
+.why-inner,
+.news-inner,
+.footer-cta-inner {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.problem-eyebrow-row {
+  padding-top: 64px;
+}
+
+.problem-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-bottom: 64px;
+}
+
+.problem-title,
+.cloudx-title,
+.why-title,
+.footer-cta-title {
+  font-size: clamp(28px, 9vw, 40px);
+  line-height: 1;
+}
+
+.problem-body,
+.cloudx-desc,
+.why-intro,
+.footer-cta-sub {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ---------- CZ grid / cards mobile ---------- */
+
+.cz-grid {
+  padding: 0 var(--container-padding) 32px;
+  gap: 14px;
+}
+
+.cz-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card-horizontal {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: auto;
+}
+
+.card-horizontal .card-text {
+  padding: 32px 24px;
+  order: 1;
+}
+
+.card-horizontal .card-image {
+  min-height: 220px;
+  padding: 24px 0 0;
+  order: 2;
+}
+
+.card-horizontal .card-image img {
+  width: 78%;
+  max-width: 320px;
+}
+
+.cz-card-title {
+  font-size: 24px;
+}
+
+.cz-card-title.large {
+  font-size: 30px;
+}
+
+.cz-card-subtitle {
+  font-size: 14px;
+  white-space: normal !important;
+}
+
+.cz-card-actions {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.btn-outline-dark,
+.btn-outline-light,
+.btn-dark,
+.btn-outline-white {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------- CloudX mobile ---------- */
+
+.cloudx {
+  padding: 64px 0;
+}
+
+.cloudx::before {
+  width: 360px;
+  height: 360px;
+  right: -180px;
+}
+
+.cloudx-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.cloudx-dashboard {
+  width: 100%;
+}
+
+.db-row {
+  grid-template-columns: 1fr;
+}
+
+/* ---------- Why / stats mobile ---------- */
+
+.why {
+  padding: 64px 0;
+}
+
+.why-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stat-box {
+  padding: 28px 18px 24px;
+}
+
+.stat-value {
+  font-size: 34px;
+}
+
+.why-awards {
+  margin-top: 36px;
+  padding-top: 32px;
+}
+
+.award-label {
+  line-height: 1.6;
+}
+
+/* ---------- News mobile ---------- */
+
+.news-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.news-grid {
+  grid-template-columns: 1fr;
+}
+
+.news-card {
+  padding: 28px 24px;
+}
+
+/* ---------- Footer CTA mobile ---------- */
+
+.footer-cta {
+  padding: 84px 0;
+}
+
+.footer-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.footer-cta-actions {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.link-arrow {
+  justify-content: center;
+}
+
+/* ---------- Footer mobile ---------- */
+
+footer {
+  padding: 64px 20px 48px;
+}
+
+.footer-inner {
+  max-width: 100%;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.footer-bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-social {
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+.footer-crafted {
+  line-height: 1.6;
+}
+
+/* ---------- Newsletter mobile ---------- */
+
+.nl-strip {
+  margin: 0;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.nl-left {
+  padding-right: 0;
+}
+
+.nl-right {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.nl-form {
+  width: 100%;
+}
+
+.nl-check {
+  margin-left: 0;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+/* ---------- Network strip mobile ---------- */
+
+.network-strip {
+  padding: 48px 20px;
+}
+
+.network-strip-inner {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.network-office {
+  padding: 0;
+}
+
+.network-global {
+  padding-left: 0;
+}
+
+.network-find {
+  margin-left: 0;
+}
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 380px) {
+  :root {
+    --container-padding: 16px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-event {
+    padding: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Tablet and up ---------- */
+
+@media (min-width: 769px) {
+  :root {
+    --container-padding: 48px;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-actions {
+    display: flex;
+  }
+
+  .hero {
+    height: 100vh;
+    min-height: 720px;
+    padding-top: 0 !important;
+  }
+
+  .hero-content-wrap {
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 var(--container-padding) 80px;
+    pointer-events: none;
+  }
+
+  .hero-content-wrap > * {
+    pointer-events: all;
+  }
+
+  .hero-event {
+    position: absolute;
+    right: var(--container-padding);
+    bottom: 80px;
+    width: 310px;
+    margin-top: 0;
+  }
+
+  .hero-scroll {
+    display: flex;
+  }
+
+  .problem-inner,
+  .cloudx-inner,
+  .why-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cz-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-horizontal {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ---------- Desktop restore ---------- */
+
+@media (min-width: 1201px) {
+  :root {
+    --container-padding: 80px;
+  }
+
+  .nav-inner {
+    padding: 0 var(--container-padding);
+  }
+
+  .hero-content-wrap {
+    padding: 0 var(--container-padding) 80px;
+  }
+}
+
   /* ─── PRELOADER ─── */
   #preloader {
     position: fixed;
