@@ -3170,9 +3170,6 @@
   .login-link:hover { color: rgba(245,243,239,0.7); }
 </style>
 
-<div id="nav-placeholder"></div>
-
-<!-- PAGE HERO -->
 <style>
   .page-hero-wrap { max-width:1440px; margin:var(--nav-h) auto 0; padding:12px 80px 0; }
   .page-hero { border-radius:4px; overflow:hidden; background:#000; display:grid; grid-template-columns:2fr 3fr; height:460px; }
@@ -3202,6 +3199,1123 @@
   .btn-cx-login { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:"Public Sans",sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:14px 28px; text-decoration:none; transition:background .2s; }
   .btn-cx-login:hover { background:#c41019; }
 </style>
+
+<style>
+
+/* =========================================================
+   TARGET PRO RESPONSIVE BUILD
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   Scope: Static header/footer integration + mobile/tablet/iPad responsive optimization
+   Notes:
+   - Desktop layout stays untouched.
+   - Header/footer are static from index.html.
+   - Mobile menu hidden on desktop and enabled on mobile.
+   Paste location: directly before closing closing style tag.
+   ========================================================= */
+
+/* ---------- GLOBAL SAFETY ---------- */
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 0 !important;
+}
+
+img,
+video,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+section,
+main,
+footer,
+nav,
+div {
+  box-sizing: border-box;
+}
+
+/* ---------- STATIC HEADER / MOBILE MENU SAFETY ---------- */
+.nav-mobile-menu {
+  display: none;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+.nav-mobile-menu a.active {
+  color: var(--accent) !important;
+}
+
+/* Newsletter drawer support from static footer */
+#nl-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+#nl-drawer-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  background: #0a0a0a;
+  border-right: 1px solid rgba(255,255,255,.08);
+  z-index: 9999;
+  padding: 80px 24px 32px;
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+body.nl-drawer-open #nl-drawer-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.nl-drawer-open #nl-drawer-panel {
+  transform: translateX(0);
+}
+
+body.nl-drawer-open,
+html.nl-drawer-open {
+  overflow: hidden !important;
+}
+
+#nl-drawer-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(245,243,239,.7);
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 9999;
+  display: block !important;
+  padding: 8px;
+}
+
+@media (min-width: 481px) {
+  #nl-drawer-panel,
+  #nl-drawer-overlay,
+  #nl-btn-mobile {
+    display: none !important;
+  }
+}
+
+/* ---------- TABLET / IPAD FOUNDATION ---------- */
+@media (max-width: 1180px) {
+  .page-hero-wrap,
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing,
+  .sol-editorial,
+  .cloudx-inner,
+  .why-inner,
+  .news-inner,
+  .footer-cta-inner {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .page-hero {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .page-hero-left {
+    padding: 90px 48px 42px !important;
+    order: 1 !important;
+  }
+
+  .page-hero-right {
+    order: 2 !important;
+    min-height: 360px !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(38px, 6vw, 56px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .page-hero-desc {
+    max-width: 720px !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  .cx-title {
+    font-size: clamp(30px, 4.5vw, 42px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .cx-body {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .cx-caps-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px 28px !important;
+  }
+
+  .cx-closing {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .sol-editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .footer-cta-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    align-items: start !important;
+  }
+
+  .footer-cta-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .footer-inner,
+  .network-strip-inner {
+    max-width: 100% !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .footer-top,
+  .network-strip-inner {
+    grid-template-columns: 1.4fr 1fr 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+/* ---------- NAV / HEADER RESPONSIVE FIX ---------- */
+@media (max-width: 900px) {
+  nav {
+    height: 68px !important;
+    min-height: 68px !important;
+    background: rgba(10,10,10,0.92) !important;
+    z-index: 9999 !important;
+    overflow: visible !important;
+  }
+
+  .nav-inner {
+    height: 68px !important;
+    padding: 0 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .nav-links,
+  .nav-actions,
+  .mega {
+    display: none !important;
+  }
+
+  .nav-logo {
+    width: 128px !important;
+    min-width: 128px !important;
+    height: 32px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 10001 !important;
+  }
+
+  .nav-logo .cz-logo-svg {
+    width: 128px !important;
+    max-width: 128px !important;
+    height: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+    color: var(--accent) !important;
+  }
+
+  .nav-logo .cz-brandmark-svg {
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  nav.scrolled .cz-logo-svg {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  nav.scrolled .cz-brandmark-svg {
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  .nav-hamburger {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 28px !important;
+    transform: translateY(-50%) !important;
+    width: 34px !important;
+    height: 26px !important;
+    z-index: 99999 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    background: linear-gradient(#ffffff, #ffffff) center / 34px 2px no-repeat !important;
+  }
+
+  .nav-hamburger span {
+    display: none !important;
+  }
+
+  .nav-hamburger::before,
+  .nav-hamburger::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    width: 34px !important;
+    height: 2px !important;
+    background: #ffffff !important;
+    border-radius: 999px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: transform .25s ease, top .25s ease, bottom .25s ease !important;
+  }
+
+  .nav-hamburger::before {
+    top: 2px !important;
+  }
+
+  .nav-hamburger::after {
+    bottom: 2px !important;
+  }
+
+  body.nav-open .nav-hamburger {
+    background: none !important;
+  }
+
+  body.nav-open .nav-hamburger::before {
+    top: 12px !important;
+    transform: rotate(45deg) !important;
+  }
+
+  body.nav-open .nav-hamburger::after {
+    bottom: 12px !important;
+    transform: rotate(-45deg) !important;
+  }
+
+  .nav-mobile-menu {
+    position: fixed !important;
+    top: 68px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(100svh - 68px) !important;
+    background: rgba(10,10,10,0.98) !important;
+    z-index: 9998 !important;
+    padding: 34px 28px !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+
+  .nav-mobile-menu.open {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-mobile-menu a {
+    color: #f5f5f5 !important;
+    text-decoration: none !important;
+    font-family: 'Switzer', sans-serif !important;
+    font-size: 20px !important;
+    letter-spacing: .03em !important;
+  }
+
+  .nav-mobile-menu a.active {
+    color: var(--accent) !important;
+  }
+
+  .nav-mobile-actions {
+    display: flex !important;
+    gap: 16px !important;
+    margin-top: 18px !important;
+    padding-top: 22px !important;
+    border-top: 1px solid rgba(255,255,255,.12) !important;
+  }
+
+  .nav-mobile-actions a {
+    font-size: 13px !important;
+    color: var(--accent) !important;
+    text-transform: uppercase !important;
+    letter-spacing: .08em !important;
+  }
+
+  .page-hero-wrap,
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing,
+  .sol-editorial,
+  .cloudx-inner,
+  .why-inner,
+  .news-inner,
+  .footer-cta-inner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .page-hero-left {
+    padding: 72px 40px 34px !important;
+  }
+
+  .page-hero-right {
+    min-height: 320px !important;
+  }
+
+  .footer-top,
+  .network-strip-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 64px;
+  }
+
+  nav {
+    height: 64px !important;
+    min-height: 64px !important;
+  }
+
+  .nav-inner {
+    height: 64px !important;
+    padding: 0 20px !important;
+  }
+
+  .nav-logo {
+    width: 120px !important;
+    min-width: 120px !important;
+    height: 28px !important;
+  }
+
+  .nav-logo .cz-logo-svg {
+    width: 120px !important;
+    max-width: 120px !important;
+  }
+
+  .nav-hamburger {
+    right: 20px !important;
+    width: 32px !important;
+    height: 24px !important;
+    background-size: 32px 2px !important;
+  }
+
+  .nav-hamburger::before,
+  .nav-hamburger::after {
+    width: 32px !important;
+  }
+
+  body.nav-open .nav-hamburger::before {
+    top: 11px !important;
+  }
+
+  body.nav-open .nav-hamburger::after {
+    bottom: 11px !important;
+  }
+
+  .nav-mobile-menu {
+    top: 64px !important;
+    height: calc(100svh - 64px) !important;
+    padding: 30px 20px !important;
+  }
+
+  .page-hero-wrap {
+    padding: 14px 20px 0 !important;
+    margin-top: 64px !important;
+  }
+
+  .page-hero {
+    border-radius: 4px !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .page-hero-left {
+    padding: 52px 24px 30px !important;
+  }
+
+  .page-hero-eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(32px, 11vw, 48px) !important;
+    line-height: 1.04 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .page-hero-desc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .page-hero-right {
+    min-height: 240px !important;
+  }
+
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing,
+  .sol-editorial {
+    padding: 56px 20px !important;
+  }
+
+  .cx-video-wrap {
+    padding-top: 0 !important;
+  }
+
+  .cx-title {
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .cx-body {
+    font-size: 14px !important;
+    line-height: 1.68 !important;
+    max-width: 100% !important;
+  }
+
+  .cx-caps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .cx-cap {
+    font-size: 13px !important;
+  }
+
+  .cx-closing {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .innov-link,
+  .innov-btn-outline,
+  .btn-cx-login {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .sol-editorial {
+    margin-top: 0 !important;
+  }
+
+  .sol-editorial-label {
+    padding: 0 0 18px !important;
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+  }
+
+  .sol-editorial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .ed-card {
+    min-height: 210px !important;
+    padding: 28px 24px !important;
+  }
+
+  .ed-card-content {
+    margin-top: 32px !important;
+  }
+
+  .ed-card-title {
+    font-size: 22px !important;
+    line-height: 1.05 !important;
+  }
+
+  .footer-cta {
+    padding: 72px 0 !important;
+  }
+
+  .footer-cta-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    align-items: start !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .footer-cta-title {
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .footer-cta-title br {
+    display: none !important;
+  }
+
+  .footer-cta-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .footer-cta-actions a,
+  .footer-cta-actions .btn-primary,
+  .footer-cta-actions .link-arrow {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex !important;
+  }
+
+  .nl-strip {
+    display: none !important;
+  }
+
+  .footer-inner {
+    display: block !important;
+    padding: 48px 20px 36px !important;
+  }
+
+  .footer-top {
+    display: block !important;
+  }
+
+  .footer-brand-col {
+    margin-bottom: 26px !important;
+  }
+
+  .footer-col {
+    display: none !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 22px 0 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-social,
+  .footer-legal {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+
+  .network-strip {
+    padding: 40px 0 !important;
+  }
+
+  .network-strip-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .network-office {
+    padding: 0 !important;
+  }
+
+  .network-global {
+    padding-left: 0 !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 480px) {
+  .nav-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .nav-logo {
+    width: 118px !important;
+    min-width: 118px !important;
+  }
+
+  .nav-logo .cz-logo-svg {
+    width: 118px !important;
+    max-width: 118px !important;
+  }
+
+  .nav-hamburger {
+    right: 18px !important;
+    width: 30px !important;
+    height: 22px !important;
+    background-size: 30px 2px !important;
+  }
+
+  .nav-hamburger::before,
+  .nav-hamburger::after {
+    width: 30px !important;
+  }
+
+  .page-hero-wrap,
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing,
+  .sol-editorial,
+  .footer-inner,
+  .network-strip-inner,
+  .footer-cta-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .page-hero-left {
+    padding: 46px 20px 26px !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(30px, 11vw, 42px) !important;
+  }
+
+  .page-hero-right {
+    min-height: 220px !important;
+  }
+
+  .cx-title {
+    font-size: clamp(26px, 9vw, 34px) !important;
+  }
+
+  .ed-card {
+    padding: 26px 22px !important;
+  }
+}
+
+/* =========================================================
+   END TARGET PRO RESPONSIVE BUILD
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   This is the end of the responsive style block.
+   Paste location: directly before closing closing style tag.
+   ========================================================= */
+
+
+
+/* =========================================================
+   TARGET PRO FINAL DISPLAY FIX
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   Scope: Prevent CSS text rendering, hide mobile-only drawers on desktop, keep nav/footer clean.
+   ========================================================= */
+
+.nav-mobile-menu {
+  display: none;
+}
+
+#nl-drawer-overlay,
+#nl-drawer-panel {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#nl-drawer-panel {
+  transform: translateX(-100%);
+}
+
+body.nl-drawer-open #nl-drawer-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.nl-drawer-open #nl-drawer-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+@media (min-width: 901px) {
+  .nav-mobile-menu,
+  .nav-hamburger,
+  #nl-drawer-overlay,
+  #nl-drawer-panel {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-mobile-menu {
+    display: none !important;
+  }
+
+  .nav-mobile-menu.open {
+    display: flex !important;
+  }
+}
+
+/* =========================================================
+   END TARGET PRO FINAL DISPLAY FIX
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   End of final display style block.
+   ========================================================= */
+
+/* =========================================================
+   TARGET PRO CLOUDX PAGE FINAL POLISH
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   Scope: Static header/footer integration, CloudX layout polish and safety fixes.
+   ========================================================= */
+
+:root {
+  --carbon: #0a0a0a;
+  --steel: #3e3e3d;
+  --light: #dadadb;
+}
+
+.footer-cta-title .cta-word {
+  color: var(--white) !important;
+}
+
+.footer-cta-title .cta-word-accent {
+  color: var(--accent) !important;
+}
+
+.page-hero-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.cx-section,
+.cx-section-narrow,
+.cx-video-wrap,
+.cx-closing {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1180px) {
+  .page-hero-wrap {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .page-hero {
+    height: auto !important;
+    min-height: 420px !important;
+  }
+
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .cx-closing {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-hero-wrap {
+    margin-top: var(--nav-h) !important;
+    padding: 12px 32px 0 !important;
+  }
+
+  .page-hero {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+
+  .page-hero-left {
+    padding: 64px 40px 36px !important;
+  }
+
+  .page-hero-right {
+    min-height: 320px !important;
+  }
+
+  .cx-section,
+  .cx-section-narrow {
+    padding: 64px 32px !important;
+  }
+
+  .cx-video-wrap {
+    padding: 0 32px 64px !important;
+  }
+
+  .cx-closing {
+    padding: 64px 32px !important;
+  }
+
+  .cx-caps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-wrap {
+    padding: 10px 20px 0 !important;
+  }
+
+  .page-hero-left {
+    padding: 54px 28px 30px !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(34px, 11vw, 52px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .page-hero-desc {
+    font-size: 15px !important;
+    line-height: 1.62 !important;
+  }
+
+  .page-hero-right {
+    min-height: 260px !important;
+  }
+
+  .cx-section,
+  .cx-section-narrow {
+    padding: 56px 20px !important;
+  }
+
+  .cx-video-wrap {
+    padding: 0 20px 56px !important;
+  }
+
+  .cx-closing {
+    padding: 56px 20px !important;
+  }
+
+  .cx-title {
+    font-size: clamp(28px, 9vw, 38px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .cx-body {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  .btn-cx-login {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-wrap {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .page-hero-left {
+    padding: 46px 20px 28px !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(30px, 12vw, 42px) !important;
+  }
+
+  .page-hero-right {
+    min-height: 220px !important;
+  }
+
+  .cx-section,
+  .cx-section-narrow,
+  .cx-video-wrap,
+  .cx-closing {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* =========================================================
+   END TARGET PRO CLOUDX PAGE FINAL POLISH
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   This is the end of the CloudX responsive style block.
+   ========================================================= */
+
+</style>
+
+</head>
+<body>
+
+<!-- =========================================================
+     TARGET PRO STATIC HEADER FROM index.html
+     Page: cloudx.html
+     Version: 2.0.0
+     Work by: Target PRO
+     ========================================================= -->
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 234.85 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-brandmark-svg">
+<g id="XMLID_1678_">
+	<g id="XMLID_1679_">
+		<g id="XMLID_1680_">
+			<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
+				c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
+				c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
+			<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
+				l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56c1.44-2.38,1.44-5.35,0-7.73
+				l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+    <svg viewBox="0 0 961.38 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logo-svg" aria-label="Carbon Zapp">
+<g>
+	<g id="XMLID_1678_">
+		<g id="XMLID_1679_">
+			<g id="XMLID_1680_">
+				<path id="XMLID_1682_" d="M49.12,91.64l26.61-43.87c2.93-4.83,8.16-7.77,13.8-7.77h72.44V5.55c0-3.06-2.48-5.55-5.54-5.55H67
+					c-5.64,0-10.87,2.95-13.8,7.77L2.34,91.64c-3.12,5.15-3.12,11.59,0,16.74l50.87,83.86c2.93,4.83,8.16,7.77,13.8,7.77h89.42
+					c3.06,0,5.54-2.47,5.54-5.54v-34.45H89.53c-5.64,0-10.87-2.96-13.8-7.77l-26.61-43.87C46.01,103.23,46.01,96.78,49.12,91.64z"/>
+				<path id="XMLID_1681_" d="M195.53,40h-33.56v39.32h-58.93c-2.61,0-5.01,1.36-6.36,3.58l-8.03,13.24c-1.44,2.38-1.44,5.35,0,7.73
+					l8.03,13.22c1.35,2.23,3.76,3.58,6.36,3.58h58.93v39.33h33.56c2.6,0,5.01-1.36,6.36-3.58l31.88-52.56
+					c1.44-2.38,1.44-5.35,0-7.73l-31.88-52.56C200.54,41.37,198.13,40,195.53,40z"/>
+			</g>
+		</g>
+	</g>
+	<g id="XMLID_1375_">
+		<g id="XMLID_1388_">
+			<path id="XMLID_1676_" d="M341.45,82.55c-3.55-1.11-8.03-2.05-13.07-2.05c-11.48,0-14.28,4.48-14.28,19.23
+				c0,15.59,3.07,20.07,14.56,20.07c4.76,0,9.24-0.94,12.98-2.53l1.96,15.31c-4.85,2.25-11.67,3.74-17.74,3.74
+				c-21.56,0-32.3-11.86-32.3-36.69c0-22.97,10.36-35.94,33.6-35.94c5.51,0,12.05,1.22,16.24,2.81L341.45,82.55z"/>
+			<path id="XMLID_1673_" d="M390.66,122.96H369l-3.08,12.05h-20.63l23.24-70h23.34l23.62,70h-21.75L390.66,122.96z M378.05,87.77
+				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.28L378.05,87.77z"/>
+			<path id="XMLID_1398_" d="M464.38,106.83l15.22,28.18h-16.97c-3.52,0-6.7-2.11-8.06-5.35l-8.01-19.01h-7.1v24.36h-19.51V65h26.7
+				c18.76,0,28.28,6.99,28.28,22.68C474.93,97.01,471.1,104.11,464.38,106.83z M446.84,80.59h-7.38v16.04h7.19
+				c5.78,0,7.93-1.39,7.93-8.21C454.58,82.26,452.62,80.59,446.84,80.59z"/>
+			<path id="XMLID_1394_" d="M514.38,135.01h-29.97V65h30.06c16.15,0,24.18,7.18,24.18,18.2c0,7.57-3.54,12.23-9.15,14.75v0.19
+				c7.55,2.34,11.48,7.85,11.48,16.24C540.98,127.08,533.05,135.01,514.38,135.01z M513.73,80.78h-10.55v11.94h10.74
+				c4.48,0,6.06-1.67,6.06-6.15C519.98,82.17,518.3,80.78,513.73,80.78z M514.38,106.44h-11.2v13.17h11.49
+				c4.95,0,6.81-1.4,6.81-6.63C521.47,108.31,519.7,106.44,514.38,106.44z"/>
+			<path id="XMLID_1391_" d="M577.83,136.23c-22.21,0-32.01-11.67-32.01-36.31s9.52-36.13,32.01-36.13
+				c22.49,0,32.01,11.49,32.01,36.13C609.85,125.12,600.33,136.23,577.83,136.23z M577.74,80.59c-8.68,0-11.39,3.54-11.39,19.32
+				c0,15.87,2.81,19.6,11.58,19.6c8.68,0,11.39-3.82,11.39-19.6C589.32,84.04,586.7,80.59,577.74,80.59z"/>
+			<path id="XMLID_1389_" d="M668.28,135.01c-3.28,0-6.35-1.58-8.27-4.22l-20.28-28.08l-4.3-6.24l-0.19,0.08l0.09,7.57v30.9h-17.35
+				V65h10.9c3.34,0,6.47,1.63,8.38,4.39l22.16,31.93l0.19-0.09l-0.19-7.47V65h17.27v70H668.28z"/>
+		</g>
+		<g id="XMLID_1376_">
+			<path id="XMLID_1385_" d="M815.32,122.96h-21.65l-3.08,12.05h-20.63l23.25-70h23.33l23.61,70H818.4L815.32,122.96z M802.73,87.77
+				l-5.04,19.6h13.72l-4.95-19.51l-1.68-7.46h-0.27L802.73,87.77z"/>
+			<path id="XMLID_1382_" d="M871.09,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
+				C900.22,105.05,892,114,871.09,114z M871.09,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
+				C880.05,82.45,878,80.59,871.09,80.59z"/>
+			<path id="XMLID_1379_" d="M932.26,114h-6.62v21h-19.51V65h26.13c20.72,0,29.13,8.21,29.13,25.02
+				C961.38,105.05,953.17,114,932.26,114z M932.26,80.59h-6.62v18.48h6.62c6.54,0,8.96-1.4,8.96-9.14
+				C941.22,82.45,939.17,80.59,932.26,80.59z"/>
+			<path id="XMLID_1377_" d="M714.95,135.05v-8.1c0-2.69,0.82-5.29,2.35-7.5l21.83-31.34l4.39-5.98l-0.09-0.19h-28.47v-16.9h51.99
+				v9.51c0,2.69-0.82,5.31-2.36,7.5l-20.97,30.04l-4.39,5.88l0.09,0.28h28l-0.28,16.79H714.95z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="solutions.html">Solutions</a></li>
+    <li><a href="innovation.html">Innovation</a></li>
+    <li><a href="cloudx.html" class="active">CloudX</a></li>
+    <li><a href="cznews.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="https://carbonzapp.com/all-machines/" target="_blank" rel="noopener" class="btn-store">Store</a>
+    <a href="https://cloudx.carbonzapp.com/client" target="_blank" rel="noopener" class="btn-login">Login</a>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="nav-hamburger" id="nav-hamburger" onclick="var nl=document.body.classList.contains('nl-drawer-open');if(nl){document.body.classList.remove('nl-drawer-open');document.documentElement.style.overflow='';return;}var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.classList.toggle('nav-open',open);" >
+    <span></span><span></span><span></span>
+  </div>
+</div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+
+  <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Home</a>
+  <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Solutions</a>
+  <a href="innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Innovation</a>
+  <a href="cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">CloudX</a>
+  <a href="cznews.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">News</a>
+  <a href="contact.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Contact</a>
+  <div class="nav-mobile-actions">
+    <a href="https://carbonzapp.com/all-machines/" target="_blank" class="btn-store">Store</a>
+    <a href="https://cloudx.carbonzapp.com/client" target="_blank" class="btn-login">Login</a>
+  </div>
+</div>
 
 <div class="page-hero-wrap">
   <div class="page-hero">
@@ -3288,10 +4402,244 @@
   </div>
 </div>
 
-<div id="footer-cta-placeholder"></div>
-<div id="footer-placeholder"></div>
+<!-- =========================================================
+     TARGET PRO STATIC FOOTER FROM index.html
+     Page: cloudx.html
+     Version: 2.0.0
+     Work by: Target PRO
+     ========================================================= -->
+<!-- ═══════════════════════════════ FOOTER CTA ═══════════════════════════════ -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <h2 class="footer-cta-title"><span class="cta-word">READY</span> <span class="cta-word">TO MOVE</span> <span class="cta-word cta-word-accent">FORWARD?</span></h2>
+      <p class="footer-cta-sub">Find the right system for your operation or connect with an authorized representative in your region.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+      <a href="assets/pdfs/CZ_GLOBAL_REPR.pdf" target="_blank" rel="noopener" class="link-arrow">Find a Distributor →</a>
+    </div>
+  </div>
+</section>
 
-<script src="components.js"></script>
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <svg viewBox="0 0 400 118.22" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="cz-logotype-2l">
+<g>
+	<g id="XMLID_00000080915881670183587740000000085572578607977128_">
+		<path id="XMLID_00000176006771781295828880000001859487201463875517_" d="M201.84,23.87c-2.1-0.66-4.74-1.21-7.73-1.21
+			c-6.79,0-8.44,2.65-8.44,11.36c0,9.22,1.82,11.86,8.61,11.86c2.82,0,5.46-0.55,7.67-1.48l1.16,9.05c-2.87,1.33-6.9,2.2-10.48,2.2
+			c-12.74,0-19.09-7-19.09-21.68c0-13.57,6.13-21.24,19.86-21.24c3.25,0,7.12,0.72,9.6,1.66L201.84,23.87z"/>
+		<path id="XMLID_00000152970878059953179810000002621249577525375935_" d="M230.92,47.75h-12.8l-1.82,7.12h-12.19l13.74-41.38
+			h13.79l13.96,41.38h-12.85L230.92,47.75z M223.47,26.96l-2.98,11.58h8.11l-2.92-11.53l-0.99-4.41h-0.16L223.47,26.96z"/>
+		<path id="XMLID_00000031889916422204559240000000824751284053718450_" d="M274.51,38.22l8.99,16.66h-10.03
+			c-2.08,0-3.96-1.25-4.76-3.16l-4.74-11.24h-4.19v14.4h-11.53V13.49h15.78c11.09,0,16.72,4.14,16.72,13.41
+			C280.74,32.42,278.48,36.61,274.51,38.22z M264.13,22.71h-4.36v9.49h4.25c3.42,0,4.69-0.83,4.69-4.86
+			C268.71,23.7,267.55,22.71,264.13,22.71z"/>
+		<path id="XMLID_00000013168126147200714770000006184956592480623751_" d="M304.06,54.88h-17.71V13.49h17.77
+			c9.55,0,14.29,4.25,14.29,10.76c0,4.47-2.09,7.23-5.4,8.72v0.11c4.47,1.38,6.79,4.63,6.79,9.6
+			C319.78,50.19,315.1,54.88,304.06,54.88z M303.67,22.82h-6.23v7.06h6.34c2.64,0,3.59-0.99,3.59-3.64
+			C307.37,23.65,306.37,22.82,303.67,22.82z M304.06,37.99h-6.62v7.78h6.78c2.92,0,4.03-0.82,4.03-3.91
+			C308.25,39.09,307.2,37.99,304.06,37.99z"/>
+		<path id="XMLID_00000090253562339020785820000014479032283044541612_" d="M341.57,55.59c-13.13,0-18.92-6.9-18.92-21.46
+			c0-14.57,5.63-21.36,18.92-21.36c13.3,0,18.93,6.79,18.93,21.36C360.49,49.03,354.86,55.59,341.57,55.59z M341.51,22.71
+			c-5.13,0-6.73,2.1-6.73,11.42c0,9.38,1.66,11.58,6.84,11.58c5.13,0,6.73-2.26,6.73-11.58C348.35,24.75,346.81,22.71,341.51,22.71z
+			"/>
+		<path id="XMLID_00000125576327399160945890000004588128736865701034_" d="M395.03,54.88c-1.94,0-3.75-0.93-4.89-2.5l-11.99-16.59
+			l-2.54-3.7l-0.11,0.06l0.06,4.47v18.26H365.3V13.49h6.45c1.98,0,3.83,0.97,4.96,2.59l13.1,18.87l0.11-0.05l-0.11-4.41v-17H400
+			v41.38L395.03,54.88L395.03,54.88z"/>
+	</g>
+	<g id="XMLID_00000132047374684032640030000003365064625450956937_">
+		<path id="XMLID_00000161625550210288727290000015200878215025810061_" d="M232.86,98.35h-12.8l-1.82,7.11h-12.19l13.74-41.38
+			h13.79l13.96,41.38h-12.86L232.86,98.35z M225.42,77.55l-2.98,11.58h8.11l-2.93-11.53l-0.99-4.41h-0.16L225.42,77.55z"/>
+		<path id="XMLID_00000060019383514659736310000007638930862321752235_" d="M265.83,93.05h-3.92v12.41h-11.53V64.09h15.45
+			c12.25,0,17.21,4.86,17.21,14.79C283.04,87.76,278.19,93.05,265.83,93.05z M265.83,73.3h-3.92v10.93h3.92
+			c3.86,0,5.3-0.83,5.3-5.41C271.13,74.41,269.91,73.3,265.83,73.3z"/>
+		<path id="XMLID_00000129176095134709063970000016755659074718709685_" d="M301.98,93.05h-3.91v12.41h-11.53V64.09h15.44
+			c12.25,0,17.22,4.86,17.22,14.79C319.2,87.76,314.35,93.05,301.98,93.05z M301.98,73.3h-3.91v10.93h3.91c3.86,0,5.3-0.83,5.3-5.41
+			C307.28,74.41,306.07,73.3,301.98,73.3z"/>
+		<path id="XMLID_00000013905479607970875440000002824559246493519519_" d="M173.53,105.5v-4.79c0-1.58,0.48-3.13,1.39-4.43
+			l12.9-18.53l2.6-3.53l-0.06-0.11h-16.22v-9.98h30.13v5.62c0,1.59-0.49,3.13-1.4,4.43l-12.4,17.75l-2.59,3.48l0.06,0.17h16.55
+			l-0.17,9.93h-30.79V105.5z"/>
+	</g>
+	<g id="XMLID_00000004543759459776758580000017855367178137969303_">
+		<g id="XMLID_00000109722323609244788940000006833804179099432889_">
+			<path id="XMLID_00000081648858034737407110000006443239721645281432_" d="M29.04,54.17l15.72-25.93
+				c1.73-2.85,4.82-4.59,8.16-4.59h42.82V3.28c0-1.81-1.47-3.28-3.27-3.28H39.61c-3.33,0-6.43,1.74-8.15,4.59L1.38,54.17
+				c-1.84,3.04-1.84,6.85,0,9.89l30.07,49.57c1.73,2.85,4.82,4.59,8.15,4.59h52.86c1.8,0,3.27-1.47,3.27-3.28V94.58H52.92
+				c-3.33,0-6.43-1.74-8.16-4.59L29.04,64.06C27.19,61.01,27.19,57.2,29.04,54.17z"/>
+			<path id="XMLID_00000068674361520583963160000007628094044354249151_" d="M115.58,23.64H95.74v23.24H60.9
+				c-1.54,0-2.96,0.81-3.76,2.12l-4.75,7.82c-0.85,1.4-0.85,3.16,0,4.56l4.75,7.82c0.79,1.31,2.22,2.11,3.76,2.11h34.83v23.25h19.85
+				c1.53,0,2.96-0.81,3.76-2.12l18.85-31.07c0.85-1.4,0.85-3.16,0-4.56l-18.85-31.07C118.55,24.44,117.12,23.64,115.58,23.64z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+        </div>
+        <p class="footer-tagline">Engineering precision injection service equipment since 1989.</p>
+        <div class="footer-contact-block">
+          <a href="mailto:sales@carbonzapp.com" class="footer-contact-line">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send email
+          </a>
+          <a href="tel:+302109856110" class="footer-contact-line">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +30 210 98 56 110
+          </a>
+          <div class="footer-hours">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Fri 08:00–16:00 (UTC+2)
+          </div>
+          <button class="nl-btn-mobile" id="nl-btn-mobile">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="nl-btn-mobile-text">Get CZ Newsletter</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Company</h6>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Innovation & R&D</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Solutions</h6>
+        <ul>
+          <li><a href="#">Specialists</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">Large Engines</a></li>
+          <li><a href="cloudx.html">CloudX</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Discover</h6>
+        <ul>
+          <li><a href="#">Global Network</a></li>
+          <li><a href="assets/pdfs/CZ_Product_Catalog.pdf" target="_blank" rel="noopener">Product Catalog</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="cznews.html">News</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  <div class="nl-strip" style="margin:0;padding-left:0;padding-right:0;"><div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:0;width:100%;">
+    <div class="nl-left">
+      <div class="nl-title">Join the Carbon Zapp Newsletter</div>
+    </div>
+    <div class="nl-right">
+      <div class="nl-form">
+        <input type="email" class="nl-input" placeholder="Your email address">
+        <button class="nl-btn">Subscribe</button>
+      </div>
+      <label class="nl-check">
+        <input type="checkbox">
+        I agree to receive updates from Carbon Zapp
+      </label>
+    </div>
+  </div></div>
+
+  <div class="footer-bottom">
+      <div class="footer-legal">
+        © 1989—2026 Carbon Zapp
+        <span class="footer-legal-sep">·</span>
+        <a href="#">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/CarbonZapp" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/user/CarbonZapp" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/carbonzapp/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/CarbonZapp" target="_blank">Facebook</a>
+      </div>
+      <div class="footer-crafted">
+        Crafted by <a href="https://www.eternaloptimists.com" target="_blank">Eternal Optimists</a>
+      </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+     TARGET PRO NEWSLETTER DRAWER FROM index.html
+     Page: cloudx.html
+     Version: 2.0.0
+     ========================================================= -->
+<div id="nl-drawer-overlay"></div>
+<div id="nl-drawer-panel">
+  <button id="nl-drawer-close" type="button" aria-label="Close newsletter">×</button>
+  
+  <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ED1C24;margin-bottom:8px;">Newsletter</div>
+  <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop<br>with Carbon Zapp</h3>
+  <input type="email" id="nl-email" placeholder="Your email address" oninput="
+    var val=this.value;
+    var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    var btn=document.getElementById('nl-sub-btn');
+    btn.style.opacity=valid?'1':'0.35';
+    btn.style.cursor=valid?'pointer':'not-allowed';
+    btn.disabled=!valid;
+  " style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;box-sizing:border-box;">
+  <button id="nl-sub-btn" disabled onclick="
+    var email=document.getElementById('nl-email').value;
+    var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var m=document.getElementById('nl-thanks');
+    if(valid){
+      m.style.color='rgba(245,243,239,.6)';
+      m.textContent='Thank you for subscribing to the Carbon Zapp Newsletter';
+    } else {
+      m.style.color='#ED1C24';
+      m.textContent='Please enter a valid email address.';
+    }
+    m.style.display='block';m.style.opacity='1';
+    var inp=document.getElementById('nl-email');var btn=document.getElementById('nl-sub-btn');
+    inp.value='';btn.disabled=true;btn.style.opacity='0.35';btn.style.cursor='not-allowed';
+    setTimeout(function(){m.style.opacity='0';setTimeout(function(){m.style.display='none';m.style.opacity='1';},600);},2500);
+  " style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:not-allowed;margin-top:12px;width:100%;box-sizing:border-box;opacity:0.35;transition:opacity .2s;">Subscribe</button>
+  <div style="display:flex;align-items:flex-start;gap:10px;margin-top:12px;cursor:pointer;" onclick="var cb=document.getElementById('nl-agree');cb.checked=!cb.checked;cb.dispatchEvent(new Event('change'));">
+    <input type="checkbox" id="nl-agree" style="width:14px;height:14px;cursor:pointer;flex-shrink:0;margin-top:2px;appearance:none;-webkit-appearance:none;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:2px;pointer-events:none;" onchange="this.style.background=this.checked?'#ED1C24':'transparent';this.style.borderColor=this.checked?'#ED1C24':'rgba(255,255,255,.3)';this.style.backgroundImage=this.checked?'url(&quot;data:image/svg+xml,%3Csvg viewBox=\'0 0 10 8\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 4l3 3 5-6\' stroke=\'white\' stroke-width=\'1.5\'/%3E%3C/svg%3E&quot;)':'none';this.style.backgroundSize='10px';this.style.backgroundRepeat='no-repeat';this.style.backgroundPosition='center'">
+    <span style="font-size:11px;color:rgba(245,243,239,.4);line-height:1.5;">I agree to receive updates from Carbon Zapp</span>
+  </div>
+  <div id="nl-thanks" style="display:none;font-family:'Public Sans',sans-serif;font-size:12px;color:rgba(245,243,239,.6);text-align:center;padding:12px 0;transition:opacity .6s;">Thank you for subscribing to the Carbon Zapp Newsletter</div>
+</div>
+
+<script>
+/* =========================================================
+   TARGET PRO CLOUDX PAGE JS
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   Scope: Safe nav scroll support for static header.
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", function() {
+  var nav = document.querySelector("nav");
+  if (nav) {
+    function onScroll() {
+      nav.classList.toggle("scrolled", window.scrollY > 80);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+});
+/* =========================================================
+   END TARGET PRO CLOUDX PAGE JS
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   ========================================================= */
+</script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   // ── Actuator filters ──
@@ -3342,5 +4690,65 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
+<script>
+/* =========================================================
+   TARGET PRO STATIC HEADER/FOOTER JS
+   Page: cloudx.html
+   Version: 2.0.0
+   Work by: Target PRO
+   Scope: Newsletter drawer support for static footer.
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", function() {
+  function openNewsletterDrawer() {
+    document.body.classList.add("nl-drawer-open");
+    document.documentElement.classList.add("nl-drawer-open");
+    document.documentElement.style.overflow = "hidden";
+  }
+
+  function closeNewsletterDrawer() {
+    document.body.classList.remove("nl-drawer-open");
+    document.documentElement.classList.remove("nl-drawer-open");
+    document.documentElement.style.overflow = "";
+  }
+
+  var newsletterBtn = document.getElementById("nl-btn-mobile");
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openNewsletterDrawer();
+    });
+  }
+
+  var drawerClose = document.getElementById("nl-drawer-close");
+  if (drawerClose) {
+    drawerClose.addEventListener("click", closeNewsletterDrawer);
+  }
+
+  var drawerOverlay = document.getElementById("nl-drawer-overlay");
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener("click", closeNewsletterDrawer);
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeNewsletterDrawer();
+    }
+  });
+});
+/* =========================================================
+   END TARGET PRO STATIC HEADER/FOOTER JS
+   Page: cloudx.html
+   Version: 2.0.0
+   ========================================================= */
+</script>
+
 </body>
+
+<!-- =========================================================
+     END TARGET PRO CLOUDX STATIC HEADER/FOOTER VERSION 2.0.0
+     Page: cloudx.html
+     Work by: Target PRO
+     ========================================================= -->
 </html>
