@@ -7,6 +7,37 @@
 <link rel="icon" type="image/svg+xml" href="assets/icons/CZ_brandmark_black.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  .page-hero-wrap { max-width:1440px; margin:var(--nav-h) auto 0; padding:12px 80px 0; }
+  .page-hero { border-radius:4px; overflow:hidden; background:#000; display:grid; grid-template-columns:2fr 3fr; height:460px; }
+  .page-hero-left { padding:80px 48px 48px; display:flex; flex-direction:column; justify-content:flex-start; background:#000; }
+  .page-hero-eyebrow { font-family:"DM Mono",monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#ED1C24; margin-bottom:12px; }
+  .page-hero-title { font-family:"Gunterz",sans-serif; font-size:38px; line-height:1.05; color:#f5f3ef; margin-bottom:16px; }
+  .page-hero-desc { font-size:14px; font-weight:200; line-height:1.65; color:rgba(245,243,239,0.5); max-width:380px; }
+  .page-hero-right { background:#0a0a0a; }
+
+  /* ── CLOUDX PAGE ── */
+  .cx-section { max-width:1440px; margin:0 auto; padding:80px 80px; }
+  .cx-section-narrow { max-width:1440px; margin:0 auto; padding:80px 80px; }
+  .cx-eyebrow { font-family:"DM Mono",monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#ED1C24; margin-bottom:16px; }
+  .cx-title { font-family:"Gunterz",sans-serif; font-size:36px; line-height:1.05; color:#f5f3ef; margin-bottom:28px; max-width:700px; }
+  .cx-body { font-size:15px; font-weight:300; line-height:1.75; color:rgba(245,243,239,.65); max-width:720px; margin-bottom:20px; }
+  .cx-divider { border:none; border-top:1px solid rgba(255,255,255,.06); margin:0; }
+  .cx-caps-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 48px; margin-top:32px; max-width:760px; }
+  .cx-cap { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:rgba(245,243,239,.7); line-height:1.5; }
+  .cx-cap-dot { width:5px; height:5px; background:#ED1C24; border-radius:50%; flex-shrink:0; margin-top:7px; }
+  .cx-video-wrap { max-width:1440px; margin:0 auto; padding:0 80px 80px; }
+  .cx-video-inner { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px; background:#0a0a0a; }
+  .cx-video-inner iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  .cx-closing { max-width:1440px; margin:0 auto; padding:80px 80px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  .cx-login-wrap { margin-top:40px; }
+
+  /* ── LOGIN BUTTON ── */
+  .btn-cx-login { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:"Public Sans",sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:14px 28px; text-decoration:none; transition:background .2s; }
+  .btn-cx-login:hover { background:#c41019; }
+</style>
+
 <style>
 
   @font-face {
@@ -2341,7 +2372,7 @@
   .filter-count{margin-left:auto;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,243,239,0.2);padding-left:12px;flex-shrink:0}
   /* ─── HERO ─── */
   .sol-hero-wrap{max-width:1440px;margin:0 auto;padding:12px 80px 0}
-  .sol-hero{border-radius:4px;overflow:hidden;background:#000;display:grid;grid-template-columns:2fr 3fr;min-height:460px;max-height:460px}
+  .sol-hero{border-radius:4px;overflow:hidden;background:#000;display:grid;grid-template-columns:2fr 3fr;min-height:460px;max-height:520px}
   .sol-hero-left{padding:100px 56px 48px;display:flex;flex-direction:column;justify-content:flex-start;background:#000}
   .sol-hero-right{display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:20px 0 0;background:#000}
   .sol-hero-left .btn-primary{display:inline-flex;width:auto;align-self:flex-start}
@@ -3168,9 +3199,9 @@
     transition: color 0.2s;
   }
   .login-link:hover { color: rgba(245,243,239,0.7); }
-</style>
 
-<style>
+
+  /* ── PAGE HERO ── */
   .page-hero-wrap { max-width:1440px; margin:var(--nav-h) auto 0; padding:12px 80px 0; }
   .page-hero { border-radius:4px; overflow:hidden; background:#000; display:grid; grid-template-columns:2fr 3fr; height:460px; }
   .page-hero-left { padding:80px 48px 48px; display:flex; flex-direction:column; justify-content:flex-start; background:#000; }
@@ -3179,7 +3210,30 @@
   .page-hero-desc { font-size:14px; font-weight:200; line-height:1.65; color:rgba(245,243,239,0.5); max-width:380px; }
   .page-hero-right { background:#0a0a0a; }
 
-  /* ── CLOUDX PAGE ── */
+  /* ── INNOVATION PAGE ── */
+  .innov-btn-outline { display:inline-flex;align-items:center;font-family:"Public Sans",sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,243,239,.7);text-decoration:none;border:1px solid rgba(245,243,239,.25);padding:10px 20px;transition:border-color .2s,color .2s,background .2s; }
+  .innov-btn-outline:hover { color:#fff;border-color:#ED1C24;background:#ED1C24; }
+  .innov-link { font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.6);text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(245,243,239,.2);padding-bottom:8px;width:fit-content;transition:color .2s,border-color .2s; }
+  .innov-link:hover { color:#ED1C24;border-color:#ED1C24; }
+  .btn-cx-login:hover { background:#c41019; }
+  
+
+  /* ── PAGE HERO ── */
+  .page-hero-wrap { max-width:1440px; margin:var(--nav-h) auto 0; padding:12px 80px 0; }
+  .page-hero { border-radius:4px; overflow:hidden; background:#000; display:grid; grid-template-columns:2fr 3fr; height:460px; }
+  .page-hero-left { padding:80px 48px 48px; display:flex; flex-direction:column; justify-content:flex-start; background:#000; }
+  .page-hero-eyebrow { font-family:"DM Mono",monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#ED1C24; margin-bottom:12px; }
+  .page-hero-title { font-family:"Gunterz",sans-serif; font-size:38px; line-height:1.05; color:#f5f3ef; margin-bottom:16px; }
+  .page-hero-desc { font-size:14px; font-weight:200; line-height:1.65; color:rgba(245,243,239,0.5); max-width:380px; }
+  .page-hero-right { background:#0a0a0a; }
+
+  /* ── INNOVATION PAGE ── */
+  .innov-btn-outline { display:inline-flex;align-items:center;font-family:"Public Sans",sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,243,239,.7);text-decoration:none;border:1px solid rgba(245,243,239,.25);padding:10px 20px;transition:border-color .2s,color .2s,background .2s; }
+  .innov-btn-outline:hover { color:#fff;border-color:#ED1C24;background:#ED1C24; }
+  .innov-link { font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.6);text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(245,243,239,.2);padding-bottom:8px;width:fit-content;transition:color .2s,border-color .2s; }
+  .innov-link:hover { color:#ED1C24;border-color:#ED1C24; }
+  .btn-cx-login:hover { background:#c41019; }
+
   .cx-section { max-width:1440px; margin:0 auto; padding:80px 80px; }
   .cx-section-narrow { max-width:1440px; margin:0 auto; padding:80px 80px; }
   .cx-eyebrow { font-family:"DM Mono",monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#ED1C24; margin-bottom:16px; }
@@ -3198,14 +3252,11 @@
   /* ── LOGIN BUTTON ── */
   .btn-cx-login { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:"Public Sans",sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:14px 28px; text-decoration:none; transition:background .2s; }
   .btn-cx-login:hover { background:#c41019; }
-</style>
-
-<style>
 
 /* =========================================================
    TARGET PRO RESPONSIVE BUILD
-   Page: cloudx.html
-   Version: 2.0.0
+   Page: innovation.html
+   Version: 2.0.1
    Work by: Target PRO
    Scope: Static header/footer integration + mobile/tablet/iPad responsive optimization
    Notes:
@@ -3417,206 +3468,53 @@ html.nl-drawer-open {
   }
 }
 
-/* ---------- NAV / HEADER RESPONSIVE FIX ---------- */
-@media (max-width: 900px) {
+@media (max-width: 480px) {
+
   nav {
-    height: 68px !important;
-    min-height: 68px !important;
-    background: rgba(10,10,10,0.92) !important;
-    z-index: 9999 !important;
-    overflow: visible !important;
+    height: 64px !important;
+    min-height: 64px !important;
   }
 
   .nav-inner {
-    height: 68px !important;
-    padding: 0 28px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  .nav-links,
-  .nav-actions,
-  .mega {
-    display: none !important;
+    height: 64px !important;
+    padding: 0 20px !important;
   }
 
   .nav-logo {
-    width: 128px !important;
-    min-width: 128px !important;
-    height: 32px !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 10001 !important;
+    width: 112px !important;
+    min-width: 112px !important;
+    height: 28px !important;
   }
 
   .nav-logo .cz-logo-svg {
-    width: 128px !important;
-    max-width: 128px !important;
-    height: auto !important;
-    opacity: 1 !important;
-    display: block !important;
-    color: var(--accent) !important;
-  }
-
-  .nav-logo .cz-brandmark-svg {
-    display: none !important;
-    opacity: 0 !important;
-  }
-
-  nav.scrolled .cz-logo-svg {
-    opacity: 1 !important;
-    pointer-events: all !important;
-  }
-
-  nav.scrolled .cz-brandmark-svg {
-    opacity: 0 !important;
-    display: none !important;
+    width: 112px !important;
+    max-width: 112px !important;
   }
 
   .nav-hamburger {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: absolute !important;
-    top: 50% !important;
-    right: 28px !important;
-    transform: translateY(-50%) !important;
-    width: 34px !important;
-    height: 26px !important;
-    z-index: 99999 !important;
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    background: linear-gradient(#ffffff, #ffffff) center / 34px 2px no-repeat !important;
+    width: 30px !important;
+    height: 24px !important;
   }
 
   .nav-hamburger span {
-    display: none !important;
+    width: 30px !important;
   }
 
-  .nav-hamburger::before,
-  .nav-hamburger::after {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    width: 34px !important;
-    height: 2px !important;
-    background: #ffffff !important;
-    border-radius: 999px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transition: transform .25s ease, top .25s ease, bottom .25s ease !important;
+  .nav-hamburger.open span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg) !important;
   }
 
-  .nav-hamburger::before {
-    top: 2px !important;
+  .nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg) !important;
   }
 
-  .nav-hamburger::after {
-    bottom: 2px !important;
-  }
-
-  body.nav-open .nav-hamburger {
-    background: none !important;
-  }
-
-  body.nav-open .nav-hamburger::before {
-    top: 12px !important;
-    transform: rotate(45deg) !important;
-  }
-
-  body.nav-open .nav-hamburger::after {
-    bottom: 12px !important;
-    transform: rotate(-45deg) !important;
-  }
-
-  /* .nav-mobile-menu {
-    position: fixed !important;
-    top: 68px !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: calc(100svh - 68px) !important;
-    background: rgba(10,10,10,0.98) !important;
-    z-index: 9998 !important;
-    padding: 34px 28px !important;
-    display: none !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-  }
-
-  .nav-mobile-menu.open {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-
-  .nav-mobile-menu a {
-    color: #f5f5f5 !important;
-    text-decoration: none !important;
-    font-family: 'Switzer', sans-serif !important;
-    font-size: 20px !important;
-    letter-spacing: .03em !important;
-  }
-
-  .nav-mobile-menu a.active {
-    color: var(--accent) !important;
-  }
-
-  .nav-mobile-actions {
-    display: flex !important;
-    gap: 16px !important;
-    margin-top: 18px !important;
-    padding-top: 22px !important;
-    border-top: 1px solid rgba(255,255,255,.12) !important;
-  }
-
-  .nav-mobile-actions a {
-    font-size: 13px !important;
-    color: var(--accent) !important;
-    text-transform: uppercase !important;
-    letter-spacing: .08em !important;
-  } */
-
-  .page-hero-wrap,
-  .cx-section,
-  .cx-section-narrow,
-  .cx-video-wrap,
-  .cx-closing,
-  .sol-editorial,
-  .cloudx-inner,
-  .why-inner,
-  .news-inner,
-  .footer-cta-inner {
-    padding-left: 32px !important;
-    padding-right: 32px !important;
-  }
-
-  .page-hero-left {
-    padding: 72px 40px 34px !important;
-  }
-
-  .page-hero-right {
-    min-height: 320px !important;
-  }
-
-  .footer-top,
-  .network-strip-inner {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 32px !important;
-  }
-
-  .footer-bottom {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
+  .nav-mobile-menu {
+    top: 64px !important;
+    height: calc(100svh - 64px) !important;
+    padding: 30px 20px !important;
   }
 }
+
 
 /* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
@@ -3898,15 +3796,15 @@ html.nl-drawer-open {
   }
 
   .nav-hamburger {
-    right: 18px !important;
-    width: 30px !important;
+    right: 22px !important;
+    width: 22px !important;
     height: 22px !important;
-    background-size: 30px 2px !important;
+    background-size: 22px 2px !important;
   }
 
   .nav-hamburger::before,
   .nav-hamburger::after {
-    width: 30px !important;
+    width: 22px !important;
   }
 
   .page-hero-wrap,
@@ -3945,8 +3843,8 @@ html.nl-drawer-open {
 
 /* =========================================================
    END TARGET PRO RESPONSIVE BUILD
-   Page: cloudx.html
-   Version: 2.0.0
+   Page: innovation.html
+   Version: 2.0.1
    Work by: Target PRO
    This is the end of the responsive style block.
    Paste location: directly before closing closing style tag.
@@ -3956,8 +3854,8 @@ html.nl-drawer-open {
 
 /* =========================================================
    TARGET PRO FINAL DISPLAY FIX
-   Page: cloudx.html
-   Version: 2.0.0
+   Page: innovation.html
+   Version: 2.0.1
    Work by: Target PRO
    Scope: Prevent CSS text rendering, hide mobile-only drawers on desktop, keep nav/footer clean.
    ========================================================= */
@@ -4008,200 +3906,14 @@ body.nl-drawer-open #nl-drawer-panel {
 
 /* =========================================================
    END TARGET PRO FINAL DISPLAY FIX
-   Page: cloudx.html
-   Version: 2.0.0
+   Page: innovation.html
+   Version: 2.0.1
    Work by: Target PRO
    End of final display style block.
    ========================================================= */
-
-/* =========================================================
-   TARGET PRO CLOUDX PAGE FINAL POLISH
-   Page: cloudx.html
-   Version: 2.0.0
-   Work by: Target PRO
-   Scope: Static header/footer integration, CloudX layout polish and safety fixes.
-   ========================================================= */
-
-:root {
-  --carbon: #0a0a0a;
-  --steel: #3e3e3d;
-  --light: #dadadb;
-}
-
-.footer-cta-title .cta-word {
-  color: var(--white) !important;
-}
-
-.footer-cta-title .cta-word-accent {
-  color: var(--accent) !important;
-}
-
-.page-hero-wrap {
-  position: relative;
-  z-index: 1;
-}
-
-.cx-section,
-.cx-section-narrow,
-.cx-video-wrap,
-.cx-closing {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 1180px) {
-  .page-hero-wrap {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-  }
-
-  .page-hero {
-    height: auto !important;
-    min-height: 420px !important;
-  }
-
-  .cx-section,
-  .cx-section-narrow,
-  .cx-video-wrap,
-  .cx-closing {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-  }
-
-  .cx-closing {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-  }
-}
-
-@media (max-width: 900px) {
-  .page-hero-wrap {
-    margin-top: var(--nav-h) !important;
-    padding: 12px 32px 0 !important;
-  }
-
-  .page-hero {
-    grid-template-columns: 1fr !important;
-    height: auto !important;
-  }
-
-  .page-hero-left {
-    padding: 64px 40px 36px !important;
-  }
-
-  .page-hero-right {
-    min-height: 320px !important;
-  }
-
-  .cx-section,
-  .cx-section-narrow {
-    padding: 64px 32px !important;
-  }
-
-  .cx-video-wrap {
-    padding: 0 32px 64px !important;
-  }
-
-  .cx-closing {
-    padding: 64px 32px !important;
-  }
-
-  .cx-caps-grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-hero-wrap {
-    padding: 10px 20px 0 !important;
-  }
-
-  .page-hero-left {
-    padding: 54px 28px 30px !important;
-  }
-
-  .page-hero-title {
-    font-size: clamp(34px, 11vw, 52px) !important;
-    line-height: 1.02 !important;
-  }
-
-  .page-hero-desc {
-    font-size: 15px !important;
-    line-height: 1.62 !important;
-  }
-
-  .page-hero-right {
-    min-height: 260px !important;
-  }
-
-  .cx-section,
-  .cx-section-narrow {
-    padding: 56px 20px !important;
-  }
-
-  .cx-video-wrap {
-    padding: 0 20px 56px !important;
-  }
-
-  .cx-closing {
-    padding: 56px 20px !important;
-  }
-
-  .cx-title {
-    font-size: clamp(28px, 9vw, 38px) !important;
-    line-height: 1.08 !important;
-  }
-
-  .cx-body {
-    font-size: 15px !important;
-    line-height: 1.65 !important;
-  }
-
-  .btn-cx-login {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-hero-wrap {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .page-hero-left {
-    padding: 46px 20px 28px !important;
-  }
-
-  .page-hero-title {
-    font-size: clamp(30px, 12vw, 42px) !important;
-  }
-
-  .page-hero-right {
-    min-height: 220px !important;
-  }
-
-  .cx-section,
-  .cx-section-narrow,
-  .cx-video-wrap,
-  .cx-closing {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-}
-
-/* =========================================================
-   END TARGET PRO CLOUDX PAGE FINAL POLISH
-   Page: cloudx.html
-   Version: 2.0.0
-   Work by: Target PRO
-   This is the end of the CloudX responsive style block.
-   ========================================================= */
-
 </style>
 <link rel="stylesheet" href="responsive-style.css">
+<link rel="stylesheet" href="mobile-nav.css">
 </head>
 <body>
 

@@ -3289,6 +3289,7 @@ html.nl-drawer-open {
    ========================================================= */
 </style>
 <link rel="stylesheet" href="responsive-style.css">
+<link rel="stylesheet" href="mobile-nav.css">
 </head>
 <body>
 
@@ -3514,6 +3515,14 @@ svg {
   display: none;
 }
 
+.nav-hamburger {
+  display: none;
+}
+
+.nav-mobile-menu a.active {
+  color: var(--accent) !important;
+}
+
 @media (max-width: 1180px) {
   .nav-inner,
   .filter-bar-row,
@@ -3592,98 +3601,6 @@ svg {
     opacity: 0 !important;
     display: none !important;
   }
-
-  .nav-hamburger {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: absolute !important;
-    top: 50% !important;
-    right: 28px !important;
-    transform: translateY(-50%) !important;
-    width: 34px !important;
-    height: 26px !important;
-    z-index: 10002 !important;
-    cursor: pointer !important;
-    background: linear-gradient(#ffffff, #ffffff) center / 34px 2px no-repeat !important;
-  }
-
-  .nav-hamburger span {
-    display: none !important;
-  }
-
-  .nav-hamburger::before,
-  .nav-hamburger::after {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    width: 34px !important;
-    height: 2px !important;
-    background: #ffffff !important;
-    border-radius: 999px !important;
-    transition: transform .25s ease, top .25s ease, bottom .25s ease !important;
-  }
-
-  .nav-hamburger::before { top: 2px !important; }
-  .nav-hamburger::after { bottom: 2px !important; }
-
-  body.nav-open .nav-hamburger {
-    background: none !important;
-  }
-
-  body.nav-open .nav-hamburger::before {
-    top: 12px !important;
-    transform: rotate(45deg) !important;
-  }
-
-  body.nav-open .nav-hamburger::after {
-    bottom: 12px !important;
-    transform: rotate(-45deg) !important;
-  }
-
-  /* .nav-mobile-menu {
-    position: fixed !important;
-    top: 68px !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: calc(100svh - 68px) !important;
-    background: rgba(10,10,10,0.98) !important;
-    z-index: 9998 !important;
-    padding: 34px 28px !important;
-    display: none !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    pointer-events: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
-
-  .nav-mobile-menu.open {
-    display: flex !important;
-    pointer-events: all !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .nav-mobile-menu a {
-    color: #f5f5f5 !important;
-    text-decoration: none !important;
-    font-family: 'Switzer', sans-serif !important;
-    font-size: 20px !important;
-    letter-spacing: .03em !important;
-  }
-
-  .nav-mobile-menu a.active {
-    color: var(--accent) !important;
-  }
-
-  .nav-mobile-actions {
-    display: flex !important;
-    gap: 16px !important;
-    margin-top: 18px !important;
-    padding-top: 22px !important;
-    border-top: 1px solid rgba(255,255,255,.12) !important;
-  } */
 
   .filter-bar {
     top: 68px !important;
@@ -3989,6 +3906,61 @@ svg {
     padding-right: 24px !important;
   }
 }
+
+/* =========================================================
+   TARGET PRO FINAL DISPLAY FIX
+   Page: cznews.html
+   Version: 2.0.1
+   Work by: Target PRO
+   Scope: Hide mobile-only drawers on desktop, keep nav/footer clean.
+   ========================================================= */
+
+#nl-drawer-overlay,
+#nl-drawer-panel {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#nl-drawer-panel {
+  transform: translateX(-100%);
+}
+
+body.nl-drawer-open #nl-drawer-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.nl-drawer-open #nl-drawer-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+@media (min-width: 901px) {
+  .nav-mobile-menu,
+  .nav-hamburger,
+  #nl-drawer-overlay,
+  #nl-drawer-panel {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-mobile-menu {
+    display: none !important;
+  }
+
+  .nav-mobile-menu.open {
+    display: flex !important;
+  }
+}
+
+/* =========================================================
+   END TARGET PRO FINAL DISPLAY FIX
+   Page: cznews.html
+   Version: 2.0.1
+   Work by: Target PRO
+   ========================================================= */
 
 /* =========================================================
    END TARGET PRO NEWS PAGE RESPONSIVE BUILD
