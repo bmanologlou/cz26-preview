@@ -1818,6 +1818,91 @@ a{color:inherit;text-decoration:none}
 
 </style>
 <link rel="stylesheet" href="../responsive-style.css">
+<link rel="stylesheet" href="../mobile-nav.css">
+<style>
+.nav-mobile-menu { display: none; }
+.nav-hamburger { display: none; }
+.nav-mobile-menu a.active { color: var(--accent) !important; }
+@media (min-width: 901px) {
+  .nav-mobile-menu,
+  .nav-hamburger {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .nav-mobile-menu { display: none !important; }
+  .nav-mobile-menu.open { display: flex !important; }
+  nav { height: 68px !important; }
+  .nav-inner {
+    height: 68px !important;
+    padding: 0 28px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .nav-links, .nav-actions, .mega { display: none !important; }
+  .nav-logo {
+    width: 128px !important;
+    min-width: 128px !important;
+    height: 32px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 10001 !important;
+  }
+  .nav-logo .cz-logo-svg {
+    width: 128px !important;
+    max-width: 128px !important;
+    height: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+    color: var(--accent) !important;
+  }
+  .nav-logo .cz-brandmark-svg {
+    display: none !important;
+    opacity: 0 !important;
+  }
+  nav.scrolled .cz-logo-svg {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+  nav.scrolled .cz-brandmark-svg {
+    opacity: 0 !important;
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; }
+  nav, .nav-inner { height: 64px !important; }
+  .nav-inner { padding: 0 20px !important; }
+  .nav-logo { width: 120px !important; min-width: 120px !important; }
+  .nav-logo .cz-logo-svg { width: 120px !important; max-width: 120px !important; }
+  .nav-hamburger {
+    right: 20px !important;
+    width: 32px !important;
+    height: 24px !important;
+    background-size: 32px 2px !important;
+  }
+  .nav-hamburger::before, .nav-hamburger::after { width: 32px !important; }
+  .nav-mobile-menu {
+    top: 64px !important;
+    height: calc(100svh - 64px) !important;
+  }
+}
+@media (max-width: 480px) {
+  .nav-hamburger {
+    right: 22px !important;
+    width: 22px !important;
+    height: 22px !important;
+    background-size: 22px 2px !important;
+  }
+  .nav-hamburger::before, .nav-hamburger::after { width: 22px !important; }
+  body.nav-open .nav-hamburger::before { top: 10px !important; }
+  body.nav-open .nav-hamburger::after { bottom: 11px !important; }
+  .nav-mobile-menu { padding-left: 24px !important; padding-right: 24px !important; }
+}
+</style>
 </head>
 <body>
 
@@ -1904,9 +1989,29 @@ a{color:inherit;text-decoration:none}
     <a href="https://carbonzapp.com/all-machines/" target="_blank" rel="noopener" class="btn-store">Store</a>
     <a href="https://cloudx.carbonzapp.com/client" target="_blank" rel="noopener" class="btn-login">Login</a>
   </div>
+  <!-- Hamburger -->
+  <div class="nav-hamburger" id="nav-hamburger" onclick="var nl=document.body.classList.contains('nl-drawer-open');if(nl){document.body.classList.remove('nl-drawer-open');document.documentElement.style.overflow='';return;}var m=document.getElementById('nav-mobile-menu');var h=this;var open=m.classList.toggle('open');h.classList.toggle('open');document.body.classList.toggle('nav-open',open);" >
+    <span></span><span></span><span></span>
+  </div>
 </div>
 <style>.nav-links a.active { color: #ED1C24; }</style>
 </nav>
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+
+  <a href="../index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Home</a>
+  <a href="../solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Solutions</a>
+  <a href="../innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Innovation</a>
+  <a href="../cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">CloudX</a>
+  <a href="../cznews.html" class="active" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">News</a>
+  <a href="../contact.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Contact</a>
+  <div class="nav-mobile-actions">
+    <a href="https://carbonzapp.com/all-machines/" target="_blank" class="btn-store">Store</a>
+    <a href="https://cloudx.carbonzapp.com/client" target="_blank" class="btn-login">Login</a>
+  </div>
+</div>
+
+
 
 
 <article>
