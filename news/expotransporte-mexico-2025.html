@@ -1816,6 +1816,123 @@ a{color:inherit;text-decoration:none}
   .nl-check input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 13px; height: 13px; border: 1px solid rgba(255,255,255,0.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; }
   .nl-check input[type="checkbox"]:checked { border-color: #ED1C24; background: #ED1C24; }
 
+/* =========================================================
+   TARGET PRO NEWSLETTER DRAWER VISIBILITY FIX
+   Page: cznews.html
+   Version: 2.0.1
+   Work by: Target PRO
+   Scope: Keep newsletter drawer hidden by default and open only via button.
+   ========================================================= */
+#nl-drawer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,.6) !important;
+  z-index: 9998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity .3s ease, visibility .3s ease !important;
+}
+#nl-drawer-panel {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: min(420px, 100vw) !important;
+  max-width: 100vw !important;
+  height: 100svh !important;
+  background: #0a0a0a !important;
+  border-right: 1px solid rgba(255,255,255,.08) !important;
+  z-index: 9999 !important;
+  padding: 80px 24px 32px !important;
+  transform: translateX(-105%) !important;
+  transition: transform .3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  box-sizing: border-box !important;
+}
+body.nl-drawer-open #nl-drawer-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+}
+body.nl-drawer-open #nl-drawer-panel {
+  transform: translateX(0) !important;
+}
+body.nl-drawer-open,
+html.nl-drawer-open {
+  overflow: hidden !important;
+}
+#nl-drawer-close {
+  position: absolute !important;
+  top: 18px !important;
+  right: 18px !important;
+  background: none !important;
+  border: 0 !important;
+  color: rgba(245,243,239,.7) !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  z-index: 10000 !important;
+  padding: 8px !important;
+}
+#nl-drawer-panel .nl-drawer-eyebrow {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 10px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+}
+#nl-drawer-panel .nl-drawer-title {
+  font-family: 'Gunterz', sans-serif !important;
+  font-size: clamp(24px, 7vw, 34px) !important;
+  line-height: 1.08 !important;
+  color: var(--white) !important;
+}
+#nl-drawer-panel .nl-drawer-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+#nl-drawer-panel .nl-drawer-input {
+  width: 100% !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.2) !important;
+  color: #f5f3ef !important;
+  font-family: 'Public Sans', sans-serif !important;
+  font-size: 14px !important;
+  padding: 12px 0 !important;
+  outline: none !important;
+}
+#nl-drawer-panel .nl-drawer-btn {
+  width: 100% !important;
+  background: var(--accent) !important;
+  color: #fff !important;
+  border: 0 !important;
+  font-family: 'Public Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  padding: 14px !important;
+  cursor: pointer !important;
+}
+#nl-drawer-panel .nl-drawer-check {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  color: rgba(245,243,239,.45) !important;
+}
+
+/* =========================================================
+   END TARGET PRO NEWSLETTER DRAWER VISIBILITY FIX
+   Page: cznews.html
+   Version: 2.0.1
+   Work by: Target PRO
+   ========================================================= */
 </style>
 <link rel="stylesheet" href="../responsive-style.css">
 <link rel="stylesheet" href="../mobile-nav.css">
@@ -2126,7 +2243,12 @@ a{color:inherit;text-decoration:none}
           <div class="footer-hours">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Mon–Fri 08:00–16:00 (UTC+2)
-          </div>
+            
+        </div>
+        <button class="nl-btn-mobile" id="nl-btn-mobile">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="nl-btn-mobile-text">Get CZ Newsletter</span>
+          </button>
         </div>
       </div>
 
@@ -2197,6 +2319,80 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </footer>
+
+<!-- =========================================================
+     TARGET PRO NEWSLETTER DRAWER -->
+<div id="nl-drawer-overlay"></div>
+<div id="nl-drawer-panel">
+  <button id="nl-drawer-close" type="button" aria-label="Close newsletter">×</button>
+  
+  <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ED1C24;margin-bottom:8px;">Newsletter</div>
+  <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop<br>with Carbon Zapp</h3>
+  <input type="email" id="nl-email" placeholder="Your email address" oninput="
+    var val=this.value;
+    var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    var btn=document.getElementById('nl-sub-btn');
+    btn.style.opacity=valid?'1':'0.35';
+    btn.style.cursor=valid?'pointer':'not-allowed';
+    btn.disabled=!valid;
+  " style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;box-sizing:border-box;">
+  <button id="nl-sub-btn" disabled onclick="
+    var email=document.getElementById('nl-email').value;
+    var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var m=document.getElementById('nl-thanks');
+    if(valid){
+      m.style.color='rgba(245,243,239,.6)';
+      m.textContent='Thank you for subscribing to the Carbon Zapp Newsletter';
+    } else {
+      m.style.color='#ED1C24';
+      m.textContent='Please enter a valid email address.';
+    }
+    m.style.display='block';m.style.opacity='1';
+    var inp=document.getElementById('nl-email');var btn=document.getElementById('nl-sub-btn');
+    inp.value='';btn.disabled=true;btn.style.opacity='0.35';btn.style.cursor='not-allowed';
+    setTimeout(function(){m.style.opacity='0';setTimeout(function(){m.style.display='none';m.style.opacity='1';},600);},2500);
+  " style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:not-allowed;margin-top:12px;width:100%;box-sizing:border-box;opacity:0.35;transition:opacity .2s;">Subscribe</button>
+  <div style="display:flex;align-items:flex-start;gap:10px;margin-top:12px;cursor:pointer;" onclick="var cb=document.getElementById('nl-agree');cb.checked=!cb.checked;cb.dispatchEvent(new Event('change'));">
+    <input type="checkbox" id="nl-agree" style="width:14px;height:14px;cursor:pointer;flex-shrink:0;margin-top:2px;appearance:none;-webkit-appearance:none;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:2px;pointer-events:none;" onchange="this.style.background=this.checked?'#ED1C24':'transparent';this.style.borderColor=this.checked?'#ED1C24':'rgba(255,255,255,.3)';this.style.backgroundImage=this.checked?'url(&quot;data:image/svg+xml,%3Csvg viewBox=\'0 0 10 8\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 4l3 3 5-6\' stroke=\'white\' stroke-width=\'1.5\'/%3E%3C/svg%3E&quot;)':'none';this.style.backgroundSize='10px';this.style.backgroundRepeat='no-repeat';this.style.backgroundPosition='center'">
+    <span style="font-size:11px;color:rgba(245,243,239,.4);line-height:1.5;">I agree to receive updates from Carbon Zapp</span>
+  </div>
+  <div id="nl-thanks" style="display:none;font-family:'Public Sans',sans-serif;font-size:12px;color:rgba(245,243,239,.6);text-align:center;padding:12px 0;transition:opacity .6s;">Thank you for subscribing to the Carbon Zapp Newsletter</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function openNewsletterDrawer() {
+    document.body.classList.add("nl-drawer-open");
+    document.documentElement.classList.add("nl-drawer-open");
+    document.documentElement.style.overflow = "hidden";
+  }
+  function closeNewsletterDrawer() {
+    document.body.classList.remove("nl-drawer-open");
+    document.documentElement.classList.remove("nl-drawer-open");
+    document.documentElement.style.overflow = "";
+  }
+  var newsletterBtn = document.getElementById("nl-btn-mobile");
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openNewsletterDrawer();
+    });
+  }
+  var drawerClose = document.getElementById("nl-drawer-close");
+  if (drawerClose) {
+    drawerClose.addEventListener("click", closeNewsletterDrawer);
+  }
+  var drawerOverlay = document.getElementById("nl-drawer-overlay");
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener("click", closeNewsletterDrawer);
+  }
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeNewsletterDrawer();
+    }
+  });
+});
+</script>
 
 <script>
 (function(){
