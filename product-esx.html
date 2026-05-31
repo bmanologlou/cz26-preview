@@ -4751,5 +4751,38 @@ body.nl-drawer-open #nl-drawer-panel {
 
   })();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.__czNewsletterInit) return;
+  window.__czNewsletterInit = true;
+  function openNewsletterDrawer() {
+    document.body.classList.add("nl-drawer-open");
+    document.documentElement.classList.add("nl-drawer-open");
+    document.documentElement.style.overflow = "hidden";
+  }
+  function closeNewsletterDrawer() {
+    document.body.classList.remove("nl-drawer-open");
+    document.documentElement.classList.remove("nl-drawer-open");
+    document.documentElement.style.overflow = "";
+  }
+  var newsletterBtn = document.getElementById("nl-btn-mobile");
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openNewsletterDrawer();
+    });
+  }
+  var drawerClose = document.getElementById("nl-drawer-close");
+  if (drawerClose) drawerClose.addEventListener("click", closeNewsletterDrawer);
+  var drawerOverlay = document.getElementById("nl-drawer-overlay");
+  if (drawerOverlay) drawerOverlay.addEventListener("click", closeNewsletterDrawer);
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeNewsletterDrawer();
+  });
+});
+</script>
+
 </body>
 </html>

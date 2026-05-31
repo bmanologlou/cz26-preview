@@ -2,10 +2,14 @@
  * Carbon Zapp — Global Components Loader
  * Injects nav, footer-cta, footer from shared HTML files.
  * Sets active nav state based on current page.
- * Initialises nav scroll behaviour and mega menu hover.
+ * Initialises nav scroll behaviour, mega menu hover, and newsletter drawer.
  */
 
 (function() {
+
+  function basePath() {
+    return window.location.pathname.includes('/news/') ? '../' : '';
+  }
 
   // ── Helper: fetch and inject HTML into a placeholder ──
   function inject(selector, url, callback) {
@@ -26,9 +30,7 @@
     document.querySelectorAll('nav a').forEach(a => {
       const href = a.getAttribute('href') || '';
       const exactMatch = href === page || (page === '' && href === 'index.html') || (page === 'index.html' && href === 'index.html');
-      // Match all solutions-*.html pages to the solutions.html nav link
       const solutionsMatch = href === 'solutions.html' && page.startsWith('solutions');
-      // Match home
       const homeMatch = href === 'index.html' && (page === '' || page === 'index.html');
       if (exactMatch || solutionsMatch || homeMatch) {
         a.classList.add('active');
@@ -47,8 +49,7 @@
     onScroll();
   }
 
-  // ── Mega menu hover (CSS-driven, no JS needed) ──
-  // Login dropdown
+  // ── Login dropdown ──
   function initLoginDropdown() {
     const btn = document.querySelector('.login-btn');
     const dropdown = document.querySelector('.login-dropdown');
@@ -58,6 +59,72 @@
       dropdown.classList.toggle('open');
     });
     document.addEventListener('click', () => dropdown.classList.remove('open'));
+  }
+
+  // ── Newsletter drawer ──
+  function initNewsletterDrawer() {
+    if (window.__czNewsletterInit) return;
+    window.__czNewsletterInit = true;
+
+    function openNewsletterDrawer() {
+      document.body.classList.add('nl-drawer-open');
+      document.documentElement.classList.add('nl-drawer-open');
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    function closeNewsletterDrawer() {
+      document.body.classList.remove('nl-drawer-open');
+      document.documentElement.classList.remove('nl-drawer-open');
+      document.documentElement.style.overflow = '';
+    }
+
+    var newsletterBtn = document.getElementById('nl-btn-mobile');
+    if (newsletterBtn) {
+      newsletterBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openNewsletterDrawer();
+      });
+    }
+
+    var drawerClose = document.getElementById('nl-drawer-close');
+    if (drawerClose) {
+      drawerClose.addEventListener('click', closeNewsletterDrawer);
+    }
+
+    var drawerOverlay = document.getElementById('nl-drawer-overlay');
+    if (drawerOverlay) {
+      drawerOverlay.addEventListener('click', closeNewsletterDrawer);
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeNewsletterDrawer();
+      }
+    });
+  }
+
+  function ensureNewsletterDrawer(done) {
+    if (document.getElementById('nl-drawer-panel')) {
+      initNewsletterDrawer();
+      if (done) done();
+      return;
+    }
+    fetch(basePath() + '_newsletter-drawer.html')
+      .then(r => r.text())
+      .then(html => {
+        document.body.insertAdjacentHTML('beforeend', html);
+        initNewsletterDrawer();
+        if (done) done();
+      })
+      .catch(err => console.warn('Newsletter drawer load failed:', err));
+  }
+
+  function finishInit() {
+    setActiveNav();
+    initNavScroll();
+    initLoginDropdown();
+    ensureNewsletterDrawer();
   }
 
   // ── Load order: nav first, then footer-cta + footer ──
@@ -70,17 +137,15 @@
     function done() {
       pending--;
       if (pending === 0) {
-        setActiveNav();
-        initNavScroll();
-        initLoginDropdown();
+        finishInit();
       }
     }
 
-    const basePath = window.location.pathname.includes('/news/') ? '../' : '';
+    const prefix = basePath();
 
     if (navPlaceholder) {
       pending++;
-      fetch(basePath + '_nav.html')
+      fetch(prefix + '_nav.html')
         .then(r => r.text())
         .then(html => {
           navPlaceholder.outerHTML = html;
@@ -90,22 +155,20 @@
 
     if (footerCtaPlaceholder) {
       pending++;
-      fetch(basePath + '_footer-cta.html')
+      fetch(prefix + '_footer-cta.html')
         .then(r => r.text())
         .then(html => { footerCtaPlaceholder.outerHTML = html; done(); });
     }
 
     if (footerPlaceholder) {
       pending++;
-      fetch(basePath + '_footer.html')
+      fetch(prefix + '_footer.html')
         .then(r => r.text())
         .then(html => { footerPlaceholder.outerHTML = html; done(); });
     }
 
     if (pending === 0) {
-      setActiveNav();
-      initNavScroll();
-      initLoginDropdown();
+      finishInit();
     }
   }
 
