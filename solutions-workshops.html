@@ -3372,13 +3372,6 @@ div {
     padding-top: 22px !important;
     border-top: 1px solid rgba(255,255,255,.12) !important;
   }
-
-  .nav-mobile-actions a {
-    font-size: 13px !important;
-    color: var(--accent) !important;
-    text-transform: uppercase !important;
-    letter-spacing: .08em !important;
-  }
 }
 
 
@@ -3594,6 +3587,7 @@ div {
 
   .sol-hero-right {
     min-height: 300px !important;
+    display: none !important;
   }
 
   .sol-hero-title {
@@ -3761,6 +3755,7 @@ div {
     min-height: 230px !important;
     padding: 0 0 24px !important;
     align-items: flex-end !important;
+    display: none !important;
   }
 
   .sol-hero-right img {
@@ -4073,6 +4068,7 @@ div {
 
   .sol-hero-right {
     min-height: 210px !important;
+    display: none !important;
   }
 
   .prod-card-image {
@@ -4257,6 +4253,7 @@ html.nl-drawer-open {
 </style>
    ========================================================= */
 <link rel="stylesheet" href="responsive-style.css">
+<link rel="stylesheet" href="mobile-nav.css">
 </head>
 <body>
 
@@ -4360,7 +4357,7 @@ html.nl-drawer-open {
 <div class="nav-mobile-menu" id="nav-mobile-menu">
 
   <a href="index.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Home</a>
-  <a href="solutions.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Solutions</a>
+  <a href="solutions.html" class="active" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Solutions</a>
   <a href="innovation.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">Innovation</a>
   <a href="cloudx.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">CloudX</a>
   <a href="cznews.html" onclick="document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');document.body.classList.remove('nav-open')">News</a>
@@ -4380,7 +4377,7 @@ html.nl-drawer-open {
       <button class="filter-btn" onclick="location.href='solutions-large.html'">Large Engines</button>
       <button class="filter-btn" onclick="location.href='solutions-authorized.html'">Authorized</button>
     </div>
-    <div class="act-pills" style="margin-left:10px">
+    <!--<div class="act-pills" style="margin-left:10px">
       <button class="act-pill" data-act="crdi">CRDi</button>
       <button class="act-pill" data-act="crp">CRp</button>
       <button class="act-pill" data-act="eui eup">EUi/EUP</button>
@@ -4395,7 +4392,7 @@ html.nl-drawer-open {
     </div>
     <div class="filter-sep"></div>
     <button class="act-pill" id="act-reset">Reset</button>
-    <span class="filter-count" id="filter-count"></span>
+    <span class="filter-count" id="filter-count"></span>-->
   </div>
 </div>
 
