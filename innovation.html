@@ -3280,18 +3280,48 @@ div {
   }
 
   .page-hero {
-    grid-template-columns: 1fr !important;
-    min-height: auto !important;
-  }
-
-  .page-hero-left {
-    padding: 90px 48px 42px !important;
-    order: 1 !important;
+    position: relative !important;
+    display: block !important;
+    grid-template-columns: none !important;
+    min-height: 360px !important;
+    height: auto !important;
   }
 
   .page-hero-right {
-    order: 2 !important;
-    min-height: 360px !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    min-height: 0 !important;
+    order: unset !important;
+  }
+
+  .page-hero-right img {
+    min-height: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    object-position: center center !important;
+  }
+
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.58) 45%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+  }
+
+  .page-hero-left {
+    position: relative !important;
+    z-index: 2 !important;
+    padding: 90px 48px 42px !important;
+    order: unset !important;
+    background: transparent !important;
   }
 
   .page-hero-title {
@@ -3465,8 +3495,7 @@ div {
 
   .page-hero {
     border-radius: 4px !important;
-    grid-template-columns: 1fr !important;
-    min-height: auto !important;
+    min-height: 320px !important;
   }
 
   .page-hero-left {
@@ -3489,10 +3518,6 @@ div {
     font-size: 14px !important;
     line-height: 1.6 !important;
     margin-bottom: 0 !important;
-  }
-
-  .page-hero-right {
-    min-height: 240px !important;
   }
 
   .cx-section,
@@ -3717,8 +3742,8 @@ div {
     font-size: clamp(30px, 11vw, 42px) !important;
   }
 
-  .page-hero-right {
-    min-height: 220px !important;
+  .page-hero {
+    min-height: 280px !important;
   }
 
   .cx-title {
