@@ -3286,37 +3286,73 @@ body.nl-drawer-open #nl-drawer-panel {
       <h2 style="font-family:'Gunterz',sans-serif;font-size:36px;line-height:1.05;color:#f5f3ef;margin-bottom:16px;">Contact Us</h2>
       <p style="font-size:14px;font-weight:300;line-height:1.7;color:rgba(245,243,239,.5);">Fill in the form and a member of the Carbon Zapp team will get back to you shortly.</p>
     </div>
-    <form class="contact-form" onsubmit="return false;" style="display:flex;flex-direction:column;gap:20px;">
-      <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Full Name *</label>
-          <input type="text" placeholder="John Smith" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Email Address *</label>
-          <input type="email" placeholder="john@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
-        </div>
-      </div>
-      <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Country</label>
-          <input type="text" placeholder="United Kingdom" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Company</label>
-          <input type="text" placeholder="Company Name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Phone Number</label>
-        <input type="tel" placeholder="+44 ..." style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
-      </div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">How can we help *</label>
-        <textarea placeholder="Tell us about your operation and what you're looking for..." required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;resize:none;min-height:100px;"></textarea>
-      </div>
-      <button type="submit" style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 32px;cursor:pointer;align-self:flex-start;">Submit</button>
-    </form>
+    <form id="custom-contact-form" action="send_email.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+  <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Full Name *</label>
+      <input type="text" name="name" placeholder="John Smith" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Email Address *</label>
+      <input type="email" name="email" placeholder="john@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
+    </div>
+  </div>
+  <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Country</label>
+      <input type="text" name="country" placeholder="United Kingdom" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Company</label>
+      <input type="text" name="company" placeholder="Company Name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">Phone Number</label>
+    <input type="tel" name="phone" placeholder="+44 ..." style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;">
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <label style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.3);">How can we help *</label>
+    <textarea name="message" placeholder="Tell us about your operation and what you're looking for..." required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;resize:none;min-height:100px;"></textarea>
+  </div>
+  <button type="submit" style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 32px;cursor:pointer;align-self:flex-start;">Submit</button>
+  
+  <div id="form-response" style="font-family:'Public Sans',sans-serif; font-size:13px; margin-top:10px;"></div>
+</form>
+
+<script>
+document.getElementById('custom-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop the page from reloading
+    
+    var form = this;
+    var responseDiv = document.getElementById('form-response');
+    var formData = new FormData(form);
+    
+    responseDiv.style.color = '#f5f3ef';
+    responseDiv.innerHTML = "Sending...";
+    
+    fetch(form.action, {
+        method: form.method,
+        body: formData
+    })
+    .then(response => {
+        return response.text().then(text => {
+            if (response.ok) {
+                responseDiv.style.color = '#4BB543'; // Green for success
+                responseDiv.innerHTML = text;
+                form.reset(); // Clear the form
+            } else {
+                responseDiv.style.color = '#ED1C24'; // Red for error
+                responseDiv.innerHTML = text;
+            }
+        });
+    })
+    .catch(error => {
+        responseDiv.style.color = '#ED1C24';
+        responseDiv.innerHTML = "An error occurred. Please try again.";
+    });
+});
+</script>
   </div>
 </div>
 
