@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST["message"]));
 
     // 2. CONFIGURATION: Set your destination email address here
-    $recipient = "georgedanilopoulos@gmail.com"; 
+    $recipient = "sales@carbonzapp.com"; 
     $subject   = "New Website Operation Inquiry from $name";
 
     // 3. Validation check for required fields
