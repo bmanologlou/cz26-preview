@@ -328,7 +328,7 @@
   }
 
   .card-horizontal .card-image {
-    order: 2 !important;
+    order: 0 !important;
     width: 100% !important;
     min-height: 240px !important;
     padding: 14px 0 26px !important;
