@@ -2377,7 +2377,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-sticky-name{
   font-family:"Gunterz",sans-serif;font-size:15px;
-  color:rgba(26,26,26,.9);letter-spacing:0.04em;
+  color:var(--text);letter-spacing:0.04em;
 }
 #pdp-sticky-nav .pdp-sticky-links{display:flex;gap:32px;align-items:center;}
 #pdp-sticky-nav .pdp-sticky-link{
@@ -2409,18 +2409,18 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 
 /* ─── EXPANDABILITY CAROUSEL ─── */
-.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);margin-bottom:40px;max-width:640px;}
+.pdp-expand-intro{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:640px;}
 .pdp-carousel-wrap{overflow:hidden;}
 .pdp-carousel{display:flex;gap:24px;transition:transform 0.4s ease;}
 .pdp-carousel-item{flex:0 0 calc(50% - 12px);flex-shrink:0;display:flex;flex-direction:row;gap:28px;align-items:flex-start;}
 .pdp-carousel-img{flex-shrink:0;width:320px;height:320px;border-radius:4px;overflow:hidden;order:2;}
 .pdp-carousel-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#b8b8b8 0%,#a0a0a0 100%);}
 .pdp-carousel-text{flex:1;order:1;display:flex;flex-direction:column;gap:8px;}
-.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:6px;}
-  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-carousel-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);margin-bottom:6px;}
+  .pdp-carousel-desc{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 .pdp-carousel-controls{display:flex;gap:8px;margin-top:32px;}
-.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(26,26,26,.9);transition:all 0.2s;}
-.pdp-carousel-btn:hover{border-color:rgba(26,26,26,.9);color:rgba(26,26,26,.9);}
+.pdp-carousel-btn{width:40px;height:40px;border:1px solid #b0b0b0;border-radius:2px;background:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:all 0.2s;}
+.pdp-carousel-btn:hover{border-color:var(--text);color:var(--text);}
 .pdp-carousel-btn:disabled{opacity:0.3;cursor:default;}
 
 /* ─── SECTION BASE ─── */
@@ -2434,20 +2434,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
   color:var(--accent);margin-bottom:12px;
 }
 .pdp-sec-title{
-  font-family:"Gunterz",sans-serif;font-size:34px;
-  line-height:1.05;color:rgba(26,26,26,.9);margin-bottom:0;
+  font-family:"Gunterz",sans-serif;font-size:26px;
+  line-height:1.1;color:var(--text);margin-bottom:0;
 }
 .pdp-sec-divider{
   border:none;border-top:1px solid var(--grey-mid);
   margin:0;
 }
-.pdp-highlights{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-bottom:32px;}
-.pdp-hl{padding:16px 0;border-top:1px solid #b0b0b0;display:flex;align-items:flex-start;gap:12px;}
-.pdp-hl-dot{display:none;}
-.pdp-hl-text{font-family:"DM Mono",monospace;font-size:16px;letter-spacing:0.03em;color:rgba(26,26,26,.85);line-height:1.5;}
-.pdp-overview-inner{max-width:1440px;margin:0 auto;padding:80px 80px;}
-.pdp-overview-inner .pdp-overview-text{max-width:70%;}
-.pdp-overview-text{font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);margin-bottom:20px;}
 
 /* ─── HERO INTRO (section below hero) ─── */
 .pdp-intro{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2458,10 +2451,10 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-intro-breadcrumb{
   font-family:"DM Mono",monospace;font-size:9px;
   letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(26,26,26,.6);margin-bottom:20px;
+  color:var(--text-light);margin-bottom:20px;
 }
 .pdp-intro-breadcrumb a{color:inherit;text-decoration:none}
-.pdp-intro-breadcrumb a:hover{color:rgba(26,26,26,.9)}
+.pdp-intro-breadcrumb a:hover{color:var(--text)}
 .pdp-intro-breadcrumb span{margin:0 6px;opacity:0.4}
 .pdp-intro-category{
   font-family:"DM Mono",monospace;font-size:11px;
@@ -2470,11 +2463,11 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 }
 .pdp-intro-name{
   font-family:"Gunterz",sans-serif;font-size:52px;
-  line-height:0.95;color:rgba(26,26,26,.9);margin-bottom:16px;
+  line-height:0.95;color:var(--text);margin-bottom:16px;
 }
 .pdp-intro-tagline{
   font-size:22px;font-weight:500;line-height:1.2;
-  color:rgba(26,26,26,.6);max-width:560px;
+  color:var(--text-light);max-width:560px;
 }
 .pdp-highlights{
   display:grid;grid-template-columns:1fr 1fr;gap:0 32px;
@@ -2488,7 +2481,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-hl-dot{display:none;}
 .pdp-hl-text{
   font-family:"DM Mono",monospace;font-size:14px;
-  letter-spacing:0.05em;color:rgba(26,26,26,.9);line-height:1.5;
+  letter-spacing:0.05em;color:var(--text);line-height:1.5;
 }
 .pdp-intro-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;margin-top:28px;}
 .btn-primary{
@@ -2502,13 +2495,13 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .btn-primary:hover{background:#c41019}
 .btn-outline{
   display:inline-flex;align-items:center;
-  border:1px solid rgba(26,26,26,0.25);color:rgba(26,26,26,.6);
+  border:1px solid rgba(26,26,26,0.25);color:var(--text-light);
   font-family:"Public Sans",sans-serif;font-size:12px;
   letter-spacing:0.04em;text-transform:uppercase;
   text-decoration:none;padding:12px 24px;border-radius:2px;
   transition:all 0.2s;white-space:nowrap;
 }
-.btn-outline:hover{border-color:rgba(26,26,26,.9);color:rgba(26,26,26,.9)}
+.btn-outline:hover{border-color:var(--text);color:var(--text)}
 
 /* ─── OVERVIEW ─── */
 .pdp-overview{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2520,53 +2513,51 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-overview-inner .pdp-overview-body{max-width:70%;}
 .pdp-overview-body{
   font-size:18px;font-weight:300;line-height:1.2;
-  color:rgba(26,26,26,.6);margin-top:24px;
+  color:var(--text-light);margin-top:24px;
 }
 .pdp-overview-body p+p{margin-top:16px}
 
 /* ─── INDUSTRIES ─── */
 .pdp-industries{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
-.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);margin-bottom:40px;max-width:560px;}
+.pdp-ind-intro{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);margin-bottom:40px;max-width:560px;}
 .pdp-ind-grid{display:flex;gap:48px;flex-wrap:wrap;}
 .pdp-ind-cell{padding:0;}
 .pdp-ind-icon{display:none;}
-.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,26,.9);line-height:1.4;}
+.pdp-ind-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);line-height:1.4;}
 
 /* ─── CORE CAPABILITIES ─── */
 .pdp-caps{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-cap{background:var(--grey);padding:32px 28px;}
 .pdp-cap-num{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:12px;letter-spacing:0.1em;}
-.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:12px;}
-.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-cap-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;color:var(--text);margin-bottom:12px;}
+.pdp-cap-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── ENGINEERING HIGHLIGHTS ─── */
 .pdp-eng{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-eng-block{background:var(--grey);padding:40px 36px;}
 .pdp-eng-num{font-family:"Gunterz",sans-serif;font-size:11px;color:var(--accent);margin-bottom:16px;letter-spacing:0.1em;}
-.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:rgba(26,26,26,.9);margin-bottom:12px;text-transform:none;}
-.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-eng-title{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:var(--text);margin-bottom:12px;text-transform:none;}
+.pdp-eng-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── ADVANCED FUNCTIONS ─── */
 .pdp-adv{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-mid);border:1px solid var(--grey-mid);border-radius:4px;overflow:hidden;margin-top:48px;}
 .pdp-adv-card{background:var(--grey);padding:28px 24px;}
-#hardware-grid .pdp-adv-card{background:var(--grey);}
-#hardware-grid{background:var(--grey);}
 .pdp-adv-code{font-family:"Gunterz",sans-serif;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.1em;}
-.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(26,26,26,.9);margin-bottom:10px;line-height:1.3;}
-.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.6);}
+.pdp-adv-title{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text);margin-bottom:10px;line-height:1.3;}
+.pdp-adv-body{font-size:16px;font-weight:300;line-height:1.2;color:var(--text-light);}
 
 /* ─── EXPANDABILITY ─── */
 .pdp-expand{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-inner{max-width:1440px;margin:0 auto;padding:80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:rgba(26,26,26,.6);margin-bottom:32px;}
+.pdp-expand-body{font-size:17px;font-weight:300;line-height:1.8;color:var(--text-light);margin-bottom:32px;}
 .pdp-expand-list{display:flex;flex-direction:column;gap:0;}
 .pdp-expand-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--grey-mid);}
 .pdp-expand-item:first-child{border-top:1px solid var(--grey-mid);}
 .pdp-expand-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
-.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(26,26,26,.6);}
+.pdp-expand-item-text{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-light);}
 
 /* ─── SOFTWARE ECOSYSTEM ─── */
 .pdp-soft{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
@@ -2574,7 +2565,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-soft-inner .pdp-sec-eyebrow,
 .pdp-soft-inner h2,
 .pdp-soft-inner .pdp-soft-body{max-width:70%;}
-.pdp-soft-body{font-size:17px;font-weight:300;line-height:1.7;color:rgba(26,26,26,.65);}
+.pdp-soft-body{font-size:18px;font-weight:300;line-height:1.2;color:var(--text-light);}
 .pdp-soft-body p+p{margin-top:16px}
 .pdp-soft-tags{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:32px;max-width:none !important;}
 .pdp-soft-tag{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#868685;padding:0 20px;}
@@ -2585,12 +2576,12 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 .pdp-specs{background:var(--grey);border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table{width:100%;border-collapse:collapse;margin-top:48px;}
 .pdp-specs-table thead tr{border-bottom:2px solid var(--grey-mid);}
-.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,26,.6);padding:12px 16px;text-align:left;font-weight:400;}
+.pdp-specs-table th{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);padding:12px 16px;text-align:left;font-weight:400;}
 .pdp-specs-table tbody tr{border-bottom:1px solid var(--grey-mid);}
 .pdp-specs-table tbody tr:hover{background:rgba(0,0,0,0.02);}
 .pdp-specs-cat{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);padding:20px 16px 8px;font-weight:400;}
-.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:rgba(26,26,26,.6);padding:14px 16px;}
-.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:rgba(26,26,26,.9);padding:14px 16px;}
+.pdp-specs-label{font-family:"DM Mono",monospace;font-size:14px;letter-spacing:0.03em;color:var(--text-light);padding:14px 16px;}
+.pdp-specs-val{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:300;line-height:1.2;color:var(--text);padding:14px 16px;}
 .pdp-specs-yes{color:var(--accent);}
 
 /* ─── FINAL CTA ─── */
@@ -3580,8 +3571,8 @@ body{font-family:"Public Sans",sans-serif;background:var(--black);color:var(--wh
 
 /* =========================================================
    TARGET PRO PRODUCT RESPONSIVE BUILD
-   Page: product-ltbrx.html
-   Product: LTBR-X
+   Page: product-ptbrx.html
+   Product: PTBR-X
    Version: 2.0.0
    Work by: Target PRO
    Scope: Static header/footer, mobile/tablet/iPad product optimization.
@@ -4046,6 +4037,7 @@ body.nl-drawer-open #nl-drawer-panel {
   .pdp-soft-inner,
   .pdp-expand-inner,
   .sol-editorial {
+    margin-top: 0 !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
@@ -4173,7 +4165,7 @@ body.nl-drawer-open #nl-drawer-panel {
   }
 
   .sol-editorial {
-    padding-top: 54px !important;
+    padding-top: 0px !important;
     padding-bottom: 54px !important;
   }
 
@@ -4339,15 +4331,17 @@ body.nl-drawer-open #nl-drawer-panel {
 
 /* =========================================================
    END TARGET PRO PRODUCT RESPONSIVE BUILD
-   Page: product-ltbrx.html
-   Product: LTBR-X
+   Page: product-ptbrx.html
+   Product: PTBR-X
    Version: 2.0.0
    Work by: Target PRO
    This is the end of the responsive style block.
    ========================================================= */
 
+
 </style>
 <link rel="stylesheet" href="responsive-style.css">
+<link rel="stylesheet" href="mobile-nav.css">
 <body>
 
 <!-- =========================================================
