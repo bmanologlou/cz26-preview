@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->setFrom('noreply@carbonzapp.com', 'Carbon Zapp Contact Form'); 
         
         // This is where the contact form details are sent
-        $mail->addAddress('sales@carbonzapp.com'); 
+        $mail->addAddress('sales@carbonzapp.com');
         
         // When your sales team clicks "Reply", it automatically drafts to the prospect's email
         $mail->addReplyTo($email, $name); 
