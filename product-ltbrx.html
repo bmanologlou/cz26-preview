@@ -4941,6 +4941,7 @@ body.nl-drawer-open #nl-drawer-panel {
   
   <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ED1C24;margin-bottom:8px;">Newsletter</div>
   <h3 style="font-family:'Gunterz',sans-serif;font-size:22px;line-height:1.1;color:#f5f3ef;margin:0 0 20px;">Stay in the loop<br>with Carbon Zapp</h3>
+  
   <input type="email" id="nl-email" placeholder="Your email address" oninput="
     var val=this.value;
     var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
@@ -4949,26 +4950,14 @@ body.nl-drawer-open #nl-drawer-panel {
     btn.style.cursor=valid?'pointer':'not-allowed';
     btn.disabled=!valid;
   " style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#f5f3ef;font-family:'Public Sans',sans-serif;font-size:14px;padding:8px 0;outline:none;width:100%;box-sizing:border-box;">
-  <button id="nl-sub-btn" disabled onclick="
-    var email=document.getElementById('nl-email').value;
-    var valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    var m=document.getElementById('nl-thanks');
-    if(valid){
-      m.style.color='rgba(245,243,239,.6)';
-      m.textContent='Thank you for subscribing to the Carbon Zapp Newsletter';
-    } else {
-      m.style.color='#ED1C24';
-      m.textContent='Please enter a valid email address.';
-    }
-    m.style.display='block';m.style.opacity='1';
-    var inp=document.getElementById('nl-email');var btn=document.getElementById('nl-sub-btn');
-    inp.value='';btn.disabled=true;btn.style.opacity='0.35';btn.style.cursor='not-allowed';
-    setTimeout(function(){m.style.opacity='0';setTimeout(function(){m.style.display='none';m.style.opacity='1';},600);},2500);
-  " style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:not-allowed;margin-top:12px;width:100%;box-sizing:border-box;opacity:0.35;transition:opacity .2s;">Subscribe</button>
+  
+  <button id="nl-sub-btn" disabled style="background:#ED1C24;color:#fff;border:none;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px;cursor:not-allowed;margin-top:12px;width:100%;box-sizing:border-box;opacity:0.35;transition:opacity .2s;">Subscribe</button>
+  
   <div style="display:flex;align-items:flex-start;gap:10px;margin-top:12px;cursor:pointer;" onclick="var cb=document.getElementById('nl-agree');cb.checked=!cb.checked;cb.dispatchEvent(new Event('change'));">
     <input type="checkbox" id="nl-agree" style="width:14px;height:14px;cursor:pointer;flex-shrink:0;margin-top:2px;appearance:none;-webkit-appearance:none;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:2px;pointer-events:none;" onchange="this.style.background=this.checked?'#ED1C24':'transparent';this.style.borderColor=this.checked?'#ED1C24':'rgba(255,255,255,.3)';this.style.backgroundImage=this.checked?'url(&quot;data:image/svg+xml,%3Csvg viewBox=\'0 0 10 8\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M1 4l3 3 5-6\' stroke=\'white\' stroke-width=\'1.5\'/%3E%3C/svg%3E&quot;)':'none';this.style.backgroundSize='10px';this.style.backgroundRepeat='no-repeat';this.style.backgroundPosition='center'">
     <span style="font-size:11px;color:rgba(245,243,239,.4);line-height:1.5;">I agree to receive updates from Carbon Zapp</span>
   </div>
+  
   <div id="nl-thanks" style="display:none;font-family:'Public Sans',sans-serif;font-size:12px;color:rgba(245,243,239,.6);text-align:center;padding:12px 0;transition:opacity .6s;">Thank you for subscribing to the Carbon Zapp Newsletter</div>
 </div>
 
