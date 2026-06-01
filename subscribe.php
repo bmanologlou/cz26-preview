@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // --- SENDER & RECIPIENT ---
         $mail->setFrom('noreply@carbonzapp.com', 'Carbon Zapp Portal'); 
-        $mail->addAddress('sales@carbonzapp.com'); // Sending the subscriber data to sales
-        $mail->addAddress('georgedanilopoulos@gmail.com'); // Sending the subscriber data to sales
+        $mail->addAddress('newsletter@carbonzapp.com'); // Sending the subscriber data to the newsletter team
+
         $mail->addReplyTo($email);                 // Conveniently reply straight to subscriber if needed
 
         // --- EMAIL CONTENT ---
