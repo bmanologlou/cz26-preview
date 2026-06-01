@@ -4961,6 +4961,70 @@ body.nl-drawer-open #nl-drawer-panel {
   <div id="nl-thanks" style="display:none;font-family:'Public Sans',sans-serif;font-size:12px;color:rgba(245,243,239,.6);text-align:center;padding:12px 0;transition:opacity .6s;">Thank you for subscribing to the Carbon Zapp Newsletter</div>
 </div>
 
+<script>
+document.getElementById('nl-sub-btn').addEventListener('click', function() {
+    var emailInput = document.getElementById('nl-email');
+    var emailValue = emailInput.value.trim();
+    var msgDiv = document.getElementById('nl-thanks');
+    var btn = this;
+
+    // Validate email client-side first
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+    if (!isValid) {
+        msgDiv.style.color = '#ED1C24';
+        msgDiv.textContent = 'Please enter a valid email address.';
+        msgDiv.style.display = 'block';
+        return;
+    }
+
+    // Inform user backend work is happening
+    msgDiv.style.color = 'rgba(245,243,239,.6)';
+    msgDiv.textContent = 'Subscribing...';
+    msgDiv.style.display = 'block';
+    msgDiv.style.opacity = '1';
+
+    // Prepare payload
+    var formData = new FormData();
+    formData.append('email', emailValue);
+
+    // Hit the dedicated newsletter processing file
+    fetch('subscribe.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        return response.text().then(text => {
+            if (response.ok) {
+                msgDiv.style.color = 'rgba(245,243,239,.6)';
+                msgDiv.textContent = text;
+                
+                // Clear state on success
+                emailInput.value = '';
+                btn.disabled = true;
+                btn.style.opacity = '0.35';
+                btn.style.cursor = 'not-allowed';
+            } else {
+                msgDiv.style.color = '#ED1C24';
+                msgDiv.textContent = text;
+            }
+            
+            // Graceful fadeout timer
+            setTimeout(function() {
+                msgDiv.style.opacity = '0';
+                setTimeout(function() {
+                    msgDiv.style.display = 'none';
+                    msgDiv.style.opacity = '1';
+                }, 600);
+            }, 3500);
+        });
+    })
+    .catch(error => {
+        msgDiv.style.color = '#ED1C24';
+        msgDiv.textContent = 'An error occurred. Please try again.';
+    });
+});
+</script>
+
 
 
 <script>
