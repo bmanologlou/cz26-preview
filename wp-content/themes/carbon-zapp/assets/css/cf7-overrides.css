@@ -1,0 +1,140 @@
+/**
+ * Contact Form 7 visual overrides for page-contact.php.
+ *
+ * The source contact.html form (#custom-contact-form) styled every field
+ * with inline style="..." attributes: transparent background, bottom-border
+ * only inputs, 'Public Sans' body copy, 'DM Mono' uppercase letter-spaced
+ * labels. CF7 renders its own markup (.wpcf7-form / .wpcf7-form-control /
+ * .wpcf7-text / .wpcf7-email / .wpcf7-tel / .wpcf7-textarea / .wpcf7-submit)
+ * which won't pick up those inline styles, so this file reproduces the same
+ * values as real CSS rules against CF7's default output classes, scoped to
+ * the contact page's form wrapper. See wp-theme/CF7-SETUP.md for the CF7
+ * form template that emits the surrounding .cz-contact-form-row /
+ * .cz-contact-form-field / .cz-contact-form-label wrapper markup this file
+ * also targets.
+ *
+ * Only enqueued on the Contact page, see inc/enqueue.php.
+ */
+
+.cz-cf7-contact-wrap .wpcf7-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.cz-cf7-contact-wrap .cz-contact-form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.cz-cf7-contact-wrap .cz-contact-form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.cz-cf7-contact-wrap .cz-contact-form-label {
+	font-family: 'DM Mono', monospace;
+	font-size: 9px;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: rgba(245, 243, 239, .3);
+}
+
+/* Text inputs, email, tel, textarea — same bottom-border-only look. */
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-text,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-email,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-tel,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-textarea {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, .15);
+	color: #f5f3ef;
+	font-family: 'Public Sans', sans-serif;
+	font-size: 14px;
+	padding: 8px 0;
+	outline: none;
+	width: 100%;
+	border-radius: 0;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-textarea {
+	resize: none;
+	min-height: 100px;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-text::placeholder,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-email::placeholder,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-tel::placeholder,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-textarea::placeholder {
+	color: rgba(245, 243, 239, .3);
+	opacity: 1;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-text:focus,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-email:focus,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-tel:focus,
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-textarea:focus {
+	border-bottom-color: rgba(237, 28, 36, .6);
+}
+
+/* Submit button — matches source's inline-styled <button type="submit">. */
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-submit {
+	background: #ED1C24;
+	color: #fff;
+	border: none;
+	font-family: 'Public Sans', sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	padding: 14px 32px;
+	cursor: pointer;
+	align-self: flex-start;
+	border-radius: 0;
+	width: auto;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-submit:hover {
+	background: #c8151c;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form-control.wpcf7-submit:disabled {
+	opacity: .6;
+	cursor: default;
+}
+
+/* CF7's built-in validation/response messaging, restyled to match the
+   source's #form-response div (white while sending/neutral, green success,
+   red error) instead of CF7's default blue/red boxed styles. */
+.cz-cf7-contact-wrap .wpcf7-response-output {
+	font-family: 'Public Sans', sans-serif;
+	font-size: 13px;
+	margin: 10px 0 0;
+	padding: 0;
+	border: none;
+	color: #f5f3ef;
+}
+
+.cz-cf7-contact-wrap.wpcf7-mail-sent-ok .wpcf7-response-output,
+.cz-cf7-contact-wrap .wpcf7-form.sent .wpcf7-response-output {
+	color: #4BB543;
+}
+
+.cz-cf7-contact-wrap .wpcf7-form.invalid .wpcf7-response-output,
+.cz-cf7-contact-wrap .wpcf7-form.unaccepted .wpcf7-response-output,
+.cz-cf7-contact-wrap .wpcf7-form.payment-required .wpcf7-response-output,
+.cz-cf7-contact-wrap .wpcf7-form.spam .wpcf7-response-output,
+.cz-cf7-contact-wrap .wpcf7-form.aborted .wpcf7-response-output {
+	color: #ED1C24;
+}
+
+/* Per-field validation tooltips CF7 injects — keep them legible on the
+   dark form background instead of the plugin's default white/black. */
+.cz-cf7-contact-wrap .wpcf7-not-valid-tip {
+	color: #ED1C24;
+	font-family: 'Public Sans', sans-serif;
+	font-size: 12px;
+	margin-top: 4px;
+}

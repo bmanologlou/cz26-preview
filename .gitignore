@@ -1,0 +1,22 @@
+# WordPress core (installed via wp-cli, not tracked in this repo)
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+!/wp-config-sample.php
+/xmlrpc.php
+.htaccess
+
+# Contains DB credentials
+wp-config.php
+
+# Uploaded media, not source
+/wp-content/uploads/
+
+# Plugins/themes installed via wp-cli rather than committed
+/wp-content/plugins/*
+!/wp-content/plugins/index.php
+/wp-content/upgrade/
+/wp-content/cache/
