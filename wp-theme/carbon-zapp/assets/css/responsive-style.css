@@ -1648,4 +1648,7 @@ html.nl-drawer-open {
   #nl-drawer-overlay {
     display: none !important;
   }
+  #nl-btn-mobile {
+    display: none !important;
+  }
 }
