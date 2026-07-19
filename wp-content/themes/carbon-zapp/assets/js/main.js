@@ -243,7 +243,31 @@
 		} );
 	}
 
+	/* ── Preloader — once per session ── */
+	function initPreloader() {
+		var preloader = document.getElementById( 'preloader' );
+		if ( ! preloader ) {
+			return;
+		}
+		if ( sessionStorage.getItem( 'cz_visited' ) ) {
+			preloader.style.display = 'none';
+			document.body.classList.add( 'loaded' );
+			return;
+		}
+		sessionStorage.setItem( 'cz_visited', '1' );
+		window.addEventListener( 'load', function () {
+			setTimeout( function () {
+				preloader.classList.add( 'hidden' );
+				document.body.classList.add( 'loaded' );
+				setTimeout( function () {
+					preloader.style.display = 'none';
+				}, 600 );
+			}, 400 );
+		} );
+	}
+
 	function init() {
+		initPreloader();
 		initNavScroll();
 		initMobileNav();
 		initNewsletterDrawer();

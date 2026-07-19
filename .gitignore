@@ -20,3 +20,6 @@ wp-config.php
 !/wp-content/plugins/index.php
 /wp-content/upgrade/
 /wp-content/cache/
+
+# Database dumps (contain password hashes / site data, not source)
+*.sql

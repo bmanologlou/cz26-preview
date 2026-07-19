@@ -15,6 +15,7 @@ require CZ_THEME_DIR . '/inc/theme-setup.php';
 require CZ_THEME_DIR . '/inc/enqueue.php';
 require CZ_THEME_DIR . '/inc/nav-menus.php';
 require CZ_THEME_DIR . '/inc/cpt-product.php';
+require CZ_THEME_DIR . '/inc/product-order.php';
 require CZ_THEME_DIR . '/inc/cpt-news.php';
 require CZ_THEME_DIR . '/inc/acf-fields.php';
 require CZ_THEME_DIR . '/inc/newsletter-ajax.php';
