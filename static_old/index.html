@@ -4727,7 +4727,7 @@ body.nl-drawer-open .nav-hamburger {
     var events = [];
 
     // Load events dynamically from news.json
-    fetch('news.json')
+    fetch('news.json?id=' + Date.now())
       .then(function(r) { return r.json(); })
       .then(function(data) {
         events = data.articles
