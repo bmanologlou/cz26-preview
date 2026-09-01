@@ -1262,6 +1262,32 @@
     overflow-wrap: break-word !important;
     hyphens: none !important;
   }
+
+  /* Event card (single-cz_news.php) — two fields per row (50% each) instead
+     of the desktop 3-column track, with the link centred on its own row. */
+  .event-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 20px !important;
+    gap: 18px 14px !important;
+  }
+
+  .event-field {
+    min-width: 0 !important;
+  }
+
+  .event-field span {
+    overflow-wrap: break-word !important;
+  }
+
+  .event-link {
+    grid-column: 1 / -1 !important;
+    margin-top: 4px !important;
+    text-align: center !important;
+  }
+
+  .event-link a {
+    display: inline-block !important;
+  }
 }
 
 /* =========================================================

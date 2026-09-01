@@ -83,7 +83,7 @@ get_header();
 <!-- VIDEO -->
 <div class="cx-video-wrap">
   <div class="cx-video-inner">
-    <iframe src="https://www.youtube-nocookie.com/embed/sAKAsurtyHY?rel=0&modestbranding=1" title="Carbon Zapp Innovation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/KTlRf9eA98U?rel=0&modestbranding=1" title="Carbon Zapp Innovation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
 </div>
 
