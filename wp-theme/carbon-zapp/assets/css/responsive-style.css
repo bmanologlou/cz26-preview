@@ -1238,6 +1238,11 @@
   }
 
   /* Article header (single-cz_news.php) */
+  .article-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
   .article-hero {
     padding: 56px 0 24px !important;
   }
@@ -1247,12 +1252,15 @@
     margin-bottom: 10px !important;
   }
 
+  /* Gunterz is a very wide face (~11.7em for the longest title word), so the
+     title is sized off the viewport to keep long words on one line instead of
+     breaking a single trailing letter onto the next line. */
   .article-title {
-    font-size: 32px !important;
+    font-size: clamp(20px, calc(8.1vw - 3.2px), 32px) !important;
     line-height: 1.08 !important;
     margin-bottom: 14px !important;
     overflow-wrap: break-word !important;
-    hyphens: auto !important;
+    hyphens: none !important;
   }
 }
 
@@ -1540,13 +1548,9 @@
     line-height: 1.6 !important;
   }
 
-  /* Article header (single-cz_news.php) */
+  /* Article header (single-cz_news.php) — title size stays fluid, see 768px */
   .article-hero {
     padding: 44px 0 20px !important;
-  }
-
-  .article-title {
-    font-size: 26px !important;
   }
 }
 

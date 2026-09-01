@@ -1,27 +1,10 @@
 {
   "articles": [
     {
-      "id": "smm-2026",
-      "title": "SMM 2026",
-      "date": "2026-07-01",
-      "date_display": "July 2026",
-      "categories": [
-        "events"
-      ],
-      "excerpt": "Carbon Zapp invites you to SMM 2026 in Hamburg — Hall B7, Stand B7.442, Greek National Pavilion. The complete CZ Marine Solutions, led by the LTBR-X.",
-      "image": "/assets/images/CZ_EVENT_SMM.png",
-      "image_thumb": "/assets/images/CZ_EVENT_SMM.png",
-      "event_date": "September 1–4, 2026",
-      "event_end": "2026-09-04",
-      "event_location": "Hamburg Exhibition and Congress Centre, Hamburg — Hall B7, Stand B7.442 · Greek National Pavilion",
-      "event_link": "https://www.smm-hamburg.com/",
-      "body": "Carbon Zapp invites you to SMM 2026, bringing advanced marine engineering solutions to one of the world's leading maritime industry exhibitions.\n\nOur flagship LTBR-X leads the stand, the Large Engines Diesel Test Bench covering all nine top diesel power engine OEMs, from Marine common-rail to dual-fuel pilot systems.\n\nAround it, the complete CZ Marine Solutions: testing, screening and professional servicing built for shipyards, reman shops and precision built for classification-society standards.\n\nJoin us at SMM 2026 in Hamburg, Germany, from 1–4 September 2026, at the Greek National Pavilion, Hall B7, Stand B7.442, and discover our latest marine testing, screening and servicing solutions engineered for demanding marine applications.\n\nWith advanced technology and precision engineering at the core of our solutions, Carbon Zapp continues to deliver professional solutions for the marine industry worldwide.\n\nDiscover the power behind precision marine service.\n\nDon't miss the opportunity to meet the Carbon Zapp team and explore the complete CZ Marine Solutions. Book your meeting at contact@carbonzapp.com and discover how our solutions can support your marine operation."
-    },
-    {
       "id": "automechanika-frankfurt-2026",
       "title": "Automechanika 2026",
       "date": "2026-07-01",
-      "date_display": "July 2026",
+      "date_display": "September 2026",
       "categories": [
         "events"
       ],
@@ -33,6 +16,23 @@
       "event_location": "Frankfurt Exhibition Centre, Frankfurt am Main — Hall 9.0, Booth D16",
       "event_link": "https://automechanika.messefrankfurt.com/frankfurt/en.html",
       "body": "Carbon Zapp returns to Automechanika Frankfurt 2026, bringing the latest evolution of its workshop technology and complete X-Series ecosystem to the heart of the automotive aftermarket.\n\nFrankfurt is where we bring everything. The 2026 evolution of the complete X-Series on one stand. Flagship, Specialists and Workshop platforms, all connected through CloudX.\n\nFrom the LTBR-X, MTBR-X and ITBR-X flagship stations to the dedicated CRDi, GDi and HEUI specialists, down to the workshop benches and the tools that complete the bay with de-carbonizing and on-vehicle diagnosis.\n\nNew machines. New capabilities. The biggest platform update in our 35-year history.\n\nJoin us at Automechanika Frankfurt 2026, from 8–12 September 2026, and visit Carbon Zapp at Hall 9.0, Booth D16 to discover the complete X-Series ecosystem and explore the latest solutions for the modern workshop.\n\nOne ecosystem. Every solution. Come configure yours.\n\nExperience the CZ Platforms in Frankfurt. Discover the complete X-Series, explore every solution and configure yours.\n\nBook your meeting at contact@carbonzapp.com"
+    },
+    {
+      "id": "smm-2026",
+      "title": "SMM 2026",
+      "date": "2026-07-01",
+      "date_display": "September 2026",
+      "categories": [
+        "events"
+      ],
+      "excerpt": "Carbon Zapp invites you to SMM 2026 in Hamburg — Hall B7, Stand B7.442, Greek National Pavilion. The complete CZ Marine Solutions, led by the LTBR-X.",
+      "image": "/assets/images/CZ_EVENT_SMM.png",
+      "image_thumb": "/assets/images/CZ_EVENT_SMM.png",
+      "event_date": "September 1–4, 2026",
+      "event_end": "2026-09-04",
+      "event_location": "Hamburg Exhibition and Congress Centre, Hamburg — Hall B7, Stand B7.442 · Greek National Pavilion",
+      "event_link": "https://www.smm-hamburg.com/",
+      "body": "Carbon Zapp invites you to SMM 2026, bringing advanced marine engineering solutions to one of the world's leading maritime industry exhibitions.\n\nOur flagship LTBR-X leads the stand, the Large Engines Diesel Test Bench covering all nine top diesel power engine OEMs, from Marine common-rail to dual-fuel pilot systems.\n\nAround it, the complete CZ Marine Solutions: testing, screening and professional servicing built for shipyards, reman shops and precision built for classification-society standards.\n\nJoin us at SMM 2026 in Hamburg, Germany, from 1–4 September 2026, at the Greek National Pavilion, Hall B7, Stand B7.442, and discover our latest marine testing, screening and servicing solutions engineered for demanding marine applications.\n\nWith advanced technology and precision engineering at the core of our solutions, Carbon Zapp continues to deliver professional solutions for the marine industry worldwide.\n\nDiscover the power behind precision marine service.\n\nDon't miss the opportunity to meet the Carbon Zapp team and explore the complete CZ Marine Solutions. Book your meeting at contact@carbonzapp.com and discover how our solutions can support your marine operation."
     },
     {
       "id": "posidonia-2026",

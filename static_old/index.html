@@ -4732,7 +4732,7 @@ body.nl-drawer-open .nav-hamburger {
       .then(function(data) {
         events = data.articles
           .filter(function(a) { return a.categories.includes('events'); })
-          .slice(0, 5)
+          .slice(0, 2)
           .map(function(a) {
             return {
               name: a.title,

@@ -2016,19 +2016,23 @@ html.nl-drawer-open {
 
 /* ── ARTICLE HEADER — MOBILE ONLY ── */
 @media (max-width: 768px) {
+  .article-wrap { padding-left: 20px; padding-right: 20px; }
   .article-hero { padding: 56px 0 24px; }
   .article-meta { font-size: 10px; margin-bottom: 10px; }
+  /* Gunterz is a very wide face (~11.7em for the longest title word), so the
+     title is sized off the viewport to keep long words on one line instead of
+     breaking a single trailing letter onto the next line. */
   .article-title {
-    font-size: 32px;
+    font-size: clamp(20px, calc(8.1vw - 3.2px), 32px);
     line-height: 1.08;
     margin-bottom: 14px;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
   }
 }
 @media (max-width: 480px) {
+  /* title size stays fluid, see 768px block */
   .article-hero { padding: 44px 0 20px; }
-  .article-title { font-size: 26px; }
 }
 </style>
 </head>
