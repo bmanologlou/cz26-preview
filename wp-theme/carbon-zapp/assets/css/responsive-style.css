@@ -1236,6 +1236,24 @@
     padding-left: 0 !important;
     align-items: flex-start !important;
   }
+
+  /* Article header (single-cz_news.php) */
+  .article-hero {
+    padding: 56px 0 24px !important;
+  }
+
+  .article-meta {
+    font-size: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .article-title {
+    font-size: 32px !important;
+    line-height: 1.08 !important;
+    margin-bottom: 14px !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
 }
 
 /* =========================================================
@@ -1520,6 +1538,15 @@
 
   .footer-legal {
     line-height: 1.6 !important;
+  }
+
+  /* Article header (single-cz_news.php) */
+  .article-hero {
+    padding: 44px 0 20px !important;
+  }
+
+  .article-title {
+    font-size: 26px !important;
   }
 }
 

@@ -181,12 +181,18 @@ function cz_import_news() {
 			$post_id = $existing->ID;
 		} else {
 			$content = implode( "\n\n", array_map( 'wp_kses_post', $data['body'] ) );
+
+			// Seed dates are Y-m-d, defaulting to 09:00. An entry may instead
+			// give a full Y-m-d H:i:s to break a same-day tie in the news
+			// listing's post_date DESC order.
+			$post_date = strlen( $data['date'] ) > 10 ? $data['date'] : $data['date'] . ' 09:00:00';
+
 			$post_id = wp_insert_post( array(
 				'post_type'    => 'cz_news',
 				'post_title'   => $data['title'],
 				'post_name'    => $slug,
 				'post_status'  => 'publish',
-				'post_date'    => $data['date'] . ' 09:00:00',
+				'post_date'    => $post_date,
 				'post_excerpt' => $data['excerpt'] ?? '',
 				'post_content' => wpautop( $content ),
 			) );
@@ -201,7 +207,11 @@ function cz_import_news() {
 		}
 
 		if ( ! empty( $data['image'] ) && ! has_post_thumbnail( $post_id ) ) {
-			$att_id = cz_sideload_external_image( $data['image'], $post_id, $data['title'] );
+			// Older entries hotlink a carbonzapp.com URL and get sideloaded;
+			// newer ones ship the artwork in the theme's own /assets/.
+			$att_id = preg_match( '#^https?://#i', $data['image'] )
+				? cz_sideload_external_image( $data['image'], $post_id, $data['title'] )
+				: cz_import_theme_asset_as_attachment( $data['image'], $post_id );
 			if ( $att_id ) {
 				set_post_thumbnail( $post_id, $att_id );
 			}
