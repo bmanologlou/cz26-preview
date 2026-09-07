@@ -68,7 +68,7 @@ get_header();
    *     JS should toggle "is-active"/"active" and the inline display style
    *     together when rotating, and wire click-to-go + swipe as before.
    */
-  $cz_events = cz_get_upcoming_events( 5 );
+  $cz_events = cz_get_upcoming_events( 2 );
   if ( ! empty( $cz_events ) ) :
   ?>
   <!-- UPCOMING EVENT CARD -->

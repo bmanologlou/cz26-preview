@@ -11,8 +11,8 @@ function cz_products_seed_part1() {
 			'authorized'          => true,
 			'actuator_tags'       => array( 'crdi', 'crp' ),
 			'hero_slides'         => array(
-				'images/cz_ctbrx_slider_01.webp',
-				'images/cz_ctbrx_slider_02.webp',
+				'images/ctbrx-slide-01.webp',
+				'images/ctbrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Compact Bench-Top Design',
@@ -24,7 +24,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/ctbr-x',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_CTBRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_CTBRX.webp',
+			'card_image'          => 'images/ctbrx-preview-image.webp',
 			'card_description'    => 'Common Rail Test Bench. CRDi + CRp.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -37,8 +37,8 @@ function cz_products_seed_part1() {
 			'authorized'          => true,
 			'actuator_tags'       => array( 'gdi-inj', 'gdi-pump' ),
 			'hero_slides'         => array(
-				'images/cz_dgfrx_slider_01.webp',
-				'images/cz_dgfrx_slider_02.webp',
+				'images/dgfrx-slide-01.webp',
+				'images/dgfrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Injector Flushing System',
@@ -50,7 +50,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/dgfr-x',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_DGFRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_DGFRX.webp',
+			'card_image'          => 'images/dgfrx-preview-image.webp',
 			'card_description'    => 'Diesel GDi Flow & Return Test System.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -63,8 +63,8 @@ function cz_products_seed_part1() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'crdi', 'crp' ),
 			'hero_slides'         => array(
-				'images/cz_dsrx_slider_01.webp',
-				'images/cz_dsrx_slider_02.webp',
+				'images/dsrx-slide-01.webp',
+				'images/dsrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'CRDi Injector Diagnostics',
@@ -76,7 +76,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/dsr-x',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_WORKSHOP_DSRX.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_DSRX.webp',
+			'card_image'          => 'images/dsrx-preview-image.webp',
 			'card_description'    => 'Diesel Service & Repair Station.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -89,8 +89,8 @@ function cz_products_seed_part1() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'crp', 'engine' ),
 			'hero_slides'         => array(
-				'images/cz_epx_slider_01.webp',
-				'images/cz_epx_slider_02.webp',
+				'images/epx-slide-01.webp',
+				'images/epx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Engine De-Carbonizing',
@@ -102,7 +102,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/ep-x',
 			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_WORKSHOP_EPX.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_EPX.webp',
+			'card_image'          => 'images/epx-preview-image.webp',
 			'card_description'    => 'Electronic Pump & Injector Tester.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -115,8 +115,8 @@ function cz_products_seed_part1() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'gdi-inj', 'gdi-pump' ),
 			'hero_slides'         => array(
-				'images/cz_esx_slider_01.webp',
-				'images/cz_esx_slider_02.webp',
+				'images/esx-slide-01.webp',
+				'images/esx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Engine De-Carbonizing',
@@ -128,7 +128,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/es-x',
 			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_WORKSHOP_ESX.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_ESX.webp',
+			'card_image'          => 'images/esx-preview-image.webp',
 			'card_description'    => 'Electronic GDi Service Station.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -141,8 +141,8 @@ function cz_products_seed_part1() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'eui-eup' ),
 			'hero_slides'         => array(
-				'images/cz_etbrx_slider_01.webp',
-				'images/cz_etbrx_slider_02.webp',
+				'images/etbrx-slide-01.webp',
+				'images/etbrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Modular Expansion Platform',
@@ -154,7 +154,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/etbr-x',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_ETBRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_ETBRX.webp',
+			'card_image'          => 'images/etbrx-preview-image.webp',
 			'card_description'    => 'EUI / EUP Unit Injector Test Bench.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -193,8 +193,8 @@ function cz_products_seed_part1() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'gdi-inj', 'efi' ),
 			'hero_slides'         => array(
-				'images/cz_gdrx_slider_01.webp',
-				'images/cz_gdrx_slider_02.webp',
+				'images/gdrx-slide-01.webp',
+				'images/gdrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'GDi Injector Testing',
@@ -206,7 +206,7 @@ function cz_products_seed_part1() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/gdr-x',
 			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_WORKSHOP_GDRX.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_GDRX.webp',
+			'card_image'          => 'images/gdrx-preview-image.webp',
 			'card_description'    => 'Gasoline Diagnostic & Repair System.',
 			'card_bg'             => 'none',
 			'sections'            => array(),

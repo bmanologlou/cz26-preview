@@ -12,8 +12,8 @@ function cz_products_seed_part2() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'efi' ),
 			'hero_slides'         => array(
-				'images/cz_gs4_slider_01.webp',
-				'images/cz_gs4_slider_02.webp',
+				'images/gs4-slide-01.webp',
+				'images/gs4-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Ultrasonic Cleaning',
@@ -25,7 +25,7 @@ function cz_products_seed_part2() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/gs4-20',
 			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_WORKSHOP_GS4.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_GS4.webp',
+			'card_image'          => 'images/gs4-preview-image.webp',
 			'card_description'    => 'Gasoline 4-Channel Service Station.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -39,8 +39,8 @@ function cz_products_seed_part2() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'efi' ),
 			'hero_slides'         => array(
-				'images/cz_gs8_slider_01.webp',
-				'images/cz_gs8_slider_02.webp',
+				'images/gs8-slide-01.webp',
+				'images/gs8-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'Ultrasonic Cleaning',
@@ -52,22 +52,22 @@ function cz_products_seed_part2() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/workshops/gs8-20',
 			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_WORKSHOP_GS8.pdf',
-			'card_image'          => 'images/All_Machine_Workshops_800x800_01_GS8.webp',
+			'card_image'          => 'images/gs8-preview-image.webp',
 			'card_description'    => 'Gasoline 8-Channel Service Station.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
 		),
 
 		'gtb4rx' => array(
-			'title'               => 'GTB4R-X',
+			'title'               => 'GTBR-X',
 			'category_label'      => 'Gasoline 4-Rail Test Bench',
 			'tagline'             => 'Professional GDi Testing Solution',
 			'market'              => 'specialists',
 			'authorized'          => false,
 			'actuator_tags'       => array( 'gdi-inj', 'efi' ),
 			'hero_slides'         => array(
-				'images/cz_gtb4rx_slider_01.webp',
-				'images/cz_gtb4rx_slider_02.webp',
+				'images/gtbrx-slide-01.webp',
+				'images/gtbrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'GDi Injector Testing',
@@ -78,8 +78,8 @@ function cz_products_seed_part2() {
 			),
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/gtb-4rx-w',
-			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_SPECIALIST_GTB4RX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_GTB4RX.webp',
+			'brochure_pdf'        => 'pdfs/CZ_GASOLINE_SPECIALIST_GTBRX.pdf',
+			'card_image'          => 'images/gtbrx-preview-image.webp',
 			'card_description'    => 'Gasoline 4-Rail Test Bench. GDi + EFi.',
 			'card_bg'             => 'none',
 			'sections'            => array(),
@@ -93,8 +93,8 @@ function cz_products_seed_part2() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'heui', 'engine' ),
 			'hero_slides'         => array(
-				'images/cz_htbrx_slider_01.webp',
-				'images/cz_htbrx_slider_02.webp',
+				'images/htbrx-slide-01.webp',
+				'images/htbrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'HEUI Injector Testing',
@@ -106,22 +106,22 @@ function cz_products_seed_part2() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/htbrx-w',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_HTBRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_HTBRX.webp',
+			'card_image'          => 'images/htbrx-preview-image.webp',
 			'card_description'    => 'HEUI & Engine Diagnostic Bench.',
 			'card_bg'             => 'blue',
 			'sections'            => array(),
 		),
 
 		'itb1rx' => array(
-			'title'               => 'ITB1R-X',
+			'title'               => 'ITBR-X2',
 			'category_label'      => 'Single CRDi Injector Test Bench',
 			'tagline'             => 'Professional 1-Injector CRDi Testing Solution',
 			'market'              => 'specialists',
 			'authorized'          => true,
 			'actuator_tags'       => array( 'crdi' ),
 			'hero_slides'         => array(
-				'images/cz_itb1rx_slider_01.webp',
-				'images/cz_itb1rx_slider_02.webp',
+				'images/itbrx2-slide-01.webp',
+				'images/itbrx2-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'CRDi Injector Testing',
@@ -132,23 +132,24 @@ function cz_products_seed_part2() {
 			),
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/itb-4rx-a',
-			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_ITB1RX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_ITB1RX.webp',
+			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_ITBRX2.pdf',
+			'card_image'          => 'images/itbrx2-preview-image.webp',
 			'card_description'    => 'Single CRDi Injector Test Bench.',
 			'card_bg'             => 'blue',
 			'sections'            => array(),
 		),
 
 		'itb4rx' => array(
-			'title'               => 'ITB4R-X',
+			'title'               => 'ITBR-X4',
 			'category_label'      => 'Standalone CRDi Injector Test Bench',
 			'tagline'             => 'Professional 4-Injector CRDi Testing Solution',
 			'market'              => 'specialists',
 			'authorized'          => true,
 			'actuator_tags'       => array( 'crdi' ),
 			'hero_slides'         => array(
-				'images/cz_itb4rx_slider_01.webp',
-				'images/cz_itb4rx_slider_02.webp',
+				'images/itbrx4-slide-01.webp',
+				'images/itbrx4-slide-02.webp',
+				'images/itbrx4-slide-03.webp',
 			),
 			'key_capabilities'    => array(
 				'CRDi Injector Testing',
@@ -159,8 +160,8 @@ function cz_products_seed_part2() {
 			),
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/itb-4rx-w',
-			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_ITB4RX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_ITB4RX.webp',
+			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_ITBRX4.pdf',
+			'card_image'          => 'images/itbrx4-preview-image.webp',
 			'card_description'    => 'Standalone CRDi Injector Test Bench.',
 			'card_bg'             => 'blue',
 			'sections'            => array(),
@@ -174,10 +175,11 @@ function cz_products_seed_part2() {
 			'authorized'          => true,
 			'actuator_tags'       => array( 'eui-eup', 'heui' ),
 			'hero_slides'         => array(
-				'images/LTBRX_Hero_S1.webp',
-				'images/LTBRX_Slidern_S3_new_rrd2.webp',
-				'images/LTBRX_Slidern_S2_new_rrd2.webp',
-				'images/LTBRX_Hero_S4.webp',
+				'images/ltbrx-slide-01.webp',
+				'images/ltbrx-slide-02.webp',
+				'images/ltbrx-slide-03.webp',
+				'images/ltbrx-slide-04.webp',
+				'images/ltbrx-slide-05.webp',
 			),
 			'key_capabilities'    => array(
 				'3,000+ Bar High-Pressure Capability',
@@ -191,8 +193,8 @@ function cz_products_seed_part2() {
 			// Source href points to a non-existent "CZ_DIESEL_SPECIALIST_LTBRX.pdf" (broken
 			// link in the original site); the file that actually exists on disk is the
 			// "_com" variant below, so that's what we point to here.
-			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_LTBRX_com.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_LTBRX.webp',
+			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_LTBRX.pdf',
+			'card_image'          => 'images/ltbrx-preview-image.webp',
 			'card_description'    => 'Large Injector Test Bench. EUI, EUP, HEUI.',
 			'card_bg'             => 'blue',
 			'sections'            => array(
@@ -394,8 +396,11 @@ function cz_products_seed_part2() {
 			'authorized'          => true,
 			'actuator_tags'       => array( 'crdi', 'eui-eup', 'crp' ),
 			'hero_slides'         => array(
-				'images/cz_mtbrx_slider_01.webp',
-				'images/cz_mtbrx_slider_02.webp',
+				'images/mtbrx-slide-01.webp',
+				'images/mtbrx-slide-02.webp',
+				'images/mtbrx-slide-03.webp',
+				'images/mtbrx-slide-04.webp',
+				'images/mtbrx-slide-05.webp',
 			),
 			'key_capabilities'    => array(
 				'CRDi / GDi / HEUI / EUI-EUP',
@@ -407,7 +412,7 @@ function cz_products_seed_part2() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/mtbrx-w',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_MTBRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_MTBRX.webp',
+			'card_image'          => 'images/mtbrx-preview-image.webp',
 			'card_description'    => 'Multi-System Test Bench. CRDi, CRp, EUI, EUP.',
 			'card_bg'             => 'blue',
 			'sections'            => array(),
@@ -421,8 +426,8 @@ function cz_products_seed_part2() {
 			'authorized'          => false,
 			'actuator_tags'       => array( 'crp' ),
 			'hero_slides'         => array(
-				'images/cz_ptbrx_slider_01.webp',
-				'images/cz_ptbrx_slider_02.webp',
+				'images/ptbrx-slide-01.webp',
+				'images/ptbrx-slide-02.webp',
 			),
 			'key_capabilities'    => array(
 				'CR & GDi Pump Testing',
@@ -434,7 +439,7 @@ function cz_products_seed_part2() {
 			'intro_disclaimer'    => 'More in-depth product information material is currently being prepared. For now, available technical details and documentation can be accessed through the links below.',
 			'product_details_url' => 'https://carbonzapp.com/specialists/ptbrx-w',
 			'brochure_pdf'        => 'pdfs/CZ_DIESEL_SPECIALIST_PTBRX.pdf',
-			'card_image'          => 'images/All_Machine_Specialists_800x800_01_PTBRX.webp',
+			'card_image'          => 'images/ptbrx-preview-image.webp',
 			'card_description'    => 'Common Rail Pump Test Bench.',
 			'card_bg'             => 'blue',
 			'sections'            => array(),
