@@ -196,6 +196,20 @@ function cz_import_news() {
 				'post_excerpt' => $data['excerpt'] ?? '',
 				'post_content' => wpautop( $content ),
 			) );
+
+			// wp_insert_post() silently rewrites 'publish' to 'future' when
+			// post_date is ahead of server time, which would hide a
+			// same-/next-day announcement (e.g. the Stanadyne press release,
+			// dated the morning of its Automechanika launch). The seed only
+			// ever describes already-live content ported from the static
+			// site, never a scheduled post, so put it back — and do it with
+			// a direct UPDATE, since wp_update_post() applies the same
+			// future-date rewrite and would just flip it again.
+			if ( ! is_wp_error( $post_id ) && $post_id && 'future' === get_post_status( $post_id ) ) {
+				global $wpdb;
+				$wpdb->update( $wpdb->posts, array( 'post_status' => 'publish' ), array( 'ID' => $post_id ) );
+				clean_post_cache( $post_id );
+			}
 		}
 
 		if ( is_wp_error( $post_id ) || ! $post_id ) {
@@ -224,6 +238,10 @@ function cz_import_news() {
 			update_field( 'event_end', $event['end'] ?? '', $post_id );
 			update_field( 'event_location', $event['location'] ?? '', $post_id );
 			update_field( 'event_link', $event['link'] ?? '', $post_id );
+		}
+
+		if ( ! empty( $data['no_page'] ) ) {
+			update_field( 'event_no_page', 1, $post_id );
 		}
 
 		$created[ $slug ] = $post_id;

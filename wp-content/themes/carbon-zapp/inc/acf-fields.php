@@ -328,6 +328,14 @@ add_action( 'acf/init', function () {
 				'name'  => 'event_link',
 				'type'  => 'url',
 			),
+			array(
+				'key'          => 'field_cz_event_no_page',
+				'label'        => 'No Detail Page',
+				'name'         => 'event_no_page',
+				'type'         => 'true_false',
+				'ui'           => 1,
+				'instructions' => 'Listing-only event: shown on the homepage card and the News list as "Coming Soon" with no link, and its own URL redirects to the News page. Untick once the article is written.',
+			),
 		),
 		'location' => array(
 			array(

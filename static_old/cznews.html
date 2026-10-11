@@ -4550,6 +4550,30 @@
    Version: 2.0.1
    Work by: Target PRO
    ========================================================= */
+/* Newsletter drawer trigger: mobile-only (matches index/solutions) */
+@media (min-width: 481px) {
+  #nl-btn-mobile { display: none !important; }
+}
+@media (max-width: 480px) {
+  #nl-btn-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+    text-align: left;
+  }
+  .nl-btn-mobile:active { opacity: 0.6; }
+  .nl-btn-mobile-text {
+    font-size: 12px;
+    color: rgba(245,243,239,.45);
+    font-family: 'Public Sans', sans-serif;
+  }
+}
+
   </style>
   <link rel="stylesheet" href="responsive-style.css">
   <link rel="stylesheet" href="mobile-nav.css">
@@ -4780,7 +4804,7 @@
 
     .news-row {
       display: grid;
-      grid-template-columns: 120px 100px 1fr 32px;
+      grid-template-columns: 120px 150px 1fr 32px;
       align-items: center;
       gap: 16px;
       padding: 22px 24px;
@@ -4853,6 +4877,9 @@
       border-color: var(--accent);
       background: var(--accent);
     }
+
+    div.news-row { cursor: default; }
+    div.news-row .news-arrow-box { visibility: hidden; }
 
     .news-row[data-cat].hidden {
       display: none;
@@ -5048,7 +5075,7 @@
       }
 
       .news-row {
-        grid-template-columns: 100px 90px 1fr 32px !important;
+        grid-template-columns: 100px 145px 1fr 32px !important;
         gap: 14px !important;
         padding: 22px 18px !important;
       }
@@ -5717,12 +5744,14 @@
       listEl.innerHTML = articles.map(a => {
         const primaryCat = a.categories[0];
         const label = catLabels[primaryCat] || primaryCat;
-        return `<a href="news/${a.id}.html" class="news-row" data-cat="${primaryCat}" data-preview="${a.image}">
+        const tag = a.no_page ? 'div' : 'a';
+        const href = a.no_page ? '' : ` href="news/${a.id}.html"`;
+        return `<${tag}${href} class="news-row" data-cat="${primaryCat}" data-preview="${a.image}">
       <div class="news-cat" data-filter="${primaryCat}">${label}</div>
       <div class="news-date">${a.date_display}</div>
       <div class="news-headline">${a.title}</div>
       <div class="news-arrow-box">${arrowSVG}</div>
-    </a>`;
+    </${tag}>`;
       }).join('');
 
       // Re-attach cat click handlers

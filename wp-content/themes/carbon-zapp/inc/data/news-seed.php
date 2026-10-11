@@ -22,6 +22,115 @@ if ( ! defined( 'ABSPATH' ) ) {
 function cz_news_seed() {
 	return array(
 
+		// Listing-only events (no article yet — 'no_page' sets the ACF
+		// event_no_page flag, see cz_news_has_page()). Date-only/location
+		// as supplied; Alianza Diesel had no venue given.
+		'aapex-2026' => array(
+			'title'      => 'USA AAPEX 2026',
+			'date'       => '2026-11-03',
+			'categories' => array( 'events' ),
+			'body'       => array(),
+			'no_page'    => true,
+			'event'      => array(
+				'date_display' => 'November 3–5, 2026',
+				'start'        => '20261103',
+				'end'          => '20261105',
+				'location'     => 'Venetian Expo & AAPEX Forum (Caesars Forum)',
+			),
+		),
+
+		'sema-show-2026' => array(
+			'title'      => 'USA SEMA SHOW 2026',
+			'date'       => '2026-11-03',
+			'categories' => array( 'events' ),
+			'body'       => array(),
+			'no_page'    => true,
+			'event'      => array(
+				'date_display' => 'November 3–6, 2026',
+				'start'        => '20261103',
+				'end'          => '20261106',
+				'location'     => 'Las Vegas Convention Center, Las Vegas',
+			),
+		),
+
+		'automechanika-dubai-2026' => array(
+			'title'      => 'AUTOMECHANIKA DUBAI 2026',
+			'date'       => '2026-11-10',
+			'categories' => array( 'events' ),
+			'body'       => array(),
+			'no_page'    => true,
+			'event'      => array(
+				'date_display' => 'November 10–12, 2026',
+				'start'        => '20261110',
+				'end'          => '20261112',
+				'location'     => 'Dubai Exhibition Centre, Dubai',
+			),
+		),
+
+		'alianza-diesel-colombia-2026' => array(
+			'title'      => 'ALIANZA DIESEL COLOMBIA 2026',
+			'date'       => '2026-11-16',
+			'categories' => array( 'events' ),
+			'body'       => array(),
+			'no_page'    => true,
+			'event'      => array(
+				'date_display' => 'November 16–20, 2026',
+				'start'        => '20261116',
+				'end'          => '20261120',
+			),
+		),
+
+		'automechanika-shanghai-2026' => array(
+			'title'      => 'AUTOMECHANIKA SHANGHAI 2026',
+			'date'       => '2026-12-02',
+			'categories' => array( 'events' ),
+			'body'       => array(),
+			'no_page'    => true,
+			'event'      => array(
+				'date_display' => 'December 2–5, 2026',
+				'start'        => '20261202',
+				'end'          => '20261205',
+				'location'     => 'National Exhibition and Convention Center, Shanghai — Hall 2.1, Booth G48',
+			),
+		),
+
+		// Press release, announced on the opening day of Automechanika
+		// Frankfurt. Categorised 'news' (not 'events') — it is an
+		// announcement, not a show appearance — but it still carries event
+		// dates so the article renders the Date-only card and the homepage
+		// hero rotator can pick it up. No location/link: the source press
+		// release gives only "DATE September 8-12, 2026".
+		'stanadyne-authorized-testing' => array(
+			'title'   => 'Stanadyne Authorized Testing',
+			'date'    => '2026-09-08 09:00:00',
+			'excerpt' => 'Carbon Zapp becomes Stanadyne’s authorized partner for the testing of Stanadyne common rail pumps, bringing official Stanadyne test plans and procedures to qualified diesel specialists worldwide.',
+			'image'   => 'images/CZ_EVENT_STANADYNE.png',
+			'categories' => array( 'news' ),
+			'body' => array(
+				"Carbon Zapp becomes Stanadyne’s authorized partner for the testing of Stanadyne common rail pumps, bringing official Stanadyne test plans and procedures to qualified diesel specialists worldwide.",
+				"<strong>Athens, Greece / Jacksonville, NC – USA, 8 September 2026.</strong>",
+				"Stanadyne, a recognized leader in diesel fuel injection technology, and Carbon Zapp, a leading manufacturer of high-precision fuel injection test equipment, today announced a global cooperation under which Carbon Zapp will become an authorized testing partner for Stanadyne common rail pump systems.",
+				"As part of this cooperation, Stanadyne’s official test plans, specifications, acceptance criteria, and procedures for its common rail pump portfolio will be integrated into the Carbon Zapp testing platform and made available, under license, to qualified Diesel Specialists worldwide.",
+				"This collaboration represents an important step in expanding access to OEM-level testing capabilities across the independent service network. For the first time, qualified workshops outside the traditional OEM environment will be able to test and validate Stanadyne common rail pumps using Stanadyne-approved procedures and the manufacturer’s own performance and acceptance criteria, rather than relying on generic, estimated, or reverse-engineered test data.",
+				"By combining Stanadyne’s fuel system expertise and validated technical specifications with Carbon Zapp’s advanced testing technology and global service network, the cooperation will provide Diesel Specialists with greater confidence, consistency, and accuracy when diagnosing, testing, and servicing Stanadyne common rail pump systems.",
+				"<h2>An official standard</h2>",
+				"The test plans are developed by Stanadyne, validated by Stanadyne Engineering, and will continue to be maintained and expanded by Stanadyne as the product portfolio evolves. Carbon Zapp provides the precision measurement platform, hydraulic and electronic control capability, and software architecture required to execute these procedures accurately and consistently. The test database will be securely distributed, updated, and protected through the Carbon Zapp platform.",
+				"The result is a standardized testing process that delivers repeatable, traceable, and manufacturer-recognized results, regardless of where the testing is performed worldwide.",
+				"The program will be released on designated Carbon Zapp specialist test benches. This is a deliberate decision by both companies, recognizing that an official manufacturer test standard is only as reliable as the equipment used to execute it. Access will be provided through a licensed software release, ensuring that every authorized location operates with the same Stanadyne-validated test procedures, acceptance limits, calibration requirements, and reporting format.",
+				"The initial phase of the program will focus on Stanadyne’s common rail pump portfolio. In subsequent phases, Stanadyne and Carbon Zapp plan to expand the program to include Stanadyne’s conventional rotary and inline pump systems, providing continued technical and service support for the significant installed base of Stanadyne products operating worldwide.",
+				"Through this approach, Stanadyne and Carbon Zapp are establishing a consistent global standard for the testing and validation of Stanadyne fuel injection systems across the independent diesel service network.",
+				"<strong>Nikolas Pantazis, CEO and International Business Director, Carbon Zapp P.C.C.:</strong>",
+				"“There is no substitute for testing a component against the specifications established by the people who designed it. What we are bringing to Diesel Specialists is not an interpretation of how a Stanadyne pump should perform, but Stanadyne’s own validated test standards, executed on equipment engineered to reproduce those conditions with the accuracy and repeatability required to prove performance.”",
+				"<strong>Edward Flanagan, Vice President of Global Sales, Stanadyne Operating Company LLC:</strong>",
+				"“Expanding access to Stanadyne-approved testing is an important step in strengthening our support for the global aftermarket. By working with Carbon Zapp, we are giving qualified Diesel Specialists access to Stanadyne-validated test procedures and acceptance criteria, helping ensure greater consistency, confidence, and quality in the service of our products. This collaboration strengthens our connection with the independent service network and supports our long-term strategy to expand Stanadyne’s aftermarket presence, protect product performance in the field, and deliver greater value to customers throughout the product lifecycle.”",
+			),
+			'event' => array(
+				'date_display' => 'September 8–12, 2026',
+				'start'        => '20260908',
+				'end'          => '20260912',
+			),
+		),
+
 		'automechanika-frankfurt-2026' => array(
 			'title'   => 'Automechanika 2026',
 			'date'    => '2026-09-01 09:00:00',

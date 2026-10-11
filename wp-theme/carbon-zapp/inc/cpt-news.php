@@ -100,8 +100,30 @@ function cz_news_primary_category( $post_id ) {
 }
 
 /**
+ * False for listing-only events (ACF event_no_page) announced before their
+ * article is written: they render without a link, and their single URL
+ * redirects to the News page instead of showing an empty article.
+ */
+function cz_news_has_page( $post_id ) {
+	return ! get_field( 'event_no_page', $post_id );
+}
+
+add_action( 'template_redirect', function () {
+	if ( is_singular( 'cz_news' ) && ! cz_news_has_page( get_queried_object_id() ) ) {
+		wp_safe_redirect( cz_page_url( 'news' ) . '?filter=events', 302 );
+		exit;
+	}
+} );
+
+/**
  * Events for the homepage hero card — replaces the original news.json
  * fetch + client-side filter/sort with a server-side WP_Query.
+ *
+ * Not restricted to the 'events' category: index.html commented out its
+ * `categories.includes('events')` filter so a dated announcement (e.g. the
+ * Stanadyne press release, categorised 'news') can also surface in the
+ * card. Any cz_news post carrying an event_start is therefore eligible;
+ * the `! $start` skip below is what keeps undated news articles out.
  *
  * Mirrors the source site's behaviour: it never leaves the card empty just
  * because nothing is upcoming. Current/future events are preferred (soonest
@@ -118,13 +140,6 @@ function cz_get_upcoming_events( $limit = 5 ) {
 	$all_events = get_posts( array(
 		'post_type'      => 'cz_news',
 		'posts_per_page' => -1,
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'cz_news_category',
-				'field'    => 'slug',
-				'terms'    => 'events',
-			),
-		),
 	) );
 
 	$upcoming = array();
@@ -138,7 +153,7 @@ function cz_get_upcoming_events( $limit = 5 ) {
 		$end = get_field( 'event_end', $event->ID );
 		$end = $end ? $end : $start;
 
-		$row = array( 'post' => $event, 'start' => $start );
+		$row = array( 'post' => $event, 'start' => $start, 'end' => $end );
 
 		if ( $end >= $today ) {
 			$upcoming[] = $row;
@@ -148,7 +163,7 @@ function cz_get_upcoming_events( $limit = 5 ) {
 	}
 
 	usort( $upcoming, function ( $a, $b ) {
-		return strcmp( $a['start'], $b['start'] );
+		return strcmp( $a['start'], $b['start'] ) ?: strcmp( $a['end'], $b['end'] );
 	} );
 	usort( $past, function ( $a, $b ) {
 		return strcmp( $b['start'], $a['start'] );

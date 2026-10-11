@@ -66,7 +66,7 @@ if ( $cz_news_query->have_posts() ) {
 		$cz_primary_cat = cz_news_primary_category( get_the_ID() );
 
 		$cz_news_rows[] = array(
-			'permalink' => get_permalink(),
+			'permalink' => cz_news_has_page( get_the_ID() ) ? get_permalink() : '',
 			'title'     => get_the_title(),
 			'date'      => get_the_date( 'd M Y' ),
 			'primary'   => $cz_primary_cat,
@@ -121,12 +121,13 @@ foreach ( $cz_news_rows as $cz_row ) {
 			$cz_label   = isset( $cz_news_cat_labels[ $cz_row['primary'] ] ) ? $cz_news_cat_labels[ $cz_row['primary'] ] : $cz_row['primary'];
 			$cz_matches = ( 'all' === $cz_active_filter || $cz_row['primary'] === $cz_active_filter );
 			?>
-			<a href="<?php echo esc_url( $cz_row['permalink'] ); ?>" class="news-row<?php echo $cz_matches ? '' : ' hidden'; ?>" data-cat="<?php echo esc_attr( $cz_row['primary'] ); ?>" data-preview="<?php echo esc_url( $cz_row['thumb'] ); ?>">
+			<?php $cz_row_tag = $cz_row['permalink'] ? 'a' : 'div'; ?>
+			<<?php echo $cz_row_tag; ?><?php if ( $cz_row['permalink'] ) : ?> href="<?php echo esc_url( $cz_row['permalink'] ); ?>"<?php endif; ?> class="news-row<?php echo $cz_matches ? '' : ' hidden'; ?>" data-cat="<?php echo esc_attr( $cz_row['primary'] ); ?>" data-preview="<?php echo esc_url( $cz_row['thumb'] ); ?>">
 				<div class="news-cat" data-filter="<?php echo esc_attr( $cz_row['primary'] ); ?>"><?php echo esc_html( $cz_label ); ?></div>
 				<div class="news-date"><?php echo esc_html( $cz_row['date'] ); ?></div>
 				<div class="news-headline"><?php echo esc_html( $cz_row['title'] ); ?></div>
 				<div class="news-arrow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-			</a>
+			</<?php echo $cz_row_tag; ?>>
 		<?php endforeach; ?>
 	</div>
 </div>

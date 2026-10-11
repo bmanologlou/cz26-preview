@@ -69,10 +69,12 @@ while ( have_posts() ) :
 							<label>Date</label>
 							<span><?php echo esc_html( $cz_event_date_display ); ?></span>
 						</div>
-						<div class="event-field">
-							<label>Location</label>
-							<span><?php echo esc_html( $cz_event_location ); ?></span>
-						</div>
+						<?php if ( ! empty( $cz_event_location ) ) : ?>
+							<div class="event-field">
+								<label>Location</label>
+								<span><?php echo esc_html( $cz_event_location ); ?></span>
+							</div>
+						<?php endif; ?>
 						<?php if ( ! empty( $cz_event_link ) ) : ?>
 							<div class="event-link">
 								<a href="<?php echo esc_url( $cz_event_link ); ?>" target="_blank" rel="noopener">Visit Exhibition Website</a>

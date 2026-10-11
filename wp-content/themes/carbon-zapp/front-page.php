@@ -68,7 +68,7 @@ get_header();
    *     JS should toggle "is-active"/"active" and the inline display style
    *     together when rotating, and wire click-to-go + swipe as before.
    */
-  $cz_events = cz_get_upcoming_events( 2 );
+  $cz_events = cz_get_upcoming_events( 5 );
   if ( ! empty( $cz_events ) ) :
   ?>
   <!-- UPCOMING EVENT CARD -->
@@ -81,9 +81,10 @@ get_header();
       $cz_event_dates  = get_field( 'event_date_display', $cz_event->ID );
       $cz_event_venue  = get_field( 'event_location', $cz_event->ID );
       $cz_event_is_first = ( 0 === $cz_event_index );
+      $cz_event_tag    = cz_news_has_page( $cz_event->ID ) ? 'a' : 'div';
     ?>
-    <a class="hero-event-body hero-event-slide<?php echo $cz_event_is_first ? ' is-active' : ''; ?>"
-       href="<?php echo esc_url( get_permalink( $cz_event ) ); ?>"
+    <<?php echo $cz_event_tag; ?> class="hero-event-body hero-event-slide<?php echo $cz_event_is_first ? ' is-active' : ''; ?>"
+       <?php if ( 'a' === $cz_event_tag ) : ?>href="<?php echo esc_url( get_permalink( $cz_event ) ); ?>"<?php endif; ?>
        data-event-start="<?php echo esc_attr( $cz_event_start ); ?>"
        data-event-end="<?php echo esc_attr( $cz_event_end ? $cz_event_end : $cz_event_start ); ?>"
        <?php echo $cz_event_is_first ? '' : 'style="display:none;"'; ?>>
@@ -96,8 +97,12 @@ get_header();
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <span><?php echo esc_html( $cz_event_venue ); ?></span>
       </div>
+      <?php if ( 'a' === $cz_event_tag ) : ?>
       <div class="hero-event-action"><span class="event-action-btn">View Event <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></div>
-    </a>
+      <?php else : ?>
+      <div class="hero-event-action"><span class="event-coming-soon">Coming Soon</span></div>
+      <?php endif; ?>
+    </<?php echo $cz_event_tag; ?>>
     <?php endforeach; ?>
 
     <div class="hero-event-nav">
