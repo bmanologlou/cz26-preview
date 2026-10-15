@@ -2,17 +2,20 @@
   "articles": [
     {
       "id": "aapex-2026",
-      "title": "USA AAPEX 2026",
+      "title": "AAPEX 2026",
       "date": "2026-11-03",
       "date_display": "November 3–5, 2026",
       "categories": [
         "events"
       ],
-      "excerpt": "",
+      "excerpt": "Carbon Zapp brings new energy to AAPEX 2026 in Las Vegas — Booth V8101. Discover the GTBR-X and GS8 and our latest testing solutions for the modern workshop.",
+      "image": "/assets/images/CZ_EVENT_AAPEX26.png",
+      "image_thumb": "/assets/images/CZ_EVENT_AAPEX26.png",
       "event_date": "November 3–5, 2026",
       "event_end": "2026-11-05",
-      "no_page": true,
-      "event_location": "Venetian Expo & AAPEX Forum (Caesars Forum)"
+      "event_location": "The Venetian Expo, Las Vegas, Nevada, USA — Booth V8101",
+      "event_link": "https://www.aapexshow.com/",
+      "body": "Carbon Zapp is bringing new energy to AAPEX 2026 in Las Vegas, showcasing its latest workshop technology and solutions for the automotive aftermarket.\n\nDiscover the GTBR-X and GS8, explore our testing solutions, and see how Carbon Zapp technology supports greater precision, efficiency, and confidence in the modern workshop.\n\nNew Models. New Possibilities.\n\nJoin us at AAPEX 2026, Booth V8101, to discover our latest solutions, meet the Carbon Zapp team, and explore new opportunities for your business.\n\nBeyond Precision. One Ecosystem. Every Solution.\n\nExperience the CZ Platforms in Las Vegas and discover solutions designed to meet the evolving needs of automotive professionals.\n\nBook your meeting at contact@carbonzapp.com"
     },
     {
       "id": "sema-show-2026",

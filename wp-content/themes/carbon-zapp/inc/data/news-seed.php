@@ -22,23 +22,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 function cz_news_seed() {
 	return array(
 
-		// Listing-only events (no article yet — 'no_page' sets the ACF
-		// event_no_page flag, see cz_news_has_page()). Date-only/location
-		// as supplied; Alianza Diesel had no venue given.
+		// Upgraded from a listing-only event once the article/artwork arrived.
 		'aapex-2026' => array(
-			'title'      => 'USA AAPEX 2026',
-			'date'       => '2026-11-03',
+			'title'   => 'AAPEX 2026',
+			'date'    => '2026-11-03',
+			'excerpt' => 'Carbon Zapp brings new energy to AAPEX 2026 in Las Vegas — Booth V8101. Discover the GTBR-X and GS8 and our latest testing solutions for the modern workshop.',
+			'image'   => 'images/CZ_EVENT_AAPEX26.png',
 			'categories' => array( 'events' ),
-			'body'       => array(),
-			'no_page'    => true,
-			'event'      => array(
+			'body' => array(
+				"Carbon Zapp is bringing new energy to AAPEX 2026 in Las Vegas, showcasing its latest workshop technology and solutions for the automotive aftermarket.",
+				"Discover the GTBR-X and GS8, explore our testing solutions, and see how Carbon Zapp technology supports greater precision, efficiency, and confidence in the modern workshop.",
+				"New Models. New Possibilities.",
+				"Join us at AAPEX 2026, Booth V8101, to discover our latest solutions, meet the Carbon Zapp team, and explore new opportunities for your business.",
+				"Beyond Precision. One Ecosystem. Every Solution.",
+				"Experience the CZ Platforms in Las Vegas and discover solutions designed to meet the evolving needs of automotive professionals.",
+				"Book your meeting at contact@carbonzapp.com",
+			),
+			'event' => array(
 				'date_display' => 'November 3–5, 2026',
 				'start'        => '20261103',
 				'end'          => '20261105',
-				'location'     => 'Venetian Expo & AAPEX Forum (Caesars Forum)',
+				'location'     => 'The Venetian Expo, Las Vegas, Nevada, USA — Booth V8101',
+				'link'         => 'https://www.aapexshow.com/',
 			),
 		),
 
+		// Listing-only events (no article yet — 'no_page' sets the ACF
+		// event_no_page flag, see cz_news_has_page()). Date-only/location
+		// as supplied; Alianza Diesel had no venue given.
 		'sema-show-2026' => array(
 			'title'      => 'USA SEMA SHOW 2026',
 			'date'       => '2026-11-03',
