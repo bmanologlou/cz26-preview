@@ -403,7 +403,7 @@ function cz_products_seed_part2() {
 				'images/mtbrx-slide-05.webp',
 			),
 			'key_capabilities'    => array(
-				'CRDi / GDi / HEUI / EUI-EUP',
+				'CRDi / GDi / EUI-EUP',
 				'Injector & Pump Testing',
 				'Up to 2800 Bar Pressure',
 				'EU6 Technologies Support',

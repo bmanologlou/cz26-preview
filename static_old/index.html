@@ -4732,6 +4732,16 @@ body.nl-drawer-open .nav-hamburger {
       .then(function(data) {
         events = data.articles
           /*.filter(function(a) { return a.categories.includes('events'); })*/
+          // Only dated events that ended no more than 2 days ago
+          // (event_end is YYYY-MM-DD; kept until 23:59:59 two days after it).
+          .filter(function(a) {
+            if (!a.event_end) return false;
+            var until = new Date(a.event_end + 'T23:59:59');
+            until.setDate(until.getDate() + 2);
+            return until >= new Date();
+          })
+          // news.json is newest-first; the hero wants the soonest event first.
+          .sort(function(a, b) { return a.event_end < b.event_end ? -1 : a.event_end > b.event_end ? 1 : 0; })
           .slice(0, 5)
           .map(function(a) {
             return {
@@ -4743,6 +4753,11 @@ body.nl-drawer-open .nav-hamburger {
               url: (a.id && !a.no_page) ? 'news/' + a.id + '.html' : null
             };
           });
+        if (!events.length) {
+          var card = document.getElementById('hero-event-card');
+          if (card) card.style.display = 'none';
+          return;
+        }
         buildDots();
         showEvent(0, false);
         resetTimer();

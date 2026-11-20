@@ -23,3 +23,4 @@ wp-config.php
 
 # Database dumps (contain password hashes / site data, not source)
 *.sql
+incomingfilesforclaude/

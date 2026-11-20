@@ -91,17 +91,29 @@ function cz_news_seed() {
 			),
 		),
 
+		// Upgraded from a listing-only event once the article arrived
+		// (copy taken from the AMS26 newsletter).
 		'automechanika-shanghai-2026' => array(
 			'title'      => 'AUTOMECHANIKA SHANGHAI 2026',
 			'date'       => '2026-12-02',
+			'excerpt'    => 'Carbon Zapp brings innovation and fresh energy to Automechanika Shanghai 2026 — Hall 2.1, Booth G48. Discover the MTB and ITB Platforms and our latest solutions for the automotive aftermarket.',
+			'image'      => 'images/CZ_EVENT_AMS26.png',
 			'categories' => array( 'events' ),
-			'body'       => array(),
-			'no_page'    => true,
+			'body'       => array(
+				"Carbon Zapp is ready to bring innovation and fresh energy to Automechanika Shanghai 2026, showcasing its latest workshop technology and solutions for the automotive aftermarket.",
+				"Discover the MTB and ITB Platforms, explore our latest testing solutions, and see how Carbon Zapp technology supports greater precision, efficiency, and confidence in the modern workshop.",
+				"New Technologies. New Opportunities.",
+				"From specialized testing equipment to connected platforms, software, data and global support, Carbon Zapp brings every part of the testing process together within one continuously evolving ecosystem. Built to help fuel system professionals work with greater precision, efficiency and confidence.",
+				"Beyond Precision. One Ecosystem. Every Solution.",
+				"Join us at Automechanika Shanghai 2026, from 2–5 December 2026, and visit Carbon Zapp at Hall 2.1, Booth G48 to meet the Carbon Zapp team, discover our latest technologies, discuss your testing requirements, and explore innovative solutions that can help drive your business forward.",
+				"Book your meeting at contact@carbonzapp.com",
+			),
 			'event'      => array(
 				'date_display' => 'December 2–5, 2026',
 				'start'        => '20261202',
 				'end'          => '20261205',
 				'location'     => 'National Exhibition and Convention Center, Shanghai — Hall 2.1, Booth G48',
+				'link'         => 'https://automechanika-shanghai.hk.messefrankfurt.com/shanghai/en.html',
 			),
 		),
 

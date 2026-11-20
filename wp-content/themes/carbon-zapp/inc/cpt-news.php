@@ -127,15 +127,17 @@ add_action( 'template_redirect', function () {
  *
  * Mirrors the source site's behaviour: it never leaves the card empty just
  * because nothing is upcoming. Current/future events are preferred (soonest
- * first); if there are fewer than $limit of those, the remaining slots are
- * filled with the most recent past events (newest first) so the card falls
- * back to showing "Recent Event" instead of disappearing — same as
+ * first); only when there are none at all does it fall back to the most
+ * recent past events (newest first), so the card shows "Recent Event"
+ * instead of disappearing — same as
  * carbonzapp.com, which always renders the top of its unsorted events list
  * regardless of date and lets the label (Now On / Recent Event / Next
  * Appearance) communicate whether it's past or future.
  */
 function cz_get_upcoming_events( $limit = 5 ) {
-	$today = current_time( 'Ymd' );
+	// An event stays "upcoming" (and on the card) until 2 days after its
+	// end date, then drops off — matches the static index.html filter.
+	$cutoff = ( new DateTime( 'now', wp_timezone() ) )->modify( '-2 days' )->format( 'Ymd' );
 
 	$all_events = get_posts( array(
 		'post_type'      => 'cz_news',
@@ -155,7 +157,7 @@ function cz_get_upcoming_events( $limit = 5 ) {
 
 		$row = array( 'post' => $event, 'start' => $start, 'end' => $end );
 
-		if ( $end >= $today ) {
+		if ( $end >= $cutoff ) {
 			$upcoming[] = $row;
 		} else {
 			$past[] = $row;
@@ -169,7 +171,11 @@ function cz_get_upcoming_events( $limit = 5 ) {
 		return strcmp( $b['start'], $a['start'] );
 	} );
 
-	$ordered = array_merge( wp_list_pluck( $upcoming, 'post' ), wp_list_pluck( $past, 'post' ) );
+	// Past events only fill in when nothing is upcoming, so finished shows
+	// drop off the homepage as soon as there is something newer to show.
+	$ordered = ! empty( $upcoming )
+		? wp_list_pluck( $upcoming, 'post' )
+		: wp_list_pluck( $past, 'post' );
 
 	return array_slice( $ordered, 0, $limit );
 }
